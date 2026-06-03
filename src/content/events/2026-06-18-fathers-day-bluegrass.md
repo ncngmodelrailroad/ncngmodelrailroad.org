@@ -19,7 +19,7 @@ Stop by the railroad building between sets to watch the On3 scale layout run. Ho
 
 ## About the Festival
 
-The California Bluegrass Association runs a four-day festival with more than 30 bands, camping, workshops, and youth programs. The festival is a separate, ticketed event, so you may need a festival ticket or fairgrounds admission to reach our display.
+The California Bluegrass Association runs a four-day festival with more than 30 bands, camping, workshops, and youth programs. The festival is a separate, ticketed event, so you need a festival ticket to enter the fairgrounds and reach our display. Viewing the layout is included once you are inside.
 
 - **Festival info:** [californiabluegrass.org/cbaevent/fathers-day-festival](https://californiabluegrass.org/cbaevent/fathers-day-festival/)
 - **Tickets and passes:** [Buy festival tickets](https://californiabluegrass.org/cbaevent/fathers-day-festival/tickets/)

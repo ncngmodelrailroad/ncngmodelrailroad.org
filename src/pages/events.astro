@@ -25,7 +25,6 @@ const eventSchemaItems = upcomingEvents.map((event) => {
     "endDate": (event.data.endDate || event.data.date).toISOString().split('T')[0],
     "eventStatus": "https://schema.org/EventScheduled",
     "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
-    "isAccessibleForFree": !event.data.requiresTicket,
     "location": {
       "@type": "Place",
       "name": event.data.location,
@@ -42,14 +41,6 @@ const eventSchemaItems = upcomingEvents.map((event) => {
       "url": siteUrl,
     },
   };
-  if (!event.data.requiresTicket) {
-    item.offers = {
-      "@type": "Offer",
-      "price": "0",
-      "priceCurrency": "USD",
-      "availability": "https://schema.org/InStock",
-    };
-  }
   return item;
 });
 

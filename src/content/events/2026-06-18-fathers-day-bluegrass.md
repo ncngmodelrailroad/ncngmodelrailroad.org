@@ -8,7 +8,7 @@ description: |
 featured: true
 ---
 
-The model railroad opens to visitors during the **[Father's Day Bluegrass Festival](https://californiabluegrass.org/cbaevent/fathers-day-festival/)**, run by the California Bluegrass Association at the Nevada County Fairgrounds, June 18 to 21, 2026. This is our next scheduled open house for 2026.
+The model railroad opens to visitors during the [Father's Day Bluegrass Festival](https://californiabluegrass.org/cbaevent/fathers-day-festival/), run by the California Bluegrass Association at the Nevada County Fairgrounds, June 18 to 21, 2026. This is our next scheduled open house for 2026.
 
 ## Open House Hours
 

@@ -380,6 +380,17 @@ blockquote {
   --tw-prose-bullets: var(--color-primary);
 }
 
+.prose a {
+  text-decoration-thickness: 2px;
+  text-underline-offset: 3px;
+  transition: color 0.15s ease, text-decoration-thickness 0.15s ease;
+}
+
+.prose a:hover {
+  color: var(--color-primary-dark);
+  text-decoration-thickness: 3px;
+}
+
 /* Form accessibility */
 input:invalid,
 textarea:invalid {

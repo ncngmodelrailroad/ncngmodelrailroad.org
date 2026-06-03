@@ -10,6 +10,7 @@ const events = defineCollection({
     location: z.string(),
     description: z.string().optional(),
     featured: z.boolean().default(false),
+    requiresTicket: z.boolean().default(false),
   }),
 });
 

@@ -15,37 +15,43 @@ const pastEvents = sortedEvents.filter(e => new Date(e.data.date) < new Date()).
 
 const siteUrl = Astro.site?.origin || 'https://ncngmodelrailroad.org';
 
-const eventSchemaItems = upcomingEvents.map((event) => ({
-  "@context": "https://schema.org",
-  "@type": "Event",
-  "name": event.data.title,
-  "description": event.data.description || event.data.title,
-  "startDate": event.data.date.toISOString().split('T')[0],
-  "endDate": (event.data.endDate || event.data.date).toISOString().split('T')[0],
-  "eventStatus": "https://schema.org/EventScheduled",
-  "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
-  "location": {
-    "@type": "Place",
-    "name": event.data.location,
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "Grass Valley",
-      "addressRegion": "CA",
-      "addressCountry": "US",
+const eventSchemaItems = upcomingEvents.map((event) => {
+  const item: Record<string, unknown> = {
+    "@context": "https://schema.org",
+    "@type": "Event",
+    "name": event.data.title,
+    "description": event.data.description || event.data.title,
+    "startDate": event.data.date.toISOString().split('T')[0],
+    "endDate": (event.data.endDate || event.data.date).toISOString().split('T')[0],
+    "eventStatus": "https://schema.org/EventScheduled",
+    "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+    "isAccessibleForFree": !event.data.requiresTicket,
+    "location": {
+      "@type": "Place",
+      "name": event.data.location,
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Grass Valley",
+        "addressRegion": "CA",
+        "addressCountry": "US",
+      },
     },
-  },
-  "organizer": {
-    "@type": "Organization",
-    "name": "N.C.N.G. Historical Model Railroad",
-    "url": siteUrl,
-  },
-  "offers": {
-    "@type": "Offer",
-    "price": "0",
-    "priceCurrency": "USD",
-    "availability": "https://schema.org/InStock",
-  },
-}));
+    "organizer": {
+      "@type": "Organization",
+      "name": "N.C.N.G. Historical Model Railroad",
+      "url": siteUrl,
+    },
+  };
+  if (!event.data.requiresTicket) {
+    item.offers = {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD",
+      "availability": "https://schema.org/InStock",
+    };
+  }
+  return item;
+});
 
 const eventSchemaJson = JSON.stringify(eventSchemaItems);
 
@@ -137,14 +143,30 @@ function formatDate(date: Date, endDate?: Date) {
   {pastEvents.length > 0 && (
     <section class="py-16 bg-cream">
       <div class="container mx-auto px-4 max-w-4xl">
-        <h2 class="text-3xl font-display text-gray-900 mb-8">Past Events</h2>
-        <div class="space-y-4">
-          {pastEvents.slice(0, 5).map((event) => (
-            <div class="bg-white p-4 rounded shadow-sm">
-              <h3 class="font-semibold text-gray-900">{event.data.title}</h3>
-              <p class="text-sm text-gray-600">{formatDate(event.data.date, event.data.endDate)}</p>
-            </div>
-          ))}
+        <h2 class="text-3xl font-display text-gray-900 mb-3">Past Events</h2>
+        <p class="text-gray-600 mb-8">Events we have already attended this year. These dates have passed, but the festivals return each year.</p>
+        <div class="space-y-6">
+          {pastEvents.slice(0, 5).map(async (event) => {
+            const { Content } = await render(event);
+            return (
+              <article class="bg-white p-6 rounded-lg shadow-sm border-l-4 border-gray-300 opacity-90">
+                <div class="flex flex-wrap items-start justify-between gap-3 mb-2">
+                  <div>
+                    <h3 class="text-xl font-display text-gray-800">{event.data.title}</h3>
+                    <p class="text-sm text-gray-500 mt-1">{formatDate(event.data.date, event.data.endDate)}</p>
+                  </div>
+                  <span class="bg-gray-200 text-gray-700 px-3 py-1 rounded-full text-xs font-medium">Past event</span>
+                </div>
+                <p class="text-gray-500 text-sm mb-2">
+                  <Icon name="solar:map-point-bold" class="w-4 h-4 inline-block mr-1" />
+                  {event.data.location}
+                </p>
+                <div class="prose prose-sm mt-3">
+                  <Content />
+                </div>
+              </article>
+            );
+          })}
         </div>
       </div>
     </section>

@@ -6,6 +6,7 @@ location: Nevada County Fairgrounds, Grass Valley
 description: |
   Visit our model railroad during the California Bluegrass Association's Father's Day Bluegrass Festival at the Nevada County Fairgrounds. We open Saturday, June 20, 12 to 8 PM, with Friday hours to be announced.
 featured: true
+requiresTicket: true
 ---
 
 The model railroad opens to visitors during the [Father's Day Bluegrass Festival](https://californiabluegrass.org/cbaevent/fathers-day-festival/), run by the California Bluegrass Association at the Nevada County Fairgrounds, June 18 to 21, 2026. This is our next scheduled open house for 2026.

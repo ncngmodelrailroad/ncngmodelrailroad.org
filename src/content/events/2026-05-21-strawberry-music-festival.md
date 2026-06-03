@@ -6,6 +6,7 @@ location: Nevada County Fairgrounds, Grass Valley
 description: |
   Visit our On3 scale model railroad during the Spring Strawberry Music Festival at the Nevada County Fairgrounds, May 21 to 24, 2026. A festival ticket is required to enter the fairgrounds.
 featured: true
+requiresTicket: true
 ---
 
 The model railroad opens to visitors during the [Spring Strawberry Music Festival](https://strawberrymusic.com/festival-info/spring-festival/) at the Nevada County Fairgrounds, May 21 to 24, 2026. We opened during the festival this year, and we return for the 2026 Memorial Day weekend run.

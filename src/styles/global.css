@@ -1,5 +1,7 @@
 @import "tailwindcss";
 
+@plugin "@tailwindcss/typography";
+
 @theme {
   /* Primary Colors - Railroad Heritage Red */
   --color-primary: #8B0000;
@@ -369,6 +371,13 @@ blockquote {
   padding-left: 1rem;
   font-style: italic;
   color: var(--color-text-muted);
+}
+
+/* Rich text content theming (event bodies and similar) */
+.prose {
+  --tw-prose-links: var(--color-primary);
+  --tw-prose-headings: var(--color-text);
+  --tw-prose-bullets: var(--color-primary);
 }
 
 /* Form accessibility */

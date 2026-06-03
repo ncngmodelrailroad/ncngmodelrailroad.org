@@ -54,7 +54,8 @@ function formatDate(date: Date, endDate?: Date) {
     weekday: 'long', 
     year: 'numeric', 
     month: 'long', 
-    day: 'numeric' 
+    day: 'numeric',
+    timeZone: 'UTC'
   };
   const start = date.toLocaleDateString('en-US', options);
   if (endDate) {

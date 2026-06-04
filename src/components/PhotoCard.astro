@@ -22,12 +22,21 @@ const aspectClasses = {
   'square': 'aspect-square',
   '4/3': 'aspect-[4/3]'
 };
+
+const aspectDimensions = {
+  'video': { width: 800, height: 450 },
+  'square': { width: 800, height: 800 },
+  '4/3': { width: 800, height: 600 }
+};
+const { width, height } = aspectDimensions[aspectRatio];
 ---
 
 <div class={`relative ${aspectClasses[aspectRatio]} overflow-hidden rounded-xl shadow-lg group ${className}`}>
   <img 
     src={src} 
     alt={alt}
+    width={width}
+    height={height}
     class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
     loading="lazy"
   />

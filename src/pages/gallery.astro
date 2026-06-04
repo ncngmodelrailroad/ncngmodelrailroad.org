@@ -23,7 +23,7 @@ const categories = [
 ];
 ---
 
-<BaseLayout title="Photo Gallery - N.C.N.G. Historical Model Railroad" description="Browse historic railroad photos, layout scenes, volunteer work, and fairgrounds images from the N.C.N.G. Historical Model Railroad." image="/images/trestle-bridge-wide.jpg">
+<BaseLayout title="Photo Gallery - N.C.N.G. Historical Model Railroad" description="Browse historic railroad photos, layout scenes, volunteer work, and fairgrounds images from the N.C.N.G. Historical Model Railroad." image="/images/trestle-bridge-wide.jpg" heroImage={`${base}/images/ncng-layout-1.jpg`}>
   <!-- Hero Section -->
   <section class="relative py-20 md:py-28 bg-gray-900 text-white overflow-hidden">
     <div class="absolute inset-0 opacity-30">
@@ -49,7 +49,7 @@ const categories = [
   </section>
 
   <!-- Category Filter -->
-  <section class="py-6 bg-white border-b sticky top-0 z-30">
+  <section class="py-6 bg-white border-b sticky top-20 md:top-16 z-30">
     <div class="container">
         <div class="flex flex-wrap gap-3 justify-center">
           <button type="button" class="category-btn active" data-category="all" aria-pressed="true">All Photos</button>
@@ -156,6 +156,13 @@ const categories = [
   }
   .photo-card.hidden {
     display: none;
+  }
+  .photo-card {
+    border-radius: 0.75rem;
+  }
+  .photo-card:focus-visible {
+    outline: none;
+    box-shadow: var(--focus-ring);
   }
   /* Skip rendering off-screen gallery items until scrolled into view */
   .photo-card:nth-child(n+7) {

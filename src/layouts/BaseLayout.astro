@@ -350,6 +350,15 @@ const breadcrumbSchema = {
         is:inline />
     )}
 
+    <!-- GoatCounter: open-source, cookie-free analytics (no consent banner needed) -->
+    {organization.analytics?.goatCounter && (
+      <script
+        data-goatcounter={organization.analytics.goatCounter}
+        async
+        src="//gc.zgo.at/count.js"
+        is:inline />
+    )}
+
     <!-- Service Worker Registration -->
     <script is:inline>
       if ('serviceWorker' in navigator) {

@@ -46,7 +46,7 @@ function getInitials(name: string) {
       />
 
       <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mt-8">
-        {boardMembers.map((member) => (
+        {boardMembers.map((member, i) => (
           <div class="bg-white rounded-xl shadow-sm p-6 text-center hover:shadow-md transition-shadow">
             {member.image ? (
               <div class="w-24 h-24 mx-auto mb-4 rounded-full overflow-hidden shadow-md ring-2 ring-primary/20">
@@ -54,7 +54,7 @@ function getInitials(name: string) {
                   src={`${base}/images/${member.image}`}
                   alt={`${member.name}, ${member.role}`}
                   class="w-full h-full object-cover"
-                  loading="lazy"
+                  loading={i < 3 ? 'eager' : 'lazy'}
                   decoding="async"
                   width={96}
                   height={96}

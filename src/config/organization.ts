@@ -28,12 +28,8 @@ export const organization = {
     email: "ncngrr@hotmail.com",
   },
   analytics: {
-    // Cloudflare Web Analytics beacon token (cookie-free, currently active)
+    // Cloudflare Web Analytics beacon token (cookie-free, no consent banner)
     // Get yours at: https://dash.cloudflare.com → Web Analytics → Add site
     cfBeaconToken: "8e6f7569c50c4856a2a8800970d962d6",
-    // GoatCounter: open-source, cookie-free analytics. Leave empty to disable.
-    // 1) Sign up (free for non-commercial) at https://www.goatcounter.com
-    // 2) Paste your full count endpoint here, e.g. "https://ncng.goatcounter.com/count"
-    goatCounter: "",
   },
 };

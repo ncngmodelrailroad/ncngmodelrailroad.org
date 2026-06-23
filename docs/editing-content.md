@@ -40,7 +40,6 @@ src/content/events/
 ├── 2026-06-18-fathers-day-bluegrass.md
 ├── 2026-08-13-nevada-county-fair.md
 ├── 2026-09-18-draft-horse-classic.md
-├── 2026-10-01-roaming-angels-car-show.md
 └── 2026-11-27-christmas-fair.md
 ```
 

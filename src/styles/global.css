@@ -58,7 +58,6 @@
   /* System tokens */
   --radius-card: 1.25rem;
   --radius-pill: 999px;
-  --size-brand-mark: 2.75rem;
   --tracking-kicker: 0.25em;
   --tracking-eyebrow: 0.12em;
   --gradient-direction-diagonal: 135deg; /* Used for button depth effects. */
@@ -318,10 +317,8 @@ select:focus-visible {
 .text-secondary { color: var(--color-secondary); }
 .bg-secondary { background-color: var(--color-secondary); }
 .bg-cream { background-color: var(--color-bg-alt); }
-.bg-surface { background-color: var(--color-surface); }
 .bg-gold { background-color: var(--color-gold); }
 .text-gold { color: var(--color-gold); }
-.text-muted { color: var(--color-text-muted); }
 
 /* Container */
 .container {
@@ -445,21 +442,6 @@ select:focus-visible {
   border-color: var(--color-kicker-border);
   background-color: var(--color-kicker-bg);
   backdrop-filter: blur(8px);
-}
-
-.brand-mark {
-  width: var(--size-brand-mark);
-  height: var(--size-brand-mark);
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: var(--radius-pill);
-  background-color: var(--color-primary);
-  color: white;
-  font-family: 'Archivo Black', 'Archivo Black Fallback', serif;
-  font-size: 0.875rem;
-  font-weight: 700;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12);
 }
 
 .hero-label {

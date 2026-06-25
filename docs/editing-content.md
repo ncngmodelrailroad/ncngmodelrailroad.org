@@ -102,9 +102,9 @@ Open the file and find the `boardMembers` array near the top (around line 8). It
 ```javascript
 const boardMembers = [
   {
-    name: 'Steve Coffey',
+    name: 'Jane Doe',
     role: 'President',
-    image: 'board/steve-coffey.jpeg',
+    image: 'board/jane-doe.jpeg',
     bio: 'Leads the organization and oversees operations.'
   },
   // ... more members
@@ -117,10 +117,10 @@ Find the member and update the `role` or `bio` field:
 
 ```javascript
   {
-    name: 'Doug Doane',
+    name: 'John Smith',
     role: 'Member at Large',  // ← change this
     bio: 'Longtime volunteer and advisor.',  // ← or this
-    image: 'board/doug-doane.jpeg'
+    image: 'board/john-smith.jpeg'
   },
 ```
 

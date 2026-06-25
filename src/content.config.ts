@@ -1,5 +1,5 @@
 import { defineCollection, z } from 'astro:content';
-import { glob } from 'astro/loaders';
+import { glob, file } from 'astro/loaders';
 
 const events = defineCollection({
   loader: glob({ pattern: '**/*.md', base: './src/content/events' }),
@@ -58,4 +58,18 @@ const learn = defineCollection({
   }),
 });
 
-export const collections = { events, board, gallery, trains, learn };
+const glossary = defineCollection({
+  loader: file('src/data/glossary.yaml'),
+  schema: z.object({
+    term: z.string(),
+    definition: z.string(),
+    category: z.enum([
+      'Scale & Gauge',
+      'Trains & Equipment',
+      'Building & Detailing',
+      'Track & Operating',
+    ]),
+  }),
+});
+
+export const collections = { events, board, gallery, trains, learn, glossary };

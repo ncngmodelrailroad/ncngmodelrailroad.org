@@ -1,9 +1,18 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import SectionHeader from '../../components/SectionHeader.astro';
-import { glossary, glossaryCategories } from '../../data/glossary';
+import { getCollection } from 'astro:content';
 
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+
+const glossaryCategories = [
+  'Scale & Gauge',
+  'Trains & Equipment',
+  'Building & Detailing',
+  'Track & Operating',
+] as const;
+
+const terms = await getCollection('glossary');
 
 const slug = (text: string) =>
   text
@@ -58,16 +67,16 @@ const slug = (text: string) =>
               {category}
             </h2>
             <dl class="grid gap-4">
-              {glossary
-                .filter((entry) => entry.category === category)
+              {terms
+                .filter((entry) => entry.data.category === category)
                 .map((entry) => (
                   <div
-                    id={slug(entry.term)}
+                    id={entry.id}
                     class="bg-white rounded-xl border border-gray-200 shadow-sm p-5 scroll-mt-24"
                   >
-                    <dt class="font-bold text-lg text-primary">{entry.term}</dt>
+                    <dt class="font-bold text-lg text-primary">{entry.data.term}</dt>
                     <dd class="text-gray-700 mt-1 leading-relaxed">
-                      {entry.definition}
+                      {entry.data.definition}
                     </dd>
                   </div>
                 ))}

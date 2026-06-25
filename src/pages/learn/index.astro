@@ -1,0 +1,75 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import SectionHeader from '../../components/SectionHeader.astro';
+import { getCollection } from 'astro:content';
+import { Icon } from 'astro-icon/components';
+
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+
+const articles = (await getCollection('learn')).sort(
+  (a, b) => a.data.order - b.data.order
+);
+
+const resources = [
+  {
+    title: 'Glossary of Terms',
+    description:
+      "Scale, gauge, On3, DCC, rolling stock, and the rest of the words you'll hear around the layout, in plain English.",
+    href: `${base}/learn/glossary`,
+    icon: 'solar:book-bold',
+  },
+  ...articles.map((article) => ({
+    title: article.data.title,
+    description: article.data.description,
+    href: `${base}/learn/${article.id}`,
+    icon: article.data.icon,
+  })),
+];
+---
+
+<BaseLayout
+  title="Learn | N.C.N.G. Model Railroad"
+  description="Newcomer-friendly guides to model railroading and the Nevada County Narrow Gauge: a beginner's primer and a plain-language glossary."
+>
+  <section class="py-16 md:py-20 bg-cream">
+    <div class="container">
+      <SectionHeader
+        eyebrow="For Newcomers"
+        title="Learn About Model Railroading"
+        description="New to model trains or the Nevada County Narrow Gauge? Start here. These guides explain the hobby and our railroad in plain language, with no experience needed."
+      />
+    </div>
+  </section>
+
+  <section class="py-12 md:py-16">
+    <div class="container">
+      <div class="grid md:grid-cols-2 gap-6 max-w-4xl">
+        {
+          resources.map((resource) => (
+            <a
+              href={resource.href}
+              class="group block bg-white rounded-xl border border-gray-200 shadow-sm p-6 transition hover:shadow-md hover:border-primary/40 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
+            >
+              <div class="flex items-start gap-4">
+                <div class="flex-shrink-0 w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center">
+                  <Icon name={resource.icon} class="w-6 h-6 text-primary" />
+                </div>
+                <div>
+                  <h2 class="text-xl font-bold mb-1 group-hover:text-primary transition-colors">
+                    {resource.title}
+                  </h2>
+                  <p class="text-gray-600 text-sm leading-relaxed">
+                    {resource.description}
+                  </p>
+                  <span class="inline-block mt-3 text-primary font-semibold text-sm">
+                    Read more &rarr;
+                  </span>
+                </div>
+              </div>
+            </a>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+</BaseLayout>

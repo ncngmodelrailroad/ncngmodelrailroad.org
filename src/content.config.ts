@@ -47,4 +47,15 @@ const trains = defineCollection({
   }),
 });
 
-export const collections = { events, board, gallery, trains };
+const learn = defineCollection({
+  loader: glob({ pattern: '**/*.md', base: './src/content/learn' }),
+  schema: z.object({
+    title: z.string(),
+    description: z.string(),
+    order: z.number().default(0),
+    icon: z.string().default('solar:book-bold'),
+    updatedDate: z.date().optional(),
+  }),
+});
+
+export const collections = { events, board, gallery, trains, learn };

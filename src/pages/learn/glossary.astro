@@ -1,0 +1,79 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import SectionHeader from '../../components/SectionHeader.astro';
+import { glossary, glossaryCategories } from '../../data/glossary';
+
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+
+const slug = (text: string) =>
+  text
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/(^-|-$)/g, '');
+---
+
+<BaseLayout
+  title="Glossary of Model Railroad Terms | N.C.N.G. Model Railroad"
+  description="Plain-language definitions of model railroad and narrow gauge terms: scale, gauge, On3, DCC, rolling stock, motive power, and more."
+>
+  <section class="py-16 md:py-20 bg-cream">
+    <div class="container">
+      <SectionHeader
+        eyebrow="Learn"
+        title="Glossary of Terms"
+        description="The model railroad and narrow gauge words you'll hear around the layout, in plain English."
+      />
+      <p class="text-gray-600 -mt-4">
+        New to the hobby? Start with our
+        <a
+          href={`${base}/learn/new-to-model-railroading`}
+          class="text-primary font-semibold hover:underline">beginner's primer</a
+        >.
+      </p>
+      <nav aria-label="Glossary categories" class="flex flex-wrap gap-2 mt-6">
+        {
+          glossaryCategories.map((category) => (
+            <a
+              href={`#${slug(category)}`}
+              class="text-sm font-semibold text-primary bg-primary/10 hover:bg-primary/20 rounded-full px-4 py-1.5 transition-colors"
+            >
+              {category}
+            </a>
+          ))
+        }
+      </nav>
+    </div>
+  </section>
+
+  <section class="py-12 md:py-16">
+    <div class="container max-w-4xl">
+      {
+        glossaryCategories.map((category) => (
+          <div class="mb-12">
+            <h2
+              id={slug(category)}
+              class="text-2xl md:text-3xl font-bold mb-6 scroll-mt-24"
+            >
+              {category}
+            </h2>
+            <dl class="grid gap-4">
+              {glossary
+                .filter((entry) => entry.category === category)
+                .map((entry) => (
+                  <div
+                    id={slug(entry.term)}
+                    class="bg-white rounded-xl border border-gray-200 shadow-sm p-5 scroll-mt-24"
+                  >
+                    <dt class="font-bold text-lg text-primary">{entry.term}</dt>
+                    <dd class="text-gray-700 mt-1 leading-relaxed">
+                      {entry.definition}
+                    </dd>
+                  </div>
+                ))}
+            </dl>
+          </div>
+        ))
+      }
+    </div>
+  </section>
+</BaseLayout>

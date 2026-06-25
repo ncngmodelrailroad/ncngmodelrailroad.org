@@ -47,6 +47,7 @@ Public website for an all-volunteer model railroad museum. Astro static site, Ta
 ## Visual / CSS changes
 
 - Verify visual changes by building and screenshotting the result, including dark mode (`prefers-color-scheme: dark`).
+- Use `playwright-cli` (npm `@playwright/cli`, https://github.com/microsoft/playwright-cli) for browser checks and screenshots. It runs Playwright's agent commands (open/click/snapshot/screenshot, ARIA `ref`s) from the terminal and writes snapshots, screenshots, and console/network logs to `.playwright-cli/` (gitignored). Prefer it over a Playwright MCP server.
 - `global.css` overrides `.bg-white` and `header.bg-white` to dark surfaces in dark mode, so the header is not always white. Do not assume a fixed background when reasoning about contrast — check the actual rendered colors.
 
 ## Conventions

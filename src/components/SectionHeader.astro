@@ -4,6 +4,7 @@ interface Props {
   title: string;
   description?: string;
   centered?: boolean;
+  as?: 'h1' | 'h2' | 'h3';
   class?: string;
 }
 
@@ -12,6 +13,7 @@ const {
   title, 
   description,
   centered = false,
+  as: Heading = 'h2',
   class: className = ''
 } = Astro.props;
 
@@ -24,9 +26,9 @@ const alignment = centered ? 'text-center mx-auto' : '';
       {eyebrow}
     </span>
   )}
-  <h2 class="text-3xl md:text-4xl font-bold mt-2 mb-4">
+  <Heading class="text-3xl md:text-4xl font-bold mt-2 mb-4">
     {title}
-  </h2>
+  </Heading>
   {description && (
     <p class="text-lg text-gray-600">
       {description}

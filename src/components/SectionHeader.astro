@@ -22,11 +22,11 @@ const alignment = centered ? 'text-center mx-auto' : '';
 
 <div class={`max-w-3xl mb-8 ${alignment} ${className}`}>
   {eyebrow && (
-    <span class="text-primary font-semibold uppercase tracking-wider text-sm">
+    <span class="eyebrow">
       {eyebrow}
     </span>
   )}
-  <Heading class="text-3xl md:text-4xl font-bold mt-2 mb-4">
+  <Heading class={`text-3xl md:text-4xl font-bold mb-4${eyebrow ? ' mt-4' : ''}`}>
     {title}
   </Heading>
   {description && (

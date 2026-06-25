@@ -184,8 +184,8 @@ const breadcrumbSchema = {
       Skip to main content
     </a>
     <!-- Header -->
-    <header class="bg-white shadow-sm sticky top-0 z-50" role="banner">
-      <nav class="container py-4" aria-label="Main navigation">
+    <header class="bg-white backdrop-blur-xl border-b border-gray-200 shadow-sm sticky top-0 z-50" role="banner">
+      <nav class="container py-3" aria-label="Main navigation">
         <div class="flex items-center justify-between">
           <a href={`${base}/`} class="flex items-center gap-3" aria-label={`${organization.name} - Home`}>
             <img
@@ -201,7 +201,7 @@ const breadcrumbSchema = {
             <span class="text-xl md:text-2xl font-bold text-primary" style="font-family: 'Archivo Black', 'Archivo Black Fallback', serif;">
               {organization.abbreviation}
             </span>
-            <span class="hidden sm:inline xl:hidden whitespace-nowrap text-sm text-gray-600">
+            <span class="hidden sm:inline xl:hidden whitespace-nowrap text-sm font-semibold text-gray-600">
               Historical Model Railroad
             </span>
           </a>
@@ -214,12 +214,12 @@ const breadcrumbSchema = {
                   {item.label}
                 </a>
               ) : item.icon ? (
-                <a href={`${base}${item.href}`} class="text-gray-700 hover:text-primary transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 rounded inline-flex items-center gap-1.5">
+                <a href={`${base}${item.href}`} class="nav-link nav-link-icon focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2">
                   <Icon name={item.icon} class="w-4 h-4" />
                   {item.label}
                 </a>
               ) : (
-                <a href={`${base}${item.href}`} class="text-gray-700 hover:text-primary transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 rounded">
+                <a href={`${base}${item.href}`} class="nav-link focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2">
                   {item.label}
                 </a>
               )
@@ -229,7 +229,7 @@ const breadcrumbSchema = {
           <!-- Mobile Menu Button -->
           <button 
             id="mobile-menu-btn"
-            class="xl:hidden p-3 text-gray-700 hover:text-primary focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 rounded"
+            class="xl:hidden p-3 text-gray-700 hover:text-primary focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 rounded-full"
             aria-label="Toggle navigation menu"
             aria-expanded="false"
             aria-controls="mobile-menu"
@@ -242,22 +242,22 @@ const breadcrumbSchema = {
       <!-- Mobile Menu -->
       <nav 
         id="mobile-menu" 
-        class="xl:hidden hidden bg-white border-t border-gray-200 shadow-lg"
+        class="xl:hidden hidden bg-white backdrop-blur-xl border-t border-gray-200 shadow-lg"
         aria-label="Mobile navigation"
       >
         <div class="container py-4 flex flex-col gap-2">
           {navItems.map((item) =>
             item.cta ? (
-              <a href={`${base}${item.href}`} class="block py-3 px-4 btn-outline text-center rounded-lg">
+              <a href={`${base}${item.href}`} class="block py-3 px-4 btn-outline text-center rounded-full">
                 {item.label}
               </a>
             ) : item.icon ? (
-              <a href={`${base}${item.href}`} class="flex items-center gap-2 py-3 px-4 text-gray-700 hover:bg-gray-50 hover:text-primary rounded-lg transition-colors">
+              <a href={`${base}${item.href}`} class="flex items-center gap-2 py-3 px-4 text-gray-700 hover:bg-gray-50 hover:text-primary rounded-xl transition-colors">
                 <Icon name={item.icon} class="w-4 h-4" />
                 {item.label}
               </a>
             ) : (
-              <a href={`${base}${item.href}`} class="block py-3 px-4 text-gray-700 hover:bg-gray-50 hover:text-primary rounded-lg transition-colors">
+              <a href={`${base}${item.href}`} class="block py-3 px-4 text-gray-700 hover:bg-gray-50 hover:text-primary rounded-xl transition-colors">
                 {item.label}
               </a>
             )
@@ -272,7 +272,7 @@ const breadcrumbSchema = {
     </main>
 
     <!-- Footer -->
-    <footer class="bg-gray-900 text-white py-12" role="contentinfo">
+    <footer class="bg-gray-900 text-white py-14" role="contentinfo">
       <div class="container">
         <div class="track-divider mb-10"></div>
         <div class="grid md:grid-cols-3 gap-8">

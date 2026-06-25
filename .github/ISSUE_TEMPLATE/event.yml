@@ -1,0 +1,70 @@
+name: Event or open house
+description: Add a new event, or update or cancel one (dates, our open hours, details).
+title: "[Event]: "
+labels: ["event"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use this to add a new event, change an existing one, or cancel one. A maintainer reviews every submission before it goes on the website, so nothing is published automatically.
+  - type: dropdown
+    id: request_type
+    attributes:
+      label: What do you want to do?
+      options:
+        - Add a new event
+        - Update an existing event (dates, hours, details)
+        - Cancel or remove an event
+    validations:
+      required: true
+  - type: input
+    id: title
+    attributes:
+      label: Event name
+      placeholder: "e.g. Father's Day Bluegrass Festival 2026"
+    validations:
+      required: true
+  - type: input
+    id: dates
+    attributes:
+      label: Event date(s)
+      description: A single day or a range.
+      placeholder: "e.g. June 18 to 21, 2026"
+    validations:
+      required: true
+  - type: input
+    id: location
+    attributes:
+      label: Location
+      value: "Nevada County Fairgrounds, Grass Valley"
+    validations:
+      required: true
+  - type: textarea
+    id: hours
+    attributes:
+      label: Our open house hours
+      description: When the model railroad will be open. Leave blank or write "not sure yet" if it isn't decided.
+      placeholder: |
+        e.g.
+        Saturday: 10 AM to 8 PM
+        Friday: 12 to 5 PM
+  - type: dropdown
+    id: confirmed
+    attributes:
+      label: Is the layout confirmed open for this?
+      description: We only publish open hours once they're confirmed, so this matters.
+      options:
+        - "Yes, confirmed"
+        - "Not yet, still deciding"
+    validations:
+      required: true
+  - type: textarea
+    id: details
+    attributes:
+      label: Details or anything else
+      description: A sentence or two about the event, admission or ticket info, or what is changing.
+  - type: input
+    id: submitter
+    attributes:
+      label: Your name (optional)
+      placeholder: So we know who to follow up with

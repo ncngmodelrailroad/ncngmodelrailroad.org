@@ -201,13 +201,13 @@ const breadcrumbSchema = {
             <span class="text-xl md:text-2xl font-bold text-primary" style="font-family: 'Archivo Black', 'Archivo Black Fallback', serif;">
               {organization.abbreviation}
             </span>
-            <span class="hidden sm:inline text-sm text-gray-600">
+            <span class="hidden sm:inline xl:hidden whitespace-nowrap text-sm text-gray-600">
               Historical Model Railroad
             </span>
           </a>
           
           <!-- Desktop Nav -->
-          <div class="hidden md:flex items-center gap-6">
+          <div class="hidden xl:flex items-center gap-5">
             {navItems.map((item) =>
               item.cta ? (
                 <a href={`${base}${item.href}`} class="btn-outline text-sm py-2 px-4 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2">
@@ -229,7 +229,7 @@ const breadcrumbSchema = {
           <!-- Mobile Menu Button -->
           <button 
             id="mobile-menu-btn"
-            class="md:hidden p-3 text-gray-700 hover:text-primary focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 rounded"
+            class="xl:hidden p-3 text-gray-700 hover:text-primary focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 rounded"
             aria-label="Toggle navigation menu"
             aria-expanded="false"
             aria-controls="mobile-menu"
@@ -242,7 +242,7 @@ const breadcrumbSchema = {
       <!-- Mobile Menu -->
       <nav 
         id="mobile-menu" 
-        class="md:hidden hidden bg-white border-t border-gray-200 shadow-lg"
+        class="xl:hidden hidden bg-white border-t border-gray-200 shadow-lg"
         aria-label="Mobile navigation"
       >
         <div class="container py-4 flex flex-col gap-2">

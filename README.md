@@ -31,8 +31,14 @@ src/
 ├── config/           # Centralized org data & navigation
 │   ├── organization.ts   # Name, address, contact info
 │   └── navigation.ts     # Shared nav items for header/mobile
-├── content/
-│   └── events/       # Event pages (Markdown files, one per event)
+├── content/          # Markdown content collections
+│   ├── events/       # Event pages (one Markdown file per event)
+│   ├── board/        # Board members
+│   ├── gallery/      # Gallery photos
+│   ├── trains/       # Engine roster
+│   └── learn/        # Learn / newcomer guides
+├── data/
+│   └── glossary.yaml # Glossary terms (Learn section)
 ├── layouts/
 │   └── BaseLayout.astro  # Shared header, footer, SEO, schema.org
 ├── components/       # Reusable UI pieces (Button, SectionHeader, etc.)
@@ -42,8 +48,9 @@ src/
 │   ├── trains.astro      # Engine roster & railroad history
 │   ├── gallery.astro     # Photo gallery with lightbox
 │   ├── events.astro      # Upcoming events (auto-generated from content/)
+│   ├── learn/            # Learn section: hub, glossary, guides
 │   ├── board-members.astro # Board of directors
-│   ├── donate.astro      # Support / donations
+│   ├── donate.astro      # Get Involved (donate / support)
 │   ├── volunteer.astro   # Volunteer signup
 │   ├── contact.astro     # Contact form
 │   ├── links.astro       # External resources

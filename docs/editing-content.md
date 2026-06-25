@@ -25,6 +25,7 @@ The rest of this guide covers editing files directly — useful if you prefer wo
 - [Updating Events](#updating-events)
 - [Updating Board Members](#updating-board-members)
 - [Adding Gallery Photos](#adding-gallery-photos)
+- [Updating the Learn Section](#updating-the-learn-section)
 - [Updating Organization Info](#updating-organization-info)
 - [Updating Navigation](#updating-navigation)
 
@@ -63,8 +64,7 @@ featured: true
 ---
 
 Join us during the Father's Day Bluegrass Festival! Our layout will be open
-for visitors throughout the weekend. Free admission to the model railroad
-with fairground entry.
+for visitors throughout the weekend. Check the festival for admission details.
 ```
 
 **Field reference:**
@@ -93,56 +93,49 @@ Delete the file. The event disappears from the site automatically.
 
 ## Updating Board Members
 
-Board member data lives in a single file: `src/pages/board-members.astro`.
+Board members are Markdown files in `src/content/board/`, one file per person. The easiest way to edit them is [Pages CMS](https://app.pagescms.org/djdefi/ncngmodelrailroad.org) → **Board Members**, but you can also edit the files directly.
 
-### Where to look
+### File location
 
-Open the file and find the `boardMembers` array near the top (around line 8). It looks like this:
-
-```javascript
-const boardMembers = [
-  {
-    name: 'Jane Doe',
-    role: 'President',
-    image: 'board/jane-doe.jpeg',
-    bio: 'Leads the organization and oversees operations.'
-  },
-  // ... more members
-];
+```
+src/content/board/
+├── jane-doe.md
+├── john-smith.md
+└── ...
 ```
 
-### Changing a role or bio
+### Editing a member
 
-Find the member and update the `role` or `bio` field:
+Open their file and change the fields in the frontmatter (between the `---` lines):
 
-```javascript
-  {
-    name: 'John Smith',
-    role: 'Member at Large',  // ← change this
-    bio: 'Longtime volunteer and advisor.',  // ← or this
-    image: 'board/john-smith.jpeg'
-  },
+```md
+---
+name: Jane Doe
+role: President
+bio: Leads the organization and oversees operations.
+image: board/jane-doe.jpeg
+order: 1
+---
 ```
 
-### Adding a new member
+**Field reference:**
 
-1. **Add their photo** to `public/images/board/` (JPEG format, any reasonable size — it will display at 96×96px)
-2. **Add an entry** to the `boardMembers` array:
+| Field | Required | Description |
+| :---- | :------- | :---------- |
+| `name` | Yes | Full name |
+| `role` | Yes | Role or title |
+| `bio` | Yes | Short description |
+| `image` | Yes | Photo path under `public/images/` (for example `board/jane-doe.jpeg`) |
+| `order` | Yes | Display position (lower numbers appear first) |
 
-```javascript
-  {
-    name: 'Jane Smith',
-    role: 'Board Member',
-    image: 'board/jane-smith.jpeg',
-    bio: 'Short description of their role.'
-  },
-```
+### Adding a member
 
-If no photo is available, omit the `image` field — the site will show their initials instead.
+1. **Add their photo** to `public/images/board/` (JPEG, displays at 96×96px).
+2. **Create a new file** in `src/content/board/`, for example `jane-doe.md`, with the fields above. Set `order` to control where they appear.
 
 ### Removing a member
 
-Delete their entry from the array. Optionally delete their photo from `public/images/board/`.
+Delete their file from `src/content/board/`.
 
 ---
 
@@ -202,6 +195,43 @@ Photos are filterable by category on the gallery page:
 
 ---
 
+## Updating the Learn Section
+
+The [Learn](https://ncngmodelrailroad.org/learn) section has two parts: a glossary of terms and beginner guides.
+
+### Glossary terms
+
+Glossary terms live in one file: `src/data/glossary.yaml`. To add a term, copy an existing block and change the words:
+
+```yaml
+- id: ballast
+  term: "Ballast"
+  definition: "The crushed rock packed around and between the ties to hold the track in place."
+  category: Track & Operating
+```
+
+- `id` is a short label, lowercase with hyphens (also used as the link anchor)
+- `category` is one of: `Scale & Gauge`, `Trains & Equipment`, `Building & Detailing`, `Track & Operating`
+
+### Learn guides
+
+Longer guides are Markdown files in `src/content/learn/`. Add a new `.md` file with frontmatter like this:
+
+```md
+---
+title: New to Model Railroading?
+description: A short summary shown on the Learn hub.
+order: 1
+icon: solar:book-bold
+---
+
+Your guide text goes here.
+```
+
+> **Note:** The Learn section is not in Pages CMS, so edit these as files (on GitHub or locally).
+
+---
+
 ## Updating Organization Info
 
 Centralized info (name, address, phone, email) lives in one file:
@@ -249,8 +279,9 @@ To add, remove, or reorder pages in the nav, edit the `navItems` array:
 
 ```typescript
 export const navItems = [
-  { label: 'Home', href: '/' },
   { label: 'About', href: '/about' },
+  { label: 'Events', href: '/events', icon: 'solar:calendar-bold' },
+  { label: 'Get Involved', href: '/donate', cta: true },
   // ... add or remove items here
 ];
 ```

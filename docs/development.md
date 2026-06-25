@@ -92,10 +92,10 @@ Serves the `dist/` folder locally so you can verify the production build looks r
 - `organization.ts` — Org name, address, contact info
 - `navigation.ts` — Nav items shared by desktop and mobile menus
 
-**Content** (`src/content/events/`) — Markdown files that Astro processes as a content collection. Each `.md` file has frontmatter (YAML between `---` lines) and body text.
+**Content** (`src/content/`) — Markdown content collections: `events/`, `board/`, `gallery/`, `trains/` (engine roster), and `learn/` (guides). Each `.md` file has frontmatter (YAML between `---` lines) and body text. Glossary terms live in `src/data/glossary.yaml`.
 
 **Styles** (`src/styles/global.css`) — Global CSS with Tailwind imports and custom theme:
-- Colors: Primary `#8B0000`, Secondary `#8B4513`, Accent `#2E5A3A`, Gold `#B8860B`
+- Colors: Primary `#8A1F17`, Secondary `#8B5E34`, Accent `#2F5D46`, Gold `#B9821B` (defined as CSS variables; see the `@theme` and `:root` blocks)
 - Fonts: Archivo Black (headings), Montserrat (body)
 - Button classes: `.btn-primary`, `.btn-outline`
 
@@ -115,7 +115,7 @@ Astro reads:
   ├── src/layouts/BaseLayout   → wraps each page
   ├── src/components/*         → reusable UI
   ├── src/config/*             → org data, nav
-  ├── src/content/events/*.md  → event pages
+  ├── src/content/*/*.md       → content collections (events, board, gallery, trains, learn)
   ├── src/styles/global.css    → theme
   └── public/*                 → images, favicon (copied as-is)
 ```

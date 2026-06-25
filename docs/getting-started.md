@@ -25,8 +25,9 @@ The website has these main pages:
 | **Trains** | The real N.C.N.G. Railroad history and engine roster |
 | **Gallery** | Photos of the layout, historic images, and building |
 | **Events** | Upcoming open houses and fairground events |
+| **Learn** | Beginner guides and a glossary of model-railroad terms |
 | **Board Members** | Current board of directors with photos and roles |
-| **Support Us** | Ways to support the organization |
+| **Get Involved** | Ways to support the organization (donate, volunteer, materials) |
 | **Volunteer** | Sign-up form for new volunteers |
 | **Contact** | Email contact form and our location info |
 | **Links** | Useful external resources about narrow gauge railroads |
@@ -45,7 +46,7 @@ You don't need to know how to code to get something changed on the site. Here's 
 
 ### Option 2: Email the webmaster
 Send an email to **info@ncngmodelrailroad.org** with what you'd like changed. Be specific:
-- "Please update Doug's role to Member at Large"
+- "Please update a board member's role to Member at Large"
 - "Can we add photos from the June open house?"
 - "The Christmas Fair date should be November 27-29"
 

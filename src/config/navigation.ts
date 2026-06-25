@@ -4,7 +4,7 @@ export const navItems = [
   { label: 'Events', href: '/events', icon: 'solar:calendar-bold' },
   { label: 'Trains', href: '/trains', icon: 'solar:tram-bold' },
   { label: 'Board', href: '/board-members' },
-  { label: 'Support Us', href: '/donate' },
+  { label: 'Get Involved', href: '/donate', cta: true },
   { label: 'Volunteer', href: '/volunteer' },
   { label: 'Links', href: '/links' },
   { label: 'Contact', href: '/contact' },

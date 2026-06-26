@@ -86,15 +86,18 @@ const secureCookie = {
 
 function eventFromBody(b: Record<string, unknown>): EventInput {
   const s = (v: unknown) => (v == null ? '' : String(v));
+  // Normalize line endings up front so Windows CRLF (or a lone CR) cannot slip
+  // past validation or break the YAML serializer.
+  const ml = (v: unknown) => s(v).replace(/\r\n?/g, '\n');
   const featured = b.featured;
   return {
     title: s(b.title),
     date: s(b.date),
     endDate: b.endDate ? s(b.endDate) : undefined,
     location: s(b.location),
-    description: b.description ? s(b.description) : undefined,
+    description: b.description ? ml(b.description) : undefined,
     featured: featured === true || featured === 'true' || featured === 'on',
-    body: s(b.body),
+    body: ml(b.body),
   };
 }
 

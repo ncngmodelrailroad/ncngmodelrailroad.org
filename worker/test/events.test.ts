@@ -57,4 +57,29 @@ describe('events content type', () => {
     expect(md).toContain('title: "A \\"Big\\" Show"');
     expect(parseEvent(md).title).toBe('A "Big" Show');
   });
+
+  it('rejects HTML and control characters in fields', () => {
+    expect(validateEvent({ ...sample, title: 'Hi <script>' })).toContain(
+      'Title cannot contain "<" or ">".',
+    );
+    expect(validateEvent({ ...sample, location: 'A<b' })).toContain(
+      'Location cannot contain "<" or ">".',
+    );
+    expect(validateEvent({ ...sample, title: 'Line\nbreak' })).toContain(
+      'Title cannot contain line breaks or control characters.',
+    );
+  });
+
+  it('contains a lone carriage return inside the description block', () => {
+    const md = serializeEvent({
+      ...sample,
+      description: 'first line\rinjected: PWNED',
+      endDate: undefined,
+    });
+    const frontmatter = md.slice(0, md.indexOf('\n---', 4));
+    // The injected text must stay indented inside the block scalar, never a
+    // top-level key at column 0.
+    expect(frontmatter).not.toMatch(/^injected:/m);
+    expect(md).toContain('  injected: PWNED');
+  });
 });

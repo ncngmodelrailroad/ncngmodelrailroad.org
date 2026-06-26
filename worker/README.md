@@ -182,8 +182,9 @@ verification, the events serializer and parser, and every auth gate.
 - An events link can only create or update files under `src/content/events/`.
   The server validates the target path on every update and rejects anything
   else, so a link cannot be steered at a workflow, config, or source file.
-- Submitted Markdown is committed verbatim and can contain raw HTML. The admin
-  PR review is the gate: read the rendered diff before merging.
+- Event fields reject raw HTML (`<`/`>`) and stray control characters, and the
+  site sanitizes rendered Markdown, so a submission cannot run script on the
+  published page. Review the rendered diff before merging regardless.
 - Use limits and link reuse are best-effort. KV is eventually consistent, so a
   burst of concurrent submissions can exceed `max_uses`. Revocation and expiry
   are enforced on every use.

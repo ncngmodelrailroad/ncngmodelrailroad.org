@@ -62,6 +62,12 @@ export const FIELD_LIMITS = {
   body: 50000,
 } as const;
 
+// Control characters: single-line fields reject all of them; multi-line fields
+// keep tab (\t) and newline (\n). Defense in depth alongside the render-side
+// sanitizer and the YAML serializer.
+const CONTROL_SINGLE_LINE = /[\u0000-\u001F\u007F]/;
+const CONTROL_MULTI_LINE = /[\u0000-\u0008\u000B-\u001F\u007F]/;
+
 export function validateEvent(input: EventInput): string[] {
   const errors: string[] = [];
   if (!input.title?.trim()) errors.push('Title is required.');
@@ -81,6 +87,22 @@ export function validateEvent(input: EventInput): string[] {
     errors.push(`Description must be ${FIELD_LIMITS.description} characters or fewer.`);
   if (input.body && input.body.length > FIELD_LIMITS.body)
     errors.push(`Details must be ${FIELD_LIMITS.body} characters or fewer.`);
+
+  // Event fields are text, never HTML. Reject angle brackets and stray control
+  // characters in the short fields so nothing dangerous reaches the site.
+  if (input.title && /[<>]/.test(input.title)) errors.push('Title cannot contain "<" or ">".');
+  if (input.location && /[<>]/.test(input.location))
+    errors.push('Location cannot contain "<" or ">".');
+  if (input.description && /[<>]/.test(input.description))
+    errors.push('Short description cannot contain "<" or ">".');
+  if (input.title && CONTROL_SINGLE_LINE.test(input.title))
+    errors.push('Title cannot contain line breaks or control characters.');
+  if (input.location && CONTROL_SINGLE_LINE.test(input.location))
+    errors.push('Location cannot contain line breaks or control characters.');
+  if (input.description && CONTROL_MULTI_LINE.test(input.description))
+    errors.push('Short description contains invalid control characters.');
+  if (input.body && CONTROL_MULTI_LINE.test(input.body))
+    errors.push('Details contain invalid control characters.');
   return errors;
 }
 
@@ -104,11 +126,16 @@ export function eventPath(input: EventInput): string {
 }
 
 function yamlQuote(value: string): string {
-  return `"${value.replace(/\\/g, '\\\\').replace(/"/g, '\\"')}"`;
+  const clean = value.replace(CONTROL_SINGLE_LINE, '');
+  return `"${clean.replace(/\\/g, '\\\\').replace(/"/g, '\\"')}"`;
 }
 
 function yamlBlock(value: string): string {
-  const lines = value.replace(/\r\n/g, '\n').replace(/\s+$/, '').split('\n');
+  const lines = value
+    .replace(/\r\n?/g, '\n')
+    .replace(CONTROL_MULTI_LINE, '')
+    .replace(/\s+$/, '')
+    .split('\n');
   return `|\n${lines.map((l) => `  ${l}`).join('\n')}`;
 }
 
@@ -121,7 +148,7 @@ export function serializeEvent(input: EventInput): string {
   fm.push(`location: ${yamlQuote(input.location.trim())}`);
   if (input.description?.trim()) fm.push(`description: ${yamlBlock(input.description)}`);
   fm.push(`featured: ${input.featured ? 'true' : 'false'}`);
-  const body = input.body?.replace(/\r\n/g, '\n').trim() ?? '';
+  const body = input.body?.replace(/\r\n?/g, '\n').trim() ?? '';
   return `---\n${fm.join('\n')}\n---\n\n${body}\n`;
 }
 

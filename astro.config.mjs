@@ -4,6 +4,7 @@ import tailwindcss from '@tailwindcss/vite';
 import react from '@astrojs/react';
 import sitemap from '@astrojs/sitemap';
 import icon from 'astro-icon';
+import rehypeSanitize from 'rehype-sanitize';
 
 // https://astro.build/config
 export default defineConfig({
@@ -18,6 +19,12 @@ export default defineConfig({
     plugins: [tailwindcss()],
   },
   output: 'static',
+  markdown: {
+    // Strip unsafe raw HTML (scripts, inline event handlers, javascript: URLs)
+    // from rendered Markdown. No site content uses raw HTML, so this only
+    // matters for content submitted through the content editor.
+    rehypePlugins: [rehypeSanitize],
+  },
   build: {
     inlineStylesheets: 'auto',
   },

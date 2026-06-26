@@ -44,7 +44,15 @@ const eventSchemaItems = upcomingEvents.map((event) => {
   return item;
 });
 
-const eventSchemaJson = JSON.stringify(eventSchemaItems);
+// Escape characters that could break out of the <script> context (for example
+// a literal </script> inside an event title). JSON consumers read these escapes
+// back to the original characters, so the structured data is unchanged.
+const eventSchemaJson = JSON.stringify(eventSchemaItems)
+  .replace(/</g, '\\u003c')
+  .replace(/>/g, '\\u003e')
+  .replace(/&/g, '\\u0026')
+  .replace(/\u2028/g, '\\u2028')
+  .replace(/\u2029/g, '\\u2029');
 
 function formatDate(date: Date, endDate?: Date) {
   const options: Intl.DateTimeFormatOptions = { 

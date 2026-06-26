@@ -38,6 +38,18 @@ function repoPath(env: Env, suffix: string): string {
   return `/repos/${env.GITHUB_OWNER}/${env.GITHUB_REPO}${suffix}`;
 }
 
+/**
+ * Percent-encode each path segment for the contents API. Defense in depth:
+ * callers already restrict paths to the events collection, but this keeps any
+ * stray character from altering the request URL or its structure.
+ */
+function encodeContentPath(path: string): string {
+  return path
+    .split('/')
+    .map((seg) => encodeURIComponent(seg))
+    .join('/');
+}
+
 /** Resolve a branch head commit sha. */
 export async function getBranchSha(env: Env, branch: string): Promise<string> {
   const ref = await gh<{ object: { sha: string } }>(
@@ -69,7 +81,7 @@ export async function getFile(
 ): Promise<FileContent | null> {
   const token = await getInstallationToken(env);
   const res = await fetch(
-    `${API}${repoPath(env, `/contents/${path}`)}?ref=${encodeURIComponent(ref)}`,
+    `${API}${repoPath(env, `/contents/${encodeContentPath(path)}`)}?ref=${encodeURIComponent(ref)}`,
     {
       headers: {
         Authorization: `token ${token}`,
@@ -90,7 +102,7 @@ export async function putFile(
   env: Env,
   args: { path: string; branch: string; message: string; text: string; sha?: string },
 ): Promise<void> {
-  await gh(env, 'PUT', repoPath(env, `/contents/${args.path}`), {
+  await gh(env, 'PUT', repoPath(env, `/contents/${encodeContentPath(args.path)}`), {
     message: args.message,
     content: base64Encode(args.text),
     branch: args.branch,
@@ -129,7 +141,7 @@ export interface DirEntry {
 export async function listDir(env: Env, path: string, ref: string): Promise<DirEntry[]> {
   const token = await getInstallationToken(env);
   const res = await fetch(
-    `${API}${repoPath(env, `/contents/${path}`)}?ref=${encodeURIComponent(ref)}`,
+    `${API}${repoPath(env, `/contents/${encodeContentPath(path)}`)}?ref=${encodeURIComponent(ref)}`,
     {
       headers: {
         Authorization: `token ${token}`,

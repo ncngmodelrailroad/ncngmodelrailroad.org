@@ -179,6 +179,14 @@ verification, the events serializer and parser, and every auth gate.
   checked against KV on every use, so revoking a link kills it at once.
 - The Worker writes only to `content/edit-*` branches and never to the base
   branch. Branch protection plus an admin review gates every publish.
+- An events link can only create or update files under `src/content/events/`.
+  The server validates the target path on every update and rejects anything
+  else, so a link cannot be steered at a workflow, config, or source file.
+- Submitted Markdown is committed verbatim and can contain raw HTML. The admin
+  PR review is the gate: read the rendered diff before merging.
+- Use limits and link reuse are best-effort. KV is eventually consistent, so a
+  burst of concurrent submissions can exceed `max_uses`. Revocation and expiry
+  are enforced on every use.
 - Admin POST actions carry a CSRF token tied to the signed session cookie.
 - Responses set a strict Content-Security-Policy, `no-referrer`, `nosniff`, and
   `X-Frame-Options: DENY`.

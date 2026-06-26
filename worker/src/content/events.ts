@@ -55,9 +55,18 @@ function isValidDate(value: string): boolean {
   return dt.getUTCFullYear() === y && dt.getUTCMonth() === m - 1 && dt.getUTCDate() === d;
 }
 
+export const FIELD_LIMITS = {
+  title: 200,
+  location: 200,
+  description: 2000,
+  body: 50000,
+} as const;
+
 export function validateEvent(input: EventInput): string[] {
   const errors: string[] = [];
   if (!input.title?.trim()) errors.push('Title is required.');
+  else if (input.title.length > FIELD_LIMITS.title)
+    errors.push(`Title must be ${FIELD_LIMITS.title} characters or fewer.`);
   if (!input.date?.trim()) errors.push('Start date is required.');
   else if (!isValidDate(input.date)) errors.push('Start date must be a real date (YYYY-MM-DD).');
   if (input.endDate?.trim()) {
@@ -66,6 +75,12 @@ export function validateEvent(input: EventInput): string[] {
       errors.push('End date cannot be before the start date.');
   }
   if (!input.location?.trim()) errors.push('Location is required.');
+  else if (input.location.length > FIELD_LIMITS.location)
+    errors.push(`Location must be ${FIELD_LIMITS.location} characters or fewer.`);
+  if (input.description && input.description.length > FIELD_LIMITS.description)
+    errors.push(`Description must be ${FIELD_LIMITS.description} characters or fewer.`);
+  if (input.body && input.body.length > FIELD_LIMITS.body)
+    errors.push(`Details must be ${FIELD_LIMITS.body} characters or fewer.`);
   return errors;
 }
 

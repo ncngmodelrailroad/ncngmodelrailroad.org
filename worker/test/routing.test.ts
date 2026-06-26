@@ -164,6 +164,48 @@ describe('editor token gating', () => {
     );
     expect(res.status).toBe(401);
   });
+
+  it('refuses to update a path outside the events collection', async () => {
+    const { token } = await storedCapability(kv);
+    const res = await app.fetch(
+      req('/edit/submit', {
+        method: 'POST',
+        body: JSON.stringify({
+          token,
+          mode: 'update',
+          path: '.github/workflows/deploy.yml',
+          title: 'Pwned',
+          date: '2026-01-01',
+          location: 'anywhere',
+        }),
+        headers: { 'content-type': 'application/json' },
+      }),
+      env,
+      ctx,
+    );
+    expect(res.status).toBe(403);
+  });
+
+  it('rejects a path traversal attempt in an update', async () => {
+    const { token } = await storedCapability(kv);
+    const res = await app.fetch(
+      req('/edit/submit', {
+        method: 'POST',
+        body: JSON.stringify({
+          token,
+          mode: 'update',
+          path: 'src/content/events/../../../etc/passwd.md',
+          title: 'x',
+          date: '2026-01-01',
+          location: 'y',
+        }),
+        headers: { 'content-type': 'application/json' },
+      }),
+      env,
+      ctx,
+    );
+    expect(res.status).toBe(403);
+  });
 });
 
 describe('admin gating', () => {

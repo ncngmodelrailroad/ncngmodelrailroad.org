@@ -48,6 +48,16 @@ const SESSION_COOKIE = 'ncng_admin';
 const STATE_COOKIE = 'ncng_oauth_state';
 const SESSION_TTL_SECONDS = 8 * 60 * 60;
 
+/**
+ * An events-scoped link may only ever touch event Markdown files. This guard
+ * stops a link holder from steering an update at an arbitrary repo path
+ * (a workflow, config, or source file).
+ */
+const EVENT_PATH_RE = /^src\/content\/events\/[A-Za-z0-9._-]+\.md$/;
+function isEventPath(path: string): boolean {
+  return EVENT_PATH_RE.test(path) && !path.includes('..');
+}
+
 const app = new Hono<{ Bindings: Env; Variables: Vars }>();
 
 // --- helpers ---------------------------------------------------------------
@@ -56,6 +66,8 @@ function secureHtml(c: Context, html: string, nonce?: string): Response {
   c.header('X-Content-Type-Options', 'nosniff');
   c.header('Referrer-Policy', 'no-referrer');
   c.header('X-Frame-Options', 'DENY');
+  // These pages carry private labels and one-time links; keep them out of caches.
+  c.header('Cache-Control', 'no-store');
   const scriptSrc = nonce ? `script-src 'nonce-${nonce}'; connect-src 'self'; ` : `script-src 'none'; `;
   c.header(
     'Content-Security-Policy',
@@ -172,17 +184,47 @@ app.post('/edit/submit', async (c) => {
   if (errors.length) return c.json({ errors }, 400);
 
   const mode = body.mode === 'update' ? 'update' : 'create';
-  const filePath = mode === 'update' && body.path ? String(body.path) : eventPath(input);
 
-  // Fork a fresh branch off the base and commit there. Never write to main.
+  // Resolve and lock down the target path before any write. An events-scoped
+  // link may only create a new event file or update an existing event file.
+  let filePath: string;
+  let sha: string | undefined;
+  if (mode === 'update') {
+    const requested = String(body.path ?? '');
+    if (!isEventPath(requested)) {
+      return c.json({ error: 'That file cannot be edited with this link.' }, 403);
+    }
+    filePath = requested;
+    const current = await gh.getFile(c.env, filePath, c.env.BASE_BRANCH);
+    if (!current) {
+      return c.json({ error: 'That event no longer exists. Reload and try again.' }, 409);
+    }
+    const loadedSha = String(body.sha ?? '');
+    if (!loadedSha) {
+      return c.json({ error: 'Missing version marker. Reload the event and try again.' }, 400);
+    }
+    if (loadedSha !== current.sha) {
+      return c.json(
+        { error: 'This event changed since you opened it. Reload and reapply your edit.' },
+        409,
+      );
+    }
+    sha = current.sha;
+  } else {
+    filePath = eventPath(input);
+    const existing = await gh.getFile(c.env, filePath, c.env.BASE_BRANCH);
+    if (existing) {
+      return c.json(
+        { error: 'An event with that date and title already exists. Edit it instead, or change the title.' },
+        409,
+      );
+    }
+  }
+
+  // Fork a fresh branch off the base and commit there. Never write to the base.
   const baseSha = await gh.getBranchSha(c.env, c.env.BASE_BRANCH);
   const branch = `${EDIT_BRANCH_PREFIX}events-${cap.id.slice(0, 8)}-${randomId(4)}`;
   await gh.createBranch(c.env, branch, baseSha);
-
-  let sha: string | undefined;
-  if (mode === 'update') {
-    sha = body.sha ? String(body.sha) : (await gh.getFile(c.env, filePath, c.env.BASE_BRANCH))?.sha;
-  }
 
   await gh.putFile(c.env, {
     path: filePath,
@@ -201,14 +243,20 @@ app.post('/edit/submit', async (c) => {
       `Review the change and merge to publish. The build check must pass first.`,
   });
 
-  await store.recordUse(c.env, cap.id);
-  await store.appendAudit(c.env, {
-    ts: new Date().toISOString(),
-    actor: cap.id,
-    action: mode === 'update' ? 'edit-event' : 'add-event',
-    target: filePath,
-    result: `pr#${pr.number}`,
-  });
+  // The pull request now exists. Bookkeeping is best-effort: never fail the
+  // request (and tempt a duplicate retry) just because a KV write hiccups.
+  try {
+    await store.recordUse(c.env, cap.id);
+    await store.appendAudit(c.env, {
+      ts: new Date().toISOString(),
+      actor: cap.id,
+      action: mode === 'update' ? 'edit-event' : 'add-event',
+      target: filePath,
+      result: `pr#${pr.number}`,
+    });
+  } catch (e) {
+    console.error('post-PR bookkeeping failed', e);
+  }
 
   return c.json({ ok: true, prUrl: pr.html_url, number: pr.number });
 });

@@ -9,8 +9,8 @@ one piece that lives outside the repo and needs to be set once.
 The domain sends no email (we use a separate mailbox), but right now it has no
 SPF or DMARC record, so anyone can forge mail that looks like it comes from
 `@ncngmodelrailroad.org` and use it to solicit fake "donations." Publish these
-three DNS records in Cloudflare to shut that down. They tell the world that the
-domain sends and receives no mail, so forgeries get rejected.
+three DNS records in Cloudflare to stop most of it. They tell mail receivers that
+the domain sends and receives no mail, so compliant receivers reject forgeries.
 
 | Type | Name | Value | Notes |
 |---|---|---|---|
@@ -41,10 +41,8 @@ Avoid them entirely by only publishing media we can prove we may use:
 ## Accessibility
 
 The site targets WCAG 2.1 AA. The public statement is at
-[`/accessibility`](https://ncngmodelrailroad.org/accessibility), and an
-automated accessibility check runs on every pull request (see
-`.github/workflows/a11y.yml`). Treat a failing accessibility check like a failing
-build.
+[`/accessibility`](https://ncngmodelrailroad.org/accessibility). Accessibility is
+checked on pull requests with automated tools and manual review.
 
 ## If we solicit donations: register the charity
 
@@ -54,6 +52,10 @@ other states have similar rules for online solicitation. This is a filing the
 board handles, not a code change. Start at the California Attorney General's
 Registry of Charitable Trusts. Keep the registration current if the site asks
 for money.
+
+This is operational guidance, not legal or tax advice. The board should confirm
+its obligations with counsel or an accountant, or through the California Attorney
+General's resources.
 
 ## Already handled
 

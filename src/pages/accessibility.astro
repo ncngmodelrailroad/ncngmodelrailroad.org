@@ -1,0 +1,64 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import SectionHeader from '../components/SectionHeader.astro';
+import { organization } from '../config/organization';
+
+const updated = 'June 2026';
+const email = organization.contact.email;
+---
+
+<BaseLayout
+  title="Accessibility | N.C.N.G. Model Railroad"
+  description="Our commitment to an accessible website and how to report a problem."
+>
+  <section class="container section">
+    <SectionHeader
+      as="h1"
+      eyebrow="Accessibility"
+      title="Accessibility statement"
+      description={`We want everyone to be able to use this site. Last updated ${updated}.`}
+    />
+
+    <div class="max-w-3xl space-y-5 text-gray-700 leading-relaxed">
+      <p>
+        We aim to meet
+        <strong>Web Content Accessibility Guidelines (WCAG) 2.1, Level AA</strong>.
+        These guidelines explain how to make web content easier to use for
+        people with disabilities.
+      </p>
+
+      <h2 class="text-2xl mt-10">What we do</h2>
+      <ul class="list-disc pl-6 space-y-2">
+        <li>Semantic, structured headings and a "skip to main content" link.</li>
+        <li>Text alternatives for images.</li>
+        <li>Full keyboard navigation with a visible focus indicator.</li>
+        <li>Color choices checked for contrast, with a high-contrast mode that follows your system setting.</li>
+        <li>A dark mode and a reduced-motion mode, both driven by your device preferences.</li>
+        <li>We check accessibility when we review changes, using automated tools and manual testing.</li>
+      </ul>
+
+      <h2 class="text-2xl mt-10">Known limitations</h2>
+      <p>
+        Some content we did not create may fall short. An embedded map, for
+        example, is provided by a third party and is not fully under our control.
+        We are a small volunteer group and we fix issues as we find them.
+      </p>
+
+      <h2 class="text-2xl mt-10">Tell us about a problem</h2>
+      <p>
+        If any part of this site is hard to use, or you need information in
+        another format, please tell us. Email
+        <a href={`mailto:${email}`} class="text-primary underline">{email}</a>
+        and describe the page and the problem. We will do our best to help and to
+        fix it.
+      </p>
+
+      <h2 class="text-2xl mt-10">Visiting in person</h2>
+      <p>
+        For questions about physical access to the layout at the
+        {organization.location.city} fairgrounds, contact us at the address above
+        and we will help however we can.
+      </p>
+    </div>
+  </section>
+</BaseLayout>

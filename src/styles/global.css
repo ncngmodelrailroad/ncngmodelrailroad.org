@@ -2,7 +2,7 @@
 
 @plugin "@tailwindcss/typography";
 
-@theme {
+@theme static {
   /* Primary Colors - refined railroad red */
   --color-primary: #8A1F17;
   --color-primary-rgb: 138, 31, 23;

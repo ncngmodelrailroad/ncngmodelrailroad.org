@@ -16,9 +16,10 @@ as it renders in production.
 
 Tokens are defined in two layers, both in `global.css`:
 
-1. **`@theme` block** holds the brand colors and fonts. Tailwind v4 turns these
-   into utilities (`bg-primary`, `text-secondary`, `font-display`) and also
-   emits them as `:root` custom properties. Define a brand color here once.
+1. **`@theme static` block** holds the brand colors and fonts. Tailwind v4 turns
+   these into utilities (`bg-primary`, `text-secondary`, `font-display`) and
+   emits them as `:root` custom properties. `static` guarantees every token is
+   emitted even if no utility happens to use it. Define a brand color here once.
 2. **`:root` block** adds the extended semantic tokens (surfaces, text, borders,
    accents, radii, shadows) that the custom CSS builds on.
 

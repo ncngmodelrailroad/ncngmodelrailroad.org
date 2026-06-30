@@ -1,21 +1,28 @@
 /**
  * Accessibility gate: serves the built site and runs axe-core (WCAG 2.1 A/AA)
- * against every page. Exits non-zero if any page has violations, so CI fails on
- * a regression.
+ * against every built content page. Exits non-zero if any page has violations or
+ * fails to load, so CI fails on a regression.
+ *
+ * Scope: light mode today. The site also ships a dark mode that has a backlog of
+ * pre-existing contrast issues; remediating those and adding `'dark'` to SCHEMES
+ * is tracked as a follow-up. Redirect stubs (e.g. the Pages CMS `/admin`
+ * shortcut) are skipped automatically.
  *
  * Requires `playwright` and `@axe-core/playwright` plus a Chromium browser.
- * CI installs them in .github/workflows/a11y.yml. Run `npm run build` first.
- * Locally: `npm i --no-save playwright @axe-core/playwright && npx playwright
- * install chromium`, then `npm run a11y`.
+ * CI installs pinned versions in .github/workflows/a11y.yml. Run `npm run build`
+ * first. Locally: `npm i --no-save playwright @axe-core/playwright && npx
+ * playwright install chromium`, then `npm run a11y`.
  */
 import { createServer } from 'node:http';
-import { readFile, stat } from 'node:fs/promises';
+import { readFile, readdir, stat } from 'node:fs/promises';
 import { join, extname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 const DIST = fileURLToPath(new URL('../dist/', import.meta.url));
 const PORT = 8080;
 const BASE = `http://localhost:${PORT}`;
+const SCHEMES = ['light'];
+const AXE_TAGS = ['wcag2a', 'wcag2aa', 'wcag21a', 'wcag21aa'];
 
 const TYPES = {
   '.html': 'text/html',
@@ -38,36 +45,31 @@ const TYPES = {
   '.webmanifest': 'application/manifest+json',
 };
 
-// Pages to audit (404 is intentionally excluded).
-const PAGES = [
-  '/',
-  '/about/',
-  '/board-members/',
-  '/contact/',
-  '/donate/',
-  '/events/',
-  '/gallery/',
-  '/links/',
-  '/trains/',
-  '/volunteer/',
-  '/learn/',
-  '/learn/glossary/',
-  '/learn/new-to-model-railroading/',
-  '/privacy/',
-  '/accessibility/',
-  '/styleguide/',
-];
+/**
+ * Discover every built content page from dist. Each route is a
+ * `<dir>/index.html`. Redirect stubs (pages with a meta refresh) are skipped so
+ * the audit only runs against real, viewable content.
+ */
+async function discoverPages(dir = DIST, base = '') {
+  const out = [];
+  for (const entry of await readdir(dir, { withFileTypes: true })) {
+    if (entry.isDirectory()) {
+      if (entry.name === '_astro') continue;
+      out.push(...(await discoverPages(join(dir, entry.name), `${base}/${entry.name}`)));
+    } else if (entry.name === 'index.html') {
+      const html = await readFile(join(dir, entry.name), 'utf8');
+      if (/http-equiv=["']?refresh/i.test(html)) continue;
+      out.push(`${base}/`);
+    }
+  }
+  return out;
+}
 
 async function resolveFile(urlPath) {
   const clean = decodeURIComponent(urlPath.split('?')[0]);
-  const candidates = [join(DIST, clean), join(DIST, clean, 'index.html')];
-  for (const candidate of candidates) {
+  for (const candidate of [join(DIST, clean), join(DIST, clean, 'index.html')]) {
     const info = await stat(candidate).catch(() => null);
     if (info?.isFile()) return candidate;
-    if (info?.isDirectory()) {
-      const index = join(candidate, 'index.html');
-      if (await stat(index).then((s) => s.isFile()).catch(() => false)) return index;
-    }
   }
   return null;
 }
@@ -99,30 +101,70 @@ async function launchBrowser(chromium) {
 const { chromium } = await import('playwright');
 const { AxeBuilder } = await import('@axe-core/playwright');
 
+/** Audit one page once on a fresh page. Returns a load error or violations. */
+async function auditOnce(context, path) {
+  const page = await context.newPage();
+  try {
+    const response = await page.goto(BASE + path, { waitUntil: 'load', timeout: 30000 });
+    if (!response || !response.ok()) {
+      return { loadError: `HTTP ${response?.status() ?? 'none'}` };
+    }
+    await page.waitForLoadState('domcontentloaded');
+    const { violations } = await new AxeBuilder({ page }).withTags(AXE_TAGS).analyze();
+    return { violations };
+  } finally {
+    await page.close().catch(() => {});
+  }
+}
+
+/** axe's evaluate can intermittently lose its execution context; retry once. */
+async function audit(context, path) {
+  try {
+    return await auditOnce(context, path);
+  } catch {
+    try {
+      return await auditOnce(context, path);
+    } catch (err) {
+      return { crash: err.message.split('\n')[0] };
+    }
+  }
+}
+
 const server = await startServer();
+const pages = (await discoverPages()).sort();
 const browser = await launchBrowser(chromium);
-const page = await (await browser.newContext()).newPage();
 
 let total = 0;
 const byRule = {};
-for (const path of PAGES) {
-  await page.goto(BASE + path, { waitUntil: 'load', timeout: 30000 });
-  const { violations } = await new AxeBuilder({ page })
-    .withTags(['wcag2a', 'wcag2aa', 'wcag21a', 'wcag21aa'])
-    .analyze();
-  const count = violations.reduce((sum, v) => sum + v.nodes.length, 0);
-  total += count;
-  if (count === 0) {
-    console.log(`  ok   ${path}`);
-  } else {
-    console.log(`  FAIL ${path} - ${count} violation(s)`);
-    for (const v of violations) {
-      byRule[v.id] = (byRule[v.id] ?? 0) + v.nodes.length;
-      for (const node of v.nodes) {
-        console.log(`       [${v.impact}] ${v.id}: ${node.target.join(' ')}`);
+console.log(`Auditing ${pages.length} pages (${SCHEMES.join(', ')})...\n`);
+
+for (const scheme of SCHEMES) {
+  const context = await browser.newContext({ colorScheme: scheme, reducedMotion: 'reduce' });
+  for (const path of pages) {
+    const result = await audit(context, path);
+    if (result.loadError) {
+      console.log(`  FAIL ${scheme} ${path} - did not load (${result.loadError})`);
+      total += 1;
+    } else if (result.crash) {
+      console.log(`  FAIL ${scheme} ${path} - audit error: ${result.crash}`);
+      total += 1;
+    } else {
+      const count = result.violations.reduce((sum, v) => sum + v.nodes.length, 0);
+      total += count;
+      if (count === 0) {
+        console.log(`  ok   ${scheme} ${path}`);
+      } else {
+        console.log(`  FAIL ${scheme} ${path} - ${count} violation(s)`);
+        for (const v of result.violations) {
+          byRule[v.id] = (byRule[v.id] ?? 0) + v.nodes.length;
+          for (const node of v.nodes) {
+            console.log(`       [${v.impact}] ${v.id}: ${node.target.join(' ')}`);
+          }
+        }
       }
     }
   }
+  await context.close();
 }
 
 await browser.close();
@@ -130,8 +172,8 @@ server.close();
 
 console.log('');
 if (total === 0) {
-  console.log(`PASS - 0 WCAG 2.1 AA violations across ${PAGES.length} pages.`);
+  console.log(`PASS - 0 WCAG 2.1 AA violations across ${pages.length} pages.`);
 } else {
-  console.log(`FAIL - ${total} WCAG 2.1 AA violation(s):`, byRule);
+  console.log(`FAIL - ${total} issue(s):`, byRule);
   process.exit(1);
 }

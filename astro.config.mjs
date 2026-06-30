@@ -12,7 +12,9 @@ export default defineConfig({
   compressHTML: true,
   integrations: [
     react(),
-    sitemap(),
+    sitemap({
+      filter: (page) => !page.includes('/styleguide'),
+    }),
     icon(),
   ],
   vite: {

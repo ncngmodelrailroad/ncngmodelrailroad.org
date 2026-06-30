@@ -20,20 +20,13 @@
   --font-body: 'Montserrat', 'Helvetica Neue', Arial, sans-serif;
 }
 
-/* Design System Variables */
+/* Design system variables.
+   Brand colors and fonts are defined once, in the @theme block above. Tailwind
+   v4 emits those @theme tokens as :root custom properties (and generates the
+   matching utilities), so they are available as var(--color-primary) and the
+   like without repeating them here. This block adds the extended semantic
+   tokens that build on them. */
 :root {
-  /* Primary Colors - refined railroad red */
-  --color-primary: #8A1F17;
-  --color-primary-rgb: 138, 31, 23;
-  --color-primary-dark: #5E130F;
-  --color-primary-light: #B9493E;
-  
-  /* Secondary Colors - warm earth tones */
-  --color-secondary: #8B5E34;
-  --color-secondary-rgb: 139, 94, 52;
-  --color-secondary-dark: #5F3A1C;
-  --color-secondary-light: #B88455;
-  
   /* Neutral Colors */
   --color-bg: #FCF8F1;
   --color-bg-alt: #F3EADB;

@@ -71,6 +71,7 @@ New here? Start with the guide that matches your comfort level:
 | [Getting Started](docs/getting-started.md) | Board members & anyone who just wants to understand the site |
 | [Editing Content](docs/editing-content.md) | Anyone who needs to update events, photos, or board info |
 | [Development Guide](docs/development.md) | Developers who want to run the site locally and make changes |
+| [Design System](docs/design-system.md) | Developers working on UI: tokens, components, and the `/styleguide` reference |
 | [Contributing](CONTRIBUTING.md) | Anyone submitting changes via GitHub |
 | [Support](SUPPORT.md) | Quick reference for getting help |
 | [Code of Conduct](CODE_OF_CONDUCT.md) | Community standards for contributors |

@@ -5,6 +5,7 @@ interface Props {
   image?: string;
   type?: string;
   heroImage?: string;
+  noindex?: boolean;
 }
 
 const { 
@@ -12,7 +13,8 @@ const {
   description = "An On3 scale historical model railroad display dedicated to the memory of the Nevada County Narrow Gauge Railroad. Located at Nevada County Fairgrounds, Grass Valley, CA.",
   image = "/images/bear-river-bridge.jpg",
   type = "website",
-  heroImage
+  heroImage,
+  noindex = false
 } = Astro.props;
 
 import { Icon } from 'astro-icon/components';
@@ -127,7 +129,7 @@ const breadcrumbSchema = {
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content={description} />
     <meta name="author" content={organization.fullName} />
-    <meta name="robots" content="index, follow" />
+    <meta name="robots" content={noindex ? "noindex, nofollow" : "index, follow"} />
     <meta name="theme-color" content="#8A1F17" media="(prefers-color-scheme: light)" />
     <meta name="theme-color" content="#1a1a2e" media="(prefers-color-scheme: dark)" />
     

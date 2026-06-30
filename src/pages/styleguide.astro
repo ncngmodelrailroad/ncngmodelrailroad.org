@@ -1,0 +1,185 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Button from '../components/Button.astro';
+import SectionHeader from '../components/SectionHeader.astro';
+import PhotoCard from '../components/PhotoCard.astro';
+
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+
+// Source of truth is src/styles/global.css. Values shown are the light-mode
+// defaults; every token also has a dark-mode value (see "Modes" below).
+const brand = [
+  { var: '--color-primary', label: 'Primary', value: '#8A1F17' },
+  { var: '--color-primary-dark', label: 'Primary dark', value: '#5E130F' },
+  { var: '--color-primary-light', label: 'Primary light', value: '#B9493E' },
+  { var: '--color-secondary', label: 'Secondary', value: '#8B5E34' },
+  { var: '--color-secondary-dark', label: 'Secondary dark', value: '#5F3A1C' },
+  { var: '--color-secondary-light', label: 'Secondary light', value: '#B88455' },
+];
+
+const neutrals = [
+  { var: '--color-bg', label: 'Background', value: '#FCF8F1' },
+  { var: '--color-bg-alt', label: 'Background alt', value: '#F3EADB' },
+  { var: '--color-surface', label: 'Surface', value: '#FFFDF9' },
+  { var: '--color-surface-soft', label: 'Surface soft', value: '#F8F1E7' },
+  { var: '--color-text', label: 'Text', value: '#211A17' },
+  { var: '--color-text-muted', label: 'Text muted', value: '#6F6259' },
+  { var: '--color-border', label: 'Border', value: '#DFCFBB' },
+];
+
+const accents = [
+  { var: '--color-accent', label: 'Accent', value: '#2F5D46' },
+  { var: '--color-gold', label: 'Gold', value: '#B9821B' },
+  { var: '--color-kicker-text', label: 'Kicker text', value: '#FCD34D' },
+];
+
+const system = [
+  { token: '--radius-card', value: '1.25rem', note: 'Cards, surfaces' },
+  { token: '--radius-pill', value: '999px', note: 'Buttons, eyebrows, nav links' },
+  { token: '--shadow-card', value: 'layered', note: 'Default card elevation' },
+  { token: '--shadow-soft', value: 'layered', note: 'Hover / floating elevation' },
+  { token: '--tracking-eyebrow', value: '0.12em', note: 'Eyebrow letter-spacing' },
+  { token: '--tracking-kicker', value: '0.25em', note: 'Hero kicker letter-spacing' },
+  { token: '--focus-ring', value: 'ring', note: 'Keyboard focus outline' },
+];
+---
+
+<BaseLayout title="Style guide | N.C.N.G. Model Railroad" noindex={true}>
+  <main class="container section">
+    <SectionHeader
+      as="h1"
+      eyebrow="Internal"
+      title="Style guide"
+      description="A living reference for the site's design tokens, components, and utility classes. It renders straight from src/styles/global.css, so it always matches production. This page is noindex and not linked from the site."
+    />
+
+    <p class="muted-note">
+      Documentation: <a href="https://github.com/djdefi/ncngmodelrailroad.org/blob/main/docs/design-system.md">docs/design-system.md</a>.
+      Colors below show light-mode values; switch your OS to dark to preview dark mode.
+    </p>
+
+    <h2>Colors</h2>
+    <h3>Brand</h3>
+    <div class="swatch-grid">
+      {brand.map((t) => (
+        <div class="swatch">
+          <div class="swatch-chip" style={`background: var(${t.var})`}></div>
+          <strong>{t.label}</strong>
+          <code>{t.var}</code>
+          <span class="muted-note">{t.value}</span>
+        </div>
+      ))}
+    </div>
+
+    <h3>Neutrals</h3>
+    <div class="swatch-grid">
+      {neutrals.map((t) => (
+        <div class="swatch">
+          <div class="swatch-chip bordered" style={`background: var(${t.var})`}></div>
+          <strong>{t.label}</strong>
+          <code>{t.var}</code>
+          <span class="muted-note">{t.value}</span>
+        </div>
+      ))}
+    </div>
+
+    <h3>Accents</h3>
+    <div class="swatch-grid">
+      {accents.map((t) => (
+        <div class="swatch">
+          <div class="swatch-chip" style={`background: var(${t.var})`}></div>
+          <strong>{t.label}</strong>
+          <code>{t.var}</code>
+          <span class="muted-note">{t.value}</span>
+        </div>
+      ))}
+    </div>
+
+    <h2>Typography</h2>
+    <div class="clean-card card-body">
+      <p class="muted-note">Display face: Archivo Black (<code>--font-display</code>) · Body face: Montserrat (<code>--font-body</code>)</p>
+      <h1>Heading 1 display</h1>
+      <h2>Heading 2 display</h2>
+      <h3>Heading 3 display</h3>
+      <p>Body text in Montserrat. The quick brown fox jumps over the lazy dog. Links use <a href="#">the primary color</a> with a thick underline.</p>
+      <blockquote>A blockquote, bordered with the primary color and set in muted italic.</blockquote>
+    </div>
+
+    <h2>Buttons</h2>
+    <p class="muted-note"><code>&lt;Button&gt;</code> component — variants and sizes.</p>
+    <div class="row-wrap">
+      <Button variant="primary">Primary</Button>
+      <Button variant="outline">Outline</Button>
+      <span class="on-dark"><Button variant="white">White</Button></span>
+    </div>
+    <div class="row-wrap">
+      <Button size="sm">Small</Button>
+      <Button size="md">Medium</Button>
+      <Button size="lg">Large</Button>
+    </div>
+    <p class="muted-note">CSS utility equivalents: <code>.btn-primary</code>, <code>.btn-outline</code>.</p>
+    <div class="row-wrap">
+      <a class="btn-primary">.btn-primary</a>
+      <a class="btn-outline">.btn-outline</a>
+    </div>
+
+    <h2>Labels</h2>
+    <div class="row-wrap">
+      <span class="eyebrow">Eyebrow</span>
+      <span class="nav-link">Nav link</span>
+    </div>
+
+    <h2>Cards</h2>
+    <div class="card-demo-grid">
+      <div class="card">
+        <div class="card-body">
+          <strong>.card</strong>
+          <p class="muted-note">Surface, border, card radius and shadow.</p>
+        </div>
+      </div>
+      <div class="clean-card hover-lift card-body">
+        <strong>.clean-card .hover-lift</strong>
+        <p class="muted-note">Gradient surface; lifts on hover.</p>
+      </div>
+      <div class="section-shell card-body">
+        <strong>.section-shell</strong>
+        <p class="muted-note">Translucent panel for grouping sections.</p>
+      </div>
+    </div>
+
+    <h2>PhotoCard</h2>
+    <div class="card-demo-grid">
+      <PhotoCard src={`${base}/images/bear-river-bridge.jpg`} alt="Example" caption="PhotoCard with caption overlay" />
+    </div>
+
+    <h2>SectionHeader</h2>
+    <div class="clean-card card-body">
+      <SectionHeader eyebrow="Eyebrow" title="Section title" description="Optional supporting description text for the section." />
+    </div>
+
+    <h2>Dividers</h2>
+    <div class="track-divider"></div>
+
+    <h2>Modes</h2>
+    <p class="muted-note">
+      All tokens have light and dark values and follow the OS setting
+      (<code>prefers-color-scheme</code>). High-contrast and reduced-motion
+      preferences are also honored. There is no manual theme toggle.
+    </p>
+  </main>
+</BaseLayout>
+
+<style>
+  main { padding-top: 2rem; }
+  h2 { margin-top: 3rem; border-top: 1px solid var(--color-border); padding-top: 1.5rem; }
+  h3 { margin-top: 1.5rem; font-size: 1rem; color: var(--color-text-muted); text-transform: uppercase; letter-spacing: 0.08em; }
+  .muted-note { color: var(--color-text-muted); font-size: 0.9rem; }
+  .swatch-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 1rem; margin: 1rem 0; }
+  .swatch { display: flex; flex-direction: column; gap: 0.15rem; }
+  .swatch-chip { height: 64px; border-radius: 0.75rem; box-shadow: var(--shadow-card); }
+  .swatch-chip.bordered { border: 1px solid var(--color-border); }
+  .swatch code { font-size: 0.75rem; word-break: break-all; }
+  .row-wrap { display: flex; flex-wrap: wrap; gap: 1rem; align-items: center; margin: 1rem 0; }
+  .on-dark { display: inline-flex; padding: 0.5rem 1rem; background: var(--color-primary); border-radius: var(--radius-pill); }
+  .card-demo-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 1.5rem; margin: 1rem 0; }
+</style>

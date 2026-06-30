@@ -155,9 +155,13 @@ const categories = [
     color: white;
   }
   @media (prefers-color-scheme: dark) {
-    /* Hover text needs the lighter red on the dark page background. */
-    .category-btn:hover {
+    /* Hover text needs the lighter red on the dark page background, except the
+       active pill, which has a red background and keeps white text. */
+    .category-btn:not(.active):hover {
       color: var(--color-primary-light);
+    }
+    .category-btn.active:hover {
+      color: white;
     }
   }
   .photo-card.hidden {

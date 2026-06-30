@@ -41,8 +41,10 @@ Avoid them entirely by only publishing media we can prove we may use:
 ## Accessibility
 
 The site targets WCAG 2.1 AA. The public statement is at
-[`/accessibility`](https://ncngmodelrailroad.org/accessibility). Accessibility is
-checked on pull requests with automated tools and manual review.
+[`/accessibility`](https://ncngmodelrailroad.org/accessibility). An automated
+WCAG 2.1 AA audit (axe-core) runs on every pull request via
+`.github/workflows/a11y.yml`, alongside manual review. Treat a failing
+accessibility check like a failing build.
 
 ## If we solicit donations: register the charity
 

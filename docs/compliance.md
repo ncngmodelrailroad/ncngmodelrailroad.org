@@ -44,9 +44,8 @@ The site targets WCAG 2.1 AA. The public statement is at
 [`/accessibility`](https://ncngmodelrailroad.org/accessibility). An automated
 WCAG 2.1 AA audit (axe-core) runs on every pull request via
 `.github/workflows/a11y.yml`, alongside manual review. Treat a failing
-accessibility check like a failing build. The audit covers light mode today;
-dark-mode contrast remediation is a tracked follow-up, after which the gate
-extends to dark.
+accessibility check like a failing build. The audit covers light and dark color
+schemes.
 
 ## If we solicit donations: register the charity
 

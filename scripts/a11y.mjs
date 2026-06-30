@@ -1,12 +1,11 @@
 /**
  * Accessibility gate: serves the built site and runs axe-core (WCAG 2.1 A/AA)
- * against every built content page. Exits non-zero if any page has violations or
- * fails to load, so CI fails on a regression.
+ * against every built content page, in both light and dark color schemes. Exits
+ * non-zero if any page has violations or fails to load, so CI fails on a
+ * regression.
  *
- * Scope: light mode today. The site also ships a dark mode that has a backlog of
- * pre-existing contrast issues; remediating those and adding `'dark'` to SCHEMES
- * is tracked as a follow-up. Redirect stubs (e.g. the Pages CMS `/admin`
- * shortcut) are skipped automatically.
+ * Redirect stubs (e.g. the Pages CMS `/admin` shortcut) are skipped
+ * automatically.
  *
  * Requires `playwright` and `@axe-core/playwright` plus a Chromium browser.
  * CI installs pinned versions in .github/workflows/a11y.yml. Run `npm run build`
@@ -21,7 +20,7 @@ import { fileURLToPath } from 'node:url';
 const DIST = fileURLToPath(new URL('../dist/', import.meta.url));
 const PORT = 8080;
 const BASE = `http://localhost:${PORT}`;
-const SCHEMES = ['light'];
+const SCHEMES = ['light', 'dark'];
 const AXE_TAGS = ['wcag2a', 'wcag2aa', 'wcag21a', 'wcag21aa'];
 
 const TYPES = {

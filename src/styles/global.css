@@ -65,9 +65,9 @@
 /* Dark mode - automatic, respects OS preference */
 @media (prefers-color-scheme: dark) {
   :root {
-    --color-primary: #DC2626;
-    --color-primary-rgb: 220, 38, 38;
-    --color-primary-dark: #B91C1C;
+    --color-primary: #C81E1E;
+    --color-primary-rgb: 200, 30, 30;
+    --color-primary-dark: #A11616;
     --color-primary-light: #F87171;
 
     --color-secondary: #C8855F;
@@ -486,6 +486,8 @@ blockquote {
 
 /* Rich text content theming (event bodies and similar) */
 .prose {
+  --tw-prose-body: var(--color-text);
+  --tw-prose-bold: var(--color-text);
   --tw-prose-links: var(--color-primary);
   --tw-prose-headings: var(--color-text);
   --tw-prose-bullets: var(--color-primary);
@@ -574,5 +576,64 @@ textarea:invalid:focus {
 @media (prefers-reduced-motion: reduce) {
   .animate-kenburns {
     animation: none;
+  }
+}
+
+/* Dark-mode contrast overrides.
+   Placed at the end so they win over the base element and utility rules above.
+   Brand red as TEXT needs more luminance on dark surfaces, so headings, labels,
+   and links use the lighter red; buttons and badges keep the darker
+   --color-primary background, where white text stays readable. */
+@media (prefers-color-scheme: dark) {
+  h1, h2, h3, h4, h5, h6,
+  .text-primary,
+  .eyebrow,
+  .btn-outline,
+  blockquote {
+    color: var(--color-primary-light);
+  }
+
+  .btn-outline {
+    border-color: var(--color-primary-light);
+  }
+
+  blockquote {
+    border-left-color: var(--color-primary-light);
+  }
+
+  .nav-link:hover {
+    color: var(--color-primary-light);
+  }
+
+  /* Hover and group-hover states that turn text red must use the lighter red on
+     dark surfaces too. axe does not test hover, so these are easy to miss. The
+     about-page outline button hovers to a white background, so it is excluded
+     and keeps the darker red there. */
+  .hover\:text-primary:not(.hover\:bg-white):hover,
+  .group:hover .group-hover\:text-primary,
+  .prose a:hover {
+    color: var(--color-primary-light);
+  }
+
+  .eyebrow {
+    background-color: rgba(248, 113, 113, 0.12);
+    border-color: rgba(248, 113, 113, 0.28);
+  }
+
+  .prose {
+    --tw-prose-links: var(--color-primary-light);
+  }
+
+  /* Gold badges read better with dark text (beats the .text-gray-900 override). */
+  .bg-gold.text-gray-900 {
+    color: #1a1a1a !important;
+  }
+
+  /* Utility colors the base dark overrides miss. */
+  .text-gray-800 {
+    color: #C0C0C0 !important;
+  }
+  .bg-gray-200 {
+    background-color: var(--color-bg-alt) !important;
   }
 }

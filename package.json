@@ -6,7 +6,8 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "a11y": "node scripts/a11y.mjs"
   },
   "dependencies": {
     "@astrojs/react": "^5.0.1",

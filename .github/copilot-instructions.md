@@ -18,6 +18,12 @@ Public website for an all-volunteer model railroad museum. Astro static site, Ta
 
 - `main` is protected: changes need a pull request, a passing **Build check** (`.github/workflows/build-check.yml`, runs `npm ci` + `npm run build` on PRs), and one approval. Only repo admins (the owner) can bypass or self-merge.
 - Deployment (`.github/workflows/deploy.yml`) runs only on push to `main`. Both workflows pin actions to commit SHAs; Dependabot keeps them current.
+- An **Accessibility check** (`.github/workflows/a11y.yml`) runs an axe-core WCAG 2.1 AA audit over every page on PRs (`npm run a11y`). Treat a failure like a failing build.
+
+## Merge gate
+
+Merge a PR only after all of the following: CI and tests pass, and the change has been **rubber-ducked**, **code-reviewed**, and **de-slopped** (an anti-slop pass on any prose, per the stop-slop guidelines: no em dashes, no filler, active voice, specific). Do not merge on green CI alone.
+
 
 ## Architecture
 

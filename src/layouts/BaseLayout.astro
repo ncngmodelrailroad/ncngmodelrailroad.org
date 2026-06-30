@@ -309,10 +309,10 @@ const breadcrumbSchema = {
               <ul class="text-gray-300 text-sm space-y-3">
                 {footerEvents.map((event) => (
                   <li class="flex items-start gap-2">
-                    <Icon name="solar:calendar-bold" class="w-4 h-4 text-gray-500 flex-shrink-0 mt-0.5" />
+                    <Icon name="solar:calendar-bold" class="w-4 h-4 text-gray-400 flex-shrink-0 mt-0.5" />
                     <a href={`${base}/events`} class="group hover:text-white transition-colors">
                       <span class="block">{event.data.title}</span>
-                      <span class="block text-xs text-gray-500 group-hover:text-gray-400">{footerEventDate(event.data.date, event.data.endDate)}</span>
+                      <span class="block text-xs text-gray-400 group-hover:text-gray-300">{footerEventDate(event.data.date, event.data.endDate)}</span>
                     </a>
                   </li>
                 ))}

@@ -20,6 +20,13 @@ const {
 import { Icon } from 'astro-icon/components';
 import { getCollection } from 'astro:content';
 import { organization } from '../config/organization';
+
+// Self-hosted fonts (no third-party CDN, no visitor IP sent to Google).
+import '@fontsource/archivo-black';
+import '@fontsource/montserrat/400.css';
+import '@fontsource/montserrat/500.css';
+import '@fontsource/montserrat/600.css';
+import '@fontsource/montserrat/700.css';
 import { navItems } from '../config/navigation';
 
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
@@ -154,12 +161,10 @@ const breadcrumbSchema = {
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={`${siteUrl}${image}`} />
     
-    <!-- Fonts - preconnect for performance -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <!-- Fonts are self-hosted via @fontsource (imported in the layout). No
+         third-party font CDN, so no visitor IP is sent to Google. -->
     <style>
-      /* Reduce CLS from font swap by sizing fallback to match Google Fonts */
+      /* Reduce CLS from font swap by sizing the fallback to match Archivo Black */
       @font-face { font-family: 'Archivo Black Fallback'; src: local('Arial Black'), local('Arial'); size-adjust: 95%; ascent-override: 100%; descent-override: 20%; }
     </style>
     
@@ -330,6 +335,11 @@ const breadcrumbSchema = {
           <p class="mt-2 text-xs">
             Note: The {organization.name} is a separate organization 
             not affiliated with other museums or groups.
+          </p>
+          <p class="mt-3 text-xs">
+            <a href="/privacy" class="underline hover:text-white">Privacy</a>
+            <span class="mx-2" aria-hidden="true">·</span>
+            <a href="/accessibility" class="underline hover:text-white">Accessibility</a>
           </p>
         </div>
       </div>

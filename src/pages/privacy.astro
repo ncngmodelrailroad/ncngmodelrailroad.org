@@ -1,0 +1,94 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import SectionHeader from '../components/SectionHeader.astro';
+import { organization } from '../config/organization';
+
+const updated = 'June 2026';
+const email = organization.contact.email;
+---
+
+<BaseLayout
+  title="Privacy Policy | N.C.N.G. Model Railroad"
+  description="How the Nevada County Narrow Gauge Historical Model Railroad website handles your information."
+>
+  <section class="container section">
+    <SectionHeader
+      as="h1"
+      eyebrow="Privacy"
+      title="Privacy policy"
+      description={`How this website handles your information. Last updated ${updated}.`}
+    />
+
+    <div class="max-w-3xl space-y-5 text-gray-700 leading-relaxed">
+      <p>
+        We are an all-volunteer nonprofit, and this is a simple informational
+        website. We collect almost nothing about you, we set no tracking
+        cookies, and we never sell your information.
+      </p>
+
+      <h2 class="text-2xl mt-10">What we collect</h2>
+      <p>
+        The site has no accounts, no logins, and no on-site forms that send data
+        to a server we run. The only information we receive is what you choose to
+        send us by email, plus anonymous, aggregate traffic counts (described
+        below).
+      </p>
+
+      <h2 class="text-2xl mt-10">Analytics</h2>
+      <p>
+        We use Cloudflare Web Analytics to count visits and see which pages are
+        popular. It is privacy-first: it sets no cookies, does not fingerprint
+        you, and does not track you across sites. We see totals and trends, not
+        individual people.
+      </p>
+
+      <h2 class="text-2xl mt-10">When you contact us</h2>
+      <p>
+        Our contact and "donate materials" buttons open a message in your own
+        email program addressed to us. No website server collects or stores what
+        you type. When you send that email, we receive your email address and
+        whatever you wrote, and we keep it only as long as we need to reply and
+        follow up.
+      </p>
+
+      <h2 class="text-2xl mt-10">Other services we rely on</h2>
+      <ul class="list-disc pl-6 space-y-2">
+        <li><strong>GitHub Pages</strong> hosts the site. GitHub may log standard request data such as IP addresses to serve and protect the site.</li>
+        <li><strong>Cloudflare</strong> provides the cookie-free analytics above.</li>
+        <li><strong>Google Maps</strong> may be embedded on the contact page to show our location. If it loads, your browser contacts Google and Google's privacy policy applies to that.</li>
+      </ul>
+      <p>Fonts are served from this site, not a third-party font network.</p>
+
+      <h2 class="text-2xl mt-10">Cookies</h2>
+      <p>
+        This site sets no cookies of its own and uses no advertising or
+        cross-site tracking. There is no cookie banner because there is nothing
+        to consent to.
+      </p>
+
+      <h2 class="text-2xl mt-10">Children</h2>
+      <p>
+        We do not knowingly collect personal information from children. If you
+        believe a child has sent us information, email us and we will remove it.
+      </p>
+
+      <h2 class="text-2xl mt-10">Your choices</h2>
+      <p>
+        To ask what we hold about you, or to have us delete an email you sent us,
+        contact us and we will take care of it.
+      </p>
+
+      <h2 class="text-2xl mt-10">Changes</h2>
+      <p>
+        We will update this page if our practices change, and we will update the
+        date at the top.
+      </p>
+
+      <h2 class="text-2xl mt-10">Contact</h2>
+      <p>
+        Questions about privacy? Email
+        <a href={`mailto:${email}`} class="text-primary underline">{email}</a>.
+      </p>
+    </div>
+  </section>
+</BaseLayout>

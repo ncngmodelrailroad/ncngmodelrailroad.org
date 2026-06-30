@@ -154,6 +154,12 @@ const categories = [
     border-color: var(--color-primary);
     color: white;
   }
+  @media (prefers-color-scheme: dark) {
+    /* Hover text needs the lighter red on the dark page background. */
+    .category-btn:hover {
+      color: var(--color-primary-light);
+    }
+  }
   .photo-card.hidden {
     display: none;
   }

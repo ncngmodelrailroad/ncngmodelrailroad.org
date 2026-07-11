@@ -47,7 +47,7 @@ const mutualBenefits = [
 
 <BaseLayout
   title="For Event Organizers | N.C.N.G. Model Railroad"
-  description="What the N.C.N.G. Historical Model Railroad needs to open our layout to the public during your event at the Nevada County Fairgrounds."
+  description={`What the N.C.N.G. Historical Model Railroad needs to open our layout to the public during your event at the ${organization.location.venue}.`}
 >
   <!-- Hero -->
   <section class="py-20 bg-primary text-white">
@@ -58,7 +58,7 @@ const mutualBenefits = [
           Open the Layout for Your Event
         </h1>
         <p class="text-xl text-gray-200 mb-4">
-          What we need to open our layout to the public during an event at the Nevada County Fairgrounds.
+          What we need to open our layout to the public during an event at the {organization.location.venue}.
         </p>
         <div class="inline-flex items-center gap-2 bg-white/10 px-4 py-2 rounded-full text-sm">
           <Icon name="solar:buildings-bold" class="w-5 h-5" />
@@ -71,7 +71,7 @@ const mutualBenefits = [
   <!-- Intro -->
   <section class="py-16 bg-white">
     <div class="container max-w-4xl">
-      <div class="prose prose-lg max-w-none mb-12">
+      <div class="prose prose-lg max-w-none mb-12 print:hidden">
         <p>
           The {organization.fullName} is an all-volunteer group founded in {organization.founded} to
           preserve local rail history. Our layout is a permanent display at the
@@ -166,7 +166,7 @@ const mutualBenefits = [
           <Icon name="solar:letter-bold" class="w-5 h-5" />
           {organization.contact.email}
         </Button>
-        <Button href={organization.contact.phoneHref} variant="outline" class="border-white text-white hover:bg-white hover:text-gray-900">
+        <Button href={organization.contact.phoneHref} variant="white">
           <Icon name="solar:phone-bold" class="w-5 h-5" />
           {organization.contact.phone}
         </Button>
@@ -249,52 +249,69 @@ const mutualBenefits = [
     }
     /* Compress spacing so the sheet stays close to a single page */
     section {
-      padding-top: 0.6rem !important;
-      padding-bottom: 0.6rem !important;
+      padding-top: 0.25rem !important;
+      padding-bottom: 0.25rem !important;
     }
     .py-16,
     .py-20 {
-      padding-top: 0.6rem !important;
-      padding-bottom: 0.6rem !important;
+      padding-top: 0.25rem !important;
+      padding-bottom: 0.25rem !important;
     }
     .p-8 {
-      padding: 1rem !important;
+      padding: 0.6rem !important;
+    }
+    .p-6 {
+      padding: 0.5rem !important;
     }
     .mb-14 {
-      margin-bottom: 0.85rem !important;
+      margin-bottom: 0.4rem !important;
     }
     .mb-12 {
-      margin-bottom: 0.65rem !important;
+      margin-bottom: 0.45rem !important;
     }
     .mb-8 {
-      margin-bottom: 0.6rem !important;
+      margin-bottom: 0.45rem !important;
+    }
+    .mb-5 {
+      margin-bottom: 0.25rem !important;
+    }
+    /* Tighten line-height and prose so the wrapped copy fits one page at
+       Letter/A4 paper width, where lines wrap more than on screen. */
+    p,
+    li,
+    span {
+      line-height: 1.2 !important;
+    }
+    .prose {
+      font-size: 0.9rem !important;
+      line-height: 1.2 !important;
     }
     .gap-8 {
       gap: 1rem !important;
     }
     .mb-6 {
-      margin-bottom: 0.4rem !important;
+      margin-bottom: 0.3rem !important;
     }
     .mb-4 {
-      margin-bottom: 0.35rem !important;
+      margin-bottom: 0.3rem !important;
     }
     .mt-4 {
       margin-top: 0.35rem !important;
     }
     .space-y-5 > :not(:last-child) {
-      margin-block-end: 0.5rem !important;
+      margin-block-end: 0.4rem !important;
     }
     .space-y-3 > :not(:last-child) {
-      margin-block-end: 0.4rem !important;
+      margin-block-end: 0.3rem !important;
     }
     h1 {
       font-size: 1.45rem !important;
     }
     .text-3xl {
-      font-size: 1.35rem !important;
+      font-size: 1.2rem !important;
     }
     .text-xl {
-      font-size: 1.05rem !important;
+      font-size: 1rem !important;
     }
     .grid > div,
     li {

@@ -3,10 +3,10 @@
 *A one-pager for event organizers at the Nevada County Fairgrounds.*
 
 The Nevada County Narrow Gauge Historical Model Railroad is an all-volunteer
-group that has preserved local rail history since 1986. Our layout lives in a
-permanent building at the Nevada County Fairgrounds, and we are glad to open it
-to the public during fairgrounds events. If you are organizing an event here and
-would like the layout open, a few basic needs help make that possible.
+group founded in 1986 to preserve local rail history. Our layout is a permanent
+display at the Nevada County Fairgrounds, and we are glad to open it to the
+public during fairgrounds events. If you are organizing an event here and would
+like the layout open, a few basic needs help make that possible.
 
 ## For our volunteers
 
@@ -26,7 +26,8 @@ would like the layout open, a few basic needs help make that possible.
 ## How we operate
 
 - We staff the layout with trained volunteers during posted hours.
-- We follow all fairgrounds rules for safety, setup, and cleanup.
+- We follow the applicable Fairgrounds and event safety, setup, and cleanup
+  requirements.
 - We keep the space family-friendly and welcoming to all ages.
 
 ## Mutual benefits
@@ -40,7 +41,8 @@ would like the layout open, a few basic needs help make that possible.
 ## Get in touch
 
 Interested in having the layout open during your event? Get in touch and we will
-talk through dates, hours, and details.
+talk through dates, hours, and details. Dates and hours depend on volunteer
+availability and advance coordination.
 
 - Email: ncngrr@hotmail.com
 - Phone: (916) 871-6341

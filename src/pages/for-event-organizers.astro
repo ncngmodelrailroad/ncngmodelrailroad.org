@@ -34,7 +34,7 @@ const visitorNeeds = [
 
 const howWeOperate = [
   'We staff the layout with trained volunteers during posted hours.',
-  'We follow all fairgrounds rules for safety, setup, and cleanup.',
+  'We follow the applicable Fairgrounds and event safety, setup, and cleanup requirements.',
   'We keep the space family-friendly and welcoming to all ages.',
 ];
 
@@ -62,7 +62,7 @@ const mutualBenefits = [
         </p>
         <div class="inline-flex items-center gap-2 bg-white/10 px-4 py-2 rounded-full text-sm">
           <Icon name="solar:buildings-bold" class="w-5 h-5" />
-          <span>A permanent display at the Fairgrounds since {organization.founded}</span>
+          <span>A permanent volunteer-run display at the {organization.location.venue}</span>
         </div>
       </div>
     </div>
@@ -73,8 +73,8 @@ const mutualBenefits = [
     <div class="container max-w-4xl">
       <div class="prose prose-lg max-w-none mb-12">
         <p>
-          The {organization.fullName} is an all-volunteer group that has preserved local rail history
-          since {organization.founded}. Our layout lives in a permanent building at the
+          The {organization.fullName} is an all-volunteer group founded in {organization.founded} to
+          preserve local rail history. Our layout is a permanent display at the
           {organization.location.venue}, and we are glad to open it to the public during fairgrounds
           events. If you are organizing an event here and would like the layout open, a few basic
           needs help make that possible.
@@ -159,8 +159,9 @@ const mutualBenefits = [
       <h2 class="text-3xl font-bold mb-4">Interested in having us open?</h2>
       <p class="text-gray-300 mb-8">
         Get in touch and we will talk through dates, hours, and details for your event.
+        Dates and hours depend on volunteer availability and advance coordination.
       </p>
-      <div class="flex flex-col sm:flex-row justify-center items-center gap-4">
+      <div class="flex flex-col sm:flex-row justify-center items-center gap-4 print:hidden">
         <Button href={`mailto:${organization.contact.email}`} variant="primary">
           <Icon name="solar:letter-bold" class="w-5 h-5" />
           {organization.contact.email}
@@ -170,7 +171,12 @@ const mutualBenefits = [
           {organization.contact.phone}
         </Button>
       </div>
-      <div class="mt-8 no-print">
+      <div class="hidden print:block mx-auto max-w-md text-left space-y-1">
+        <p><strong>Email:</strong> {organization.contact.email}</p>
+        <p><strong>Phone:</strong> {organization.contact.phone}</p>
+        <p><strong>Online:</strong> ncngmodelrailroad.org/for-event-organizers</p>
+      </div>
+      <div class="mt-8 print:hidden">
         <button
           id="print-one-pager"
           type="button"
@@ -187,24 +193,112 @@ const mutualBenefits = [
 <style is:global>
   @media print {
     header[role='banner'],
-    footer[role='contentinfo'],
-    .no-print {
+    footer[role='contentinfo'] {
       display: none !important;
     }
-    .bg-primary,
-    .bg-gray-900 {
+    /* Force a light, readable page for print regardless of the visitor's
+       color scheme. The `html` prefix raises specificity above the dark-mode
+       overrides in global.css so these win no matter the source order. */
+    html,
+    body {
       background: #ffffff !important;
+    }
+    /* Reset the themed text-color variables so inherited text and prose
+       (which read var(--color-text)) render dark even when the visitor's OS
+       is in dark mode. This leaves accent colors like .text-primary intact. */
+    :root {
+      --color-text: #111827 !important;
+      --color-text-muted: #374151 !important;
+      --color-primary: #8A1F17 !important;
+      --color-primary-rgb: 138, 31, 23 !important;
+      --color-primary-light: #8A1F17 !important;
+    }
+    /* Make headings deterministic in print regardless of the OS colour scheme.
+       Dark mode recolours every heading to a light coral; force plain headings
+       dark and keep only the brand-red accent on .text-primary elements. */
+    html h1,
+    html h2,
+    html h3,
+    html h4,
+    html h5,
+    html h6,
+    html .eyebrow {
       color: #111827 !important;
     }
-    .text-white,
-    .text-gray-200,
-    .text-gray-300 {
+    html .text-primary {
+      color: #8A1F17 !important;
+    }
+    html .bg-primary,
+    html .bg-gray-900,
+    html .bg-white,
+    html .bg-gray-50,
+    html .bg-gray-100,
+    html .bg-amber-50,
+    html .bg-cream {
+      background: #ffffff !important;
+    }
+    html .text-white,
+    html .text-gray-200,
+    html .text-gray-300,
+    html .text-gray-400,
+    html .text-gray-500,
+    html .text-gray-600,
+    html .text-gray-700,
+    html .text-gray-900 {
       color: #111827 !important;
     }
-    a[class*='btn-'] {
-      border: 1px solid #111827 !important;
-      color: #111827 !important;
-      background: #ffffff !important;
+    /* Compress spacing so the sheet stays close to a single page */
+    section {
+      padding-top: 0.6rem !important;
+      padding-bottom: 0.6rem !important;
+    }
+    .py-16,
+    .py-20 {
+      padding-top: 0.6rem !important;
+      padding-bottom: 0.6rem !important;
+    }
+    .p-8 {
+      padding: 1rem !important;
+    }
+    .mb-14 {
+      margin-bottom: 0.85rem !important;
+    }
+    .mb-12 {
+      margin-bottom: 0.65rem !important;
+    }
+    .mb-8 {
+      margin-bottom: 0.6rem !important;
+    }
+    .gap-8 {
+      gap: 1rem !important;
+    }
+    .mb-6 {
+      margin-bottom: 0.4rem !important;
+    }
+    .mb-4 {
+      margin-bottom: 0.35rem !important;
+    }
+    .mt-4 {
+      margin-top: 0.35rem !important;
+    }
+    .space-y-5 > :not(:last-child) {
+      margin-block-end: 0.5rem !important;
+    }
+    .space-y-3 > :not(:last-child) {
+      margin-block-end: 0.4rem !important;
+    }
+    h1 {
+      font-size: 1.45rem !important;
+    }
+    .text-3xl {
+      font-size: 1.35rem !important;
+    }
+    .text-xl {
+      font-size: 1.05rem !important;
+    }
+    .grid > div,
+    li {
+      break-inside: avoid;
     }
   }
 </style>

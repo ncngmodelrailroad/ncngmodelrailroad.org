@@ -6,9 +6,9 @@ This guide covers the most common updates: events, board members, gallery photos
 
 ## Easiest option: Use Pages CMS
 
-For most content updates, you don't need to edit files directly. **[Pages CMS](https://app.pagescms.org/djdefi/ncngmodelrailroad.org)** provides a simple web editor with form fields for each content type.
+For most content updates, you don't need to edit files directly. **[Pages CMS](https://app.pagescms.org/ncngmodelrailroad/ncngmodelrailroad.org)** provides a simple web editor with form fields for each content type.
 
-1. Go to [app.pagescms.org/djdefi/ncngmodelrailroad.org](https://app.pagescms.org/djdefi/ncngmodelrailroad.org)
+1. Go to [app.pagescms.org/ncngmodelrailroad/ncngmodelrailroad.org](https://app.pagescms.org/ncngmodelrailroad/ncngmodelrailroad.org)
 2. Log in with your GitHub account
 3. Select what you want to edit (Events, Board Members, Gallery, or Engine Roster)
 4. Fill in the fields and click **Save**
@@ -93,7 +93,7 @@ Delete the file. The event disappears from the site automatically.
 
 ## Updating Board Members
 
-Board members are Markdown files in `src/content/board/`, one file per person. The easiest way to edit them is [Pages CMS](https://app.pagescms.org/djdefi/ncngmodelrailroad.org) → **Board Members**, but you can also edit the files directly.
+Board members are Markdown files in `src/content/board/`, one file per person. The easiest way to edit them is [Pages CMS](https://app.pagescms.org/ncngmodelrailroad/ncngmodelrailroad.org) → **Board Members**, but you can also edit the files directly.
 
 ### File location
 

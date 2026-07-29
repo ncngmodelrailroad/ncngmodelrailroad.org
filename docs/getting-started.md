@@ -40,7 +40,7 @@ You don't need to know how to code to get something changed on the site. Here's 
 
 ### Option 1: Edit it yourself with Pages CMS (easiest)
 
-[Pages CMS](https://app.pagescms.org/djdefi/ncngmodelrailroad.org) is a simple web editor that lets you update events, board members, gallery photos, and engine roster — no coding needed. Just log in with your GitHub account.
+[Pages CMS](https://app.pagescms.org/ncngmodelrailroad/ncngmodelrailroad.org) is a simple web editor that lets you update events, board members, gallery photos, and engine roster — no coding needed. Just log in with your GitHub account.
 
 > **Need access?** See [Getting Access](../CONTRIBUTING.md#getting-access) to request collaborator access.
 
@@ -94,7 +94,7 @@ A: In the `public/images/` folder in this repository. They're served directly �
 ## Next steps
 
 Ready to make changes yourself? Move on to:
-- [Pages CMS](https://app.pagescms.org/djdefi/ncngmodelrailroad.org) — The quickest way to update content (no coding needed)
+- [Pages CMS](https://app.pagescms.org/ncngmodelrailroad/ncngmodelrailroad.org) — The quickest way to update content (no coding needed)
 - [Editing Content](editing-content.md) — How to update events, board members, and photos by editing files
 - [Development Guide](development.md) — How to run the site on your own computer
 - [Support](../SUPPORT.md) — Where to get help

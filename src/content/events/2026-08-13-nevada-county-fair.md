@@ -4,7 +4,7 @@ date: 2026-08-12
 endDate: 2026-08-16
 location: Nevada County Fairgrounds, Grass Valley
 description: |
-  Visit our On3 scale model railroad during the Nevada County Fair, August 12 to 16, 2026. A fair ticket is required to enter the fairgrounds. Watch our trains run through detailed Sierra Nevada scenery.
+  Visit our On3 scale model railroad during the Nevada County Fair, August 12 to 16, 2026, from noon to 5 PM daily. A fair ticket is required to enter the fairgrounds. Watch our trains run through detailed Sierra Nevada scenery.
 featured: true
 ---
 
@@ -12,7 +12,7 @@ The model railroad runs throughout the [Nevada County Fair](https://nevadacounty
 
 ## Visiting the Layout
 
-Find us in the railroad building inside the fairgrounds. We open during fair hours, and our staffing can shift across the five days, so check back for confirmed times. You need a fair ticket to enter the fairgrounds and reach our display.
+Find us in the railroad building inside the fairgrounds. We plan to open from noon to 5 PM each day, with possible extended hours depending on staffing and visitor traffic. You need a fair ticket to enter the fairgrounds and reach our display.
 
 ## About the Fair
 

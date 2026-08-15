@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#101714">
+  <title>NCNGRR — The Narrow Gauge, Then & Now</title>
+  <meta name="description" content="An interactive historical map of the Nevada County Narrow Gauge Railroad over modern terrain and satellite imagery.">
+  <link rel="canonical" href="https://ncngmodelrailroad.org/map/">
+  <link rel="icon" href="data:,">
+  <link rel="preconnect" href="https://unpkg.com">
+  <link rel="stylesheet" href="https://unpkg.com/maplibre-gl@5.6.2/dist/maplibre-gl.css">
+  <link rel="stylesheet" href="styles.min.css?v=7bc9dd92847938a8">
+</head>
+<body>
+  <a class="skip-link" href="#panel-toggle">Skip to map controls</a>
+  <main id="main-content">
+    <p class="visually-hidden" id="map-summary">Interactive comparison of historical United States Geological Survey maps and current satellite imagery along the Nevada County Narrow Gauge Railroad. The mapped railroad operated from 1876 to 1942 and used three-foot gauge track.</p>
+    <div class="map-stack" role="region" aria-label="Interactive map of the Nevada County Narrow Gauge Railroad" aria-describedby="map-summary">
+      <div id="now-map" class="map"></div>
+      <div id="then-shell" aria-label="Historical map side of the comparison"><div id="then-map" class="map"></div></div>
+    </div>
+
+    <div class="veil-label then" id="then-era-badge" aria-label="Then · USGS Smartsville 1895">
+      <span class="full" id="then-era-full" aria-hidden="true">Then · USGS Smartsville 1895</span>
+      <span class="compact" aria-hidden="true">Then · <span id="then-era-year">1895</span></span>
+    </div>
+    <div class="veil-label now"><span class="full">Now · satellite</span><span class="compact">Now</span></div>
+
+    <div class="compare-control" aria-label="Historical and modern map comparison">
+      <input id="compare" type="range" min="0" max="100" value="42" tabindex="-1" aria-hidden="true">
+      <div class="compare-handle" aria-hidden="true"></div>
+    </div>
+
+    <header class="brand">
+      <p class="eyebrow">Colfax → Grass Valley → Nevada City</p>
+      <h1>The Narrow Gauge, then &amp; now.</h1>
+      <p class="lede">Trace the Nevada County Narrow Gauge Railroad across the modern Sierra foothills. Drag the veil to compare terrain, explore stations and spurs, or travel the route stop by stop.</p>
+      <p class="mobile-facts"><span data-route-miles>—</span> mapped miles · 1876–1942 · 3 ft gauge</p>
+      <div class="actions">
+        <button class="button primary" id="start-tour" type="button">Start route tour</button>
+        <button class="button" id="fit-route" type="button">See the full route</button>
+        <a class="button" href="../">Main website</a>
+      </div>
+    </header>
+
+    <aside class="panel" id="map-controls" aria-label="Map layers and display options">
+      <div class="panel-header">
+        <h2>Map layers</h2>
+        <button class="panel-toggle" id="panel-toggle" type="button" aria-expanded="true" aria-controls="panel-content" aria-keyshortcuts="L">
+          <span class="panel-toggle-icon" aria-hidden="true">×</span>
+          <span class="panel-toggle-label">Hide</span>
+        </button>
+      </div>
+      <div id="panel-content">
+      <div class="layer-list">
+        <label class="layer-row">
+          <input type="checkbox" data-layer="route" aria-label="Show rail alignment" checked>
+          <span class="layer-title">Rail alignment</span>
+          <span class="layer-count">63</span>
+        </label>
+        <label class="layer-row">
+          <input type="checkbox" data-layer="places" aria-label="Show stations and sites" checked>
+          <span class="layer-title">Stations &amp; sites</span>
+          <span class="layer-count">75</span>
+        </label>
+        <label class="layer-row">
+          <input type="checkbox" data-layer="historicLandmarks" aria-label="Show county historical landmarks" checked>
+          <span class="layer-title">County landmarks</span>
+          <span class="layer-count">146</span>
+        </label>
+        <label class="layer-row">
+          <input type="checkbox" data-layer="landmarks" aria-label="Show modern landmarks" checked>
+          <span class="layer-title">Modern landmarks</span>
+          <span class="layer-count" id="modern-landmark-count">—</span>
+        </label>
+        <label class="layer-row">
+          <input type="checkbox" data-layer="mines" aria-label="Show mines and adits">
+          <span class="layer-title">Mines &amp; adits</span>
+          <span class="layer-count">375</span>
+        </label>
+        <label class="layer-row">
+          <input type="checkbox" data-layer="parcels" aria-label="Show right-of-way parcels">
+          <span class="layer-title">ROW parcels</span>
+          <span class="layer-count">3</span>
+        </label>
+      </div>
+      <div class="route-key" aria-label="Andrew Brandon route color key">
+        <span><i class="mainline"></i>Mainline</span>
+        <span><i class="sidings"></i>Sidings &amp; spurs</span>
+        <span><i class="standard"></i>Standard gauge</span>
+      </div>
+
+      <div class="divider"></div>
+      <h2>View</h2>
+      <div class="map-era" role="status" aria-live="polite" aria-atomic="true">
+        <span>Historical basemap shown</span>
+        <strong id="map-era-title">USGS Smartsville · 1895</strong>
+        <small id="map-era-detail">Sheet beneath the map center. Operating-era overview; the railroad is printed on the map.</small>
+      </div>
+      <div class="mode-grid">
+        <button class="button active" id="terrain" type="button" aria-pressed="true">3D terrain</button>
+        <button class="button" id="north" type="button">Reset north</button>
+      </div>
+      <p class="source-note">
+        Route reconstruction by Andrew Brandon / <a href="https://pacificng.com/template.php?page=roads/ca/ncng/routege.htm" target="_blank" rel="noreferrer">PacificNG</a>, based on 1912–1916 valuation maps and field research. Historical basemap: USGS Smartsville (1895) and Colfax (1902), with 1948–49 detail sheets at close zoom, via Esri. Mine symbols: USGS. Parcel data: Nevada County. Modern imagery: Esri.
+      </p>
+      </div>
+    </aside>
+
+    <div class="stats" aria-hidden="true">
+      <div class="stat"><strong id="route-miles">—</strong><span>mapped miles</span></div>
+      <div class="stat"><strong>1876–1942</strong><span>years operated</span></div>
+      <div class="stat"><strong>3 ft</strong><span>track gauge</span></div>
+    </div>
+
+    <section class="tour-card" id="tour-card" role="dialog" aria-labelledby="tour-title" aria-describedby="tour-description" tabindex="-1" hidden>
+      <button class="tour-close" id="tour-close" type="button" aria-label="Close route tour">×</button>
+      <div class="tour-content">
+        <div class="tour-media no-image" id="tour-media"></div>
+        <div class="tour-copy">
+          <p class="tour-kicker" id="tour-kicker">Route stop</p>
+          <h2 id="tour-title"></h2>
+          <p id="tour-description"></p>
+          <a class="tour-source" id="tour-source" target="_blank" rel="noreferrer" hidden>View photograph source ↗</a>
+        </div>
+      </div>
+      <div class="tour-controls">
+        <span class="tour-progress" id="tour-progress"></span>
+        <span class="tour-hint">← → to navigate</span>
+        <button class="button" id="tour-prev" type="button">Previous</button>
+        <button class="button primary" id="tour-next" type="button">Next stop</button>
+      </div>
+    </section>
+
+    <div class="status" id="status" role="status" aria-live="polite">Loading historical geography…</div>
+    <div id="error" role="alert" hidden></div>
+  </main>
+
+  <script src="bootstrap.min.js?v=6f738f51e5a83b0e"></script>
+  <script src="https://unpkg.com/maplibre-gl@5.6.2/dist/maplibre-gl.js"
+    onerror="window.__mapBootstrapFail('MapLibre could not be downloaded from the CDN. Check your network or content blocker, then reload.')"></script>
+  <script src="app.min.js?v=d5bf2bbdf8388298"></script>
+</body>
+</html>

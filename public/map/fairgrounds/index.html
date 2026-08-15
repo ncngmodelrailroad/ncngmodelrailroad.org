@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="refresh" content="0; url=../?mode=fairgrounds">
+  <title>NCNGRR Fairgrounds Map</title>
+</head>
+<body>
+  <p>Opening the <a href="../?mode=fairgrounds">NCNGRR Fairgrounds map</a>…</p>
+  <script>
+    const target = new URL("../", location.href);
+    new URLSearchParams(location.search).forEach((value, key) => target.searchParams.append(key, value));
+    target.searchParams.set("mode", "fairgrounds");
+    target.hash = location.hash;
+    location.replace(target);
+  </script>
+</body>
+</html>

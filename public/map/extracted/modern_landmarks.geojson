@@ -1,0 +1,35 @@
+{
+  "type": "FeatureCollection",
+  "source": "Official published addresses, geocoded with Nevada County PARCEL_ADDRESS_PRO_LOC",
+  "caveat": "Coordinates are county parcel locator points rather than surveyed building entrances.",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Nevada County Fairgrounds",
+        "subtitle": "NCNGRR Historical Model Railroad",
+        "address": "11228 McCourtney Road, Grass Valley, CA 95949",
+        "kind": "model_railroad",
+        "url": "https://ncngmodelrailroad.org/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-121.077211183903, 39.207254257094]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "NCNGRR Museum",
+        "subtitle": "Current Nevada County Narrow Gauge Railroad Museum",
+        "address": "5 Kidder Court, Nevada City, CA 95959",
+        "kind": "museum",
+        "url": "https://ncngrrmuseum.org/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-121.018253154462, 39.249595411159]
+      }
+    }
+  ]
+}

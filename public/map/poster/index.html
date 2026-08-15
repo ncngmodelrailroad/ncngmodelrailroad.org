@@ -1,0 +1,306 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Explore the Nevada County Narrow Gauge Railroad Map</title>
+  <meta name="description" content="A printable poster linking to the interactive Nevada County Narrow Gauge Railroad map.">
+  <style>
+    :root {
+      --ink: #17211c;
+      --cream: #f8f1df;
+      --paper: #fffdf7;
+      --gold: #d99a2b;
+      --red: #8a1f17;
+      --green: #294c3b;
+    }
+
+    * { box-sizing: border-box; }
+
+    html {
+      background: #d7d5cf;
+      color: var(--ink);
+      font-family: "Avenir Next", Avenir, "Segoe UI", system-ui, sans-serif;
+    }
+
+    body {
+      width: 8.5in;
+      min-height: 11in;
+      margin: 24px auto;
+      background: var(--paper);
+      box-shadow: 0 10px 40px rgba(0, 0, 0, .2);
+    }
+
+    main {
+      position: relative;
+      display: flex;
+      min-height: 11in;
+      flex-direction: column;
+      align-items: center;
+      overflow: hidden;
+      padding: .48in .58in .4in;
+      text-align: center;
+    }
+
+    main::before,
+    main::after {
+      position: absolute;
+      z-index: 0;
+      width: 2.3in;
+      height: 2.3in;
+      border: 1px solid rgba(41, 76, 59, .14);
+      border-radius: 50%;
+      content: "";
+    }
+
+    main::before { top: -.9in; left: -.8in; }
+    main::after { right: -.8in; bottom: -.9in; }
+
+    header,
+    .qr-section,
+    .features,
+    footer {
+      position: relative;
+      z-index: 1;
+    }
+
+    .logo {
+      width: 4.95in;
+      max-height: .72in;
+      object-fit: contain;
+    }
+
+    .eyebrow {
+      margin: .2in 0 .06in;
+      color: var(--red);
+      font-size: 11pt;
+      font-weight: 800;
+      letter-spacing: .17em;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      margin: 0;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 33pt;
+      font-weight: 600;
+      line-height: 1.02;
+      letter-spacing: -.025em;
+    }
+
+    .intro {
+      max-width: 6.5in;
+      margin: .12in auto .18in;
+      color: #4e5a53;
+      font-size: 14pt;
+      line-height: 1.4;
+    }
+
+    .route {
+      display: block;
+      width: 6.4in;
+      height: .47in;
+      margin: 0 auto .08in;
+    }
+
+    .qr-section {
+      display: grid;
+      width: 100%;
+      grid-template-columns: 3.7in 1fr;
+      align-items: center;
+      gap: .36in;
+      padding: .24in .3in;
+      border: 2px solid var(--green);
+      border-radius: 22px;
+      background: var(--cream);
+    }
+
+    .qr-frame {
+      display: grid;
+      width: 3.55in;
+      height: 3.55in;
+      place-items: center;
+      border: 10px solid #fff;
+      border-radius: 18px;
+      background: #fff;
+      box-shadow: 0 8px 22px rgba(23, 33, 28, .12);
+    }
+
+    .qr-frame img {
+      display: block;
+      width: 100%;
+      height: 100%;
+    }
+
+    .scan-copy {
+      text-align: left;
+    }
+
+    .scan-copy strong {
+      display: block;
+      color: var(--red);
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 26pt;
+      font-weight: 600;
+      line-height: 1.05;
+    }
+
+    .scan-copy p {
+      margin: .14in 0 0;
+      font-size: 13pt;
+      line-height: 1.4;
+    }
+
+    .features {
+      display: grid;
+      width: 100%;
+      grid-template-columns: repeat(3, 1fr);
+      gap: .14in;
+      margin: .2in 0 .16in;
+    }
+
+    .feature {
+      padding: .14in .12in;
+      border-top: 4px solid var(--gold);
+      background: #f4f0e6;
+      font-size: 10.5pt;
+      line-height: 1.25;
+    }
+
+    .feature strong {
+      display: block;
+      margin-bottom: 3px;
+      color: var(--green);
+      font-size: 12pt;
+    }
+
+    footer {
+      width: 100%;
+      margin-top: auto;
+      padding-top: .13in;
+      border-top: 1px solid rgba(23, 33, 28, .25);
+    }
+
+    .url {
+      margin: 0;
+      color: var(--red);
+      font-size: 18pt;
+      font-weight: 800;
+      letter-spacing: .01em;
+    }
+
+    .footer-note {
+      margin: .06in 0 0;
+      color: #5a645f;
+      font-size: 9.5pt;
+    }
+
+    .print-button {
+      position: fixed;
+      top: 16px;
+      right: 16px;
+      z-index: 5;
+      padding: 10px 16px;
+      border: 0;
+      border-radius: 999px;
+      background: var(--red);
+      color: #fff;
+      font: 700 14px/1 system-ui, sans-serif;
+      cursor: pointer;
+    }
+
+    @page {
+      size: letter portrait;
+      margin: 0;
+    }
+
+    @media print {
+      html,
+      body {
+        width: 8.5in;
+        height: 11in;
+        margin: 0;
+        background: #fff;
+        box-shadow: none;
+        print-color-adjust: exact;
+        -webkit-print-color-adjust: exact;
+      }
+
+      .print-button { display: none; }
+    }
+
+    @media screen and (max-width: 850px) {
+      body {
+        width: 100%;
+        min-height: 100vh;
+        margin: 0;
+      }
+
+      main {
+        min-height: 100vh;
+        padding: 32px 20px;
+      }
+
+      .qr-section {
+        grid-template-columns: 1fr;
+      }
+
+      .qr-frame {
+        width: min(78vw, 3.55in);
+        height: min(78vw, 3.55in);
+        margin: auto;
+      }
+
+      .scan-copy { text-align: center; }
+      .features { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <button class="print-button" type="button" onclick="window.print()">Print this poster</button>
+  <main>
+    <header>
+      <img class="logo" src="../../images/hero-logo.png" alt="Nevada County Narrow Gauge Historical Model Railroad">
+      <p class="eyebrow">Colfax · Grass Valley · Nevada City</p>
+      <h1>See the Narrow Gauge<br>then &amp; now.</h1>
+      <p class="intro">Explore the historic railroad across modern terrain, compare old and new maps, and travel the route stop by stop.</p>
+      <svg class="route" viewBox="0 0 800 58" role="img" aria-label="Stylized railroad route from Colfax through Grass Valley to Nevada City">
+        <path d="M35 42 C135 43 152 14 250 24 S390 50 475 27 S640 14 765 31" fill="none" stroke="#294c3b" stroke-width="7" stroke-linecap="round"/>
+        <path d="M35 42 C135 43 152 14 250 24 S390 50 475 27 S640 14 765 31" fill="none" stroke="#d99a2b" stroke-width="2" stroke-dasharray="4 10" stroke-linecap="round"/>
+        <g fill="#fffdf7" stroke="#8a1f17" stroke-width="4">
+          <circle cx="35" cy="42" r="8"/>
+          <circle cx="475" cy="27" r="8"/>
+          <circle cx="765" cy="31" r="8"/>
+        </g>
+        <g fill="#17211c" font-family="system-ui, sans-serif" font-size="13" font-weight="700">
+          <text x="24" y="18">COLFAX</text>
+          <text x="423" y="56">GRASS VALLEY</text>
+          <text x="684" y="15">NEVADA CITY</text>
+        </g>
+      </svg>
+    </header>
+
+    <section class="qr-section" aria-labelledby="scan-heading">
+      <div class="qr-frame">
+        <img src="qr.svg" alt="QR code for ncngmodelrailroad.org/map/">
+      </div>
+      <div class="scan-copy">
+        <strong id="scan-heading">Scan to explore</strong>
+        <p>Drag the map’s veil between historical USGS sheets and today’s satellite imagery.</p>
+        <p>No app or sign-in required.</p>
+      </div>
+    </section>
+
+    <section class="features" aria-label="Map features">
+      <div class="feature"><strong>Follow the route</strong>Tour stations, bridges, yards, and historic sites.</div>
+      <div class="feature"><strong>Compare eras</strong>Slide between operating-era maps and the landscape today.</div>
+      <div class="feature"><strong>Dig deeper</strong>Explore landmarks, mines, terrain, and right-of-way clues.</div>
+    </section>
+
+    <footer>
+      <p class="url">ncngmodelrailroad.org/map/</p>
+      <p class="footer-note">Nevada County Narrow Gauge Historical Model Railroad · Nevada County Fairgrounds</p>
+    </footer>
+  </main>
+</body>
+</html>

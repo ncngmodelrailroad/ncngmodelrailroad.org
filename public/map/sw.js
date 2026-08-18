@@ -1,13 +1,13 @@
 const CACHE_PREFIX = "ncngrr-";
-const CACHE_VERSION = `${CACHE_PREFIX}v4`;
+const CACHE_VERSION = `${CACHE_PREFIX}v5`;
 const SHELL_ASSETS = Object.freeze([
-  "./styles.min.css?v=dfea861d31092ff4",
+  "./styles.min.css?v=2154a59265f8206c",
   "./bootstrap.min.js?v=6f738f51e5a83b0e",
-  "./app.min.js?v=217c04234551893a",
+  "./app.min.js?v=5c667d9c0241ee9e",
 ]);
 const VENDOR_ASSETS = Object.freeze([
-  "https://unpkg.com/maplibre-gl@5.6.2/dist/maplibre-gl.css",
-  "https://unpkg.com/maplibre-gl@5.6.2/dist/maplibre-gl.js",
+  "./vendor/maplibre-gl/5.6.2/maplibre-gl.css",
+  "./vendor/maplibre-gl/5.6.2/maplibre-gl.js",
 ]);
 const SHELL_REVISION = SHELL_ASSETS
   .map(asset => new URL(asset, self.location.href).searchParams.get("v"))
@@ -20,8 +20,9 @@ const CURRENT_CACHES = new Set([SHELL_CACHE, DATA_CACHE, VENDOR_CACHE, TILE_CACH
 const ASSET_MANIFEST_URL = new URL("./extracted/asset-manifest.json", self.location.href).href;
 const INDEX_URL = new URL("./index.html", self.location.href).href;
 const SHELL_ASSET_URLS = new Set(SHELL_ASSETS.map(asset => new URL(asset, self.location.href).href));
+const VENDOR_ASSET_URLS = new Set(VENDOR_ASSETS.map(asset => new URL(asset, self.location.href).href));
 const CORE_DATA_KEYS = Object.freeze(["route", "reference", "landmarks", "historicLandmarks"]);
-const VENDOR_CACHE_LIMIT = 12;
+const VENDOR_CACHE_LIMIT = 4;
 const TILE_CACHE_LIMIT = 300;
 
 const cacheableResponse = response => response.ok || response.type === "opaque";
@@ -76,7 +77,7 @@ self.addEventListener("install", event => {
           await precacheCoreData(cache);
         }),
       caches.open(VENDOR_CACHE)
-        .then(cache => Promise.all(VENDOR_ASSETS.map(asset => cache.add(asset).catch(() => undefined)))),
+        .then(cache => cache.addAll(VENDOR_ASSETS)),
     ])
       .then(() => self.skipWaiting())
   );
@@ -126,13 +127,13 @@ self.addEventListener("fetch", event => {
     return;
   }
 
-  if (url.origin === location.origin && /\.(?:css|js)$/i.test(url.pathname)) {
-    event.respondWith(fetch(request).catch(() => caches.match(request)));
+  if (VENDOR_ASSET_URLS.has(request.url)) {
+    event.respondWith(cacheFirst(request, VENDOR_CACHE, VENDOR_CACHE_LIMIT));
     return;
   }
 
-  if (url.hostname === "unpkg.com") {
-    event.respondWith(cacheFirst(request, VENDOR_CACHE, VENDOR_CACHE_LIMIT));
+  if (url.origin === location.origin && /\.(?:css|js)$/i.test(url.pathname)) {
+    event.respondWith(fetch(request).catch(() => caches.match(request)));
     return;
   }
 

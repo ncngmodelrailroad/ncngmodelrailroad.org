@@ -10,7 +10,7 @@
   <link rel="icon" href="data:,">
   <link rel="stylesheet" href="vendor/maplibre-gl/5.6.2/maplibre-gl.css"
     integrity="sha256-Q8HYhrX98KrE5xNb1vhLgj2fSCg6ZIASZl+b5SwBOJ8=" crossorigin="anonymous">
-  <link rel="stylesheet" href="styles.min.css?v=2154a59265f8206c">
+  <link rel="stylesheet" href="styles.min.css?v=a63eb1aea0e2e024">
 </head>
 <body>
   <a class="skip-link" href="#panel-toggle">Skip to map controls</a>
@@ -54,8 +54,8 @@
         <a class="button" href="../">Main website</a>
       </div>
       <button class="brand-toggle" id="brand-toggle" type="button" aria-expanded="true" aria-label="Minimize introduction">
-        <span class="brand-toggle-icon" aria-hidden="true">−</span>
-        <span class="brand-toggle-label">Minimize</span>
+        <span class="brand-toggle-icon disclosure-icon" aria-hidden="true">−</span>
+        <span class="brand-toggle-label disclosure-label">Minimize</span>
       </button>
     </header>
 
@@ -88,71 +88,71 @@
       <div class="panel-header">
         <h2>Map layers</h2>
         <button class="panel-toggle" id="panel-toggle" type="button" aria-expanded="true" aria-controls="panel-content" aria-keyshortcuts="L">
-          <span class="panel-toggle-icon" aria-hidden="true">−</span>
-          <span class="panel-toggle-label">Hide</span>
+          <span class="panel-toggle-icon disclosure-icon" aria-hidden="true">−</span>
+          <span class="panel-toggle-label disclosure-label">Hide</span>
         </button>
       </div>
       <div id="panel-content">
-      <div class="layer-list">
-        <label class="layer-row">
-          <input type="checkbox" data-layer="route" aria-label="Show rail alignment" checked>
-          <span class="layer-title">Rail alignment</span>
-          <span class="layer-count">63</span>
-        </label>
-        <label class="layer-row">
-          <input type="checkbox" data-layer="places" aria-label="Show stations and sites" checked>
-          <span class="layer-title">Stations &amp; sites</span>
-          <span class="layer-count">75</span>
-        </label>
-        <label class="layer-row">
-          <input type="checkbox" data-layer="historicLandmarks" aria-label="Show county historical landmarks" checked>
-          <span class="layer-title">County landmarks</span>
-          <span class="layer-count">146</span>
-        </label>
-        <label class="layer-row">
-          <input type="checkbox" data-layer="landmarks" aria-label="Show modern landmarks" checked>
-          <span class="layer-title">Modern landmarks</span>
-          <span class="layer-count" id="modern-landmark-count">—</span>
-        </label>
-        <label class="layer-row">
-          <input type="checkbox" data-layer="mines" aria-label="Show mines and adits">
-          <span class="layer-title">Mines &amp; adits</span>
-          <span class="layer-count">375</span>
-        </label>
-        <label class="layer-row">
-          <input type="checkbox" data-layer="parcels" aria-label="Show right-of-way parcels">
-          <span class="layer-title">ROW parcels</span>
-          <span class="layer-count">3</span>
-        </label>
-      </div>
-      <div class="route-key" aria-label="Andrew Brandon route color key">
-        <span><i class="mainline"></i>Mainline</span>
-        <span><i class="sidings"></i>Sidings &amp; spurs</span>
-        <span><i class="standard"></i>Standard gauge</span>
-      </div>
-
-      <div class="divider"></div>
-      <h2>View</h2>
-      <div class="map-era" role="status" aria-live="polite" aria-atomic="true">
-        <span>Historical basemap shown</span>
-        <strong id="map-era-title">USGS Smartsville · 1895</strong>
-        <small id="map-era-detail">Sheet beneath the map center. Operating-era overview; the railroad is printed on the map.</small>
-      </div>
-      <div class="mode-grid">
-        <button class="button active" id="terrain" type="button" aria-pressed="true">3D terrain</button>
-        <button class="button" id="north" type="button">Reset north</button>
-      </div>
-      <details class="share-download">
-        <summary>Share &amp; download</summary>
-        <div class="share-download-menu">
-          <button class="button" id="share-view" type="button">Share current view</button>
-          <a href="/map/poster/">QR poster</a>
-          <a href="/map/ncngrr-interactive-map-poster.pdf" download>Print-ready PDF</a>
+        <div class="layer-list">
+          <label class="layer-row">
+            <input type="checkbox" data-layer="route" aria-label="Show rail alignment" checked>
+            <span class="layer-title">Rail alignment</span>
+            <span class="layer-count">63</span>
+          </label>
+          <label class="layer-row">
+            <input type="checkbox" data-layer="places" aria-label="Show stations and sites" checked>
+            <span class="layer-title">Stations &amp; sites</span>
+            <span class="layer-count">75</span>
+          </label>
+          <label class="layer-row">
+            <input type="checkbox" data-layer="historicLandmarks" aria-label="Show county historical landmarks" checked>
+            <span class="layer-title">County landmarks</span>
+            <span class="layer-count">146</span>
+          </label>
+          <label class="layer-row">
+            <input type="checkbox" data-layer="landmarks" aria-label="Show modern landmarks" checked>
+            <span class="layer-title">Modern landmarks</span>
+            <span class="layer-count" id="modern-landmark-count">—</span>
+          </label>
+          <label class="layer-row">
+            <input type="checkbox" data-layer="mines" aria-label="Show mines and adits">
+            <span class="layer-title">Mines &amp; adits</span>
+            <span class="layer-count">375</span>
+          </label>
+          <label class="layer-row">
+            <input type="checkbox" data-layer="parcels" aria-label="Show right-of-way parcels">
+            <span class="layer-title">ROW parcels</span>
+            <span class="layer-count">3</span>
+          </label>
         </div>
-      </details>
-      <p class="source-note">
-        Route reconstruction by Andrew Brandon / <a href="https://pacificng.com/template.php?page=roads/ca/ncng/routege.htm" target="_blank" rel="noreferrer">PacificNG</a>, based on 1912–1916 valuation maps and field research. Historical basemap: USGS Smartsville (1895) and Colfax (1902), with 1948–49 detail sheets at close zoom, via Esri. Mine symbols: USGS. Parcel data: Nevada County. Modern imagery: Esri.
-      </p>
+        <div class="route-key" aria-label="Andrew Brandon route color key">
+          <span><i class="mainline"></i>Mainline</span>
+          <span><i class="sidings"></i>Sidings &amp; spurs</span>
+          <span><i class="standard"></i>Standard gauge</span>
+        </div>
+
+        <div class="divider"></div>
+        <h2>View</h2>
+        <div class="map-era" role="status" aria-live="polite" aria-atomic="true">
+          <span>Historical basemap shown</span>
+          <strong id="map-era-title">USGS Smartsville · 1895</strong>
+          <small id="map-era-detail">Sheet beneath the map center. Operating-era overview; the railroad is printed on the map.</small>
+        </div>
+        <div class="mode-grid">
+          <button class="button active" id="terrain" type="button" aria-pressed="true">3D terrain</button>
+          <button class="button" id="north" type="button">Reset north</button>
+        </div>
+        <details class="share-download">
+          <summary>Share &amp; download</summary>
+          <div class="share-download-menu">
+            <button class="button" id="share-view" type="button">Share current view</button>
+            <a href="/map/poster/">QR poster</a>
+            <a href="/map/ncngrr-interactive-map-poster.pdf" download>Print-ready PDF</a>
+          </div>
+        </details>
+        <p class="source-note">
+          Route reconstruction by Andrew Brandon / <a href="https://pacificng.com/template.php?page=roads/ca/ncng/routege.htm" target="_blank" rel="noreferrer">PacificNG</a>, based on 1912–1916 valuation maps and field research. Historical basemap: USGS Smartsville (1895) and Colfax (1902), with 1948–49 detail sheets at close zoom, via Esri. Mine symbols: USGS. Parcel data: Nevada County. Modern imagery: Esri.
+        </p>
       </div>
     </aside>
 
@@ -190,6 +190,6 @@
   <script src="vendor/maplibre-gl/5.6.2/maplibre-gl.js"
     integrity="sha256-FSX5cSI9gfFp8EnxzlAIPm8WQ6prDqBxZlOlUNLVf8I=" crossorigin="anonymous"
     onerror="window.__mapBootstrapFail('MapLibre could not be loaded from this site. Reload or contact the site administrator.')"></script>
-  <script src="app.min.js?v=5c667d9c0241ee9e"></script>
+  <script src="app.min.js?v=3c65daf56fa87560"></script>
 </body>
 </html>

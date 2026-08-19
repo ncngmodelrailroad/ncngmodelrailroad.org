@@ -10,7 +10,7 @@
   <link rel="icon" href="data:,">
   <link rel="stylesheet" href="vendor/maplibre-gl/5.6.2/maplibre-gl.css"
     integrity="sha256-Q8HYhrX98KrE5xNb1vhLgj2fSCg6ZIASZl+b5SwBOJ8=" crossorigin="anonymous">
-  <link rel="stylesheet" href="styles.min.css?v=a63eb1aea0e2e024">
+  <link rel="stylesheet" href="styles.min.css?v=214166b4dc6c3ef1">
 </head>
 <body>
   <a class="skip-link" href="#panel-toggle">Skip to map controls</a>
@@ -34,24 +34,35 @@
 
     <header class="brand">
       <p class="eyebrow">Colfax → Grass Valley → Nevada City</p>
-      <h1>The Narrow Gauge, then &amp; now.</h1>
+      <h1>
+        <span class="title-main">The Narrow Gauge</span>
+        <span class="title-sub">Then &amp; now.</span>
+      </h1>
       <p class="lede">Trace the Nevada County Narrow Gauge Railroad across the modern Sierra foothills. Drag the veil to compare terrain, explore stations and spurs, or travel the route stop by stop.</p>
       <p class="mobile-facts"><span data-route-miles>—</span> mapped miles · 1876–1942 · 3 ft gauge</p>
       <div class="actions">
-        <label class="tour-picker">
-          <span class="visually-hidden">Choose a map tour</span>
-          <select id="tour-select" aria-label="Choose a map tour">
-            <option value="route">Full route</option>
-            <option value="bridges">Bridges</option>
-            <option value="depots">Depots</option>
-            <option value="mines">Mines</option>
-            <option value="grass-valley">Grass Valley</option>
-          </select>
-        </label>
-        <button class="button primary" id="start-tour" type="button">Start tour</button>
-        <button class="button search-open" id="search-open" type="button" aria-haspopup="dialog" aria-controls="map-search">Search map</button>
-        <button class="button" id="fit-route" type="button">See the full route</button>
-        <a class="button" href="../">Main website</a>
+        <div class="quick-actions">
+          <button class="button search-open" id="search-open" type="button" aria-haspopup="dialog" aria-controls="map-search">Search the map</button>
+          <button class="button" id="fit-route" type="button">Fit full route</button>
+          <a class="button button-subtle" href="../">Website</a>
+        </div>
+        <div class="tour-launcher">
+          <div class="tour-launcher-copy">
+            <strong>Guided tour</strong>
+            <span>Travel stop by stop</span>
+          </div>
+          <label class="tour-picker">
+            <span class="visually-hidden">Choose a map tour</span>
+            <select id="tour-select" aria-label="Choose a map tour">
+              <option value="route">Full route</option>
+              <option value="bridges">Bridges</option>
+              <option value="depots">Depots</option>
+              <option value="mines">Mines</option>
+              <option value="grass-valley">Grass Valley</option>
+            </select>
+          </label>
+          <button class="button primary" id="start-tour" type="button">Start</button>
+        </div>
       </div>
       <button class="brand-toggle" id="brand-toggle" type="button" aria-expanded="true" aria-label="Minimize introduction">
         <span class="brand-toggle-icon disclosure-icon" aria-hidden="true">−</span>
@@ -190,6 +201,6 @@
   <script src="vendor/maplibre-gl/5.6.2/maplibre-gl.js"
     integrity="sha256-FSX5cSI9gfFp8EnxzlAIPm8WQ6prDqBxZlOlUNLVf8I=" crossorigin="anonymous"
     onerror="window.__mapBootstrapFail('MapLibre could not be loaded from this site. Reload or contact the site administrator.')"></script>
-  <script src="app.min.js?v=3c65daf56fa87560"></script>
+  <script src="app.min.js?v=bdf51dfa09ab3388"></script>
 </body>
 </html>

@@ -1,9 +1,9 @@
 const CACHE_PREFIX = "ncngrr-";
 const CACHE_VERSION = `${CACHE_PREFIX}v5`;
 const SHELL_ASSETS = Object.freeze([
-  "./styles.min.css?v=a63eb1aea0e2e024",
+  "./styles.min.css?v=214166b4dc6c3ef1",
   "./bootstrap.min.js?v=6f738f51e5a83b0e",
-  "./app.min.js?v=3c65daf56fa87560",
+  "./app.min.js?v=bdf51dfa09ab3388",
 ]);
 const VENDOR_ASSETS = Object.freeze([
   "./vendor/maplibre-gl/5.6.2/maplibre-gl.css",

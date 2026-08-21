@@ -1,3 +1,7 @@
+// Single source for the repo identity. Deriving the URLs below from one slug
+// keeps them from diverging if the repo is ever renamed or moved again.
+const repoSlug = "ncngmodelrailroad/ncngmodelrailroad.org";
+
 export const organization = {
   name: "N.C.N.G. Historical Model Railroad",
   fullName: "Nevada County Narrow Gauge Historical Model Railroad",
@@ -26,6 +30,11 @@ export const organization = {
     phone: "(916) 871-6341",
     phoneHref: "tel:+19168716341",
     email: "ncngrr@hotmail.com",
+  },
+  repo: {
+    url: `https://github.com/${repoSlug}`,
+    // Pages CMS resolves the repo from this path, so it tracks the repo slug.
+    cmsUrl: `https://app.pagescms.org/${repoSlug}`,
   },
   analytics: {
     // Cloudflare Web Analytics beacon token (cookie-free, no consent banner)

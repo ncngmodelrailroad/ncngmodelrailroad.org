@@ -25,7 +25,7 @@ git --version    # should print git version 2.x.x
 ### 1. Clone the repository
 
 ```sh
-git clone https://github.com/djdefi/ncngmodelrailroad.org.git
+git clone https://github.com/ncngmodelrailroad/ncngmodelrailroad.org.git
 cd ncngmodelrailroad.org
 ```
 

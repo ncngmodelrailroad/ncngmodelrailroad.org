@@ -1,7 +1,7 @@
 blank_issues_enabled: true
 contact_links:
   - name: "✏️ Edit Website Content"
-    url: https://app.pagescms.org/djdefi/ncngmodelrailroad.org
+    url: https://app.pagescms.org/ncngmodelrailroad/ncngmodelrailroad.org
     about: "Use Pages CMS to add events, update board members, add gallery photos, and more. Log in with your GitHub account."
   - name: "📧 Contact Us"
     url: https://ncngmodelrailroad.org/contact

@@ -1,6 +1,6 @@
 # N.C.N.G. Historical Model Railroad — Website
 
-[![Deploy to GitHub Pages](https://github.com/djdefi/ncngmodelrailroad.org/actions/workflows/deploy.yml/badge.svg)](https://github.com/djdefi/ncngmodelrailroad.org/actions/workflows/deploy.yml)
+[![Deploy to GitHub Pages](https://github.com/ncngmodelrailroad/ncngmodelrailroad.org/actions/workflows/deploy.yml/badge.svg)](https://github.com/ncngmodelrailroad/ncngmodelrailroad.org/actions/workflows/deploy.yml)
 
 The official website for the **Nevada County Narrow Gauge Historical Model Railroad**, an all-volunteer organization preserving the legacy of the N.C.N.G. Railroad (1876–1942) through a detailed On3 scale model railroad display at the Nevada County Fairgrounds in Grass Valley, California.
 
@@ -10,7 +10,7 @@ The official website for the **Nevada County Narrow Gauge Historical Model Railr
 
 ## Want to update the website?
 
-**You don't need to know how to code.** The easiest way to edit content is through [Pages CMS](https://app.pagescms.org/djdefi/ncngmodelrailroad.org) — a simple web editor for events, board members, gallery photos, and more. Just log in with your GitHub account.
+**You don't need to know how to code.** The easiest way to edit content is through [Pages CMS](https://app.pagescms.org/ncngmodelrailroad/ncngmodelrailroad.org) — a simple web editor for events, board members, gallery photos, and more. Just log in with your GitHub account.
 
 > **First time?** You'll need collaborator access to the repository. See the [Contributing Guide](CONTRIBUTING.md#getting-access) to request it.
 

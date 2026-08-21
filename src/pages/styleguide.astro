@@ -3,6 +3,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import Button from '../components/Button.astro';
 import SectionHeader from '../components/SectionHeader.astro';
 import PhotoCard from '../components/PhotoCard.astro';
+import { organization } from '../config/organization';
 
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 
@@ -54,7 +55,7 @@ const system = [
     />
 
     <p class="muted-note">
-      Documentation: <a href="https://github.com/djdefi/ncngmodelrailroad.org/blob/main/docs/design-system.md">docs/design-system.md</a>.
+      Documentation: <a href={`${organization.repo.url}/blob/main/docs/design-system.md`}>docs/design-system.md</a>.
       Colors below show light-mode values; switch your OS to dark to preview dark mode.
     </p>
 

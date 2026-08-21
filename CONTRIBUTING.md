@@ -11,7 +11,7 @@ To edit content on the website, you need **collaborator access** to the GitHub r
 1. Create a free [GitHub account](https://github.com/signup) if you don't have one
 2. Ask the webmaster or websitesite admin to add you as a collaborator
 3. Accept the invitation you receive from GitHub (check your email)
-4. You're all set — you can now use [Pages CMS](https://app.pagescms.org/djdefi/ncngmodelrailroad.org) or edit files directly on GitHub
+4. You're all set — you can now use [Pages CMS](https://app.pagescms.org/ncngmodelrailroad/ncngmodelrailroad.org) or edit files directly on GitHub
 
 ---
 
@@ -23,7 +23,7 @@ If you need to update events, board members, gallery photos, or train informatio
 
 The website uses [Pages CMS](https://pagescms.org), a free content editor built for GitHub.
 
-1. Go to [app.pagescms.org/djdefi/ncngmodelrailroad.org](https://app.pagescms.org/djdefi/ncngmodelrailroad.org)
+1. Go to [app.pagescms.org/ncngmodelrailroad/ncngmodelrailroad.org](https://app.pagescms.org/ncngmodelrailroad/ncngmodelrailroad.org)
 2. Click **Login with GitHub**
 3. Choose what to edit — Events, Board Members, Photo Gallery, or Engine Roster
 4. Make your changes using the simple form fields
@@ -33,7 +33,7 @@ The website uses [Pages CMS](https://pagescms.org), a free content editor built 
 
 You can also edit content files directly on GitHub:
 
-1. Go to [github.com/djdefi/ncngmodelrailroad.org](https://github.com/djdefi/ncngmodelrailroad.org)
+1. Go to [github.com/ncngmodelrailroad/ncngmodelrailroad.org](https://github.com/ncngmodelrailroad/ncngmodelrailroad.org)
 2. Navigate to the content folder for what you want to edit:
    - **Events:** `src/content/events/`
    - **Board members:** `src/content/board/`
@@ -45,7 +45,7 @@ You can also edit content files directly on GitHub:
 
 ### Can't find what you need?
 
-[Open an issue](https://github.com/djdefi/ncngmodelrailroad.org/issues/new/choose) describing what you'd like changed and someone will help.
+[Open an issue](https://github.com/ncngmodelrailroad/ncngmodelrailroad.org/issues/new/choose) describing what you'd like changed and someone will help.
 
 ---
 
@@ -97,5 +97,5 @@ Then go to GitHub and open a **Pull Request**. Describe what you changed and why
 
 ## Questions?
 
-- **Edit content:** Use [Pages CMS](https://app.pagescms.org/djdefi/ncngmodelrailroad.org) or [open an issue](https://github.com/djdefi/ncngmodelrailroad.org/issues)
+- **Edit content:** Use [Pages CMS](https://app.pagescms.org/ncngmodelrailroad/ncngmodelrailroad.org) or [open an issue](https://github.com/ncngmodelrailroad/ncngmodelrailroad.org/issues)
 - **Email:** info@ncngmodelrailroad.org

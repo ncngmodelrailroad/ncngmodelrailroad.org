@@ -269,14 +269,17 @@ h1, h2, h3, h4, h5, h6 {
   color: inherit;
 }
 
-/* Focus styles for accessibility */
+/* Focus styles for accessibility.
+   box-shadow is !important so the keyboard focus ring is never suppressed by
+   the dark-mode .shadow-sm override, which is itself !important and would
+   otherwise hide the ring on every shadowed control (e.g. Button links). */
 a:focus-visible,
 button:focus-visible,
 input:focus-visible,
 textarea:focus-visible,
 select:focus-visible {
   outline: none;
-  box-shadow: var(--focus-ring);
+  box-shadow: var(--focus-ring) !important;
 }
 
 /* Screen reader only utility */

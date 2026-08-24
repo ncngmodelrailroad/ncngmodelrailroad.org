@@ -96,7 +96,7 @@ Serves the `dist/` folder locally so you can verify the production build looks r
 
 **Styles** (`src/styles/global.css`) — Global CSS with Tailwind imports and custom theme:
 - Colors: Primary `#8A1F17`, Secondary `#8B5E34`, Accent `#2F5D46`, Gold `#B9821B` (defined as CSS variables; see the `@theme` and `:root` blocks)
-- Fonts: Archivo Black (headings), Montserrat (body)
+- Fonts: Archivo Black (headings), Libre Franklin (body, variable weight axis)
 - Button classes: `.btn-primary`, `.btn-outline`
 - See **[`docs/design-system.md`](design-system.md)** for the full token and component reference, and the live **`/styleguide`** page (noindex) which renders every token and component.
 

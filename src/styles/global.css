@@ -17,7 +17,7 @@
 
   /* Custom fonts */
   --font-display: 'Archivo Black', 'Archivo Black Fallback', Georgia, serif;
-  --font-body: 'Montserrat', 'Helvetica Neue', Arial, sans-serif;
+  --font-body: 'Libre Franklin Variable', 'Libre Franklin', 'Helvetica Neue', Arial, sans-serif;
 }
 
 /* Design system variables.
@@ -241,7 +241,7 @@
 
 /* Base Styles */
 body {
-  font-family: 'Montserrat', 'Helvetica Neue', Arial, sans-serif;
+  font-family: var(--font-body);
   background-color: var(--color-bg);
   background-image:
     radial-gradient(circle at top left, rgba(var(--color-gold-rgb), 0.10), transparent 30rem),

@@ -20,18 +20,20 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
   description={article.data.description}
 >
   <article class="py-16 md:py-20">
-    <div class="container max-w-3xl">
-      <a
-        href={`${base}/learn`}
-        class="inline-flex items-center gap-1 text-primary font-semibold hover:underline"
-        >&larr; Back to Learn</a
-      >
-      <h1 class="text-4xl md:text-5xl font-bold mt-4 mb-4">
-        {article.data.title}
-      </h1>
-      <p class="text-lg text-gray-600 mb-8">{article.data.description}</p>
-      <div class="prose max-w-none">
-        <Content />
+    <div class="container">
+      <div class="mx-auto max-w-[68ch]">
+        <a
+          href={`${base}/learn`}
+          class="inline-flex items-center gap-1 text-primary font-semibold hover:underline"
+          >&larr; Back to Learn</a
+        >
+        <h1 class="text-4xl md:text-5xl font-bold mt-4 mb-4 text-balance">
+          {article.data.title}
+        </h1>
+        <p class="text-lg text-gray-600 mb-8">{article.data.description}</p>
+        <div class="prose max-w-none">
+          <Content />
+        </div>
       </div>
     </div>
   </article>

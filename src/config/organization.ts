@@ -27,6 +27,11 @@ export const organization = {
     phoneHref: "tel:+19168716341",
     email: "ncngrr@hotmail.com",
   },
+  // Public profiles. Every entry is emitted as schema.org `sameAs`, so add only
+  // official accounts the organization controls.
+  social: {
+    facebook: "https://www.facebook.com/NCNGHistoricalModelRailroad",
+  },
   analytics: {
     // Cloudflare Web Analytics beacon token (cookie-free, no consent banner)
     // Get yours at: https://dash.cloudflare.com → Web Analytics → Add site

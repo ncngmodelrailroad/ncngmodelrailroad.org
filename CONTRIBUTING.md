@@ -87,7 +87,7 @@ Then go to GitHub and open a **Pull Request**. Describe what you changed and why
 
 ## Code conventions
 
-- **Icons**: Use [Iconify Solar](https://icon-sets.iconify.design/solar/) bold variants via `astro-icon`. No emoji in page content.
+- **Icons**: Use [Iconify Solar](https://icon-sets.iconify.design/solar/) bold variants via `astro-icon`. No emoji in page content. Solar carries no brand logos, so third-party marks (for example `simple-icons:facebook`) come from [Simple Icons](https://icon-sets.iconify.design/simple-icons/). Use Simple Icons only for brand marks.
 - **Images**: JPEG format, max 800px wide for gallery, keep under 200KB. Use `loading="lazy"` and `decoding="async"` on all images.
 - **Links**: Always use `` `${base}/path` `` for internal links. External links get `target="_blank" rel="noopener noreferrer"`.
 - **Styling**: Use Tailwind utility classes. Site colors are defined as CSS variables in `global.css`.

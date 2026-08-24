@@ -46,6 +46,7 @@ function footerEventDate(date: Date, endDate?: Date) {
   return start;
 }
 const siteUrl = `${Astro.site?.origin || 'https://ncngmodelrailroad.org'}${base}`;
+const socialProfiles = Object.values(organization.social);
 const canonicalUrl = new URL(Astro.url.pathname, Astro.site || 'https://ncngmodelrailroad.org');
 
 // Structured data for nonprofit organization (Schema.org)
@@ -68,6 +69,7 @@ const organizationSchema = {
   },
   "areaServed": "Nevada County, California",
   "nonprofitStatus": "Volunteer Organization",
+  "sameAs": socialProfiles,
   "telephone": organization.contact.phone,
   "email": organization.contact.email,
   "contactPoint": {
@@ -101,6 +103,7 @@ const localBusinessSchema = {
     "longitude": organization.location.geo.longitude
   },
   "hasMap": organization.location.mapsUrl,
+  "sameAs": socialProfiles,
   "openingHoursSpecification": {
     "@type": "OpeningHoursSpecification",
     "description": "Open during fairground events, regular work sessions, special open houses, and by arrangement"
@@ -299,6 +302,10 @@ const breadcrumbSchema = {
               <div class="flex items-center gap-2">
                 <Icon name="solar:letter-bold" class="w-5 h-5 text-gray-400 flex-shrink-0" />
                 <a href={`mailto:${organization.contact.email}`} class="hover:text-white transition-colors">{organization.contact.email}</a>
+              </div>
+              <div class="flex items-center gap-2">
+                <Icon name="simple-icons:facebook" class="w-5 h-5 text-gray-400 flex-shrink-0" />
+                <a href={organization.social.facebook} target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors">Follow us on Facebook</a>
               </div>
             </address>
           </div>

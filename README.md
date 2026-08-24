@@ -80,7 +80,7 @@ New here? Start with the guide that matches your comfort level:
 
 - **[Astro](https://astro.build/)** — Static site generator (zero JS shipped by default)
 - **[Tailwind CSS](https://tailwindcss.com/)** — Utility-first styling
-- **[Iconify Solar](https://icon-sets.iconify.design/solar/)** — Icon set via `astro-icon`
+- **[Iconify Solar](https://icon-sets.iconify.design/solar/)** — Icon set via `astro-icon`, with [Simple Icons](https://icon-sets.iconify.design/simple-icons/) for brand marks
 - **Deployed to** GitHub Pages (auto-deploys on push to `main`)
 
 ## License

@@ -16,9 +16,9 @@ Public website for an all-volunteer model railroad museum. Astro static site, Ta
 
 ## Deploy and branch protection
 
-- `main` is protected: changes need a pull request, a passing **Build check** (`.github/workflows/build-check.yml`, runs `npm ci` + `npm run build` on PRs), and one approval. Only repo admins (the owner) can bypass or self-merge.
+- `main` is protected: changes need a pull request and a passing **Build check** (`.github/workflows/build-check.yml`, runs `npm ci` + `npm run build` on PRs). This project is maintained by one person, so no review approval is required and the author can merge their own PR. Force pushes and branch deletion stay blocked.
 - Deployment (`.github/workflows/deploy.yml`) runs only on push to `main`. Both workflows pin actions to commit SHAs; Dependabot keeps them current.
-- An **Accessibility check** (`.github/workflows/a11y.yml`) runs an axe-core WCAG 2.1 AA audit over every page on PRs (`npm run a11y`). Treat a failure like a failing build.
+- An **Accessibility check** (`.github/workflows/a11y.yml`) runs an axe-core WCAG 2.1 AA audit over every page on PRs (`npm run a11y`). It is not a required status check, so it cannot block a merge on its own. Treat a failure like a failing build anyway.
 
 ## Merge gate
 

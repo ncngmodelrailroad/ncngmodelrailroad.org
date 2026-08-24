@@ -51,7 +51,7 @@ Each color has a matching `*-rgb` triplet (for `rgba()`) and a dark-mode value.
 | `--shadow-card` / `--shadow-soft` | layered | Resting and raised elevation. |
 | `--tracking-eyebrow` / `--tracking-kicker` | `0.12em` / `0.25em` | Label letter-spacing. |
 | `--focus-ring` | ring | Keyboard focus outline. |
-| `--font-display` / `--font-body` | Archivo Black / Montserrat | Headings / body. |
+| `--font-display` / `--font-body` | Archivo Black / Libre Franklin Variable | Headings / body. |
 
 ## Modes
 

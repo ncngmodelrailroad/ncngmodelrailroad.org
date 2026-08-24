@@ -81,7 +81,7 @@ sitemap (used by `/styleguide`).
 
 Defined in `global.css`, usable on any element:
 
-- **Layout:** `.container`, `.section`, `.section-alt`, `.section-shell`.
+- **Layout:** `.page-container`, `.section`, `.section-alt`, `.section-shell`.
 - **Buttons:** `.btn-primary`, `.btn-outline` (the `Button` component is preferred in markup).
 - **Cards:** `.card` + `.card-body`, `.clean-card`, `.hover-lift`.
 - **Labels:** `.eyebrow`, `.hero-kicker`, `.hero-label`, `.hero-copy`.
@@ -90,6 +90,15 @@ Defined in `global.css`, usable on any element:
 - **Decorative:** `.track-divider`, `.grain-overlay`, `.hero-vignette`, `.animate-kenburns`.
 - **Content:** `.prose` theming and styled `blockquote` for rich text (event bodies, Learn pages).
 - **Accessibility:** `.sr-only`, and a `--focus-ring` applied on `:focus-visible`.
+
+`.page-container` is the page width shell: 76rem max, centered, with a
+`clamp(1rem, 4vw, 2rem)` gutter. It is named `page-container` rather than
+`container` on purpose. Tailwind ships a `container` utility of its own with
+breakpoint max-widths up to 96rem, so sharing the name means one silently
+shadows the other. It also lives in `@layer components`, which sits before
+`utilities`, so you can narrow a shell with `max-w-4xl` and have it take effect.
+An unlayered rule would beat those utilities no matter what, which is how a
+batch of `max-w-*` and `px-*` classes came to be dead on this site.
 
 ## Conventions
 

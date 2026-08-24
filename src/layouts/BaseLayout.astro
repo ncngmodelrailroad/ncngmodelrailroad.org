@@ -46,7 +46,7 @@ function footerEventDate(date: Date, endDate?: Date) {
   return start;
 }
 const siteUrl = `${Astro.site?.origin || 'https://ncngmodelrailroad.org'}${base}`;
-const socialProfiles = Object.values(organization.social);
+const socialProfiles = Object.values(organization.social).filter(Boolean);
 const canonicalUrl = new URL(Astro.url.pathname, Astro.site || 'https://ncngmodelrailroad.org');
 
 // Structured data for nonprofit organization (Schema.org)

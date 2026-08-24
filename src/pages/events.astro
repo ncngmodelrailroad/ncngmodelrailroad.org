@@ -11,8 +11,9 @@ const events = await getCollection('events');
 const sortedEvents = events.sort((a, b) => 
   new Date(a.data.date).getTime() - new Date(b.data.date).getTime()
 );
-const upcomingEvents = sortedEvents.filter(e => isUpcomingEvent(e.data));
-const pastEvents = sortedEvents.filter(e => !isUpcomingEvent(e.data)).reverse();
+const now = new Date();
+const upcomingEvents = sortedEvents.filter(e => isUpcomingEvent(e.data, now));
+const pastEvents = sortedEvents.filter(e => !isUpcomingEvent(e.data, now)).reverse();
 
 const siteUrl = Astro.site?.origin || 'https://ncngmodelrailroad.org';
 

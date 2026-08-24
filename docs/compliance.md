@@ -66,5 +66,6 @@ General's resources.
   needed. Do not add a second analytics tool or any tracking cookies.
 - No accounts, no on-site data collection (contact buttons open the visitor's
   own email client), no on-site payment processing.
-- Branch protection on `main` with a required build check and review.
+- Branch protection on `main` with a required build check. Every change goes
+  through a pull request, and force pushes and branch deletion are blocked.
 - A privacy policy at [`/privacy`](https://ncngmodelrailroad.org/privacy).

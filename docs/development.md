@@ -77,7 +77,7 @@ Serves the `dist/` folder locally so you can verify the production build looks r
 | :--------- | :--- |
 | [Astro](https://astro.build/) | Static site generator — turns `.astro` files into HTML |
 | [Tailwind CSS](https://tailwindcss.com/) | Utility-first CSS framework for styling |
-| [astro-icon](https://github.com/natemoo-re/astro-icon) | Icon component using [Iconify Solar](https://icon-sets.iconify.design/solar/) set |
+| [astro-icon](https://github.com/natemoo-re/astro-icon) | Icon component using [Iconify Solar](https://icon-sets.iconify.design/solar/) set, plus [Simple Icons](https://icon-sets.iconify.design/simple-icons/) for brand marks |
 | GitHub Pages | Free static hosting, auto-deploys on push |
 
 ### Key concepts

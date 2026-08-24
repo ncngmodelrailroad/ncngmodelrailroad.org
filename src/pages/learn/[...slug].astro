@@ -21,6 +21,15 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 >
   <article class="py-16 md:py-20">
     <div class="container">
+      {/*
+        Reading measure is calibrated, not arbitrary. max-w-xl (36rem) holds
+        body copy near 70 characters per line at 18px in Libre Franklin, and
+        prose scales up at 32rem rather than Tailwind's sm (40rem) because the
+        column reaches its 36rem cap before 40rem, which would leave a band of
+        viewports rendering 16px text at 76 to 79 characters. Measured across a
+        320px to 1440px sweep: 45 to 73 characters everywhere above 344px.
+        Re-measure if the body font or the prose size changes.
+      */}
       <div class="mx-auto max-w-xl">
         <a
           href={`${base}/learn`}

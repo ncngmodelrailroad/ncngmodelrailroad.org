@@ -3,6 +3,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import Button from '../components/Button.astro';
 import { Icon } from 'astro-icon/components';
 import { getCollection, render } from 'astro:content';
+import { isUpcomingEvent } from '../utils/events';
 
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 
@@ -10,8 +11,8 @@ const events = await getCollection('events');
 const sortedEvents = events.sort((a, b) => 
   new Date(a.data.date).getTime() - new Date(b.data.date).getTime()
 );
-const upcomingEvents = sortedEvents.filter(e => new Date(e.data.date) >= new Date());
-const pastEvents = sortedEvents.filter(e => new Date(e.data.date) < new Date()).reverse();
+const upcomingEvents = sortedEvents.filter(e => isUpcomingEvent(e.data));
+const pastEvents = sortedEvents.filter(e => !isUpcomingEvent(e.data)).reverse();
 
 const siteUrl = Astro.site?.origin || 'https://ncngmodelrailroad.org';
 

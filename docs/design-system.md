@@ -100,6 +100,11 @@ shadows the other. It also lives in `@layer components`, which sits before
 An unlayered rule would beat those utilities no matter what, which is how a
 batch of `max-w-*` and `px-*` classes came to be dead on this site.
 
+Do not use `container` as a class. Tailwind still emits that utility into the
+built stylesheet, so an element carrying it picks up Tailwind's breakpoint
+widths instead of this shell. The rules are harmless only because nothing in
+the markup uses the class.
+
 ## Conventions
 
 - Reach for an existing token, component, or class before adding new CSS.

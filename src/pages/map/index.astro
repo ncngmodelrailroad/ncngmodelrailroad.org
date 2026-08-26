@@ -1,3 +1,7 @@
+---
+import { organization } from '../../config/organization';
+---
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -11,6 +15,11 @@
   <link rel="stylesheet" href="vendor/maplibre-gl/5.6.2/maplibre-gl.css"
     integrity="sha256-Q8HYhrX98KrE5xNb1vhLgj2fSCg6ZIASZl+b5SwBOJ8=" crossorigin="anonymous">
   <link rel="stylesheet" href="styles.min.css?v=e431a4e223d3fe54">
+  {organization.analytics?.cfBeaconToken && (
+    <script defer src="https://static.cloudflareinsights.com/beacon.min.js"
+      data-cf-beacon={`{"token":"${organization.analytics.cfBeaconToken}"}`}
+      is:inline></script>
+  )}
 </head>
 <body>
   <a class="skip-link" href="#panel-toggle">Skip to map controls</a>
@@ -197,10 +206,11 @@
     <div id="error" role="alert" hidden></div>
   </main>
 
-  <script src="bootstrap.min.js?v=6f738f51e5a83b0e"></script>
+  <script src="bootstrap.min.js?v=6f738f51e5a83b0e" is:inline></script>
   <script src="vendor/maplibre-gl/5.6.2/maplibre-gl.js"
     integrity="sha256-FSX5cSI9gfFp8EnxzlAIPm8WQ6prDqBxZlOlUNLVf8I=" crossorigin="anonymous"
-    onerror="window.__mapBootstrapFail('MapLibre could not be loaded from this site. Reload or contact the site administrator.')"></script>
-  <script src="app.min.js?v=083b1ca1cf59011b"></script>
+    onerror="window.__mapBootstrapFail('MapLibre could not be loaded from this site. Reload or contact the site administrator.')"
+    is:inline></script>
+  <script src="app.min.js?v=083b1ca1cf59011b" is:inline></script>
 </body>
 </html>

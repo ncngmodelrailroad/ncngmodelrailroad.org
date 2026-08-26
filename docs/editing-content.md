@@ -265,6 +265,8 @@ analytics: {
 
 Once set, analytics data appears in your Cloudflare dashboard — page views, referrers, countries, and devices.
 
+The interactive map route reads this token directly even though it does not use the shared site layout.
+
 ---
 
 ## Updating Navigation

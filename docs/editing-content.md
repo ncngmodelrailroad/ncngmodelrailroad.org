@@ -265,7 +265,7 @@ analytics: {
 
 Once set, analytics data appears in your Cloudflare dashboard — page views, referrers, countries, and devices.
 
-The standalone interactive map at `public/map/index.html` does not use the Astro layout, so its beacon token must match `organization.analytics.cfBeaconToken`.
+The interactive map route reads this token directly even though it does not use the shared site layout.
 
 ---
 

@@ -3,7 +3,7 @@ title: Roamin' Angels Car Show Open House
 date: 2026-09-05
 location: Nevada County Fairgrounds, Grass Valley
 description: |
-  The N.C.N.G. Historical Model Railroad opens during the Roamin' Angels Cruisin' the Pines car show at the Nevada County Fairgrounds on Saturday, September 5, 2026. Layout hours are to be announced.
+  The N.C.N.G. Historical Model Railroad opens during the Roamin' Angels Cruisin' the Pines car show at the Nevada County Fairgrounds on Saturday, September 5, 2026. The show runs 9 AM to 4 PM.
 featured: true
 ---
 
@@ -11,7 +11,7 @@ The model railroad opens during [Cruisin' the Pines](https://roaminangels.com/ab
 
 ## Visiting the Layout
 
-Find us in the railroad building inside the fairgrounds. Our open hours for the day are still being confirmed, so check back before you visit.
+Find us in the railroad building inside the fairgrounds. The car show runs 9 AM to 4 PM, and we plan to be open through show hours. Our exact hours depend on volunteer turnout, so check back before you visit.
 
 Our volunteers run the trains and answer questions about the layout, the history of the Nevada County Narrow Gauge Railroad, and how to join the club.
 

@@ -353,54 +353,62 @@ select:focus-visible {
   }
 }
 
-/* Button Styles */
-.btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0.75rem 1.5rem;
-  border-radius: var(--radius-pill);
-  font-weight: 600;
-  transition: all 0.2s;
-}
+/* Button styles.
 
-.btn-primary {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0.75rem 1.5rem;
-  border-radius: var(--radius-pill);
-  font-weight: 600;
-  transition: all 0.2s;
-  color: white;
-  background: linear-gradient(var(--gradient-direction-diagonal), var(--color-primary), var(--color-primary-dark));
-  box-shadow: 0 12px 24px rgba(var(--color-primary-rgb), 0.20);
-}
+   These live in `@layer components` for the same reason `.page-container` does:
+   they set `display` and `padding`, and an unlayered rule beats every utility
+   regardless of specificity or source order. Left unlayered, a `px-8` or `py-2`
+   written next to `.btn-primary` renders as nothing at all. Inside `components`,
+   which is ordered before `utilities`, a per-instance override takes effect. */
+@layer components {
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.75rem 1.5rem;
+    border-radius: var(--radius-pill);
+    font-weight: 600;
+    transition: all 0.2s;
+  }
 
-.btn-primary:hover {
-  background: linear-gradient(var(--gradient-direction-diagonal), var(--color-primary-dark), var(--color-primary));
-  transform: translateY(-1px);
-}
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.75rem 1.5rem;
+    border-radius: var(--radius-pill);
+    font-weight: 600;
+    transition: all 0.2s;
+    color: white;
+    background: linear-gradient(var(--gradient-direction-diagonal), var(--color-primary), var(--color-primary-dark));
+    box-shadow: 0 12px 24px rgba(var(--color-primary-rgb), 0.20);
+  }
 
-.btn-primary:focus-visible {
-  box-shadow: var(--focus-ring);
-}
+  .btn-primary:hover {
+    background: linear-gradient(var(--gradient-direction-diagonal), var(--color-primary-dark), var(--color-primary));
+    transform: translateY(-1px);
+  }
 
-.btn-outline {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0.75rem 1.5rem;
-  border-radius: var(--radius-pill);
-  font-weight: 600;
-  transition: all 0.2s;
-  border: 2px solid var(--color-primary);
-  color: var(--color-primary);
-}
+  .btn-primary:focus-visible {
+    box-shadow: var(--focus-ring);
+  }
 
-.btn-outline:hover {
-  background-color: var(--color-primary);
-  color: white;
+  .btn-outline {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.75rem 1.5rem;
+    border-radius: var(--radius-pill);
+    font-weight: 600;
+    transition: all 0.2s;
+    border: 2px solid var(--color-primary);
+    color: var(--color-primary);
+  }
+
+  .btn-outline:hover {
+    background-color: var(--color-primary);
+    color: white;
+  }
 }
 
 /* Card Styles */

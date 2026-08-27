@@ -246,7 +246,7 @@ const breadcrumbSchema = {
         <div class="page-container py-4 flex flex-col gap-2">
           {navItems.map((item) =>
             item.cta ? (
-              <a href={`${base}${item.href}`} class="block py-3 px-4 btn-outline text-center rounded-full">
+              <a href={`${base}${item.href}`} class="btn-outline text-center rounded-full">
                 {item.label}
               </a>
             ) : item.icon ? (

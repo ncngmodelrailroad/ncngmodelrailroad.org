@@ -84,7 +84,7 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
               ></textarea>
             </div>
 
-            <button type="submit" class="btn-primary w-full py-3">Send</button>
+            <button type="submit" class="btn-primary w-full">Send</button>
 
             <p class="text-sm text-gray-600 text-center">
               We'll get back to you as soon as possible.
@@ -159,7 +159,7 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
             href={organization.location.mapsUrl}
             target="_blank"
             rel="noopener noreferrer"
-            class="btn-primary w-full py-3 text-center inline-block"
+            class="btn-primary w-full text-center"
           >
             <span class="inline-flex items-center gap-2">
               <Icon name="solar:map-arrow-right-bold" class="w-5 h-5" />
@@ -214,8 +214,8 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
         centered
       />
       <div class="flex flex-col sm:flex-row gap-4 justify-center">
-        <a href={`${base}/volunteer`} class="btn-primary px-8 py-3">Become a Volunteer</a>
-        <a href={`${base}/events`} class="btn-outline px-8 py-3">Upcoming Events</a>
+        <a href={`${base}/volunteer`} class="btn-primary px-8">Become a Volunteer</a>
+        <a href={`${base}/events`} class="btn-outline px-8">Upcoming Events</a>
       </div>
     </div>
   </section>

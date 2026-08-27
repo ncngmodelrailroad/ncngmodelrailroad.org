@@ -105,6 +105,13 @@ built stylesheet, so an element carrying it picks up Tailwind's breakpoint
 widths instead of this shell. The rules are harmless only because nothing in
 the markup uses the class.
 
+`.btn`, `.btn-primary`, and `.btn-outline` live in `@layer components` for the
+same reason. They set `display` and `padding`, so as unlayered rules they beat
+any spacing utility placed next to them. Layering means `px-8` on a button now
+does what it says. Any class that sets a property a component already sets
+belongs in a layer, or it will silently win over the utility an author reaches
+for.
+
 ## Conventions
 
 - Reach for an existing token, component, or class before adding new CSS.

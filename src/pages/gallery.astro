@@ -38,7 +38,7 @@ const categories = [
         height={320}
       />
     </div>
-    <div class="container relative z-10">
+    <div class="page-container relative z-10">
       <div class="max-w-3xl">
         <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">Photo Gallery</h1>
         <p class="text-xl text-gray-300">
@@ -50,7 +50,7 @@ const categories = [
 
   <!-- Category Filter -->
   <section class="py-6 bg-white border-b sticky top-20 md:top-16 z-30">
-    <div class="container">
+    <div class="page-container">
         <div class="flex flex-wrap gap-3 justify-center">
           <button type="button" class="category-btn active" data-category="all" aria-pressed="true">All Photos</button>
           {categories.map(cat => (
@@ -62,7 +62,7 @@ const categories = [
 
   <!-- Photo Grid -->
   <section class="py-12 bg-gray-50">
-    <div class="container">
+    <div class="page-container">
       <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6" id="photo-grid">
         {photos.map((photo, index) => (
           <article 
@@ -103,7 +103,7 @@ const categories = [
 
   <!-- Add Photos CTA -->
   <section class="py-16 bg-white">
-    <div class="container">
+    <div class="page-container">
       <div class="max-w-2xl mx-auto text-center">
         <h2 class="text-2xl md:text-3xl font-bold mb-4">Have Photos to Share?</h2>
         <p class="text-gray-600 mb-6">

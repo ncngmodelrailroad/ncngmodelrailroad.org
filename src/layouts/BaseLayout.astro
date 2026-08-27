@@ -197,7 +197,7 @@ const breadcrumbSchema = {
     </a>
     <!-- Header -->
     <header class="bg-white backdrop-blur-xl border-b border-gray-200 shadow-sm sticky top-0 z-50" role="banner">
-      <nav class="container py-3" aria-label="Main navigation">
+      <nav class="page-container py-3" aria-label="Main navigation">
         <div class="flex items-center justify-between">
           <a href={`${base}/`} class="flex items-center gap-3" aria-label={`${organization.name} - Home`}>
             <span class="text-xl md:text-2xl font-bold text-primary" style="font-family: 'Archivo Black', 'Archivo Black Fallback', serif;">
@@ -247,10 +247,10 @@ const breadcrumbSchema = {
         class="xl:hidden hidden bg-white backdrop-blur-xl border-t border-gray-200 shadow-lg"
         aria-label="Mobile navigation"
       >
-        <div class="container py-4 flex flex-col gap-2">
+        <div class="page-container py-4 flex flex-col gap-2">
           {navItems.map((item) =>
             item.cta ? (
-              <a href={`${base}${item.href}`} class="block py-3 px-4 btn-outline text-center rounded-full">
+              <a href={`${base}${item.href}`} class="btn-outline text-center rounded-full">
                 {item.label}
               </a>
             ) : item.icon ? (
@@ -275,7 +275,7 @@ const breadcrumbSchema = {
 
     <!-- Footer -->
     <footer class="bg-gray-900 text-white py-14" role="contentinfo">
-      <div class="container">
+      <div class="page-container">
         <div class="track-divider mb-10"></div>
         <div class="grid md:grid-cols-3 gap-8">
           <div>

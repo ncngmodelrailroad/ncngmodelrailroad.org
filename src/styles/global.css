@@ -313,63 +313,102 @@ select:focus-visible {
 .bg-gold { background-color: var(--color-gold); }
 .text-gold { color: var(--color-gold); }
 
-/* Container */
-.container {
-  max-width: 76rem;
-  margin-left: auto;
-  margin-right: auto;
-  padding-left: clamp(1rem, 4vw, 2rem);
-  padding-right: clamp(1rem, 4vw, 2rem);
+/* Page container.
+
+   This is deliberately NOT called `.container`, and it deliberately sits inside
+   `@layer components`. Both details are load-bearing.
+
+   Tailwind v4 ships its own `container` utility whose breakpoint max-widths run
+   up to 96rem, so reusing that name means either colliding with it or being
+   shadowed by it. A distinct name keeps two rules from competing for one class.
+
+   Tailwind still emits `.container` in the built CSS. Those rules match nothing,
+   because no element carries the class, so they are dead weight rather than a
+   live conflict. Exactly two files produce the candidate:
+   `public/map/vendor/maplibre-gl/5.6.2/maplibre-gl.js`, and the paragraph in
+   `docs/design-system.md` that explains this rename. They are NOT extracted from
+   `page-container`; the scanner tokenizes that as one candidate and never splits
+   it. Do not treat the emitted rules as proof the class is inert: put
+   `container` on an element and you get Tailwind's breakpoint widths, not this
+   shell.
+
+   The layer matters because unlayered rules beat layered ones regardless of
+   specificity or source order. Left unlayered, this rule would silently kill any
+   `max-w-*` or `px-*` utility written alongside it. Inside `components`, which
+   is ordered before `utilities`, an author can still narrow a shell with
+   `max-w-4xl` and have it work.
+
+   `width: 100%` is required, not decorative. Tailwind's container utility used
+   to supply it while this rule supplied the max-width, and at least one shell
+   is a flex item, where `width: auto` shrink-to-fits instead of filling the
+   row. */
+@layer components {
+  .page-container {
+    width: 100%;
+    max-width: 76rem;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: clamp(1rem, 4vw, 2rem);
+    padding-right: clamp(1rem, 4vw, 2rem);
+  }
 }
 
-/* Button Styles */
-.btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0.75rem 1.5rem;
-  border-radius: var(--radius-pill);
-  font-weight: 600;
-  transition: all 0.2s;
-}
+/* Button styles.
 
-.btn-primary {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0.75rem 1.5rem;
-  border-radius: var(--radius-pill);
-  font-weight: 600;
-  transition: all 0.2s;
-  color: white;
-  background: linear-gradient(var(--gradient-direction-diagonal), var(--color-primary), var(--color-primary-dark));
-  box-shadow: 0 12px 24px rgba(var(--color-primary-rgb), 0.20);
-}
+   These live in `@layer components` for the same reason `.page-container` does:
+   they set `display` and `padding`, and an unlayered rule beats every utility
+   regardless of specificity or source order. Left unlayered, a `px-8` or `py-2`
+   written next to `.btn-primary` renders as nothing at all. Inside `components`,
+   which is ordered before `utilities`, a per-instance override takes effect. */
+@layer components {
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.75rem 1.5rem;
+    border-radius: var(--radius-pill);
+    font-weight: 600;
+    transition: all 0.2s;
+  }
 
-.btn-primary:hover {
-  background: linear-gradient(var(--gradient-direction-diagonal), var(--color-primary-dark), var(--color-primary));
-  transform: translateY(-1px);
-}
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.75rem 1.5rem;
+    border-radius: var(--radius-pill);
+    font-weight: 600;
+    transition: all 0.2s;
+    color: white;
+    background: linear-gradient(var(--gradient-direction-diagonal), var(--color-primary), var(--color-primary-dark));
+    box-shadow: 0 12px 24px rgba(var(--color-primary-rgb), 0.20);
+  }
 
-.btn-primary:focus-visible {
-  box-shadow: var(--focus-ring);
-}
+  .btn-primary:hover {
+    background: linear-gradient(var(--gradient-direction-diagonal), var(--color-primary-dark), var(--color-primary));
+    transform: translateY(-1px);
+  }
 
-.btn-outline {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0.75rem 1.5rem;
-  border-radius: var(--radius-pill);
-  font-weight: 600;
-  transition: all 0.2s;
-  border: 2px solid var(--color-primary);
-  color: var(--color-primary);
-}
+  .btn-primary:focus-visible {
+    box-shadow: var(--focus-ring);
+  }
 
-.btn-outline:hover {
-  background-color: var(--color-primary);
-  color: white;
+  .btn-outline {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.75rem 1.5rem;
+    border-radius: var(--radius-pill);
+    font-weight: 600;
+    transition: all 0.2s;
+    border: 2px solid var(--color-primary);
+    color: var(--color-primary);
+  }
+
+  .btn-outline:hover {
+    background-color: var(--color-primary);
+    color: white;
+  }
 }
 
 /* Card Styles */

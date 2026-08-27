@@ -81,7 +81,7 @@ sitemap (used by `/styleguide`).
 
 Defined in `global.css`, usable on any element:
 
-- **Layout:** `.container`, `.section`, `.section-alt`, `.section-shell`.
+- **Layout:** `.page-container`, `.section`, `.section-alt`, `.section-shell`.
 - **Buttons:** `.btn-primary`, `.btn-outline` (the `Button` component is preferred in markup).
 - **Cards:** `.card` + `.card-body`, `.clean-card`, `.hover-lift`.
 - **Labels:** `.eyebrow`, `.hero-kicker`, `.hero-label`, `.hero-copy`.
@@ -90,6 +90,27 @@ Defined in `global.css`, usable on any element:
 - **Decorative:** `.track-divider`, `.grain-overlay`, `.hero-vignette`, `.animate-kenburns`.
 - **Content:** `.prose` theming and styled `blockquote` for rich text (event bodies, Learn pages).
 - **Accessibility:** `.sr-only`, and a `--focus-ring` applied on `:focus-visible`.
+
+`.page-container` is the page width shell: 76rem max, centered, with a
+`clamp(1rem, 4vw, 2rem)` gutter. It is named `page-container` rather than
+`container` on purpose. Tailwind ships a `container` utility of its own with
+breakpoint max-widths up to 96rem, so sharing the name means one silently
+shadows the other. It also lives in `@layer components`, which sits before
+`utilities`, so you can narrow a shell with `max-w-4xl` and have it take effect.
+An unlayered rule would beat those utilities no matter what, which is how a
+batch of `max-w-*` and `px-*` classes came to be dead on this site.
+
+Do not use `container` as a class. Tailwind still emits that utility into the
+built stylesheet, so an element carrying it picks up Tailwind's breakpoint
+widths instead of this shell. The rules are harmless only because nothing in
+the markup uses the class.
+
+`.btn`, `.btn-primary`, and `.btn-outline` live in `@layer components` for the
+same reason. They set `display` and `padding`, so as unlayered rules they beat
+any spacing utility placed next to them. Layering means `px-8` on a button now
+does what it says. Any class that sets a property a component already sets
+belongs in a layer, or it will silently win over the utility an author reaches
+for.
 
 ## Conventions
 

@@ -24,6 +24,8 @@ import { organization } from '../config/organization';
 // Self-hosted fonts (no third-party CDN, no visitor IP sent to Google).
 import '@fontsource/archivo-black';
 import '@fontsource-variable/libre-franklin';
+import archivoBlackUrl from '@fontsource/archivo-black/files/archivo-black-latin-400-normal.woff2?url';
+import libreFranklinUrl from '@fontsource-variable/libre-franklin/files/libre-franklin-latin-wght-normal.woff2?url';
 import { navItems } from '../config/navigation';
 import { isUpcomingEvent } from '../utils/events';
 
@@ -135,6 +137,8 @@ const breadcrumbSchema = {
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preload" href={archivoBlackUrl} as="font" type="font/woff2" crossorigin="anonymous" />
+    <link rel="preload" href={libreFranklinUrl} as="font" type="font/woff2" crossorigin="anonymous" />
     <meta name="description" content={description} />
     <meta name="author" content={organization.fullName} />
     <meta name="robots" content={noindex ? "noindex, nofollow" : "index, follow"} />

@@ -173,6 +173,29 @@ function formatDate(date: Date, endDate?: Date) {
     </section>
   )}
 
+  <section class="py-16 bg-white">
+    <div class="container mx-auto px-4 max-w-4xl">
+      <div class="rounded-2xl border border-amber-200 bg-amber-50 p-6 md:p-8">
+        <div class="flex flex-col gap-5 md:flex-row md:items-center md:justify-between">
+          <div class="flex items-start gap-4">
+            <div class="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-primary/10">
+              <Icon name="solar:buildings-bold" class="w-6 h-6 text-primary" />
+            </div>
+            <div>
+              <p class="mb-2 text-sm font-semibold uppercase tracking-wider text-primary">Organizing an event here?</p>
+              <h2 class="mb-2 text-2xl font-display text-gray-900">Have the layout open during your event</h2>
+              <p class="text-gray-700">
+                We are a permanent display at the Fairgrounds and can open to the public during your event.
+                See what we need to make that happen.
+              </p>
+            </div>
+          </div>
+          <Button href={`${base}/for-event-organizers`} class="shrink-0">For Event Organizers</Button>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <section class="py-16 bg-primary text-white text-center">
     <div class="page-container">
       <h2 class="text-3xl font-display mb-4">Want to Get Involved?</h2>

@@ -15,6 +15,8 @@ Find us in the railroad building inside the fairgrounds. We are open 9 AM to 4 P
 
 Our volunteers run the trains and answer questions about the layout, the history of the Nevada County Narrow Gauge Railroad, and how to join the club.
 
+We ask a $1 suggested donation per person to help keep the lights on, and kids under 12 visit free with an adult. This is separate from the car show gate below, and we never turn anyone away.
+
 ## Admission and Parking
 
 The car show and the fairgrounds handle admission and parking. Here is what they list for this year:

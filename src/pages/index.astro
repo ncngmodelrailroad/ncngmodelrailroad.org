@@ -4,11 +4,12 @@ import Button from '../components/Button.astro';
 import PhotoCard from '../components/PhotoCard.astro';
 import SectionHeader from '../components/SectionHeader.astro';
 import { Icon } from 'astro-icon/components';
+import { organization } from '../config/organization';
 
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 ---
 
-<BaseLayout title="Nevada County Narrow Gauge Historical Model Railroad" description="An On3 scale historical model railroad display at the Nevada County Fairgrounds, preserving the legacy of the Nevada County Narrow Gauge Railroad (1876–1942). Open during major fairground events." image="/images/engine8-hero.jpg" heroImage={`${base}/images/engine8-hero.jpg`}>
+<BaseLayout title="Nevada County Narrow Gauge Historical Model Railroad" description="An On3 scale historical model railroad display at the Nevada County Fairgrounds, preserving the legacy of the Nevada County Narrow Gauge Railroad (1876 to 1942). Open during major fairground events." image="/images/engine8-hero.jpg" heroImage={`${base}/images/engine8-hero.jpg`}>
   <!-- Hero Section - Full-bleed with Engine #8 -->
   <section class="relative min-h-[90vh] flex items-end text-white overflow-hidden" aria-labelledby="hero-title">
     <div class="absolute inset-0 z-0">
@@ -32,7 +33,7 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
         </h1>
         <p class="hero-label text-sm uppercase font-medium mb-6">Historical Model Railroad</p>
         <p class="hero-copy text-lg md:text-xl mb-10 leading-relaxed max-w-xl">
-          An On3 scale model preserving the railroad that connected Nevada City, Grass Valley, Chicago Park, and Colfax from 1875 to 1942.
+          An On3 scale model preserving the railroad that connected Nevada City, Grass Valley, Chicago Park, and Colfax from {organization.prototype.serviceStart} to {organization.prototype.serviceEnd}.
         </p>
         <div class="flex flex-wrap gap-4">
           <Button href={`${base}/about`} size="lg">About the Layout</Button>
@@ -85,7 +86,7 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
               height={572}
             />
             <div class="absolute -bottom-4 -left-4 bg-primary text-white px-5 py-3 rounded-full shadow-lg text-sm font-bold">
-              22 miles of history · 1875–1942
+              {organization.prototype.routeMiles} miles of history · {organization.prototype.era}
             </div>
           </div>
         </div>

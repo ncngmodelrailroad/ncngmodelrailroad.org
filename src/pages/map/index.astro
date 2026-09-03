@@ -24,7 +24,7 @@ import { organization } from '../../config/organization';
 <body>
   <a class="skip-link" href="#panel-toggle">Skip to map controls</a>
   <main id="main-content">
-    <p class="visually-hidden" id="map-summary">Interactive comparison of historical United States Geological Survey maps and current satellite imagery along the Nevada County Narrow Gauge Railroad. The mapped railroad operated from 1876 to 1942 and used three-foot gauge track.</p>
+    <p class="visually-hidden" id="map-summary">Interactive comparison of historical United States Geological Survey maps and current satellite imagery along the Nevada County Narrow Gauge Railroad. The mapped railroad operated from {organization.prototype.serviceStart} to {organization.prototype.serviceEnd} and used three-foot gauge track.</p>
     <div class="map-stack" role="region" aria-label="Interactive map of the Nevada County Narrow Gauge Railroad" aria-describedby="map-summary">
       <div id="now-map" class="map"></div>
       <div id="then-shell" aria-hidden="true"><div id="then-map" class="map"></div></div>
@@ -48,7 +48,7 @@ import { organization } from '../../config/organization';
         <span class="title-sub">Then &amp; now.</span>
       </h1>
       <p class="lede">Trace the Nevada County Narrow Gauge Railroad across the modern Sierra foothills. Drag the veil to compare terrain, explore stations and spurs, or travel the route stop by stop.</p>
-      <p class="mobile-facts"><span data-route-miles>—</span> mapped miles · 1876–1942 · 3 ft gauge</p>
+      <p class="mobile-facts"><span data-route-miles>—</span> mapped miles · {organization.prototype.era} · 3 ft gauge</p>
       <div class="actions">
         <div class="quick-actions">
           <button class="button search-open" id="search-open" type="button" aria-haspopup="dialog" aria-controls="map-search">Search the map</button>
@@ -178,7 +178,7 @@ import { organization } from '../../config/organization';
 
     <div class="stats" aria-hidden="true">
       <div class="stat"><strong id="route-miles">—</strong><span>mapped miles</span></div>
-      <div class="stat"><strong>1876–1942</strong><span>years operated</span></div>
+      <div class="stat"><strong>{organization.prototype.era}</strong><span>years operated</span></div>
       <div class="stat"><strong>3 ft</strong><span>track gauge</span></div>
     </div>
 

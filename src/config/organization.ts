@@ -6,6 +6,20 @@ export const organization = {
   description: "An On3 scale historical model railroad display at the Nevada County Fairgrounds, preserving the memory of the Nevada County Narrow Gauge Railroad.",
   founded: 1986,
   nonprofit: "",
+  // The prototype railroad the layout models. Stated once so the operating era
+  // cannot drift between pages: the site previously published both 1875-1942
+  // and 1876-1942. Construction broke ground near Colfax on February 11, 1875,
+  // but no revenue service ran that year. The first train reached Grass Valley
+  // on April 11, 1876 and the last spike was driven at Nevada City on May 20,
+  // 1876. The last train ran in 1942. Sources: contemporary Daily Alta
+  // California and Grass Valley Union reports and the PacificNG reference data
+  // at https://pacificng.com/template.php?page=roads/ca/ncng/index.htm
+  prototype: {
+    serviceStart: 1876,
+    serviceEnd: 1942,
+    era: "1876–1942",
+    routeMiles: "22",
+  },
   location: {
     venue: "Nevada County Fairgrounds",
     streetAddress: "11228 McCourtney Rd",

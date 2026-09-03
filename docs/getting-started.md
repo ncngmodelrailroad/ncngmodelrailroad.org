@@ -29,7 +29,7 @@ The website has these main pages:
 | **Board Members** | Current board of directors with photos and roles |
 | **Get Involved** | Ways to support the organization (donate, volunteer, materials) |
 | **Volunteer** | Sign-up form for new volunteers |
-| **Contact** | Email contact form and our location info |
+| **Contact** | How to reach us by email, phone, or Facebook, plus our location info |
 | **Links** | Useful external resources about narrow gauge railroads |
 
 ---

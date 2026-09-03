@@ -11,7 +11,7 @@ interface Props {
 const { 
   title, 
   description = "An On3 scale historical model railroad display dedicated to the memory of the Nevada County Narrow Gauge Railroad. Located at Nevada County Fairgrounds, Grass Valley, CA.",
-  image = "/images/bear-river-bridge.jpg",
+  image = "/images/engine8-hero.jpg",
   type = "website",
   heroImage,
   noindex = false
@@ -28,6 +28,15 @@ import archivoBlackUrl from '@fontsource/archivo-black/files/archivo-black-latin
 import libreFranklinUrl from '@fontsource-variable/libre-franklin/files/libre-franklin-latin-wght-normal.woff2?url';
 import { navItems } from '../config/navigation';
 import { isUpcomingEvent } from '../utils/events';
+import { getPublicImageSize } from '../utils/imageSize';
+
+// Preview cards are sized from the declared dimensions before the image loads,
+// so read them from the file instead of asserting a fixed 1200x630. A portrait
+// or near-square photo is served as a small `summary` card, where it is shown
+// as a square thumbnail, rather than being cropped to a wide banner.
+const socialImageSize = getPublicImageSize(image);
+const socialImageRatio = socialImageSize ? socialImageSize.width / socialImageSize.height : 0;
+const twitterCard = socialImageRatio >= 1.5 ? 'summary_large_image' : 'summary';
 
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 
@@ -154,17 +163,23 @@ const breadcrumbSchema = {
     <meta property="og:type" content={type} />
     <meta property="og:url" content={canonicalUrl} />
     <meta property="og:image" content={`${siteUrl}${image}`} />
-    <meta property="og:image:width" content="1200" />
-    <meta property="og:image:height" content="630" />
-    <meta property="og:image:type" content="image/jpeg" />
+    {socialImageSize && (
+      <>
+        <meta property="og:image:width" content={String(socialImageSize.width)} />
+        <meta property="og:image:height" content={String(socialImageSize.height)} />
+        <meta property="og:image:type" content={`image/${socialImageSize.type}`} />
+      </>
+    )}
+    <meta property="og:image:alt" content={title} />
     <meta property="og:site_name" content={organization.name} />
     <meta property="og:locale" content="en_US" />
     
     <!-- Twitter/X Card (for link previews, no account needed) -->
-    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:card" content={twitterCard} />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={`${siteUrl}${image}`} />
+    <meta name="twitter:image:alt" content={title} />
     
     <!-- Fonts are self-hosted via @fontsource (imported in the layout). No
          third-party font CDN, so no visitor IP is sent to Google. -->
@@ -191,8 +206,10 @@ const breadcrumbSchema = {
     <title>{title}</title>
   </head>
   <body class="min-h-screen flex flex-col">
-    <!-- Skip to main content - Accessibility -->
-    <a href="#main-content" class="absolute left-4 top-4 z-50 -translate-y-[200%] rounded bg-primary px-4 py-2 text-white shadow-lg transition-transform focus:translate-y-0">
+    <!-- Skip to main content. z-60 keeps it above the sticky header, which is
+         z-50 and later in the DOM; at equal z-index the header would win the
+         paint order and hide the link at the moment it receives focus. -->
+    <a href="#main-content" class="absolute left-4 top-4 z-60 -translate-y-[200%] rounded bg-primary px-4 py-2 text-white shadow-lg transition-transform focus:translate-y-0">
       Skip to main content
     </a>
     <!-- Header -->
@@ -211,17 +228,31 @@ const breadcrumbSchema = {
           <!-- Desktop Nav -->
           <div class="hidden xl:flex items-center gap-5">
             {navItems.map((item) =>
-              item.cta ? (
-                <a href={`${base}${item.href}`} class="btn-outline text-sm py-2 px-4 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2">
+              item.children ? (
+                <details class="nav-more relative">
+                  <summary class="nav-link nav-link-icon cursor-pointer list-none focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2">
+                    {item.label}
+                    <Icon name="solar:alt-arrow-down-linear" class="w-3.5 h-3.5 nav-more-chevron" />
+                  </summary>
+                  <ul class="nav-more-panel">
+                    {item.children.map((child) => (
+                      <li>
+                        <a href={`${base}${child.href}`} class="nav-more-link">{child.label}</a>
+                      </li>
+                    ))}
+                  </ul>
+                </details>
+              ) : item.cta ? (
+                <a href={`${base}${item.href}`} class="btn-outline text-sm py-2 px-4 whitespace-nowrap focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2">
                   {item.label}
                 </a>
               ) : item.icon ? (
-                <a href={`${base}${item.href}`} class="nav-link nav-link-icon focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2">
+                <a href={`${base}${item.href}`} class="nav-link nav-link-icon whitespace-nowrap focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2">
                   <Icon name={item.icon} class="w-4 h-4" />
                   {item.label}
                 </a>
               ) : (
-                <a href={`${base}${item.href}`} class="nav-link focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2">
+                <a href={`${base}${item.href}`} class="nav-link whitespace-nowrap focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2">
                   {item.label}
                 </a>
               )
@@ -249,7 +280,16 @@ const breadcrumbSchema = {
       >
         <div class="page-container py-4 flex flex-col gap-2">
           {navItems.map((item) =>
-            item.cta ? (
+            item.children ? (
+              <div class="pt-2">
+                <p class="px-4 pb-1 text-xs font-bold uppercase tracking-wider text-gray-500">{item.label}</p>
+                {item.children.map((child) => (
+                  <a href={`${base}${child.href}`} class="block py-3 px-4 text-gray-700 hover:bg-gray-50 hover:text-primary rounded-xl transition-colors">
+                    {child.label}
+                  </a>
+                ))}
+              </div>
+            ) : item.cta ? (
               <a href={`${base}${item.href}`} class="btn-outline text-center rounded-full">
                 {item.label}
               </a>
@@ -295,19 +335,19 @@ const breadcrumbSchema = {
               </div>
               <div class="flex items-center gap-2">
                 <Icon name="solar:map-arrow-right-bold" class="w-5 h-5 text-gray-400 flex-shrink-0" />
-                <a href={organization.location.mapsUrl} target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors">Get Directions</a>
+                <a href={organization.location.mapsUrl} target="_blank" rel="noopener noreferrer" class="inline-block py-1 hover:text-white transition-colors">Get Directions</a>
               </div>
               <div class="flex items-center gap-2">
                 <Icon name="solar:phone-bold" class="w-5 h-5 text-gray-400 flex-shrink-0" />
-                <a href={organization.contact.phoneHref} class="hover:text-white transition-colors">{organization.contact.phone}</a>
+                <a href={organization.contact.phoneHref} class="inline-block py-1 hover:text-white transition-colors">{organization.contact.phone}</a>
               </div>
               <div class="flex items-center gap-2">
                 <Icon name="solar:letter-bold" class="w-5 h-5 text-gray-400 flex-shrink-0" />
-                <a href={`mailto:${organization.contact.email}`} class="hover:text-white transition-colors">{organization.contact.email}</a>
+                <a href={`mailto:${organization.contact.email}`} class="inline-block py-1 hover:text-white transition-colors">{organization.contact.email}</a>
               </div>
               <div class="flex items-center gap-2">
                 <Icon name="simple-icons:facebook" class="w-5 h-5 text-gray-400 flex-shrink-0" />
-                <a href={organization.social.facebook} target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors">Follow us on Facebook</a>
+                <a href={organization.social.facebook} target="_blank" rel="noopener noreferrer" class="inline-block py-1 hover:text-white transition-colors">Follow us on Facebook</a>
               </div>
             </address>
           </div>
@@ -319,7 +359,7 @@ const breadcrumbSchema = {
                 {footerEvents.map((event) => (
                   <li class="flex items-start gap-2">
                     <Icon name="solar:calendar-bold" class="w-4 h-4 text-gray-400 flex-shrink-0 mt-0.5" />
-                    <a href={`${base}/events`} class="group hover:text-white transition-colors">
+                    <a href={`${base}/events`} class="group block py-1 hover:text-white transition-colors">
                       <span class="block">{event.data.title}</span>
                       <span class="block text-xs text-gray-400 group-hover:text-gray-300">{footerEventDate(event.data.date, event.data.endDate)}</span>
                     </a>
@@ -329,7 +369,7 @@ const breadcrumbSchema = {
             ) : (
               <p class="text-gray-300 text-sm">No events are scheduled right now.</p>
             )}
-            <a href={`${base}/events`} class="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-white hover:text-gray-300 transition-colors">
+            <a href={`${base}/events`} class="mt-4 inline-flex items-center gap-1 py-1 text-sm font-semibold text-white hover:text-gray-300 transition-colors">
               See all events
               <Icon name="solar:arrow-right-linear" class="w-4 h-4" />
             </a>
@@ -346,9 +386,9 @@ const breadcrumbSchema = {
             not affiliated with other museums or groups.
           </p>
           <p class="mt-3 text-xs">
-            <a href={`${base}/privacy`} class="underline hover:text-white">Privacy</a>
+            <a href={`${base}/privacy`} class="inline-block py-1 underline hover:text-white">Privacy</a>
             <span class="mx-2" aria-hidden="true">·</span>
-            <a href={`${base}/accessibility`} class="underline hover:text-white">Accessibility</a>
+            <a href={`${base}/accessibility`} class="inline-block py-1 underline hover:text-white">Accessibility</a>
           </p>
         </div>
       </div>
@@ -401,6 +441,35 @@ const breadcrumbSchema = {
         menuBtn.setAttribute('aria-expanded', 'false');
         menuBtn.focus();
       }
+    });
+  }
+
+  // Desktop "More" disclosure. <details> handles the toggle and keyboard
+  // operation on its own; these listeners only add the dismissal behavior a
+  // navigation menu is expected to have.
+  const navMore = document.querySelector<HTMLDetailsElement>('.nav-more');
+
+  if (navMore) {
+    document.addEventListener('click', (e) => {
+      if (navMore.open && !navMore.contains(e.target as Node)) {
+        navMore.open = false;
+      }
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && navMore.open) {
+        navMore.open = false;
+        navMore.querySelector('summary')?.focus();
+      }
+    });
+
+    navMore.addEventListener('focusout', () => {
+      // Runs after focus lands on the new target.
+      requestAnimationFrame(() => {
+        if (navMore.open && !navMore.contains(document.activeElement)) {
+          navMore.open = false;
+        }
+      });
     });
   }
 </script>

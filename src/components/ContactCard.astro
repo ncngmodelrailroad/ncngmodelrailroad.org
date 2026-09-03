@@ -1,0 +1,86 @@
+---
+import { Icon } from 'astro-icon/components';
+import { organization } from '../config/organization';
+
+interface Props {
+  heading: string;
+  intro?: string;
+  subject: string;
+  body?: string;
+  cta?: string;
+  /** Set false where the page already lists the same contact details. */
+  showDetails?: boolean;
+  class?: string;
+}
+
+const {
+  heading,
+  intro,
+  subject,
+  body,
+  cta = 'Email us',
+  showDetails = true,
+  class: className = '',
+} = Astro.props;
+
+// A plain mailto link, not a form submission. Form POSTs to mailto: are ignored
+// by Chrome and Edge, so anything built that way silently discards the message.
+// A link hands off to whatever the visitor actually uses, and the address stays
+// visible on the page so webmail users can copy it.
+//
+// RFC 6068 requires CRLF for line breaks in a mailto body. URLSearchParams
+// encodes a bare \n as %0A, which strict handlers collapse onto one line, so
+// normalize first. The trailing replace turns form-encoded spaces into %20.
+const params = new URLSearchParams({ subject });
+if (body) params.set('body', body.replace(/\r\n|\r|\n/g, '\r\n'));
+const mailtoHref = `mailto:${organization.contact.email}?${params.toString().replace(/\+/g, '%20')}`;
+---
+
+<div class={`clean-card p-6 md:p-8 ${className}`}>
+  <h2 class="text-2xl font-bold mb-3">{heading}</h2>
+  {intro && <p class="text-gray-600 mb-6">{intro}</p>}
+
+  <a href={mailtoHref} class="btn-primary w-full sm:w-auto">
+    <span class="inline-flex items-center gap-2">
+      <Icon name="solar:letter-bold" class="w-5 h-5" />
+      {cta}
+    </span>
+  </a>
+
+  {showDetails && (
+  <ul class="mt-6 space-y-3 text-sm">
+    <li class="flex items-start gap-3">
+      <Icon name="solar:letter-bold" class="w-5 h-5 text-primary flex-shrink-0 mt-1" aria-hidden="true" />
+      <div>
+        <span class="block font-semibold text-gray-700">Email</span>
+        <a href={`mailto:${organization.contact.email}`} class="inline-block py-1 text-primary hover:underline">
+          {organization.contact.email}
+        </a>
+      </div>
+    </li>
+    <li class="flex items-start gap-3">
+      <Icon name="solar:phone-bold" class="w-5 h-5 text-primary flex-shrink-0 mt-1" aria-hidden="true" />
+      <div>
+        <span class="block font-semibold text-gray-700">Phone</span>
+        <a href={organization.contact.phoneHref} class="inline-block py-1 text-primary hover:underline">
+          {organization.contact.phone}
+        </a>
+      </div>
+    </li>
+    <li class="flex items-start gap-3">
+      <Icon name="simple-icons:facebook" class="w-5 h-5 text-primary flex-shrink-0 mt-1" aria-hidden="true" />
+      <div>
+        <span class="block font-semibold text-gray-700">Facebook</span>
+        <a
+          href={organization.social.facebook}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-block py-1 text-primary hover:underline"
+        >
+          Message us on Facebook
+        </a>
+      </div>
+    </li>
+  </ul>
+  )}
+</div>

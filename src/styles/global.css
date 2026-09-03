@@ -218,26 +218,69 @@
   }
 }
 
-/* Reduced motion preference */
+/* Reduced motion preference.
+
+   Animations and scroll behavior stop. Transitions are shortened rather than
+   killed, because a blanket `transition-duration: 0.01ms` on `*` also removes
+   hover and focus feedback on links, buttons, and cards. The preference is
+   about vestibular motion, not about losing state-change cues. Transform-based
+   movement is handled per-effect (see `.animate-kenburns` below). */
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,
   *::after {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
+    transition-duration: 80ms !important;
     scroll-behavior: auto !important;
+  }
+
+  .hover-lift:hover {
+    transform: none;
+  }
+
+  .btn-primary:hover {
+    transform: none;
   }
 }
 
-/* High contrast mode support */
-@media (prefers-contrast: high) {
+/* High contrast mode support.
+
+   The media feature value is `more`, not `high`. `high` was an early draft
+   spelling that no browser ships, so a `prefers-contrast: high` block is dead
+   code that never matches while still looking like working support.
+
+   These overrides must also be scoped per color scheme. The light values below
+   push text toward black, which is correct on the cream background and
+   unreadable on the dark one, so the dark branch raises contrast in the other
+   direction instead of inheriting them. */
+@media (prefers-contrast: more) {
   :root {
     --color-primary: #660000;
+    --color-primary-rgb: 102, 0, 0;
+    --color-primary-dark: #4A0000;
     --color-text: #000000;
     --color-text-muted: #333333;
+    --color-border: #6B5B48;
+  }
+
+  /* Most body copy still reaches for Tailwind's gray utilities rather than the
+     semantic tokens above, so raising the tokens alone leaves the majority of
+     text unchanged. These mirror the dark-mode override block further down and
+     can retire alongside it once pages consume the tokens directly. */
+  .text-gray-500,
+  .text-gray-600,
+  .text-gray-700,
+  .text-gray-800 {
+    color: #1C1C1C !important;
+  }
+
+  .border-gray-200,
+  .border-gray-300 {
+    border-color: #6B5B48 !important;
   }
 }
+
 
 /* Base Styles */
 body {
@@ -468,6 +511,60 @@ select:focus-visible {
   gap: 0.375rem;
 }
 
+/* Desktop "More" disclosure.
+
+   Built on <details> so the toggle, keyboard operation, and expanded state come
+   from the element rather than from script. The marker is removed in two ways
+   because Safari uses the ::-webkit-details-marker pseudo-element instead of
+   honoring `list-style: none`. */
+.nav-more > summary {
+  list-style: none;
+}
+
+.nav-more > summary::-webkit-details-marker {
+  display: none;
+}
+
+.nav-more > summary::marker {
+  content: '';
+}
+
+.nav-more-chevron {
+  transition: transform 0.2s ease;
+}
+
+.nav-more[open] > summary .nav-more-chevron {
+  transform: rotate(180deg);
+}
+
+.nav-more-panel {
+  position: absolute;
+  right: 0;
+  top: calc(100% + 0.5rem);
+  z-index: 60;
+  min-width: 11rem;
+  padding: 0.375rem;
+  border-radius: 0.875rem;
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  box-shadow: var(--shadow-soft);
+}
+
+.nav-more-link {
+  display: block;
+  padding: 0.5rem 0.75rem;
+  border-radius: 0.5rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--color-text-muted);
+  transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+.nav-more-link:hover {
+  background-color: var(--color-bg-alt);
+  color: var(--color-primary);
+}
+
 .hero-kicker {
   letter-spacing: var(--tracking-kicker);
   color: var(--color-kicker-text);
@@ -674,5 +771,42 @@ textarea:invalid:focus {
   }
   .bg-gray-200 {
     background-color: var(--color-bg-alt) !important;
+  }
+}
+
+/* Dark high-contrast overrides.
+
+   Placed after the dark-mode block above for the same reason that block sits
+   where it does: equal specificity plus `!important` means source order
+   decides, and `.text-gray-800` is re-declared up there.
+
+   The primary red moves DARKER here, not lighter. It is a background under
+   white text (`.bg-primary`, `.btn-primary`, the gallery category badge), so
+   raising its luminance would lower contrast in the one mode meant to raise it.
+   Red as TEXT on dark surfaces is served by --color-primary-light instead. */
+@media (prefers-color-scheme: dark) and (prefers-contrast: more) {
+  :root {
+    --color-primary: #A11616;
+    --color-primary-rgb: 161, 22, 22;
+    --color-primary-dark: #7A0F0F;
+    --color-primary-light: #FF9A90;
+    --color-text: #FFFFFF;
+    --color-text-muted: #DCDCDC;
+    --color-border: #6E6E85;
+  }
+
+  .text-gray-400,
+  .text-gray-500,
+  .text-gray-600,
+  .text-gray-700,
+  .text-gray-800,
+  .text-gray-900 {
+    color: #FFFFFF !important;
+  }
+
+  .border-gray-200,
+  .border-gray-300,
+  .border-gray-800 {
+    border-color: #6E6E85 !important;
   }
 }

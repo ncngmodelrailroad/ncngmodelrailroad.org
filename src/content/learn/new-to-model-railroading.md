@@ -11,7 +11,7 @@ You do not need to know a coupler from a caboose to enjoy a model railroad. This
 
 Model railroading is the hobby of building and running miniature railroads. Modelers recreate a real railroad, called the **prototype**, or invent their own, then bring it to life with hand-built scenery, structures, and working trains.
 
-Our group models a real one: the **Nevada County Narrow Gauge Railroad**, the little line that carried gold ore, lumber, freight, and passengers between Colfax, Chicago Park, Grass Valley, and Nevada City until 1942.
+Our group models a real one: the **Nevada County Narrow Gauge Railroad**, the little line that carried gold ore, lumber, and freight between Colfax, Chicago Park, Grass Valley, and Nevada City until 1942. It carried passengers too, up until 1938.
 
 ## Scale and gauge, in plain terms
 

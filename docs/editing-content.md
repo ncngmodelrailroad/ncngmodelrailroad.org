@@ -288,6 +288,20 @@ export const navItems = [
 ];
 ```
 
+The desktop bar fits about seven slots before items wrap onto a second line.
+Anything beyond that goes in a `children` array, which renders as a "More"
+dropdown on desktop and as a labelled group in the mobile menu:
+
+```typescript
+{
+  label: 'More',
+  children: [
+    { label: 'Volunteer', href: '/volunteer' },
+    { label: 'Contact', href: '/contact' },
+  ],
+},
+```
+
 ---
 
 ## After making changes

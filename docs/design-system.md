@@ -62,7 +62,10 @@ Color modes follow the operating system. There is no manual theme toggle.
   remaps a set of them in dark mode (for example `.bg-white` becomes
   `--color-bg`, `.text-gray-600` becomes `--color-text-muted`). Keep that in
   mind: **the header is not always white**, so check both modes after a change.
-- **High contrast** (`prefers-contrast: high`) darkens the primary and text.
+- **High contrast** (`prefers-contrast: more`) raises text and border contrast. It is
+  scoped per color scheme, so the light branch pushes text toward black and the
+  dark branch pushes it toward white. Note the value is `more`; `prefers-contrast: high`
+  is an early draft spelling that no browser matches.
 - **Reduced motion** (`prefers-reduced-motion: reduce`) disables animation and
   the hero Ken Burns effect.
 

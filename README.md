@@ -52,7 +52,7 @@ src/
 │   ├── board-members.astro # Board of directors
 │   ├── donate.astro      # Get Involved (donate / support)
 │   ├── volunteer.astro   # Volunteer signup
-│   ├── contact.astro     # Contact form
+│   ├── contact.astro     # Contact details and location
 │   ├── links.astro       # External resources
 │   └── 404.astro         # Not found page
 ├── styles/

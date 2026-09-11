@@ -33,8 +33,9 @@ export const organization = {
   donations: {
     path: "/donate",
     method: "email-inquiry",
-    instructions: "Email us to coordinate a financial contribution. Online checkout is not available.",
+    instructions: "Email us for current donation instructions. Online checkout is not available.",
     emailSubject: "Financial contribution inquiry",
+    emailBody: "I'd like to support the layout. Please send the current donation instructions.",
   },
   visiting: {
     publicAccess: `We open during selected events at the ${location.venue}, only when an opening is announced on this website.`,
@@ -77,4 +78,4 @@ export const organization = {
 };
 
 export const donationEmailHref =
-  `mailto:${organization.contact.email}?subject=${encodeURIComponent(organization.donations.emailSubject)}`;
+  `mailto:${organization.contact.email}?subject=${encodeURIComponent(organization.donations.emailSubject)}&body=${encodeURIComponent(organization.donations.emailBody)}`;

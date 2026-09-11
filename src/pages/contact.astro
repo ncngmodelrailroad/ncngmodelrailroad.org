@@ -1,16 +1,13 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import SectionHeader from '../components/SectionHeader.astro';
 import ContactCard from '../components/ContactCard.astro';
-import { Icon } from 'astro-icon/components';
 import { organization } from '../config/organization';
 
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 ---
 
 <BaseLayout title="Contact Us | N.C.N.G. Model Railroad" description="Contact the volunteers about announced layout openings, volunteering, or the model railroad. Find directions to the Nevada County Fairgrounds." image="/images/building-exterior-visit.jpg" heroImage={`${base}/images/building-exterior-visit.jpg`}>
-  <!-- Hero with building exterior -->
-  <section class="relative py-20 text-white overflow-hidden">
+  <section class="relative py-12 md:py-16 text-white overflow-hidden">
     <div class="absolute inset-0 z-0">
       <img 
         src={`${base}/images/building-exterior-visit.jpg`}
@@ -24,138 +21,87 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
       />
       <div class="absolute inset-0 bg-gray-900/65"></div>
     </div>
-    <div class="page-container relative z-10">
-      <div class="max-w-3xl">
-        <h1 class="text-4xl md:text-5xl font-bold">Contact Us</h1>
-      </div>
+    <div class="page-container max-w-3xl relative z-10">
+      <h1 class="text-4xl md:text-5xl font-bold">Contact Us</h1>
     </div>
   </section>
 
-  <!-- Contact Content -->
-  <section class="py-16 bg-white">
-    <div class="page-container max-w-4xl">
-      <div class="grid md:grid-cols-2 gap-8">
-        <!-- Left: how to reach us -->
-        <div class="space-y-8">
-          <ContactCard
-            heading="Email the Volunteers"
-            intro="We are an all-volunteer group, so replies can take a few days. Email is the surest way to reach us."
-            subject="Message from the N.C.N.G. website"
-            cta="Write Us an Email"
-          />
-
-          <div>
-            <SectionHeader title="Visit the Layout" />
-            <p class="text-gray-600">
-              {organization.visiting.publicAccess}
-            </p>
-            <a href={`${base}/events`} class="inline-block mt-4 text-primary underline font-semibold">See Announced Openings</a>
-          </div>
-        </div>
-
-        <!-- Right: visiting and mailing addresses -->
-        <div class="space-y-8">
-          <div class="bg-cream p-6 rounded-lg">
-            <h2 class="text-xl font-body font-bold text-primary mb-4">Location &amp; Mailing Address</h2>
-
-            <div class="space-y-4 text-gray-700">
-              <div class="flex items-start gap-3">
-                <Icon name="solar:map-point-bold" class="w-6 h-6 text-primary flex-shrink-0 mt-0.5" />
-                <div>
-                  <strong class="block">Fairgrounds Address</strong>
-                  <p>{organization.location.venue}<br />{organization.location.streetAddress}<br />{organization.location.city}, {organization.location.state} {organization.location.zip}</p>
-                </div>
-              </div>
-
-              <div class="flex items-start gap-3">
-                <Icon name="solar:letter-bold" class="w-6 h-6 text-primary flex-shrink-0 mt-0.5" />
-                <div>
-                  <strong class="block">Mailing Address</strong>
-                  <p>{organization.location.poBox}<br />{organization.location.poCity}, {organization.location.poState} {organization.location.poZip}</p>
-                </div>
-              </div>
-
-            </div>
-          </div>
-
-          <a
-            href={organization.location.mapsUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            class="btn-primary w-full text-center"
-          >
-            <span class="inline-flex items-center gap-2">
-              <Icon name="solar:map-arrow-right-bold" class="w-5 h-5" />
-              Directions to the Fairgrounds
-            </span>
-          </a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Map Section -->
-  <section class="py-16 bg-white">
-    <div class="page-container max-w-4xl">
-      <SectionHeader
-        title="Find Us"
-        description="We're located inside the Nevada County Fairgrounds in Grass Valley, California."
-        centered
+  <section class="py-10 md:py-12 bg-white">
+    <div class="page-container max-w-3xl">
+      <ContactCard
+        heading="Email the volunteers"
+        intro="Email is the surest way to reach our volunteers. Replies can take a few days."
+        subject="Message from the N.C.N.G. website"
+        cta="Write an email"
+        variant="plain"
+        showDetails={false}
       />
-      <div class="rounded-lg overflow-hidden shadow-lg border border-gray-200">
-        <iframe
-          src={organization.location.mapsEmbedUrl}
-          width="100%"
-          height="400"
-          style="border:0;"
-          allowfullscreen
-          loading="lazy"
-          referrerpolicy="no-referrer-when-downgrade"
-          title="Nevada County Fairgrounds location map"
-        ></iframe>
-      </div>
-      <p class="mt-4 text-gray-600 text-center max-w-prose mx-auto">
-        This map shows the fairgrounds, not a confirmed event entrance. Check the opening announcement for entry and parking information.
+      <p class="text-sm text-gray-600 mt-3">
+        Or write to
+        <a href={`mailto:${organization.contact.email}`} class="text-primary underline font-semibold">{organization.contact.email}</a>.
       </p>
-      <div class="mt-8 max-w-prose mx-auto">
-        <h3 class="text-xl font-bold mb-3">Before You Travel</h3>
-        <p class="text-gray-700 mb-3">
-          Check your event's entry and parking instructions. Fairground gates and
-          layout hours can differ between events.
-        </p>
-        <p class="text-gray-700">
-          If the listing does not answer your question about the building entrance,
-          step-free access, or viewing arrangements,
-          <a href={`mailto:${organization.contact.email}?subject=Published%20event%20access%20question`} class="text-primary underline">email us before your visit</a>.
-          Include the event name and the access information you need. Replies can take a few days.
-        </p>
-      </div>
-      <div class="mt-4 text-center">
-        <a
-          href={organization.location.mapsUrl}
-          target="_blank"
-          rel="noopener noreferrer"
-          class="inline-flex items-center gap-2 text-primary hover:underline font-medium"
-        >
-          <Icon name="solar:map-arrow-right-bold" class="w-5 h-5" />
-          Open in Google Maps
+      <div class="flex flex-wrap gap-x-6 text-sm mt-2">
+        <a href={organization.contact.phoneHref} class="inline-flex items-center min-h-11 text-primary underline">
+          Phone: {organization.contact.phone}
+        </a>
+        <a href={organization.social.facebook} target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-11 text-primary underline">
+          Message us on Facebook
         </a>
       </div>
-    </div>
-  </section>
 
-  <!-- Bottom CTA -->
-  <section class="py-16 bg-gray-50">
-    <div class="page-container max-w-4xl text-center">
-      <SectionHeader
-        title="Get Involved"
-        description="Interested in helping out? See volunteer opportunities or upcoming public events."
-        centered
-      />
-      <div class="flex flex-col sm:flex-row gap-4 justify-center">
-        <a href={`${base}/volunteer`} class="btn-primary px-8">Become a Volunteer</a>
-        <a href={`${base}/events`} class="btn-outline px-8">See Announced Openings</a>
-      </div>
+      <section class="mt-8" aria-labelledby="visit-title">
+        <h2 id="visit-title" class="text-2xl font-bold mb-3">Visit the layout</h2>
+        <p class="text-gray-600">{organization.visiting.publicAccess}</p>
+        <a href={`${base}/events`} class="inline-flex items-center min-h-11 text-primary underline font-semibold">
+          See announced openings
+        </a>
+
+        <div class="grid sm:grid-cols-2 gap-6 mt-5">
+          <div>
+            <h3 class="font-bold mb-2">Fairgrounds address</h3>
+            <address class="text-gray-700 not-italic">
+              {organization.location.venue}<br />
+              {organization.location.streetAddress}<br />
+              {organization.location.city}, {organization.location.state} {organization.location.zip}
+            </address>
+          </div>
+          <div>
+            <h3 class="font-bold mb-2">Mailing address</h3>
+            <address class="text-gray-700 not-italic">
+              {organization.location.poBox}<br />
+              {organization.location.poCity}, {organization.location.poState} {organization.location.poZip}
+            </address>
+          </div>
+        </div>
+
+        <div class="mt-5">
+          <a href={organization.location.mapsUrl} target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-11 text-primary underline font-semibold">
+            Directions to the fairgrounds
+          </a>
+          <iframe
+            src={organization.location.mapsEmbedUrl}
+            width="100%"
+            height="320"
+            class="rounded-lg"
+            style="border:0;"
+            allowfullscreen
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            title="Nevada County Fairgrounds location map"
+          ></iframe>
+        </div>
+
+        <p class="text-sm text-gray-600 mt-4">
+          This map shows the fairgrounds, not a confirmed event entrance.
+          Check the opening announcement for entry, parking, and layout hours;
+          gates and hours vary by event.
+        </p>
+        <p class="text-gray-700 mt-4">
+          Questions about the building entrance, step-free access, or viewing arrangements?
+          <a href={`mailto:${organization.contact.email}?subject=Published%20event%20access%20question`} class="text-primary underline">Email us before your visit</a>
+          with the event name and the access information you need.
+        </p>
+      </section>
     </div>
   </section>
 </BaseLayout>

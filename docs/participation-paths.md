@@ -1,6 +1,6 @@
 # Give, volunteer, and stay connected
 
-Status: nonprofit identity and donation discovery are implemented in this branch. New participation and checkout flows remain proposed. No service setup is authorized.
+Status: nonprofit identity, donation discovery, and a shorter email-inquiry page are implemented in this branch. Hosted checkout and new signup flows remain proposed. No service setup is authorized.
 
 ## Goal
 
@@ -43,16 +43,16 @@ Sources: [IRS extract and posting date](https://www.irs.gov/charities-non-profit
 
 Donation-page identity block, implemented from shared organization config:
 
-> Nevada County Narrow Gauge Project
+> All-volunteer 501(c)(3) nonprofit. EIN: 68-0327319.
 >
-> 501(c)(3) nonprofit organization. EIN: 68-0327319.
+> IRS-listed name: Nevada County Narrow Gauge Project.
 >
 > Contributions are tax-deductible to the extent permitted by law.
 
 The site footer shows the classification and EIN, linking to these details.
 Organization metadata includes the EIN and the Schema.org 501(c)(3) status.
 The public source link points to the IRS extract information page, not private
-paperwork. Checkout remains email-based.
+paperwork. Contributions start with an email inquiry; there is no online checkout.
 
 `/llms.txt` and `/data/catalog.json` also expose the IRS identity, source date,
 canonical donation page, and current email-inquiry method. The page, guide, and
@@ -60,7 +60,23 @@ catalog share their instructions and prefilled email link. These discovery aids
 do not guarantee search rankings or AI recommendations. Crawler permissions
 remain unchanged; no working payment endpoint is implied.
 
-Keep this separate from the site's public-facing brand name. Before payment
+The donation page replaces seven cards and the generic closing pitch with a short
+impact summary and plain volunteer/equipment links. Financial inquiries remain the
+primary action, repeated at the end. The shared email link includes an editable
+subject and message asking for current donation instructions, without a response-time
+promise. The visible address remains available for people using webmail.
+
+The volunteer page groups roles once and uses a three-line draft for name,
+interests, and availability. Work-session confirmation, junior-member requirements,
+school-visit guidance, and the existing photographs remain. The shared footer keeps
+contact and policy links plus the EIN; full addresses live on Contact and event
+listings stay on the homepage and Events page.
+
+Contact keeps its email action and alternate contact methods together, followed by
+addresses, directions, and visit/access guidance. The homepage links to donations
+and volunteering from one short support section; event promotion remains unchanged.
+
+Keep the IRS-listed name separate from the site's public-facing brand name. Before payment
 onboarding, reconcile the exact legal spelling with the current California
 record: the supplied original articles use "Narrow Guage," while the IRS uses
 "Narrow Gauge." The articles identify entity 1548497 and carry a December 9,
@@ -123,8 +139,8 @@ and [PayPal guest-checkout limitations](https://www.paypal.com/us/cshelp/article
 
 - Make the relevant action reachable within two link selections from the
   homepage. Keep the existing direct volunteer link.
-- Show the email address and a selectable volunteer template: name, interests,
-  availability, and optional phone. Explain that the visitor must send the email.
+- Show the email address and a prefilled volunteer template: name, interests,
+  and availability. Explain that the visitor must send the email.
 - Explain the volunteer sequence beside the action: email, reply, arranged
   first visit. Preserve the instruction to confirm work sessions before attending.
 - State the email group's audience, whether approval is needed, and where to

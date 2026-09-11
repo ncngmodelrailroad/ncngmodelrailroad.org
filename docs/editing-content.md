@@ -100,7 +100,7 @@ The body text (below the `---`) is the event description shown on the page.
 
 The homepage automatically promotes the next two upcoming events in date order,
 using confirmed layout dates when available and host dates otherwise. The homepage
-and footer label which dates they show. The Events page keeps both ranges separate.
+labels which dates it shows. The Events page keeps both ranges separate.
 The `featured` field adds a badge on the Events page; it does not control homepage
 placement. Keep event dates separate from the layout's opening dates and hours.
 
@@ -121,7 +121,7 @@ Delete the file. The event disappears from the site automatically.
 > **Note:** Events move to the collapsed Past Events section on the next build
 > after their final confirmed layout day in California, or the host event's final
 > day if no layout dates are confirmed. A daily deployment refreshes the
-> homepage, Events page, and footer, even when no content has changed. The
+> homepage and Events page, even when no content has changed. The
 > refresh updates date grouping; it does not confirm event details. Avoid
 > relative wording such as "our next open house" in event bodies.
 

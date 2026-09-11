@@ -141,12 +141,24 @@ for.
   stay in each listing. With no upcoming events, the hero highlights
   layout photos instead. General opening guidance and directions sit below the
   layout introduction rather than competing with the events.
+- The homepage closes with a compact support section, not separate donation and
+  volunteer cards. The affiliation notice appears once in the shared footer.
 - Navigation, the Events page, and the footer use event-first labels. The Events
   page puts event listings before general event-day logistics.
+- The footer groups opening/contact/direction links separately from direct
+  contact methods and policies. It keeps the nonprofit classification and EIN
+  visible without repeating event listings, full addresses, or the site introduction.
+- Donation and volunteer inquiries use one primary email action with a visible
+  address fallback. Volunteer roles appear once, with work-session confirmation
+  and junior-member safeguards outside decorative panels.
 - Visitor-planning sections use `building-exterior-visit.jpg`, a crop of the
   original building photograph without admission and OPEN signage. The uncropped
   gallery photograph carries a caption explaining that its signs are not current
   visitor guidance.
+- Contact groups the email action and alternate contact methods before visiting
+  information. Physical and mailing addresses stay distinct. One directions link
+  accompanies the map; entry, parking, hours, and accessibility guidance stay
+  together without a second closing appeal.
 - Gallery categories and captions stay visible below each image on every device.
   Confirmed area labels are optional and appear with captions when provided.
   Category and area filters share a result count, reset action, empty state,

@@ -1,147 +1,89 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import Button from '../components/Button.astro';
-import { Icon } from 'astro-icon/components';
 import { donationEmailHref, organization } from '../config/organization';
 
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
-
-const supportWays = [
-  { icon: 'solar:settings-bold', title: 'Maintenance', desc: 'Help keep our locomotives and rolling stock in operating condition' },
-  { icon: 'solar:buildings-2-bold', title: 'Layout Building', desc: 'Assist with building new scenes and improving the layout' },
-  { icon: 'solar:lightbulb-bolt-bold', title: 'Technical Skills', desc: 'DCC systems, lighting, electronics, and wiring' },
-  { icon: 'solar:book-bold', title: 'Education', desc: 'Help develop educational materials and guide visitors' },
-  { icon: 'solar:buildings-bold', title: 'Facility Care', desc: 'Help maintain our building at the Nevada County Fairgrounds' },
-];
 ---
 
 <BaseLayout title="Support the Layout | N.C.N.G. Model Railroad" description="Support the N.C.N.G. Historical Model Railroad with volunteer time, donated materials, or financial contributions.">
-  <!-- Hero -->
-  <section class="py-12 md:py-16 bg-primary text-white">
-    <div class="page-container">
-      <div class="max-w-3xl mx-auto text-center">
-        <h1 class="text-4xl md:text-5xl font-bold mb-6">
-          Support the Layout
-        </h1>
-        <p class="text-xl text-gray-200 mb-4">
-          Volunteer time, donated materials, and financial support help keep the layout running
-          and open during published public events.
-        </p>
-        <div class="inline-flex items-center gap-2 bg-white/10 px-4 py-2 rounded-full text-sm">
-          <Icon name="solar:users-group-rounded-bold" class="w-5 h-5" />
-          <span>All-Volunteer Organization</span>
-        </div>
-      </div>
+  <section class="py-10 md:py-12 bg-primary text-white">
+    <div class="page-container max-w-3xl text-center">
+      <h1 class="text-4xl md:text-5xl font-bold mb-4">Support the Layout</h1>
+      <p class="text-lg text-white/90">
+        Help keep the trains running and share local railroad history.
+      </p>
     </div>
   </section>
 
-  <!-- Support Options -->
   <section class="py-10 md:py-12 bg-white">
-    <div class="page-container max-w-4xl">
-      <div class="max-w-prose mb-12" aria-labelledby="monetary-donations-title">
-        <h2 id="monetary-donations-title" class="text-3xl font-bold mb-4">Make a Financial Contribution</h2>
+    <div class="page-container max-w-3xl">
+      <section aria-labelledby="monetary-donations-title">
+        <h2 id="monetary-donations-title" class="text-3xl font-bold mb-3">Make a donation</h2>
+        <p class="text-gray-700 mb-3">
+          Your support helps with maintenance, scenery, electrical work, rolling stock,
+          building upkeep, and visitor education.
+        </p>
         <p class="text-gray-700 mb-4">
           {organization.donations.instructions}
         </p>
-        <a href={donationEmailHref} class="btn-primary">Email Us About Donations</a>
-        <p class="text-gray-600 mt-4">
-          You can also copy our address into your email service:
+        <a href={donationEmailHref} class="btn-primary">Email about a donation</a>
+        <p class="text-sm text-gray-600 mt-3">
+          Or write to
           <a href={donationEmailHref} class="text-primary underline font-semibold">{organization.contact.email}</a>.
         </p>
-        <div id="nonprofit-details" class="mt-6 border-t border-gray-200 pt-5 scroll-mt-28">
-          <h3 class="text-base font-semibold text-gray-900 mb-1">{organization.nonprofit.irsName}</h3>
-          <p class="text-sm text-gray-700">
-            {organization.nonprofit.classification} nonprofit organization.
+        <aside id="nonprofit-details" aria-label="Nonprofit details" class="mt-6 border-t border-gray-200 pt-5 scroll-mt-28 text-sm text-gray-700">
+          <p class="font-semibold text-gray-900">
+            All-volunteer {organization.nonprofit.classification} nonprofit.
             <span class="whitespace-nowrap">EIN: {organization.nonprofit.ein}.</span>
           </p>
-          <p class="text-sm text-gray-700 mt-1">{organization.nonprofit.deductibilityStatement}</p>
+          <p class="mt-1">IRS-listed name: {organization.nonprofit.irsName}.</p>
+          <p class="mt-1">{organization.nonprofit.deductibilityStatement}</p>
           <a
             href={organization.nonprofit.sourceUrl}
             target="_blank"
             rel="noopener noreferrer"
-            class="inline-block py-1 mt-2 text-sm text-primary underline font-semibold"
+            class="inline-flex items-center min-h-11 text-primary underline font-semibold"
           >
-            IRS nonprofit records
+            About the IRS data source
+          </a>
+        </aside>
+      </section>
+
+      <section class="mt-10" aria-labelledby="other-support-title">
+        <h2 id="other-support-title" class="text-2xl font-bold mb-5">Other ways to help</h2>
+        <div>
+          <h3 class="text-lg font-bold mb-2">Volunteer</h3>
+          <p class="text-gray-600">
+            Run trains, build scenery, maintain equipment, or welcome visitors.
+            No model railroad experience needed.
+          </p>
+          <a href={`${base}/volunteer`} class="inline-flex items-center min-h-11 text-primary underline font-semibold">
+            Learn about volunteering
           </a>
         </div>
-      </div>
 
-      <h2 class="text-3xl font-bold mb-8">Other Ways to Help</h2>
-
-      <div class="grid md:grid-cols-2 gap-8 mb-12">
-        <!-- Volunteer -->
-        <div class="bg-gray-50 p-8 rounded-2xl border border-gray-200">
-          <div class="mb-4"><Icon name="solar:users-group-rounded-bold" class="w-10 h-10 text-primary" /></div>
-          <h3 class="text-xl font-bold mb-3">Volunteer Your Time</h3>
-          <p class="text-gray-600 mb-6">
-            We always need people who can help operate trains, work on scenery, maintain equipment,
-            or talk with visitors. No prior model railroad experience is required.
-          </p>
-          <Button href={`${base}/volunteer`} variant="primary" class="w-full text-center">
-            Learn About Volunteering
-          </Button>
-        </div>
-
-        <!-- Donate Materials -->
-        <div class="bg-gray-50 p-8 rounded-2xl border border-gray-200">
-          <div class="mb-4"><Icon name="solar:tram-bold" class="w-10 h-10 text-primary" /></div>
-          <h3 class="text-xl font-bold mb-3">Donate Equipment & Materials</h3>
-          <p class="text-gray-600 mb-4">
-            We're always happy to hear from folks who have model railroad equipment
-            looking for a good home. We mostly work with
+        <div class="mt-6">
+          <h3 class="text-lg font-bold mb-2">Offer equipment or materials</h3>
+          <p class="text-gray-600">
+            We work with
             <a href={`${base}/learn/glossary#on3`} class="text-primary underline">On3 scale</a>,
             <a href={`${base}/learn/glossary#dcc-digital-command-control`} class="text-primary underline">DCC systems</a>,
             tools, and historical railroad items.
           </p>
-          <p class="text-gray-600 mb-6 text-sm">
-            We do have limited space, so please reach out before dropping anything off.
-            Feel free to send along a few photos and we can go from there!
+          <p class="text-gray-600 mt-2">
+            Space is limited. Email us before dropping anything off; photos help.
           </p>
-          <a href={`mailto:${organization.contact.email}`} class="btn-primary w-full text-center">
-            Send Us a Message
+          <a href={`mailto:${organization.contact.email}`} class="inline-flex items-center min-h-11 text-primary underline font-semibold">
+            Email about equipment
           </a>
         </div>
-      </div>
+      </section>
 
-    </div>
-  </section>
-
-  <!-- How Support Helps -->
-  <section class="py-16 bg-gray-50">
-    <div class="page-container max-w-4xl">
-      <h2 class="text-3xl font-bold text-center mb-4">Where Your Support Goes</h2>
-        <p class="text-center text-gray-600 mb-12 max-w-2xl mx-auto">
-          Support goes straight to maintenance, scenery, electrical work, rolling stock, and building upkeep.
-        </p>
-
-      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        {supportWays.map(way => (
-          <div class="bg-white p-6 rounded-xl shadow-sm">
-            <div class="mb-3"><Icon name={way.icon} class="w-8 h-8 text-primary" /></div>
-            <h3 class="font-bold mb-2">{way.title}</h3>
-            <p class="text-gray-600 text-sm">{way.desc}</p>
-          </div>
-        ))}
-      </div>
-    </div>
-  </section>
-
-  <!-- CTA -->
-  <section class="py-16 bg-gray-900 text-white">
-    <div class="page-container text-center max-w-2xl">
-      <h2 class="text-3xl font-bold mb-4">Want to Help?</h2>
-      <p class="text-gray-300 mb-8">
-        Whether you can volunteer, donate materials, or make a financial contribution,
-        it all helps keep the layout operating.
+      <p class="mt-8 border-t border-gray-200 pt-4">
+        <a href={donationEmailHref} class="inline-flex items-center min-h-11 text-primary underline font-semibold">
+          Email about a donation
+        </a>
       </p>
-      <div class="flex flex-wrap justify-center gap-4">
-        <Button href={`${base}/volunteer`} variant="outline-inverse">
-          Volunteer With Us
-        </Button>
-        <Button href={`${base}/about`} variant="outline-inverse">
-          Learn More About Us
-        </Button>
-      </div>
     </div>
   </section>
 </BaseLayout>

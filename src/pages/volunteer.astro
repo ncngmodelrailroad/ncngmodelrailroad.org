@@ -1,7 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import ContactCard from '../components/ContactCard.astro';
-import { Icon } from 'astro-icon/components';
 import { getCollection } from 'astro:content';
 import { organization } from '../config/organization';
 
@@ -19,128 +18,90 @@ const volunteerPhotos = volunteerPhotoIds.flatMap((id) => {
     : [];
 });
 
-const opportunities = [
-  { icon: 'solar:tram-bold', title: 'Train Operations', desc: 'Run trains during events and open houses' },
-  { icon: 'solar:settings-bold', title: 'Maintenance & Construction', desc: 'Help build and maintain the layout' },
-  { icon: 'solar:pallete-2-bold', title: 'Scenery & Detailing', desc: 'Create realistic landscapes and structures' },
-  { icon: 'solar:camera-bold', title: 'Photography & Documentation', desc: 'Document our work and history' },
-  { icon: 'solar:users-group-rounded-bold', title: 'Docents & Visitor Engagement', desc: 'Welcome guests, answer questions, and interpret railroad history' },
-];
-
-const interests = [
-  { value: 'operations', label: 'Train Operations' },
-  { value: 'maintenance', label: 'Maintenance & Construction' },
-  { value: 'scenery', label: 'Scenery & Detailing' },
-  { value: 'photography', label: 'Photography' },
-  { value: 'docents', label: 'Docents & Visitor Engagement' },
-];
-
-// Prefilled body for the volunteer email. This carries over what the old
-// checkbox fieldset collected, so the structure survives without a backend.
 const volunteerEmailBody = [
   'Name:',
-  'Phone (optional):',
-  '',
-  'Areas I am interested in (delete any that do not apply):',
-  ...interests.map((interest) => `  - ${interest.label}`),
-  '',
-  'A little about me:',
-  '',
+  'Interests (or not sure yet):',
+  'Availability:',
 ].join('\n');
 ---
 
 <BaseLayout title="Volunteer | N.C.N.G. Model Railroad" description="Volunteer with the N.C.N.G. Historical Model Railroad in Grass Valley. Help with operations, maintenance, scenery, photography, and visitor engagement.">
-  <!-- Hero -->
-  <section class="bg-gray-900 text-white py-20">
-    <div class="page-container text-center">
+  <section class="bg-gray-900 text-white py-10 md:py-12">
+    <div class="page-container max-w-3xl text-center">
       <h1 class="text-4xl md:text-5xl font-bold mb-4">Become a Volunteer</h1>
-      <p class="text-lg text-gray-300 max-w-2xl mx-auto">
-        Join the volunteers who operate trains, maintain scenery, work on structures and wiring, and talk with visitors.
-      </p>
+      <p class="text-lg text-white/90">No model railroad experience needed.</p>
     </div>
   </section>
 
-  <section class="py-16 bg-white">
-    <div class="page-container max-w-4xl">
-
+  <section class="py-10 md:py-12 bg-white">
+    <div class="page-container max-w-3xl">
       <ContactCard
-        heading="Start with a Conversation"
-        intro="No model railroad experience is required. Email us about your interests before attending a volunteer work session. The message opens with a list of volunteer roles; keep the ones that interest you."
+        heading="How to start"
+        intro="Email your interests and availability to arrange your first work session."
         subject="Volunteer inquiry"
         body={volunteerEmailBody}
-        cta="Email Us About Volunteering"
-        class="mb-8"
+        cta="Email about volunteering"
+        variant="plain"
+        showDetails={false}
       />
+      <p class="text-sm text-gray-600 mt-3">
+        Or write to
+        <a href={`mailto:${organization.contact.email}`} class="text-primary underline font-semibold">{organization.contact.email}</a>.
+      </p>
 
-      <div class="bg-cream p-6 rounded-lg mb-8">
-        <h2 class="text-xl font-semibold mb-4">Volunteer Opportunities</h2>
-        <ul class="space-y-3">
-          {opportunities.map(opp => (
-            <li class="flex items-start gap-3">
-              <Icon name={opp.icon} class="w-6 h-6 text-primary flex-shrink-0 mt-0.5" />
-              <div>
-                <strong>{opp.title}</strong>
-                <p class="text-gray-600 text-sm">{opp.desc}</p>
-              </div>
-            </li>
-          ))}
+      <section class="mt-8" aria-labelledby="ways-to-help-title">
+        <h2 id="ways-to-help-title" class="text-2xl font-bold mb-3">Ways to help</h2>
+        <ul class="list-disc pl-5 space-y-2 text-gray-600">
+          <li>Operate trains, or welcome visitors and share railroad history as a docent.</li>
+          <li>Build and maintain scenery, structures, and wiring.</li>
+          <li>Help with research, photography, and documentation.</li>
         </ul>
-      </div>
+      </section>
 
-      <!-- Detailed Info Sections -->
-      <div class="space-y-8 mb-8">
-        <div class="bg-amber-50 border border-amber-200 p-6 rounded-lg">
-          <h2 class="text-2xl font-bold text-primary mb-3">New Members Welcome</h2>
-          <p class="text-gray-700 font-semibold mb-2">Members, junior members, docents, and teachers are all welcome.</p>
-          <p class="text-gray-600">There is useful work to do whether you like train operations, scenery, carpentry, wiring, research, photography, or talking with visitors during open houses.</p>
-        </div>
-
-        <div class="bg-white border border-gray-200 p-6 rounded-lg">
-          <h3 class="text-xl font-bold text-primary mb-3 flex items-center gap-2"><Icon name="solar:calendar-bold" class="w-5 h-5" /> Work Sessions</h3>
-          <p class="text-gray-700 font-medium mb-2">First Saturday and Third Wednesday of the month, usually 11 AM to 2 PM</p>
-          <p class="text-gray-600 mb-3">Work sessions are for volunteer work, not public visits. Email us before attending so we can confirm the session and entry arrangements.</p>
-          <p class="text-sm text-gray-600">{organization.visiting.publicAccess} <a href={`${base}/events`} class="text-primary underline">See announced openings.</a></p>
-        </div>
-
-        <div class="bg-white border border-gray-200 p-6 rounded-lg">
-          <h3 class="text-xl font-bold text-primary mb-3 flex items-center gap-2"><Icon name="solar:microphone-bold" class="w-5 h-5" /> Docents Needed</h3>
-          <p class="text-gray-600">Docents help greet visitors and explain the history of the railroad and the layout during open houses. If you like talking with the public and sharing local history, this is a good place to help.</p>
-        </div>
-
-        <div class="bg-white border border-gray-200 p-6 rounded-lg">
-          <h3 class="text-xl font-bold text-primary mb-3 flex items-center gap-2"><Icon name="solar:users-group-rounded-bold" class="w-5 h-5" /> Junior Members (Ages 12-18)</h3>
-          <p class="text-gray-600">Junior members ages 12 to 18 are welcome with an accompanying adult member. It is a good way to learn model railroading, layout work, and local railroad history together.</p>
-        </div>
-
-        <div class="bg-white border border-gray-200 p-6 rounded-lg">
-          <h3 class="text-xl font-bold text-primary mb-3 flex items-center gap-2"><Icon name="solar:book-bold" class="w-5 h-5" /> School Teachers</h3>
-          <p class="text-gray-600">Teachers covering Nevada County history or transportation history can email us with questions about bringing a class to a published public event.</p>
-        </div>
-      </div>
-
-      <div class="mt-10">
-        <h2 class="text-2xl font-bold text-primary mb-3">Volunteers at Work</h2>
-        <p class="text-gray-600 mb-5">
-          A few scenes from construction, scenery work, and day-to-day upkeep on the layout.
+      <section class="mt-8" aria-labelledby="work-sessions-title">
+        <h2 id="work-sessions-title" class="text-2xl font-bold mb-3">Work sessions</h2>
+        <p class="text-gray-700 font-semibold mb-2">
+          First Saturday and third Wednesday of the month, usually 11 AM to 2 PM.
         </p>
-        <div class="grid sm:grid-cols-2 gap-4">
-          {volunteerPhotos.map((photo, index) => (
-            <figure class={`overflow-hidden rounded-xl border border-gray-200 bg-white shadow-sm ${index === 0 ? 'sm:col-span-2' : ''}`}>
-              <img
-                src={photo.src}
-                alt={photo.alt}
-                class={`w-full object-cover ${index === 0 ? 'aspect-[16/9]' : 'aspect-[4/3]'}`}
-                loading="lazy"
-                decoding="async"
-                width={index === 0 ? 1200 : 800}
-                height={index === 0 ? 675 : 600}
-              />
-              <figcaption class="px-4 py-3 text-sm text-gray-600">
-                {photo.caption}
-              </figcaption>
-            </figure>
-          ))}
-        </div>
+        <p class="text-gray-600">
+          Email us before attending to confirm the session and entry arrangements.
+          Work sessions are for volunteering, not public visits.
+        </p>
+        <a href={`${base}/events`} class="inline-flex items-center min-h-11 text-primary underline font-semibold">
+          See announced public openings
+        </a>
+        <p class="text-gray-600 mt-4">
+          <strong class="text-gray-900">Junior members (ages 12-18)</strong>
+          are welcome with an accompanying adult member.
+        </p>
+        <p class="text-gray-600 mt-3">
+          <strong class="text-gray-900">School visits:</strong>
+          Teachers covering local or transportation history can
+          <a href={`mailto:${organization.contact.email}?subject=School%20visit%20inquiry`} class="text-primary underline">email us</a>
+          about bringing a class to a published public event.
+        </p>
+      </section>
+    </div>
+
+    <div class="page-container max-w-4xl mt-10">
+      <h2 class="text-2xl font-bold mb-5">Volunteers at work</h2>
+      <div class="grid sm:grid-cols-2 gap-4">
+        {volunteerPhotos.map((photo, index) => (
+          <figure class={`overflow-hidden rounded-xl border border-gray-200 bg-white shadow-sm ${index === 0 ? 'sm:col-span-2' : ''}`}>
+            <img
+              src={photo.src}
+              alt={photo.alt}
+              class={`w-full object-cover ${index === 0 ? 'aspect-[16/9]' : 'aspect-[4/3]'}`}
+              loading="lazy"
+              decoding="async"
+              width={index === 0 ? 1200 : 800}
+              height={index === 0 ? 675 : 600}
+            />
+            <figcaption class="px-4 py-3 text-sm text-gray-600">
+              {photo.caption}
+            </figcaption>
+          </figure>
+        ))}
       </div>
     </div>
   </section>

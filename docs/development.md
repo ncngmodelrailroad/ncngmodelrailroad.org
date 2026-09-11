@@ -85,8 +85,14 @@ Serves the `dist/` folder locally so you can verify the production build looks r
 **Pages** (`src/pages/`) — Each `.astro` file becomes a URL. `about.astro` → `/about`.
 
 **Layouts** (`src/layouts/BaseLayout.astro`) — The shared wrapper around every page. Contains the header, navigation, footer, SEO meta tags, and structured data (schema.org).
+The compact footer links to announced openings, contact details, and directions.
+Full addresses remain on Contact and in structured data; event listings remain
+on the homepage and Events page.
 
 **Components** (`src/components/`) — Reusable UI pieces like `Button.astro` and `SectionHeader.astro`.
+`ContactCard.astro` defaults to a framed card. Use `variant="plain"` for an inline
+email action; when hiding its detail list, keep a visible email address nearby
+for webmail users.
 
 **Config** (`src/config/`) — Centralized data imported across the site:
 - `organization.ts` — Org name, address, contact info, verified nonprofit identity, and current donation instructions
@@ -108,6 +114,8 @@ The guide also publishes the IRS-listed name, EIN, federal classification, sourc
 date, and current contribution route. These come from `organization.nonprofit`
 and `organization.donations`, not separate copies of the facts. `donationEmailHref`
 supplies the same prefilled email link to the donation page, guide, and catalog.
+Its subject and editable message come from `organization.donations.emailSubject`
+and `emailBody`; keep the draft free of payment details and response-time promises.
 
 ### Machine-readable data
 

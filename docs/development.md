@@ -95,11 +95,17 @@ Keep transitive security fixes within their parent dependency ranges where possi
 **Pages** (`src/pages/`) — Each `.astro` file becomes a URL. `about.astro` → `/about`.
 
 **Layouts** (`src/layouts/BaseLayout.astro`) — The shared wrapper around every page. Contains the header, navigation, footer, SEO meta tags, and structured data (schema.org).
+The compact footer links to announced openings, contact details, and directions.
+Full addresses remain on Contact and in structured data; event listings remain
+on the homepage and Events page.
 
 **Components** (`src/components/`) — Reusable UI pieces like `Button.astro` and `SectionHeader.astro`.
+`ContactCard.astro` defaults to a framed card. Use `variant="plain"` for an inline
+email action; when hiding its detail list, keep a visible email address nearby
+for webmail users.
 
 **Config** (`src/config/`) — Centralized data imported across the site:
-- `organization.ts` — Org name, address, contact info
+- `organization.ts` — Org name, address, contact info, verified nonprofit identity, and current donation instructions
 - `navigation.ts` — Nav items shared by desktop and mobile menus
 
 **Content** (`src/content/`) — Markdown content collections: `events/`, `board/`, `gallery/`, `trains/` (engine roster), and `learn/` (guides). Each `.md` file has frontmatter (YAML between `---` lines) and body text. Glossary terms live in `src/data/glossary.yaml`.
@@ -114,13 +120,20 @@ Keep transitive security fixes within their parent dependency ranges where possi
 
 **AI site guide** (`src/pages/llms.txt.ts`) - Generates `/llms.txt` as a static Markdown-formatted text file during the build. It uses the shared organization config and Astro's `site` URL, and lists key public pages with visit-planning caveats. Update its curated links and descriptions when routes or their purpose change; keep event dates, hours, prices, and board names on their source pages. The shared layout and standalone map page link to the guide with `rel="describedby"`. This follows the [llms.txt proposal](https://llmstxt.org/), but does not change crawler permissions in `public/robots.txt` or guarantee AI service support.
 
+The guide also publishes the IRS-listed name, EIN, federal classification, source
+date, and current contribution route. These come from `organization.nonprofit`
+and `organization.donations`, not separate copies of the facts. `donationEmailHref`
+supplies the same prefilled email link to the donation page, guide, and catalog.
+Its subject and editable message come from `organization.donations.emailSubject`
+and `emailBody`; keep the draft free of payment details and response-time promises.
+
 ### Machine-readable data
 
 `/llms.txt` links to `/data/catalog.json`, a JSON catalog of downloadable datasets. The catalog includes field descriptions, formats, source links, caveats, and counts derived from the map files at build time. The shared layout advertises the catalog with `rel="describedby"`; the Events, Trains, Glossary, and standalone map pages also advertise their datasets with `rel="alternate"`.
 
 | URL | Contents | Source |
 | :-- | :------- | :----- |
-| `/data/catalog.json` | Dataset index and field descriptions | `src/config/data.ts` and the map files |
+| `/data/catalog.json` | Organization identity, donation route, dataset index, and field descriptions | `src/config/organization.ts`, `src/config/data.ts`, and the map files |
 | `/data/events.json` | All published event entries, including past events | `src/content/events/` |
 | `/data/trains.json` | Historical locomotive roster | `src/content/trains/` |
 | `/data/glossary.json` | Terms, definitions, categories, and term links | `src/data/glossary.yaml` |
@@ -128,6 +141,15 @@ Keep transitive security fixes within their parent dependency ranges where possi
 | `/map/extracted/ncng_historical_reference_features.geojson` | Historical stations and reference features | Existing map asset |
 
 The three content feeds use a versioned JSON envelope with `schemaVersion`, `generatedAt`, `catalogUrl`, `usagePolicyUrl`, `snapshotNote`, `id`, `name`, `description`, `url`, `sourcePageUrl`, `caveats`, and `items`. The event feed also includes the venue's IANA `timeZone`. Optional content fields are explicit `null` values. Entry IDs come from their content sources; do not derive dates or other facts from filenames. The catalog describes each item's fields. Event and train feeds follow date and roster order respectively, with ID as a tie-breaker; glossary entries sort by ID.
+
+The catalog's `organization` object identifies the publisher with its public name,
+IRS-listed name, EIN, federal classification, Schema.org nonprofit status,
+deductibility wording, and source URL/date. `sourcePublishedOn` is the IRS dataset
+publication date, not the build date or a live status assertion. The `donations`
+object provides the canonical page `url`, current `method` (`email-inquiry`),
+`instructions`, `contactEmail`, and a `mailto:` `emailUrl`. None of these is a
+payment endpoint or confirmation of a completed donation. These are additive
+catalog fields; existing dataset and feed contracts are unchanged.
 
 These files are snapshots from `npm run build`, not live APIs. `generatedAt` records generation, not source verification. Event dates are local calendar dates, not opening-hour timestamps. `date` and `endDate` retain host event dates. Optional `layoutStartDate` and `layoutEndDate` record confirmed layout days separately; null means no date was provided. The feed does not infer layout opening hours, admission prices, future recurrences, or upcoming/past status. For a confirmed opening, compare `layoutEndDate` (or `layoutStartDate` for a single day) with today's date in the feed's `timeZone`. Otherwise, use `endDate` or `date` to determine whether the host event has passed, without assuming the layout opens on those days. Regular work sessions and full event bodies remain on the Events page.
 

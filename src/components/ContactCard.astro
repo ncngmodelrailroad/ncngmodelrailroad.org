@@ -8,6 +8,7 @@ interface Props {
   subject: string;
   body?: string;
   cta?: string;
+  variant?: 'card' | 'plain';
   /** Set false where the page already lists the same contact details. */
   showDetails?: boolean;
   class?: string;
@@ -19,6 +20,7 @@ const {
   subject,
   body,
   cta = 'Email us',
+  variant = 'card',
   showDetails = true,
   class: className = '',
 } = Astro.props;
@@ -36,7 +38,7 @@ if (body) params.set('body', body.replace(/\r\n|\r|\n/g, '\r\n'));
 const mailtoHref = `mailto:${organization.contact.email}?${params.toString().replace(/\+/g, '%20')}`;
 ---
 
-<div class={`clean-card p-6 md:p-8 ${className}`}>
+<div class:list={[variant === 'card' && 'clean-card p-6 md:p-8', className]}>
   <h2 class="text-2xl font-body font-bold mb-3">{heading}</h2>
   {intro && <p class="text-gray-600 mb-6">{intro}</p>}
 

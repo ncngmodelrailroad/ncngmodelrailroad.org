@@ -30,7 +30,7 @@ Merge a PR only after all of the following: CI and tests pass, and the change ha
 - **Pages** are `src/pages/*.astro`, one file per route. `base` is `/` (custom domain), so internal links and image paths are root-relative.
 - **Content collections** (`src/content.config.ts`): `events`, `board`, `gallery`, `trains` (engine roster), and `learn` (newcomer guides) are Markdown via the `glob` loader. The glossary is a single YAML file, `src/data/glossary.yaml`, loaded via the `file()` loader — add terms there, not in component code.
 - **Shared config** in `src/config/`: `organization.ts` (name, address, contact, analytics) and `navigation.ts` (nav items; the call-to-action item uses a `cta: true` flag).
-- **Layout** `src/layouts/BaseLayout.astro` holds the header, footer (with a dynamic upcoming-events list), SEO meta, and schema.org JSON-LD.
+- **Layout** `src/layouts/BaseLayout.astro` holds the header, compact contact/navigation footer, SEO meta, and schema.org JSON-LD. Event listings stay on the homepage and Events page; full addresses stay on Contact.
 - **Styling** is Tailwind v4 plus a custom theme in `src/styles/global.css` (CSS variables and `@theme`). Brand colors and fonts live in `@theme`; extended semantic tokens live in `:root`. See `docs/design-system.md` and the live `/styleguide` page for the full token and component reference.
 - **Analytics** is Cloudflare Web Analytics only (cookie-free, no consent banner) via `organization.analytics.cfBeaconToken`. Do not add a second analytics provider.
 

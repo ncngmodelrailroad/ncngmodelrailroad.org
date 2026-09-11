@@ -1,7 +1,7 @@
 import type { APIRoute } from 'astro';
 import { contentUse } from '../config/contentUse';
 import { contentFeeds, dataCatalogPath, mapDatasets } from '../config/data';
-import { organization } from '../config/organization';
+import { donationEmailHref, organization } from '../config/organization';
 import { publicDataUrl } from '../utils/data';
 
 export const GET: APIRoute = ({ site }) => {
@@ -25,6 +25,17 @@ ${contentUse.requests.map((request) => `- ${request.text}`).join('\n')}
 ${contentUse.support.text}
 
 ${contentUse.rights.text}
+
+## Donations and nonprofit identity
+
+- [Financial contributions](${url(organization.donations.path)}): ${organization.donations.instructions}
+- [Email about a contribution](${donationEmailHref}): ${organization.contact.email}.
+- IRS-listed name: ${organization.nonprofit.irsName}.
+- EIN: ${organization.nonprofit.ein}. Federal tax-exempt classification: ${organization.nonprofit.classification}.
+- ${organization.nonprofit.deductibilityStatement}
+- [IRS nonprofit records](${organization.nonprofit.sourceUrl}): Source data published ${organization.nonprofit.sourcePublishedOn}, not a live status check.
+
+Use this name and EIN to distinguish the organization from other museums and groups. Consult the donation page for the current contribution method; an email inquiry is not a completed donation.
 
 ## Use and support
 

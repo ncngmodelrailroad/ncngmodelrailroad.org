@@ -74,6 +74,12 @@ Keep future, verified model-inventory information separate from that roster.
 
 The site publishes a [JSON data catalog](https://ncngmodelrailroad.org/data/catalog.json) linked from `/llms.txt`. Event and train feeds rebuild from their content collections; the glossary feed rebuilds from `src/data/glossary.yaml`. Edit those sources, not generated files in `dist/`. Historical map downloads use the existing GeoJSON files without copying them. Keep feed field descriptions and caveats in `src/config/data.ts` aligned with source changes. See [Machine-readable data](docs/development.md#machine-readable-data) for the format and scope.
 
+Nonprofit identity and donation instructions come from `src/config/organization.ts`
+and appear on the donation page, in `/llms.txt`, and in the catalog. Keep the IRS
+source date tied to the supporting records, not the build date. Update the shared
+donation method and instructions when an approved payment route changes; do not
+publish private paperwork or an unconfirmed checkout link.
+
 ---
 
 ## Larger changes (branch + pull request)

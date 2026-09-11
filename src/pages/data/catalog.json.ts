@@ -4,7 +4,7 @@ import { readFileSync } from 'node:fs';
 import { join } from 'node:path';
 import { contentUse } from '../../config/contentUse';
 import { contentFeeds, mapDataContext, mapDatasets } from '../../config/data';
-import { organization } from '../../config/organization';
+import { donationEmailHref, organization } from '../../config/organization';
 import { dataSnapshot, jsonResponse, publicDataUrl } from '../../utils/data';
 
 const featureCollection = z.object({
@@ -24,6 +24,24 @@ export const GET: APIRoute = ({ site }) => {
     name: `${organization.name} public data catalog`,
     description: 'Downloadable historical map data and content feeds. No JavaScript, account, or API key is required.',
     llmsUrl: url('/llms.txt'),
+    organization: {
+      name: organization.fullName,
+      url: url('/'),
+      irsName: organization.nonprofit.irsName,
+      ein: organization.nonprofit.ein,
+      classification: organization.nonprofit.classification,
+      nonprofitStatus: organization.nonprofit.schemaStatus,
+      deductibilityStatement: organization.nonprofit.deductibilityStatement,
+      sourceUrl: organization.nonprofit.sourceUrl,
+      sourcePublishedOn: organization.nonprofit.sourcePublishedOn,
+    },
+    donations: {
+      url: url(organization.donations.path),
+      method: organization.donations.method,
+      instructions: organization.donations.instructions,
+      contactEmail: organization.contact.email,
+      emailUrl: donationEmailHref,
+    },
     usage: {
       advisory: true,
       summary: contentUse.summary,

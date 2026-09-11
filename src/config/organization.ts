@@ -19,7 +19,24 @@ export const organization = {
   tagline: "Where California's Railroad Heritage Comes Alive",
   description: "An On3 scale historical model railroad display at the Nevada County Fairgrounds, preserving the memory of the Nevada County Narrow Gauge Railroad.",
   founded: 1986,
-  nonprofit: "",
+  // IRS EO BMF identity. Evidence and legal-name spelling notes are
+  // recorded in docs/participation-paths.md; irsName is not a legal-name claim.
+  nonprofit: {
+    irsName: "Nevada County Narrow Gauge Project",
+    ein: "68-0327319",
+    classification: "501(c)(3)",
+    schemaStatus: "https://schema.org/Nonprofit501c3",
+    deductibilityStatement: "Contributions are tax-deductible to the extent permitted by law.",
+    sourceUrl: "https://www.irs.gov/charities-non-profits/exempt-organizations-business-master-file-extract-eo-bmf",
+    sourcePublishedOn: "2026-09-08",
+  },
+  donations: {
+    path: "/donate",
+    method: "email-inquiry",
+    instructions: "Email us for current donation instructions. Online checkout is not available.",
+    emailSubject: "Financial contribution inquiry",
+    emailBody: "I'd like to support the layout. Please send the current donation instructions.",
+  },
   visiting: {
     publicAccess: `We open during selected events at the ${location.venue}, only when an opening is announced on this website.`,
     eventTiming: "Fairgrounds event dates and hours are not necessarily our opening dates and hours. Check the announcement before visiting.",
@@ -59,3 +76,6 @@ export const organization = {
     cfBeaconToken: "8e6f7569c50c4856a2a8800970d962d6",
   },
 };
+
+export const donationEmailHref =
+  `mailto:${organization.contact.email}?subject=${encodeURIComponent(organization.donations.emailSubject)}&body=${encodeURIComponent(organization.donations.emailBody)}`;

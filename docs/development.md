@@ -8,13 +8,13 @@ This guide walks you through setting up the site on your own computer so you can
 
 You need two things installed:
 
-1. **Node.js** (version 18 or newer) — [Download here](https://nodejs.org/)
+1. **Node.js** (version 22.19 or newer; CI uses Node 22) - [Download here](https://nodejs.org/)
 2. **Git** — [Download here](https://git-scm.com/)
 
 To check if you have them:
 
 ```sh
-node --version   # should print v18.x.x or higher
+node --version   # should print v22.19.0 or higher
 git --version    # should print git version 2.x.x
 ```
 
@@ -79,6 +79,16 @@ Serves the `dist/` folder locally so you can verify the production build looks r
 | [Tailwind CSS](https://tailwindcss.com/) | Utility-first CSS framework for styling |
 | [astro-icon](https://github.com/natemoo-re/astro-icon) | Icon component using [Iconify Solar](https://icon-sets.iconify.design/solar/) set, plus [Simple Icons](https://icon-sets.iconify.design/simple-icons/) for brand marks |
 | GitHub Pages | Free static hosting, auto-deploys on push |
+
+Astro 7 uses Vite 8 and the Rust template compiler. The site keeps `output: 'static'` and `compressHTML: true` to preserve static hosting and HTML-aware whitespace handling. Markdown uses the explicit `unified()` processor from `@astrojs/markdown-remark` with `rehype-sanitize`, preserving the sanitization used before Astro 7.
+
+After changing dependencies, regenerate the lockfile for the Linux CI runner:
+
+```sh
+npm install --package-lock-only --os=linux --cpu=x64
+```
+
+Keep transitive security fixes within their parent dependency ranges where possible. Use `package.json` overrides when a required fix falls outside those ranges.
 
 ### Key concepts
 

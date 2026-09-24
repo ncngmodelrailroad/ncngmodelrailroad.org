@@ -13,6 +13,7 @@ Public website for an all-volunteer model railroad museum. Astro static site, Ta
 - `npm run build` — production build into `dist/`; this is exactly what CI runs
 - `npm run preview` — serve the production build
 - There is no unit-test suite. "Validating a change" means it builds, and for visual changes that it renders correctly (see Visual / CSS changes).
+- New worktrees start without `node_modules`, and a pull from `main` can add dependencies. Run `npm ci` before building. Do not skip the build or report "npm unavailable" without trying it.
 
 ## Deploy and branch protection
 
@@ -24,6 +25,13 @@ Public website for an all-volunteer model railroad museum. Astro static site, Ta
 
 Merge a PR only after all of the following: CI and tests pass, and the change has been **rubber-ducked**, **code-reviewed**, and **de-slopped** (an anti-slop pass on any prose, per the stop-slop guidelines: no em dashes, no filler, active voice, specific). Do not merge on green CI alone.
 
+- PR descriptions and code comments are public claims. List only checks you actually ran against the final commit. Cite where screenshots live (the session `files/` directory, not the repo). Test a causal explanation ("X happens because Y") before you write it down.
+
+## Status replies
+
+- Keep replies short. Open with the plain state (done, ready to merge, or blocked on X), then the one decision needed from the user, if any.
+- Leave out internal review back-and-forth and implementation detail unless asked. Put that detail in the PR body.
+- Stay on the requested task. Mention optional cleanup in one line instead of doing it.
 
 ## Architecture
 
@@ -41,13 +49,15 @@ Merge a PR only after all of the following: CI and tests pass, and the change ha
 
 ## Events and content accuracy
 
-- Do not assert an admission price or "free" for visiting the layout — no "free", and no JSON-LD `Offer` / `priceRange`. The host festival may be ticketed, but the layout's admission varies and is often unconfirmed.
+- Do not assert an admission price or "free" for visiting the layout, and add no JSON-LD `Offer` / `priceRange`. A "$1 suggested donation" line shipped once (#67) and was later removed from the homepage and event page. Ask before re-adding any donation amount. Keep host-event gate and parking fees clearly separate from the layout.
 - The layout's open hours can differ from the host event's dates. Mark hours TBA unless confirmed.
 - Club information is sporadic and unreliable. Do not publish event changes (add, cancel, or hours) off a single unverified report. Confirm first, default to conservative wording, and prefer reversible PRs over direct commits.
+- Social media drafts: offer a few short variants to choose from. Match the organization's existing plain, welcoming voice and avoid hype. The same facts, hours, and admission rules apply as on the site.
 
 ## Dependencies
 
 - After changing dependencies, regenerate the lockfile for Linux: `npm install --package-lock-only --os=linux --cpu=x64`. A macOS-only lock omits Linux native binaries (rollup, esbuild, sharp, lightningcss) and breaks `npm ci` on the Pages CI runner.
+- If `npm ci` fails with a missing platform package (for example `@esbuild/sunos-x64`), or `package-lock.json` conflicts during a rebase, regenerate the lockfile with that command. Do not resolve it by hand, and do not work around it with a local `npm install`.
 - Transitive or security bumps that a parent's range won't allow go through `package.json` `overrides`.
 
 ## Visual / CSS changes

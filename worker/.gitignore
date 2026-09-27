@@ -1,0 +1,11 @@
+# Worker tooling and build artifacts — never commit these.
+node_modules/
+.wrangler/
+dist/
+.dev.vars
+*.log
+
+# Never commit secrets or private keys.
+*.pem
+*.pkcs8
+*.key

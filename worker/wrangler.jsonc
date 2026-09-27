@@ -1,0 +1,37 @@
+{
+  // Cloudflare Worker for the magic-link content editor.
+  // Design: ../docs/design/content-editor.md
+  // PUBLIC REPO: this file holds NO secrets. Secrets are set with
+  //   `wrangler secret put <NAME>` (see README.md) and never committed.
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "ncng-content-editor",
+  "main": "src/index.ts",
+  "compatibility_date": "2024-12-05",
+  "observability": { "enabled": true },
+
+  // KV holds issued capabilities (links) and the audit log.
+  // Create it with `wrangler kv namespace create EDITOR_KV` and paste the id below.
+  "kv_namespaces": [
+    { "binding": "EDITOR_KV", "id": "REPLACE_WITH_YOUR_KV_NAMESPACE_ID" }
+  ],
+
+  // Non-secret configuration. Edit these to match your install.
+  "vars": {
+    "GITHUB_OWNER": "djdefi",
+    "GITHUB_REPO": "ncngmodelrailroad.org",
+    "BASE_BRANCH": "main",
+    "GITHUB_APP_ID": "REPLACE_WITH_YOUR_APP_ID",
+    "GITHUB_APP_INSTALLATION_ID": "REPLACE_WITH_YOUR_INSTALLATION_ID",
+    "GITHUB_OAUTH_CLIENT_ID": "REPLACE_WITH_YOUR_OAUTH_CLIENT_ID",
+    "WORKER_ORIGIN": "https://edit.ncngmodelrailroad.org",
+    "SITE_ORIGIN": "https://ncngmodelrailroad.org",
+    // Comma-separated GitHub logins allowed into /admin. Set yours here.
+    "ADMIN_ALLOWLIST": "djdefi"
+  }
+
+  // Secrets (set via `wrangler secret put`, NOT here):
+  //   GITHUB_APP_PRIVATE_KEY      PKCS#8 PEM of the GitHub App private key
+  //   GITHUB_OAUTH_CLIENT_SECRET  OAuth app client secret
+  //   CAPABILITY_SIGNING_KEY      random 32+ byte secret (HMAC for links)
+  //   SESSION_SIGNING_KEY         random 32+ byte secret (admin cookie HMAC)
+}

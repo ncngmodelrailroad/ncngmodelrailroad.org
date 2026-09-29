@@ -1,0 +1,122 @@
+---
+title: Painting and Weathering
+description: A beginner's guide to brushes, paints, decals, and weathering, plus how to fix mistakes and paint safely.
+order: 11
+icon: solar:palette-bold
+---
+
+Paint turns a shiny plastic model into something that looks like it has worked for a living. The good news for beginners: paint mistakes are almost always fixable. You can wipe, sand, repaint, or strip a model and start over. This guide covers what to buy, how the common paints behave, and how to stay safe while you learn.
+
+## Start with something you won't miss
+
+Practice on a cheap or secondhand model first. An old freight car from a swap meet, a spare plastic kit, or a scrap of styrene sheet makes a fine test piece. Try a technique there before you touch a locomotive you care about. Many modelers keep a "test shelf" of junk cars for exactly this.
+
+## Brushes
+
+You need only a few brushes to start:
+
+- **A fine round brush** (size 0 or 10/0) for small details like handrails and lamps
+- **A medium round** (size 1 or 2) for general painting
+- **A small flat brush** for broad, even areas
+- **An old, stiff brush** for drybrushing and weathering powders. Drybrushing wears brushes out, so don't use your good ones.
+
+Synthetic brushes work well with acrylic paint and cost less than natural sable.
+
+Brush care keeps a brush working for years:
+
+- Don't dip past the bristles. Paint that dries in the metal band (the **ferrule**) splays the tip.
+- Rinse often while you work, in water for acrylics or the matching thinner for solvent paints.
+- Wash brushes with a brush soap when you finish, reshape the tip, and let them dry flat or bristles up.
+
+## Acrylic, enamel, and lacquer
+
+Hobby paints fall into three broad families: acrylic, enamel, and lacquer. Acrylics come in water-based and alcohol-based kinds. Each type uses a different **solvent**, the liquid that thins the paint and cleans it up.
+
+- **Water-based acrylic.** Cleans up with water. Low odor, dries fast, and makes the easiest start. For example, Vallejo, AK, or Citadel.
+- **Alcohol-based acrylic.** Thins and cleans up with isopropyl alcohol or the maker's thinner. Moderate odor. For example, Tamiya acrylics.
+- **Enamel.** Cleans up with mineral spirits or enamel thinner. Strong fumes, slow drying, and a tough finish. For example, Testors or Humbrol.
+- **Lacquer.** Cleans up with lacquer thinner. The strongest fumes, but very durable and sprays beautifully. For example, Mr. Color or Scalecoat.
+
+**Layering order matters.** Stronger ("hotter") solvents can lift or wrinkle the paint beneath them. The usual rule of thumb runs from hottest to mildest: lacquer on the bottom, then enamel, then acrylic on top. Avoid lacquer over anything else. Let each coat cure fully, and test any new combination on scrap. Beginners can skip most of this by sticking with water-based acrylics.
+
+## Primer
+
+Primer gives paint something to grip, shows flaws before you add color, and makes colors look even. First, wash the model in warm water with a drop of dish soap to remove finger oils and mold release, then let it dry. A light gray primer suits most colors. For example, Tamiya Fine Surface Primer, Vallejo Surface Primer, or Mr. Surfacer. Two light coats beat one heavy coat.
+
+## Thinning
+
+Paint straight from the jar is usually too thick for fine detail. Thick paint fills in rivets and board lines.
+
+- **For brushing,** add a drop of thinner or water at a time. Two or three thin coats look better than one thick one.
+- **For airbrushing,** thin to roughly the consistency of whole milk.
+- Use the thinner the paint maker recommends. Mixing brands of thinner and paint can make paint curdle.
+
+## Spray cans or airbrush?
+
+**Spray cans** need no extra equipment and work well for primer, one-color jobs, and clear coats. Warm the can in a bowl of warm tap water, shake it well, and spray in short passes from about a foot away.
+
+An **airbrush** is a small paint sprayer powered by an air compressor. It gives finer control and wastes less paint, but it takes practice and cleaning. Start at low pressure, often around 15 to 30 psi depending on the airbrush and paint, and check the maker's recommendation. Practice on paper or scrap before a model. Many modelers paint happily for years with brushes and cans alone.
+
+## Decals
+
+Most lettering and road names come as **water-slide decals**: printed film on backing paper that slides off after a soak in water.
+
+1. Brush a **gloss** clear coat where the decal goes. Decals stick poorly to flat paint, and the trapped air shows as a silvery haze called **silvering**.
+2. Soak the decal briefly in water until it slides on its backing.
+3. Brush a mild **setting solution** onto the spot, then slide the decal into place with a soft brush. For example, Microscale Micro Set.
+4. Brush a stronger softening solution over the top to help the decal hug rivets and seams, then leave it alone while it works. For example, Microscale Micro Sol. Even stronger solutions exist and can distort thin decals, so test them on a spare.
+5. Let it dry overnight before the next step.
+
+## Flat clear coats
+
+Real railroad equipment rarely shines. A **flat** (matte) clear coat hides decal edges, blends everything together, and protects the paint. For example, Vallejo Matt Varnish, Mr. Super Clear Flat, or a matte clear from a hardware store spray can. Spray light coats on a dry, mild day. Humid air can turn a flat coat cloudy.
+
+## Weathering for beginners
+
+**[Weathering](/learn/glossary#weathering)** makes a model look used, with dirt, rust, soot, and fading. Look at photos of real equipment first, especially the Nevada County Narrow Gauge cars and engines on our [trains page](/trains). Dirt collects low and rust starts where water sits. Three forgiving techniques:
+
+- **Washes.** Heavily thinned dark paint that flows into cracks and seams to add shadow. Brush it on, then wipe the high spots with a tissue.
+- **Drybrushing.** Load an old brush, wipe almost all the paint off onto a paper towel, then flick it lightly across raised detail. Edges catch the color and stand out.
+- **Weathering powders and pastels.** Fine colored powder brushed on for dust, rust, and soot. For example, Bragdon or AIM weathering powders, or artist chalk pastels scraped into powder. Powder wipes off if you don't like it. Some brands include a binder that helps it stick. A flat clear coat locks powder in but can make much of it vanish, so go a bit heavier than you want, seal lightly, and repeat if needed.
+
+Less is more. You can always add grime, and a light touch looks more real than a heavy one.
+
+## How to fix mistakes
+
+Nearly any paint mistake can be undone:
+
+- **Wet paint in the wrong spot:** wipe it off with a damp brush or cotton swab.
+- **A run, drip, or dust speck:** let it dry, sand it smooth with fine sandpaper or a sanding stick, and repaint.
+- **Too much weathering:** remove powder with a damp brush. Knock back a heavy wash with a cotton swab and a little thinner.
+- **A finish you hate:** strip it. Isopropyl alcohol (91 percent or stronger) lifts many paints from plastic with a soak and a scrub, though some factory finishes resist it. Commercial hobby paint strippers and degreasers handle tougher paints. Test any stripper on a hidden spot first. Some, including brake-fluid-based strippers, attack certain plastics such as ABS.
+
+A stripped model often comes out better the second time, because you have learned something.
+
+## Starter paint kit checklist
+
+- Three or four brushes (fine round, medium round, small flat, old stiff brush)
+- A spray can of gray primer
+- Water-based acrylic paints in a few basics: black, a boxcar red or brown, a gray, a rust color
+- The matching thinner
+- Gloss and flat clear coats
+- Decal setting solution
+- Weathering powders or a few chalk pastels
+- Toothpicks, cotton swabs, paper towels, and a paint palette or old tile
+- Sanding sticks and fine sandpaper
+- A scrap model for practice
+
+## Safety checklist
+
+- Work in a well-ventilated room. Spray outdoors or in a spray booth vented outside.
+- For solvent paints or any airbrushing, wear a half-face respirator with **organic vapor** cartridges and particulate prefilters. A dust mask alone does not stop solvent fumes.
+- Wear nitrile gloves when handling thinners and strippers.
+- Keep solvents and spray cans away from flames, pilot lights, and heaters.
+- Don't eat or drink at the paint bench.
+- Keep lids closed and paint out of reach of children and pets.
+- Read the label and safety data sheet for anything new, and follow local rules for disposing of solvents.
+
+## Keep exploring
+
+- [Glossary of terms](/learn/glossary): kitbashing, weathering, and more, in plain English
+- [The trains](/trains): real equipment to study before you weather
+- [New to model railroading?](/learn/new-to-model-railroading): the basics of scale, gauge, and our railroad

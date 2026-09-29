@@ -7,6 +7,15 @@ icon: solar:plug-circle-bold
 
 Model railroad wiring looks mysterious until you learn a few ideas and two tools. Layouts run on low voltage, most mistakes cost a blown resistor rather than a burnt hand, and nearly every problem has a simple test. This page covers the basics, then gives you two checklists to take to the workbench.
 
+**New to all of this?** Read the short version and the safety section, then skip to the checklists. Come back to the rest when a project calls for it. **Already comfortable with a soldering iron?** Jump to [DCC in plain terms](#dcc-in-plain-terms).
+
+## The short version
+
+- The rails carry low voltage. Wall outlets do not. Stay out of anything that plugs into the wall.
+- Unplug the system before you touch wiring.
+- A multimeter answers most "why won't it run?" questions.
+- At the club, ask an experienced member before you change any layout wiring.
+
 ## Low voltage and wall power are different worlds
 
 - **Track power is low voltage.** A DCC system puts roughly 12 to 22 volts on the rails, depending on scale and settings. You can touch the rails safely. The real risk is heat: a dead short can make a wire or rail very hot.
@@ -19,10 +28,10 @@ Model railroad wiring looks mysterious until you learn a few ideas and two tools
 
 A **digital multimeter** measures voltage, resistance, and continuity. It is the most useful electrical tool you will own. Well-regarded examples range from budget meters by Klein Tools or AstroAI to shop-grade meters by Fluke. A basic autoranging meter covers everything on this page.
 
-- **Continuity** checks whether two points connect. Touch the probes to each end of a wire; the meter beeps if it conducts. Use it to find broken feeders, bad rail joints, and hidden shorts, always with the power off.
+- **Continuity** checks whether two points connect. Touch the probes to each end of a wire; the meter beeps if electricity can flow through it. Use it to find broken feeders, bad rail joints, and hidden shorts, always with the power off.
 - **DC voltage** (marked V with a straight line) reads batteries, wall adapters for lighting, and older DC train layouts.
 - **AC voltage** (marked V with a wavy line) is the setting people try for DCC track.
-- **Why DCC reads oddly.** DCC is neither steady DC nor smooth AC. It is a fast square wave that flips polarity thousands of times a second to carry data. Many meters expect a smooth 60 Hz wave, so they read low or jump around. A **true RMS** meter gets closer, and dedicated DCC meters exist for exact numbers. For everyday checks, you are looking for "about the same as last time" and "the same on every section of track."
+- **Why DCC reads oddly.** DCC is neither steady DC nor smooth AC. It is a fast square wave that flips polarity thousands of times a second to carry data. Many meters expect a smooth 60 Hz wave, so they read low or jump around. A **true RMS** meter, one built to measure unusual waveforms, gets closer, and dedicated DCC meters exist for exact numbers. For everyday checks, you are looking for "about the same as last time" and "the same on every section of track."
 
 ## Soldering basics
 
@@ -42,12 +51,14 @@ Most layouts use two kinds of wire under the benchwork.
 
 - **Bus wires** are a pair of heavy wires that run the length of the layout, carrying power from the system. Heavy means a lower gauge number, often 12 or 14 AWG.
 - **Feeders** are short, thinner wires (often 18 to 22 AWG) that drop from the bus to the rails every few feet. Frequent feeders keep power steady even when rail joints get dirty or loose.
-- **Wire gauge (AWG).** Smaller numbers mean thicker wire. Thicker wire carries more current with less loss over long runs.
+- **Wire gauge (AWG, American Wire Gauge).** Smaller numbers mean thicker wire. Thicker wire carries more current with less loss over long runs.
 - **Color coding.** Pick one color for each rail, such as red for the front rail and black for the back, and keep it the same everywhere. Consistent colors make every future repair faster.
 
 ## DCC in plain terms
 
 **[DCC](/learn/glossary#dcc-digital-command-control)** (Digital Command Control) keeps full power on the rails all the time and sends digital commands along with it. Each locomotive listens only for commands meant for it.
+
+![Diagram of a DCC system. A throttle sends commands to the command station, which passes them to the booster. The booster powers the track, and a decoder inside each locomotive reads the commands.](/images/learn/dcc-signal-path.svg)
 
 - **Command station.** The brain. It turns your throttle inputs into digital packets.
 - **Booster.** The muscle. It amplifies those packets into track power. Small systems combine the command station and booster in one box.
@@ -77,7 +88,7 @@ Other systems work just as well at home. Ask before you bring your own throttle 
 
 LEDs light buildings, street lamps, and locomotive headlights. Two rules keep them alive.
 
-- **Always use a resistor.** An LED on its own draws current until it burns out. A resistor in series limits that current. For typical 12 to 14 volt hobby circuits, a value around 1,000 ohms is a common, safe starting point. Online LED resistor calculators work out exact values.
+- **Always use a resistor.** An LED on its own draws current until it burns out. A resistor wired in line with the LED (in series) limits that current. For typical 12 to 14 volt hobby circuits, a value around 1,000 ohms is a common, safe starting point. Online LED resistor calculators work out exact values.
 - **Mind the polarity.** An LED passes current only one way. The longer leg is positive (anode) and the flat side of the lens marks negative (cathode). Wired backward, it simply stays dark.
 - **On DCC track power**, which flips polarity, add a diode or use a lighting board made for DCC. Many hobbyists power scenery lighting from a separate DC supply instead.
 
@@ -113,4 +124,10 @@ A club layout holds decades of other people's work, and the wiring under it has 
 
 - [New to model railroading?](/learn/new-to-model-railroading): the friendly starting point
 - [Glossary of terms](/learn/glossary): every model and rail word, explained in plain English
-- [National Model Railroad Association](https://www.nmra.org): publishes the DCC standards that let equipment from different makers work together
+
+### Further reading
+
+- [Wiring for DCC](https://www.wiringfordcc.com): a long-running, free reference on feeders, buses, boosters, and troubleshooting
+- [NMRA standards](https://www.nmra.org/index-nmra-standards-and-recommended-practices): the DCC standards that let equipment from different makers work together
+- [JMRI](https://www.jmri.org): the free software our layout computer runs
+- [Engine Driver](https://enginedriver.mstevetodd.com): the Android throttle app our members use on the layout

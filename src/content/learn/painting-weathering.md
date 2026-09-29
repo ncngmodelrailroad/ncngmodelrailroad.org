@@ -9,7 +9,7 @@ Paint turns a shiny plastic model into something that looks like it has worked f
 
 ## Start with something you won't miss
 
-Practice on a cheap or secondhand model first. An old freight car from a swap meet, a spare plastic kit, or a scrap of styrene sheet makes a fine test piece. Try a technique there before you touch a locomotive you care about. Many modelers keep a "test shelf" of junk cars for exactly this.
+Practice on a cheap or secondhand model first. An old freight car from a swap meet, a spare plastic kit, or a scrap of styrene sheet makes a fine test piece. Try a technique there before you touch a locomotive you care about.
 
 ## Brushes
 
@@ -37,7 +37,7 @@ Hobby paints fall into three broad families: acrylic, enamel, and lacquer. Acryl
 - **Enamel.** Cleans up with mineral spirits or enamel thinner. Strong fumes, slow drying, and a tough finish. For example, Testors or Humbrol.
 - **Lacquer.** Cleans up with lacquer thinner. The strongest fumes, but very durable and sprays beautifully. For example, Mr. Color or Scalecoat.
 
-**Layering order matters.** Stronger ("hotter") solvents can lift or wrinkle the paint beneath them. The usual rule of thumb runs from hottest to mildest: lacquer on the bottom, then enamel, then acrylic on top. Avoid lacquer over anything else. Let each coat cure fully, and test any new combination on scrap. Beginners can skip most of this by sticking with water-based acrylics.
+**Layering order matters.** Stronger ("hotter") solvents can lift or wrinkle the paint beneath them. As a rough tendency, hotter paints sit lower in the stack: lacquer, then enamel, then acrylic. The real rule is simpler: check the paint maker's compatibility advice, let each coat cure fully, spray or brush light coats, and test any new combination on scrap. Beginners can skip most of this by sticking with water-based acrylics.
 
 ## Primer
 
@@ -45,7 +45,7 @@ Primer gives paint something to grip, shows flaws before you add color, and make
 
 ## Thinning
 
-Paint straight from the jar is usually too thick for fine detail. Thick paint fills in rivets and board lines.
+Paint straight from the jar often fills in rivets and board lines.
 
 - **For brushing,** add a drop of thinner or water at a time. Two or three thin coats look better than one thick one.
 - **For airbrushing,** thin to roughly the consistency of whole milk.
@@ -53,7 +53,7 @@ Paint straight from the jar is usually too thick for fine detail. Thick paint fi
 
 ## Spray cans or airbrush?
 
-**Spray cans** need no extra equipment and work well for primer, one-color jobs, and clear coats. Warm the can in a bowl of warm tap water, shake it well, and spray in short passes from about a foot away.
+**Spray cans** need no extra equipment and work well for primer, one-color jobs, and clear coats. Shake the can well and spray in short, light passes, following the distance and temperature on the label. Never heat a can with hot water or direct heat, or store it above the maker's stated temperature.
 
 An **airbrush** is a small paint sprayer powered by an air compressor. It gives finer control and wastes less paint, but it takes practice and cleaning. Start at low pressure, often around 15 to 30 psi depending on the airbrush and paint, and check the maker's recommendation. Practice on paper or scrap before a model. Many modelers paint happily for years with brushes and cans alone.
 
@@ -69,11 +69,11 @@ Most lettering and road names come as **water-slide decals**: printed film on ba
 
 ## Flat clear coats
 
-Real railroad equipment rarely shines. A **flat** (matte) clear coat hides decal edges, blends everything together, and protects the paint. For example, Vallejo Matt Varnish, Mr. Super Clear Flat, or a matte clear from a hardware store spray can. Spray light coats on a dry, mild day. Humid air can turn a flat coat cloudy.
+Real railroad equipment rarely shines. A **flat** (matte) clear coat hides decal edges, blends everything together, and protects the paint. For example, Vallejo Matt Varnish, Mr. Super Clear Flat, or Microscale Micro Coat Flat. General-purpose clears can attack hobby paint, so stick to hobby finishes and test on scrap. Spray light coats on a dry, mild day. Humid air can turn a flat coat cloudy.
 
 ## Weathering for beginners
 
-**[Weathering](/learn/glossary#weathering)** makes a model look used, with dirt, rust, soot, and fading. Look at photos of real equipment first, especially the Nevada County Narrow Gauge cars and engines on our [trains page](/trains). Dirt collects low and rust starts where water sits. Three forgiving techniques:
+**[Weathering](/learn/glossary#weathering)** makes a model look used, with dirt, rust, soot, and fading. Look at photos of real equipment first, especially the Nevada County Narrow Gauge cars and engines on our [trains page](/trains). Dirt collects low, and rust starts where water sits. Three forgiving techniques:
 
 - **Washes.** Heavily thinned dark paint that flows into cracks and seams to add shadow. Brush it on, then wipe the high spots with a tissue.
 - **Drybrushing.** Load an old brush, wipe almost all the paint off onto a paper towel, then flick it lightly across raised detail. Edges catch the color and stand out.
@@ -83,12 +83,12 @@ Less is more. You can always add grime, and a light touch looks more real than a
 
 ## How to fix mistakes
 
-Nearly any paint mistake can be undone:
+Many paint mistakes are fixable:
 
 - **Wet paint in the wrong spot:** wipe it off with a damp brush or cotton swab.
 - **A run, drip, or dust speck:** let it dry, sand it smooth with fine sandpaper or a sanding stick, and repaint.
 - **Too much weathering:** remove powder with a damp brush. Knock back a heavy wash with a cotton swab and a little thinner.
-- **A finish you hate:** strip it. Isopropyl alcohol (91 percent or stronger) lifts many paints from plastic with a soak and a scrub, though some factory finishes resist it. Commercial hobby paint strippers and degreasers handle tougher paints. Test any stripper on a hidden spot first. Some, including brake-fluid-based strippers, attack certain plastics such as ABS.
+- **A finish you hate:** strip it. Isopropyl alcohol (91 percent or stronger) lifts many paints from plastic with a soak and a scrub, though some factory finishes resist it. For tougher paints, use a stripper made for the model's material, and test it on scrap or a hidden spot first. Stripping has trade-offs: it can remove factory lettering, craze clear parts, attack resin or ABS plastic, and loosen glued details.
 
 A stripped model often comes out better the second time, because you have learned something.
 
@@ -102,13 +102,14 @@ A stripped model often comes out better the second time, because you have learne
 - Decal setting solution
 - Weathering powders or a few chalk pastels
 - Toothpicks, cotton swabs, paper towels, and a paint palette or old tile
-- Sanding sticks and fine sandpaper
+-Sanding sticks and fine sandpaper
 - A scrap model for practice
 
 ## Safety checklist
 
-- Work in a well-ventilated room. Spray outdoors or in a spray booth vented outside.
-- For solvent paints or any airbrushing, wear a half-face respirator with **organic vapor** cartridges and particulate prefilters. A dust mask alone does not stop solvent fumes.
+- Work in a well-ventilated room. For spraying, a spray booth exhausted outdoors is the main protection. A respirator backs it up.
+- For solvent paints or any spraying, wear a NIOSH-approved respirator. Choose cartridges based on the product's safety data sheet (SDS), usually **organic vapor**, and add particulate prefilters for spray mist. A dust mask alone does not stop solvent fumes.
+- Make sure the respirator fits, do a seal check each time you put it on, and keep the seal area clean-shaven. Replace cartridges on the maker's schedule.
 - Wear nitrile gloves when handling thinners and strippers.
 - Keep solvents and spray cans away from flames, pilot lights, and heaters.
 - Don't eat or drink at the paint bench.

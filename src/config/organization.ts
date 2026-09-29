@@ -42,6 +42,8 @@ export const organization = {
   // The flyer's QR code points to an old register.jsp URL that now returns 404.
   escrip: {
     merchant: "SPD Market",
+    // SPD's site serves HTTP only; HTTPS connections fail.
+    merchantLocationsUrl: "http://www.spdmarket.com/locations.html",
     groupId: "500030588",
     groupName: "Nevada County Narrow Gauge Project",
     rate: "up to 3%",

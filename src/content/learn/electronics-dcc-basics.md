@@ -62,9 +62,16 @@ Most layouts use two kinds of wire under the benchwork.
 
 To check that a district's breaker works, lay a coin across both rails at the far end of that district. The breaker or booster should trip right away. If it does not, the wiring to that area is too thin or too long, and it needs attention before trains run.
 
-### Common systems, as examples
+### Common systems
 
-Most DCC equipment follows shared NMRA standards, so brands work together. Widely used examples are the NCE Power Cab, Digitrax starter sets, and ESU's ECoS command stations and LokSound decoders. These are examples of what you will see in hobby shops and forums, not a statement about what any layout uses. Ask about a layout's system before you bring a throttle or decoder to it.
+Most DCC equipment follows shared NMRA standards, so brands work together. Widely used examples include the NCE Power Cab, Digitrax starter sets, and ESU's ECoS command stations and LokSound decoders.
+
+At our layout:
+
+- **The workbench** has an NCE Power Cab, a compact system that combines throttle, command station, and booster.
+- **On the layout**, members run trains with the Engine Driver app on Android tablets. The tablets connect over Wi-Fi to JMRI, free software on a computer that links to the layout's DCC system by USB.
+
+Other systems work just as well at home. Ask before you bring your own throttle or decoder to the layout.
 
 ## LED lighting basics
 

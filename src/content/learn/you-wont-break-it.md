@@ -84,7 +84,7 @@ A few habits prevent almost every hobby injury.
 
 ## What a first work session might look like
 
-Every group runs things its own way, so treat this as a general picture, not a promise. A first session often starts with a short tour, a look at the section being worked on, and a small, well-defined task alongside someone more experienced. Common first jobs include cleaning track, making trees, sorting parts, or painting simple scenery. You will likely spend a good part of the time watching and asking questions, and that counts as real help.
+Every group runs things its own way, so treat this as a general picture, not a promise. A first session often starts with a short tour, a look at the section being worked on, and a small, well-defined task alongside someone more experienced. Common first jobs include cleaning track, making trees, sorting parts, or painting simple scenery. When it is time to run trains, you will likely drive them from a tablet throttle, an app that works like a handheld controller. It is an easy, low-risk way to start, and someone can show you how to stop a train in seconds. Expect to spend a good part of the time watching and asking questions, and that counts as real help.
 
 To learn how to get involved with our group, see the [volunteer page](/volunteer).
 

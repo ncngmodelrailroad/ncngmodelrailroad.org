@@ -274,6 +274,10 @@ edition:
 | `public/images/fairgrounds-map-full.webp` | Whole-fairgrounds map, linked from the page |
 | `public/downloads/fairgrounds-map.pdf` | Printable version |
 
+The walking directions also show `public/images/fairgrounds-hut-sign.webp`
+and `-hut-sign.jpg`, a photo of the NCNGRR sign on the Main Street side of
+the hut. Replace it if the sign is repainted or moved.
+
 If a gate, path, or landmark changes, update the numbered walking directions
 and the image alt text in `src/pages/contact.astro` to match the new map.
 Keep the caveats: gates vary by event, and the walk is not a certified

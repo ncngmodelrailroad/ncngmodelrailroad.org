@@ -126,8 +126,23 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
           <ol class="list-decimal pl-6 space-y-2 text-gray-700 mt-4">
             <li>For most events outside the Fair, enter at Gate 1 on McCourtney Road. Check your event announcement, since entrances and parking can change.</li>
             <li>From Gate 1, walk straight across the entry plaza until you reach Main Street, the main path. The restrooms at Main Street Center mark this junction.</li>
-            <li>Turn left onto Main Street. The red Quonset hut is on your left, with its doors facing Main Street and the lawn. If you reach the bottle refill, you have just passed the hut.</li>
+            <li>Turn left onto Main Street. The red Quonset hut is on your left, with its doors facing Main Street and the lawn. Look for NCNGRR painted in white on the red wall. If you reach the bottle refill, you have just passed the hut.</li>
           </ol>
+          <figure class="mt-4 max-w-sm">
+            <picture>
+              <source srcset={`${base}/images/fairgrounds-hut-sign.webp`} type="image/webp" />
+              <img
+                src={`${base}/images/fairgrounds-hut-sign.jpg`}
+                width="800"
+                height="560"
+                loading="lazy"
+                decoding="async"
+                class="w-full h-auto rounded-lg border border-gray-200"
+                alt="Red board-and-batten wall of the hut with NCNGRR stenciled in white letters under a corrugated roof edge."
+              />
+            </picture>
+            <figcaption class="text-sm text-gray-600 mt-2">Look for this sign on the Main Street side.</figcaption>
+          </figure>
           <p class="text-sm text-gray-600 mt-3">
             Use the doors on the Main Street side. The area behind the hut is not open to the public. The suggested walk is not a certified accessible route.
             During the Nevada County Fair, follow the Fair's entry and parking instructions.

@@ -26,7 +26,7 @@ That kit builds most plastic and wood kits and handles everyday repairs.
 
 ### Hobby knife
 
-A hobby knife with a thin handle and a replaceable pointed blade does most of the cutting in this hobby. The #11 blade, a long sharp point, is the common default. For example, X-Acto and Excel make handles and blades that fit each other.
+A hobby knife with a thin handle and a replaceable pointed blade does most of the cutting in this hobby. The #11 blade, a long sharp point, is the common default. Use blades listed as compatible with your handle. For example, X-Acto and Excel both sell handles and #11 blades.
 
 - **Change blades often.** A dull blade needs more force, and extra force is what makes a blade slip. Fresh blades cost less than a trip to urgent care.
 - **Make several light passes** instead of one hard one.
@@ -115,7 +115,9 @@ The tools on this page are safe when you respect them. Most injuries come from a
 
 ### Ventilation
 
-- Open a window or run a fan when you use plastic cement, CA, or solvents. CA fumes irritate the eyes and nose.
+- Follow the ventilation directions on the label of any plastic cement, CA, or solvent. CA fumes irritate the eyes and nose.
+- Set up airflow, such as an open window or a fan, so it carries vapors away from your face and away from any flame or heat source.
+- Keep acetone and other solvents capped when you are not pouring them.
 - Keep glues, solvents, and blades out of reach of children and pets.
 
 ### Keeping CA off your skin
@@ -123,7 +125,7 @@ The tools on this page are safe when you respect them. Most injuries come from a
 - Use a small amount, and apply it with a toothpick or fine tip instead of straight from the bottle.
 - Keep acetone nail polish remover or CA debonder on the bench.
 - **If you glue your fingers together, do not pull them apart.** Soak the area in warm, soapy water, then gently peel or roll the skin apart. Acetone or debonder helps loosen it.
-- **If CA gets in your eye,** rinse it with clean water for several minutes and get medical help. Do not try to pry the eyelid open.
+- **If CA gets in your eye,** rinse it with clean, lukewarm water for about 15 minutes. Do not force a glued eyelid open. Contact Poison Control (in the US, 1-800-222-1222) or urgent care right away.
 
 ### First aid
 

@@ -18,7 +18,7 @@ Model railroad wiring looks mysterious until you learn a few ideas and two tools
 
 ## Low voltage and wall power are different worlds
 
-- **Track power is low voltage.** A DCC system puts roughly 12 to 22 volts on the rails, depending on scale and settings. You can touch the rails safely. The real risk is heat: a dead short can make a wire or rail very hot.
+- **Track power is low voltage.** A DCC system puts roughly 12 to 22 volts on the rails, depending on scale and settings. Brushing the rails by accident normally carries little shock risk. Still, remove rings and watches, never work with wet hands, and turn the power off before you work. The bigger risk is heat: a dead short can make a wire or rail very hot.
 - **Wall power is mains voltage.** The 120 volts in your outlet can injure or kill. Hobby work never needs you inside anything that plugs into the wall.
 - **Never open a power supply.** Power packs and DCC power supplies can hold a stored charge even when unplugged. If one misbehaves, replace it.
 - **Unplug before you work.** Turn off and unplug the system before you cut, solder, or reconnect any wiring.
@@ -26,7 +26,7 @@ Model railroad wiring looks mysterious until you learn a few ideas and two tools
 
 ## Your multimeter
 
-A **digital multimeter** measures voltage, resistance, and continuity. It is the most useful electrical tool you will own. Well-regarded examples range from budget meters by Klein Tools or AstroAI to shop-grade meters by Fluke. A basic autoranging meter covers everything on this page.
+A **digital multimeter** measures voltage, resistance, and continuity. It is the most useful electrical tool you will own. Examples range from budget meters by Klein Tools or AstroAI to shop-grade meters by Fluke. A basic autoranging meter covers everything on this page.
 
 - **Continuity** checks whether two points connect. Touch the probes to each end of a wire; the meter beeps if electricity can flow through it. Use it to find broken feeders, bad rail joints, and hidden shorts, always with the power off.
 - **DC voltage** (marked V with a straight line) reads batteries, wall adapters for lighting, and older DC train layouts.
@@ -37,7 +37,7 @@ A **digital multimeter** measures voltage, resistance, and continuity. It is the
 
 Soldering joins wires with melted metal so the connection conducts well for years. An afternoon of practice on scrap wire gets you comfortable.
 
-- **Temperature-controlled iron.** An adjustable iron heats evenly and does not cook plastic ties. Common examples include stations from Hakko and Weller and compact irons such as the Pinecil.
+- **Temperature-controlled iron.** An adjustable iron heats evenly and does not cook plastic ties. Examples include stations from Hakko and Weller and compact irons such as the Pinecil.
 - **Rosin-core electronics solder.** Use thin rosin-core solder made for electronics. Never use acid-core solder, which is for plumbing and corrodes wiring. Leaded solder flows easily; lead-free works too with a slightly hotter iron. Wash your hands after handling either.
 - **Flux.** Extra rosin flux helps solder flow onto rail and old, dull wire. Clean off the residue with isopropyl alcohol.
 - **Helping hands.** A small stand with clips holds parts still so both of your hands stay free.
@@ -71,7 +71,13 @@ Most layouts use two kinds of wire under the benchwork.
 
 ### The quarter test
 
-To check that a district's breaker works, lay a coin across both rails at the far end of that district. The breaker or booster should trip right away. If it does not, the wiring to that area is too thin or too long, and it needs attention before trains run.
+This test checks that a district's breaker shuts off power when something shorts the rails.
+
+- **On the club layout, get permission first.** Ask an experienced member before you run it.
+- **Remove locomotives** from the district you are testing.
+- **Use an insulated tool**, not your fingers. Lay a coin across both rails at the far end of the district, then lift it off immediately.
+- **The breaker or booster should trip at once.** If you see sparks or feel heat, stop.
+- **If it does not trip,** the wiring may be too thin or too long, a connection may be poor, or the breaker itself may have failed or need adjusting. Report it and keep trains off that district until someone fixes it.
 
 ### Common systems
 
@@ -89,8 +95,8 @@ Other systems work just as well at home. Ask before you bring your own throttle 
 LEDs light buildings, street lamps, and locomotive headlights. Two rules keep them alive.
 
 - **Always use a resistor.** An LED on its own draws current until it burns out. A resistor wired in line with the LED (in series) limits that current. For typical 12 to 14 volt hobby circuits, a value around 1,000 ohms is a common, safe starting point. Online LED resistor calculators work out exact values.
-- **Mind the polarity.** An LED passes current only one way. The longer leg is positive (anode) and the flat side of the lens marks negative (cathode). Wired backward, it simply stays dark.
-- **On DCC track power**, which flips polarity, add a diode or use a lighting board made for DCC. Many hobbyists power scenery lighting from a separate DC supply instead.
+- **Mind the polarity.** An LED passes current only one way. The longer leg is positive (anode) and the flat side of the lens marks negative (cathode). Wired backward, it stays dark, and at 12 volts or more it can fail, because many LEDs tolerate only a few volts in reverse.
+- **On DCC track power or any AC supply**, polarity flips constantly. Protect the LED with a diode wired across it in the opposite direction (antiparallel), feed it through a bridge rectifier, or use a lighting board built for DCC. Many hobbyists power scenery lighting from a separate DC supply instead.
 
 ## Electronics starter kit
 
@@ -101,10 +107,10 @@ LEDs light buildings, street lamps, and locomotive headlights. Two rules keep th
 - Helping hands or a small vise
 - Wire strippers sized for 12 to 24 AWG
 - Flush cutters
-- Heat-shrink tubing assortment and a heat gun or lighter
+- Heat-shrink tubing assortment and a heat gun or hot-air tool (not an open flame near flux and alcohol)
 - Spools of feeder wire in two colors
 - Assorted resistors and a few spare LEDs
-- Safety glasses and a small fan for solder smoke
+- Safety glasses and fume extraction that pulls solder smoke away from you
 - A notebook for wire colors, addresses, and decoder settings
 
 ## Before you touch the layout wiring
@@ -117,7 +123,7 @@ A club layout holds decades of other people's work, and the wiring under it has 
 - **Test before you cut.** Use continuity to confirm which wire goes where.
 - **Label anything you disconnect.** Masking tape and a pen work fine.
 - **Keep solder, iron, and tools off the track** and away from scenery.
-- **Run the quarter test after any wiring change**, then run a train slowly through the area.
+- **After any wiring change, ask an experienced member to run the quarter test** with you, then run a train slowly through the area.
 - **Write down what you changed** so the next person can follow your work.
 
 ## Keep exploring

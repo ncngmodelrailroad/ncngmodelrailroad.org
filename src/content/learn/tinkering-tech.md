@@ -38,6 +38,10 @@ With the WiThrottle server running, free and paid throttle apps connect over Wi-
 
 JMRI can't talk to the rails on its own. Your DCC system needs a **computer interface**, usually a USB adapter or a network module made for that brand of command station. Each major DCC manufacturer offers one. Check the JMRI website's list of supported hardware for your system before you buy anything.
 
+### How our layout does it
+
+Our layout runs on JMRI. A computer connects to the DCC system over USB, and JMRI's WiThrottle server lets members drive trains with the Engine Driver app on a pair of Android tablets. The workbench area has its own compact DCC system, an NCE Power Cab.
+
 ## Microcontrollers: small boards, big fun
 
 A **microcontroller** is a tiny computer on one chip that runs a single program over and over. Hobby boards such as **Arduino** and **ESP32** plug into your computer by USB, and you program them with free tools like the Arduino IDE. Modelers use them for:

@@ -150,7 +150,7 @@ object provides the canonical page `url`, current `method` (`email-inquiry`),
 `instructions`, `contactEmail`, and a `mailto:` `emailUrl`. Its nested `escrip`
 object lists the SPD Market grocery-rewards route from `organization.escrip`:
 page anchor `url`, `merchant`, `groupId`, `groupName`, `rate`, the external
-`signupUrl`, and `instructions`. None of these is a
+SPD eScrip `programUrl`, and `instructions`. None of these is a
 payment endpoint or confirmation of a completed donation. These are additive
 catalog fields; existing dataset and feed contracts are unchanged.
 

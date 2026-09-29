@@ -47,7 +47,7 @@ export const GET: APIRoute = ({ site }) => {
         groupId: organization.escrip.groupId,
         groupName: organization.escrip.groupName,
         rate: organization.escrip.rate,
-        signupUrl: organization.escrip.signupUrl,
+        programUrl: organization.escrip.programUrl,
         instructions: organization.escrip.instructions,
       },
     },

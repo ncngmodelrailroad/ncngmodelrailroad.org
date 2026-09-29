@@ -45,8 +45,8 @@ export const organization = {
     groupId: "500030588",
     groupName: "Nevada County Narrow Gauge Project",
     rate: "up to 3%",
-    signupUrl: "https://www.escrip.com/merchants/identity/SPD/",
-    instructions: "Register an SPD Community Card with eScrip and choose Nevada County Narrow Gauge Project (Group ID 500030588). SPD contributes up to 3% of eligible purchases. It costs shoppers nothing and is not a tax-deductible donation.",
+    programUrl: "https://www.escrip.com/merchants/identity/SPD/",
+    instructions: "Register an SPD Community Card with eScrip and choose Nevada County Narrow Gauge Project (Group ID 500030588). Show the card at checkout, and SPD contributes up to 3% of eligible purchases.",
   },
   visiting: {
     publicAccess: `We open during selected events at the ${location.venue}, only when an opening is announced on this website.`,

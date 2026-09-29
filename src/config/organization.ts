@@ -37,6 +37,19 @@ export const organization = {
     emailSubject: "Financial contribution inquiry",
     emailBody: "I'd like to support the layout. Please send the current donation instructions.",
   },
+  // SPD Market grocery rewards through eScrip. Group ID and listed name come
+  // from the club's eScrip flyer. escrip.com states the SPD rate as "up to 3%".
+  // The flyer's QR code points to an old register.jsp URL that now returns 404.
+  escrip: {
+    merchant: "SPD Market",
+    // SPD's site serves HTTP only; HTTPS connections fail.
+    merchantLocationsUrl: "http://www.spdmarket.com/locations.html",
+    groupId: "500030588",
+    groupName: "Nevada County Narrow Gauge Project",
+    rate: "up to 3%",
+    programUrl: "https://www.escrip.com/merchants/identity/SPD/",
+    instructions: "Register an SPD Community Card with eScrip and choose Nevada County Narrow Gauge Project (Group ID 500030588). Show the card at checkout, and SPD contributes up to 3% of eligible purchases.",
+  },
   visiting: {
     publicAccess: `We open during selected events at the ${location.venue}, only when an opening is announced on this website.`,
     eventTiming: "Fairgrounds event dates and hours are not necessarily our opening dates and hours. Check the announcement before visiting.",

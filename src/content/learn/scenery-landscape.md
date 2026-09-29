@@ -24,7 +24,7 @@ Finish each layer across an area before moving on.
 
 You need a light, solid shape to build on. Three common methods:
 
-- **Foam board.** Rigid insulation foam from a home center (the pink or blue sheets) stacks and glues into hills. Carve it with a long, thin knife, a rasp and coarse sandpaper, or a hot-wire foam cutter. Heated foam gives off fumes, so follow the cutter maker's warnings and ventilate the room.
+- **Foam board.** Rigid insulation foam from a home center (the pink or blue sheets) stacks and glues into hills. Carve it with a long, thin knife, a rasp and coarse sandpaper, or a hot-wire foam cutter. Heated foam gives off fumes, so follow the cutter maker's warnings and work outdoors or with an exhaust fan.
 - **Plaster cloth.** Gauze strips soaked in plaster, sold for crafts and for model scenery (for example, Woodland Scenics Plaster Cloth). Dip a strip in water and lay it over crumpled newspaper, cardboard strips, or foam. It sets in minutes and hardens as it dries.
 - **Hardshell.** An older, cheaper version of the same idea: paper towels dipped in thin plaster and draped over a web of cardboard strips.
 
@@ -36,7 +36,7 @@ Once the shell is hard, smooth or roughen it with a sculpting compound such as a
 
 **Then texture.** Most ground cover falls into a few families:
 
-- **Real dirt or fine sand.** Sift it through a kitchen strainer and bake it dry. Test it with a magnet first: iron particles can find their way into motors.
+- **Scenic dirt and fine sand.** Bagged scenic soil or clean craft sand is the safe choice. Soil from an unknown spot can carry pesticides, animal waste, or old mine residue, a real concern in Gold Country. If you collect your own, take it from a known clean spot, sift it with tools you keep out of the kitchen, let it air-dry, and never heat it in a food oven. Pass a magnet through it too, because iron particles can find their way into motors.
 - **Ground foam.** Dyed foam crumbs in many colors and textures, from fine turf to coarse bushes (for example, Woodland Scenics or Scenic Express products). Blend two or three shades so it doesn't look like carpet.
 - **Static grass.** Short nylon fibers, sold in lengths from about 2 mm to 12 mm. A **static grass applicator** gives the fibers an electric charge so they stand up on end in wet glue, like real grass. Examples include the Noch Gras-Master and Woodland Scenics Static King.
 - **[Ballast](/learn/glossary#ballast).** The crushed stone under the track. Real-rock ballast (for example, from Arizona Rock & Mineral) has the color variation of real stone. Keep it out of the moving parts of [turnouts](/learn/glossary#turnout-switch).
@@ -96,12 +96,29 @@ The best scenery reference is outside. The Nevada County Narrow Gauge ran throug
 
 Take photos on a walk or drive. Notice how grass grows thicker along fences, how dirt washes down a cut, and how few colors there really are. When in doubt, go duller. Nature is less green than a bag of ground foam.
 
-## Why scenery is safe to try
+## Why scenery is forgiving
+
+On a test board, you can't do much harm:
 
 - Plaster, foam, glue, and ground cover cost little, so a redo costs little.
-- Scenery bonded with white glue softens with water. Soak a patch, scrape it off with a putty knife, and redo it.
 - You can paint over any color you don't like.
-- Nothing you do here affects the track wiring, the electrical side, or [DCC](/learn/glossary#dcc-digital-command-control), as long as you keep glue off the rails and out of turnouts.
+- For a small patch bonded with white glue, first check what lies underneath, such as wiring, track, or a turnout. Then dampen just that patch with as little water as it takes, let it soften, and lift it with a putty knife.
+
+An installed layout is different. Wet glue seeps, stray plaster and ballast can jam turnouts, and static-grass applicators put out high voltage near electronics, which can affect the track wiring and [DCC](/learn/glossary#dcc-digital-command-control) equipment. Before working on one:
+
+- Turn off track power.
+- Mask the rails and turnouts with painter's tape.
+- Apply liquids a drop at a time, never in a flood.
+- On a shared layout such as a club's, ask before you start.
+
+## Work safely
+
+- Wear eye protection when cutting, carving, or sanding, and when spraying.
+- Control dust when you cut or sand foam and plaster. Vacuum as you go and wear a dust mask.
+- Wear gloves when you mix and pour two-part resin, and follow the label for ventilation.
+- Cut foam with a hot wire outdoors or with an exhaust fan pulling the fumes away.
+- Before handling a static-grass applicator's screen or pin, switch it off and discharge it as its instructions say.
+- Keep scenery tools and containers out of the kitchen.
 
 ## Starter scenery supplies checklist
 
@@ -109,14 +126,15 @@ Take photos on a walk or drive. Notice how grass grows thicker along fences, how
 - A long, thin knife or a rasp for shaping foam
 - Flat earth-tone latex paint and a cheap wide brush
 - Two or three shades of fine ground foam, plus some coarse foam for bushes
-- Sifted real dirt or fine sand (checked with a magnet)
+- Bagged scenic soil or clean craft sand
 - White glue or acrylic matte medium
 - Dish soap or rubbing alcohol for wet water
 - A fine-mist spray bottle
 - A pipette, eyedropper, or glue squeeze bottle
 - A soft brush for spreading material
-- A kitchen strainer or old spice jar for sprinkling
+- A sifter or shaker jar kept just for scenery
 - Painter's tape and plastic sheet to protect track and floors
+- Safety glasses, a dust mask, and disposable gloves
 - A shop vacuum, with a stocking over the nozzle to catch reusable material
 
 Add a static grass applicator, rock molds, and water products once you have a first patch done.

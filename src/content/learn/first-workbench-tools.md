@@ -1,0 +1,153 @@
+---
+title: Your First Workbench
+description: The hand tools, glues, and simple safety habits that let you start building models with confidence, plus checklists for what to get now and what can wait.
+order: 10
+icon: solar:ruler-cross-pen-bold
+---
+
+You do not need a workshop to start building models. A kitchen table, a handful of small tools, and two or three glues will carry you through your first kits and repairs. This page covers what to get first, what each tool does, and how to stay safe while you learn.
+
+## The bare minimum
+
+If you buy nothing else, start here:
+
+- A hobby knife and a pack of spare blades
+- A self-healing cutting mat
+- Flush cutters (also called sprue cutters)
+- A pair of fine-point tweezers
+- A steel rule with a cork or rubber back
+- Plastic cement and a bottle of CA (super glue)
+- A bright desk lamp
+- Safety glasses
+
+That kit builds most plastic and wood kits and handles everyday repairs.
+
+## The starter tool kit
+
+### Hobby knife
+
+A hobby knife with a thin handle and a replaceable pointed blade does most of the cutting in this hobby. The #11 blade, a long sharp point, is the common default. For example, X-Acto and Excel make handles and blades that fit each other.
+
+- **Change blades often.** A dull blade needs more force, and extra force is what makes a blade slip. Fresh blades cost less than a trip to urgent care.
+- **Make several light passes** instead of one hard one.
+- **Keep a lidded container for old blades**, such as an empty pill bottle or a mint tin, and tape it shut before it goes in the trash.
+
+### Flush cutters
+
+Plastic kit parts come attached to a frame called a **sprue**. Flush cutters, sold as sprue cutters or electronics cutters, have one flat side that snips a part off cleanly with almost no leftover nub. Cut a little away from the part first, then trim close. Keep them for plastic and thin wire. Hard steel wire, like the music wire used for handrails and grab irons, will chip their edges, so use a heavier pair of wire cutters for that.
+
+### Tweezers
+
+A pair of fine, pointed tweezers holds parts too small for fingers.
+
+### Jeweler's screwdrivers
+
+Locomotives and cars use tiny screws to hold shells, trucks, and couplers in place. A set of small flat and Phillips screwdrivers lets you open things without stripping screw heads. Match the tip to the screw, and press down as you turn.
+
+### Needle files and sanding sticks
+
+Small files with flat, round, half-round, and triangular shapes clean up the edges of parts and open up holes. Sanding sticks or emery boards smooth seams and cut edges. Check your work often: you can always remove more, but you cannot put it back.
+
+### Pin vise and small drills
+
+A **pin vise** is a hand drill the size of a pen. It holds tiny drill bits, usually numbered 61 to 80, for holes too fine for a power drill. You will use it for grab irons, handrails, wire, and mounting pins. Turn it slowly, and keep spares of the sizes you use most, since small bits snap easily.
+
+### Steel rule and cutting mat
+
+A steel rule gives you a straight edge your blade cannot shave. Look for one with a cork or rubber back so it will not slide. A scale rule marked in your modeling scale, such as 1:48 for O scale, lets you measure in model feet and inches.
+
+A self-healing cutting mat protects the table and keeps blades sharp longer.
+
+### Light and magnification
+
+Good light is the most underrated tool on the bench. A bright LED desk lamp with a neutral, daylight-style color shows you edges, seams, and glue blobs you would otherwise miss. Magnification helps too, at any age. A few common options:
+
+- A head-worn magnifier with flip-down lenses, for example the OptiVisor
+- A lighted magnifier lamp on an arm
+- Inexpensive reading glasses in a higher strength than you normally need
+
+## Glues, and which to use for what
+
+No single glue does everything. Match the glue to the materials.
+
+- **Plastic cement** for styrene plastic to styrene plastic. It melts the two surfaces together. Thin liquid types wick into a joint on their own. It does not work on metal, wood, or resin.
+- **CA (cyanoacrylate, or super glue)** for metal, resin, and mixed materials. It sets in seconds. Thin CA wicks into joints, and thicker "gap-filling" CA gives you time to position parts.
+- **White or wood glue (PVA)** for wood, paper, cardstock, and scenery. It dries nearly clear and stays a little flexible. Watered down, it holds ground cover and ballast.
+- **Epoxy** for strong joints, heavy parts, and filling gaps. You mix two parts together. Five-minute epoxy is handy, and slower types are stronger.
+- **Canopy glue** for clear windows and headlight lenses. It dries clear and will not fog clear plastic. It is also sold as clear parts cement, for example Formula 560.
+
+### When not to use CA
+
+CA is useful, but it is not a universal fix.
+
+- **Near clear parts.** CA fumes leave a white haze, called frosting or fogging, on windows and lenses. Use canopy glue there.
+- **On styrene-to-styrene joints.** Plastic cement makes a stronger, cleaner bond.
+- **For big joints that take a load.** CA is brittle and can pop loose with a knock. Epoxy holds better.
+- **On cotton or wool.** A big dab of CA on cotton cloth or cotton balls can heat up fast enough to burn you.
+- **Near moving parts.** A drop of CA wicking into a gear, truck, or motor bearing can freeze it solid.
+
+Three extras make CA easier to control: accelerator (a spray that sets CA instantly), debonder (a solvent that softens it), and fine applicator tips.
+
+## Setting up your workspace
+
+A good bench is less about space and more about habits.
+
+- **Cover the surface.** A cutting mat, or a large sheet of cardboard or hardboard, protects the table.
+- **Sit where the light comes from the front or the side** of your working hand, so your hand does not shadow the work.
+- **Use a tray with a lip.** A baking sheet or cafeteria tray keeps small parts from rolling off the edge.
+- **Sort small parts.** A tackle box, pill organizer, or egg carton keeps screws, couplers, and details apart. Label each compartment.
+- **Leave kit parts on the sprue** until you need them.
+- **Work over a light-colored towel** when you handle tiny parts. It catches drops and makes them easier to spot. A magnet on a stick finds dropped steel screws on the floor.
+
+## Safety
+
+The tools on this page are safe when you respect them. Most injuries come from a few predictable moments.
+
+### Blades
+
+- Cut away from your body and keep your other hand behind the blade.
+- Never try to catch a falling knife. Step back and let it drop.
+- Cap the blade or set the knife in a holder when you put it down, so it cannot roll.
+
+### Eyes
+
+- Wear safety glasses when you cut wire, snip sprues, or drill. Small bits of plastic and metal fly further than you expect.
+
+### Ventilation
+
+- Open a window or run a fan when you use plastic cement, CA, or solvents. CA fumes irritate the eyes and nose.
+- Keep glues, solvents, and blades out of reach of children and pets.
+
+### Keeping CA off your skin
+
+- Use a small amount, and apply it with a toothpick or fine tip instead of straight from the bottle.
+- Keep acetone nail polish remover or CA debonder on the bench.
+- **If you glue your fingers together, do not pull them apart.** Soak the area in warm, soapy water, then gently peel or roll the skin apart. Acetone or debonder helps loosen it.
+- **If CA gets in your eye,** rinse it with clean water for several minutes and get medical help. Do not try to pry the eyelid open.
+
+### First aid
+
+- Keep a basic first aid kit close to the bench, with adhesive bandages and gauze.
+- For a small cut, press on it with a clean cloth until it stops bleeding, rinse it with clean water, and cover it.
+- Get medical help for deep cuts, cuts that will not stop bleeding, or anything in the eye.
+
+## Nice to have later
+
+Add these as your projects call for them. None of them are needed on day one.
+
+- Curved or reverse-action tweezers (reverse-action ones stay closed until you squeeze)
+- A set of small clamps and clothespins
+- A small square for checking corners
+- A razor saw and miter box for cutting wood strips and plastic shapes
+- A chopper tool for cutting many strips to the same length
+- A motor tool at low speed, for example a Dremel
+- A digital caliper for precise measurements
+- A soldering iron with a stand and a fume fan (see the upcoming electronics guide)
+- Brushes and paint supplies (see the upcoming painting and weathering guide)
+- Putty for filling gaps, and fine sanding sponges
+
+## Keep exploring
+
+- [New to model railroading?](/learn/new-to-model-railroading): the basics of scale, gauge, and what we model
+- [Glossary of terms](/learn/glossary): look up [kitbashing](/learn/glossary#kitbashing), [scratchbuilding](/learn/glossary#scratchbuilding), and other words from the bench
+- [Links](/links): hobby shops and clubs that welcome beginners

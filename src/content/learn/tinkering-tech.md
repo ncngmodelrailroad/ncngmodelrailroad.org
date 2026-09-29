@@ -5,9 +5,9 @@ order: 14
 icon: solar:cpu-bolt-bold
 ---
 
-Model railroading has a tech side, and it welcomes beginners. A laptop can read and save every setting in a locomotive. A small circuit board can make a crossing signal blink. A tiny camera can show the layout from the engineer's seat. This guide covers where to start, what to buy first, and how to avoid the few mistakes that cause real damage.
+Model railroading has a tech side, and it welcomes beginners. A laptop can read and save every setting in a locomotive. A small circuit board can make a crossing signal blink. A tiny camera can show the layout from the engineer's seat.
 
-**Software settings are reversible when you back them up first.** Most tinkering happens in settings and code, and you can undo both.
+**Most settings are reversible when you back them up first.** Most tinkering happens in decoder settings and your own code, and you can undo both. The main exception is decoder firmware and sound files, covered below.
 
 ## Your computer and DCC: meet JMRI
 
@@ -28,11 +28,13 @@ This habit protects you more than any other:
 3. Change one setting at a time and test it.
 4. If you don't like the result, write the saved settings back.
 
-Many decoders also support a factory reset, often by writing a specific value to CV8. Check the decoder's manual for the exact value, and remember that a reset erases custom sound and speed tuning. A backup brings all of that back.
+A DecoderPro backup covers the CV settings it can read. It does not save a decoder's sound project or firmware. Those need the decoder maker's own tools and files, and you may not be able to recover them, so leave them alone until you know that process.
+
+Many decoders also support a factory reset, often by writing a specific value to CV8. Check the decoder's manual for the exact value. A reset returns the CVs to their defaults and erases your custom speed and sound settings. It does not restore a replaced or damaged sound project. Writing your DecoderPro backup back to the decoder restores your saved CV settings.
 
 ### Phones as throttles
 
-With the WiThrottle server running, free and paid throttle apps connect over Wi-Fi. For example, **Engine Driver** runs on Android and **WiThrottle** runs on iPhone and iPad. An old phone with no SIM card works fine as a spare throttle. Some command stations and wireless add-ons speak the same protocol directly, so you may not need a computer running at all.
+With the WiThrottle server running, free and paid throttle apps connect over Wi-Fi. For example, **Engine Driver** runs on Android and **WiThrottle** runs on iPhone and iPad. An old phone with no SIM card works fine as a spare throttle.
 
 ### The computer interface
 
@@ -51,7 +53,7 @@ A **microcontroller** is a tiny computer on one chip that runs a single program 
 - **Sensors:** infrared or light sensors that detect a passing train.
 - **Lighting:** flickering welding arcs, building lights that switch on at dusk, or a firebox glow.
 
-The ESP32 adds built-in Wi-Fi and Bluetooth, which makes it handy for wireless projects. Classic Arduino boards like the Uno are simpler and more forgiving for a first build.
+The ESP32 adds built-in Wi-Fi and Bluetooth. Classic Arduino boards like the Uno are simpler for a first build.
 
 ### A starter kit
 
@@ -71,12 +73,12 @@ You don't need much. Many "starter kits" bundle most of this:
 
 - **5V vs 3.3V:** An Arduino Uno's pins work at 5 volts. An ESP32's pins work at 3.3 volts and are not built to accept 5 volts. Connecting a 5V signal to an ESP32 pin can destroy it. Use a **logic level shifter** between the two, or stick to parts rated for your board's voltage.
 - **Always use a resistor with an LED.** Without one, the LED draws too much current and burns out, and it can damage the pin driving it.
-- **Power servos separately.** Servos draw bursts of current that can reset or damage a board. Give them their own 5V supply and connect that supply's ground to the board's ground.
+- **Power servos separately.** Servos draw bursts of current that can reset or damage a board. Give them their own 5V supply. For simple, non-isolated low-voltage circuits like this, connect that supply's ground to the board's ground.
 - **Never power a microcontroller straight from the track or from household mains.** DCC track power runs well above what these boards accept, and mains voltage is dangerous to you and the board. Use a proper low-voltage supply or a purpose-built regulator.
 
 ### DCC-EX: an open-source example
 
-**DCC-EX** is a volunteer-run, open-source project that shows how far this can go. Its EX-CommandStation turns an Arduino board plus a motor driver board into a working DCC command station. It works with JMRI, Engine Driver, and WiThrottle, and it offers both a build-it-yourself path and ready-to-run hardware. Even if you never build one, its documentation explains DCC clearly for beginners.
+**DCC-EX** is a volunteer-run, open-source project that shows how far this can go. Its EX-CommandStation turns an Arduino board plus a motor driver board into a working DCC command station. It works with JMRI, Engine Driver, and WiThrottle, and it offers both a build-it-yourself path and ready-to-run hardware.
 
 ## Train cams: ride along from the cab
 
@@ -95,7 +97,7 @@ A few things to plan for:
 
 ## Checklist: a safe first project
 
-Start with a blinking crossing light. It teaches the whole loop of wiring, coding, and testing, and nothing touches the layout.
+Start with a blinking crossing light. Nothing touches the layout.
 
 - Install the Arduino IDE and your board's support package.
 - Upload the built-in "Blink" example and watch the onboard LED flash.
@@ -110,11 +112,11 @@ Start with a blinking crossing light. It teaches the whole loop of wiring, codin
 - Back up every affected locomotive's CVs in DecoderPro.
 - Confirm each device's voltage rating and your board's logic level (5V or 3.3V).
 - Use a separate, low-voltage power supply. Nothing runs straight from track power or mains.
-- Connect grounds between supplies that share signal wires.
+- For simple, non-isolated low-voltage circuits, connect grounds between supplies that share signal wires. For DCC interfaces and other commercial modules, follow the maker's wiring diagram, because some are isolated on purpose.
 - Test the project on the bench first, then on a single isolated section of track.
 - Label every new wire at both ends.
 - Measure clearance for anything mounted on a car or beside the track.
-- Keep a way to cut power fast, like a switch or an unplugged cord within reach.
+- Keep a way to cut power fast, such as a switched power strip, a switched outlet, or a plug you can pull without reaching across the project.
 - If you work on a shared or club layout, ask before connecting anything.
 
 ## Keep exploring

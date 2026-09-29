@@ -25,6 +25,7 @@ The rest of this guide covers editing files directly — useful if you prefer wo
 - [Updating Events](#updating-events)
 - [Updating Board Members](#updating-board-members)
 - [Adding Gallery Photos](#adding-gallery-photos)
+- [Updating the Fairgrounds Map](#updating-the-fairgrounds-map)
 - [Updating the Learn Section](#updating-the-learn-section)
 - [Updating Organization Info](#updating-organization-info)
 - [Updating Navigation](#updating-navigation)
@@ -256,6 +257,31 @@ not a bibliographic citation. Quote text containing locomotive numbers such as
 
 Do not mix a future inventory of actual models and rolling stock into this
 historical collection. That information needs its own verified records.
+
+---
+
+## Updating the Fairgrounds Map
+
+The Contact page shows an illustrated fairgrounds map with a suggested walk
+from Gate 1 to the building. The map is drawn outside this repository and
+exported as six files. Replace them together so every size shows the same
+edition:
+
+| File | Used for |
+|------|----------|
+| `public/images/fairgrounds-map-focus.webp` and `-focus.jpg` | Map shown on the page on wider screens (JPEG is the fallback) |
+| `public/images/fairgrounds-map-railroad.webp` and `-railroad.jpg` | Tighter railroad-area view for screens 640px wide and narrower |
+| `public/images/fairgrounds-map-full.webp` | Whole-fairgrounds map, linked from the page |
+| `public/downloads/fairgrounds-map.pdf` | Printable version |
+
+The walking directions also show `public/images/fairgrounds-hut-sign.webp`
+and `-hut-sign.jpg`, a photo of the NCNGRR sign on the Main Street side of
+the hut. Replace it if the sign is repainted or moved.
+
+If a gate, path, or landmark changes, update the numbered walking directions
+and the image alt text in `src/pages/contact.astro` to match the new map.
+Keep the caveats: gates vary by event, and the walk is not a certified
+accessible route.
 
 ---
 

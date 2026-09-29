@@ -78,7 +78,9 @@ Nonprofit identity and donation instructions come from `src/config/organization.
 and appear on the donation page, in `/llms.txt`, and in the catalog. Keep the IRS
 source date tied to the supporting records, not the build date. Update the shared
 donation method and instructions when an approved payment route changes; do not
-publish private paperwork or an unconfirmed checkout link.
+publish private paperwork or an unconfirmed checkout link. The SPD Market eScrip
+Group ID, rate, and signup link live in `organization.escrip`; update them there
+if the eScrip enrollment changes.
 
 ---
 

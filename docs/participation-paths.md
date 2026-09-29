@@ -19,6 +19,7 @@ needed and approved. No new website accounts, forms, database, or tracking.
 | Volunteer | `/volunteer`: **Email about volunteering**. | A volunteer replies and arranges a first work session. Explain any confirmed membership requirements before attendance. | A first session is agreed. Count attendance separately. |
 | Join the email group | `/donate`: **Join the email group**, only if the existing group accepts public requests. | Groups.io handles confirmation and any approval. For a members-only group, explain on `/volunteer` that access is arranged after approval; do not publish a public signup offer. | Subscription is confirmed and any required approval is complete. |
 | Offer equipment | `/donate`: **Email about equipment**. | Ask for item type, scale, condition, photos, and collection/delivery needs. A volunteer confirms whether it can be accepted. | Acceptance and handoff are agreed. No unannounced drop-offs. |
+| Shop at SPD | `/donate#shop-at-spd`: **Sign up with eScrip**, shown with the Group ID. | The shopper registers an SPD Community Card on eScrip and picks the organization. SPD contributes up to 3% of eligible purchases. eScrip handles accounts and payouts; the site only links out. | The card is linked to the Group ID. Payouts arrive through the eScrip group coordinator account. |
 
 There is no universal "Sign up" button. Email-group subscription, volunteer
 interest, and club membership are separate. Never automatically subscribe

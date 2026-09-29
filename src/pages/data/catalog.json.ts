@@ -41,6 +41,15 @@ export const GET: APIRoute = ({ site }) => {
       instructions: organization.donations.instructions,
       contactEmail: organization.contact.email,
       emailUrl: donationEmailHref,
+      escrip: {
+        url: url(`${organization.donations.path}#shop-at-spd`),
+        merchant: organization.escrip.merchant,
+        groupId: organization.escrip.groupId,
+        groupName: organization.escrip.groupName,
+        rate: organization.escrip.rate,
+        signupUrl: organization.escrip.signupUrl,
+        instructions: organization.escrip.instructions,
+      },
     },
     usage: {
       advisory: true,

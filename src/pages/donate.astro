@@ -3,6 +3,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import { donationEmailHref, organization } from '../config/organization';
 
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+const { escrip } = organization;
 ---
 
 <BaseLayout title="Support the Layout | N.C.N.G. Model Railroad" description="Support the N.C.N.G. Historical Model Railroad with volunteer time, donated materials, or financial contributions.">
@@ -47,6 +48,37 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
             About the IRS data source
           </a>
         </aside>
+      </section>
+
+      <section id="shop-at-spd" class="mt-10 scroll-mt-28" aria-labelledby="escrip-title">
+        <h2 id="escrip-title" class="text-2xl font-bold mb-3">Shop at {escrip.merchant}</h2>
+        <p class="text-gray-700 mb-4">
+          Link your SPD Community Card to us through eScrip, and SPD contributes
+          {escrip.rate} of your eligible purchases to the layout. You pay the same
+          prices, and it keeps giving every time you shop.
+        </p>
+        <ol class="list-decimal pl-6 space-y-2 text-gray-700">
+          <li>Pick up an SPD Community Card at SPD in Grass Valley or Nevada City.</li>
+          <li>
+            Register the card with eScrip and choose
+            <strong class="text-gray-900">{escrip.groupName}</strong>,
+            <span class="whitespace-nowrap">Group ID <strong class="text-gray-900 tabular-nums">{escrip.groupId}</strong>.</span>
+          </li>
+          <li>Show your card, or give your linked phone number, at checkout.</li>
+        </ol>
+        <a
+          href={escrip.signupUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="btn-outline mt-5"
+        >
+          Sign up with eScrip<span class="sr-only"> (opens in a new tab)</span>
+        </a>
+        <p class="text-sm text-gray-600 mt-3">
+          eScrip lets you choose up to three groups. Some purchases don't count,
+          including lottery tickets, postage, gift cards, and utility payments.
+          Store contributions through eScrip are not tax-deductible donations.
+        </p>
       </section>
 
       <section class="mt-10" aria-labelledby="other-support-title">

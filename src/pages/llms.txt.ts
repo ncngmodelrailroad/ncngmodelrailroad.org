@@ -30,6 +30,7 @@ ${contentUse.rights.text}
 
 - [Financial contributions](${url(organization.donations.path)}): ${organization.donations.instructions}
 - [Email about a contribution](${donationEmailHref}): ${organization.contact.email}.
+- [Shop at ${organization.escrip.merchant}](${url(`${organization.donations.path}#shop-at-spd`)}): ${organization.escrip.instructions}
 - IRS-listed name: ${organization.nonprofit.irsName}.
 - EIN: ${organization.nonprofit.ein}. Federal tax-exempt classification: ${organization.nonprofit.classification}.
 - ${organization.nonprofit.deductibilityStatement}

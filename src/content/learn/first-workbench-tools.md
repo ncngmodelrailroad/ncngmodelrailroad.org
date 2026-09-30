@@ -7,9 +7,17 @@ icon: solar:ruler-cross-pen-bold
 
 You do not need a workshop to start building models. A kitchen table, a handful of small tools, and two or three glues will carry you through your first kits and repairs. This page covers what to get first, what each tool does, and how to stay safe while you learn.
 
-## The bare minimum
+## Volunteering? You do not need your own kit
 
-If you buy nothing else, start here:
+The layout has a workbench area with shared tools and supplies for work on the layout, including an NCE Power Cab, a compact [DCC](/learn/glossary#dcc-digital-command-control) controller. You do not need to buy anything before you volunteer. Ask a volunteer what is available and what, if anything, to bring.
+
+The checklists below are for building a bench at home, for your own projects.
+
+Prices on this page are rough 2026 US estimates. They vary by store, brand, and sale.
+
+## The bare minimum for home projects
+
+If you buy nothing else, start here. Expect to spend about $75 to $160 in total, or about $55 to $120 if you already own a good desk lamp.
 
 - A hobby knife and a pack of spare blades
 - A self-healing cutting mat
@@ -26,7 +34,7 @@ That kit builds most plastic kits and handles everyday repairs. Add wood glue fo
 
 ### Hobby knife
 
-A hobby knife with a thin handle and a replaceable pointed blade does most of the cutting in this hobby. The #11 blade, a long sharp point, is the common default. Use blades listed as compatible with your handle. For example, X-Acto and Excel both sell handles and #11 blades.
+A hobby knife with a thin handle and a replaceable pointed blade does most of the cutting in this hobby. The #11 blade, a long sharp point, is the common default. Use blades listed as compatible with your handle. For example, X-Acto and Excel both sell handles and #11 blades. A handle with a few blades runs about $7 to $10, and a 100-pack of blades about $30 to $40, which lasts a long time.
 
 - **Change blades often.** A dull blade needs more force, and extra force is what makes a blade slip. Fresh blades cost less than a trip to urgent care.
 - **Make several light passes** instead of one hard one.
@@ -34,7 +42,7 @@ A hobby knife with a thin handle and a replaceable pointed blade does most of th
 
 ### Flush cutters
 
-Plastic kit parts come attached to a frame called a **sprue**. Flush cutters, sold as sprue cutters or electronics cutters, have one flat side that snips a part off cleanly with almost no leftover nub. Cut a little away from the part first, then trim close. Most grab irons are brass or phosphor-bronze wire, which flush cutters handle fine. Hard steel (music) wire, which some modelers use for handrails, will chip them, so use heavier cutters for it.
+Plastic kit parts come attached to a frame called a **sprue**. Flush cutters, sold as sprue cutters or electronics cutters, have one flat side that snips a part off cleanly with almost no leftover nub. Cut a little away from the part first, then trim close. Most grab irons are brass or phosphor-bronze wire, which flush cutters handle fine. Hard steel (music) wire, which some modelers use for handrails, will chip them, so use heavier cutters for it. A good pair of flush cutters costs about $12 to $20.
 
 ### Tweezers
 
@@ -50,7 +58,7 @@ Small files with flat, round, half-round, and triangular shapes clean up the edg
 
 ### Pin vise and small drills
 
-A **pin vise** is a hand drill the size of a pen. It holds tiny drill bits, usually numbered 61 to 80, for holes too fine for a power drill. You will use it for grab irons, handrails, wire, and mounting pins. Turn it slowly, and keep spares of the sizes you use most, since small bits snap easily.
+A **pin vise** is a hand drill the size of a pen. It holds tiny drill bits, usually numbered 61 to 80, for holes too fine for a power drill. You will use it for grab irons, handrails, wire, and mounting pins. Turn it slowly, and keep spares of the sizes you use most, since small bits snap easily. Expect about $30 to $40 for a pin vise plus a set of #61 to #80 drills.
 
 ### Steel rule and cutting mat
 
@@ -62,7 +70,7 @@ A self-healing cutting mat protects the table and keeps blades sharp longer.
 
 Good light is the most underrated tool on the bench. A bright LED desk lamp with a neutral, daylight-style color shows you edges, seams, and glue blobs you would otherwise miss. Magnification helps too, at any age. A few common options:
 
-- A head-worn magnifier with flip-down lenses, for example the OptiVisor
+- A head-worn magnifier with flip-down lenses, for example the OptiVisor (about $55 to $100), or a simpler headband magnifier (about $15 to $40)
 - A lighted magnifier lamp on an arm
 - Inexpensive reading glasses in a higher strength than you normally need
 
@@ -138,15 +146,15 @@ The tools on this page are safe when you respect them. Most injuries come from a
 
 ## Nice to have later
 
-Add these as your projects call for them. None of them are needed on day one.
+Add these to your home bench as your projects call for them. None of them are needed on day one.
 
 - Curved or reverse-action tweezers (reverse-action ones stay closed until you squeeze)
 - A set of small clamps and clothespins
 - A small square for checking corners
-- A razor saw and miter box for cutting wood strips and plastic shapes
+- A razor saw and miter box for cutting wood strips and plastic shapes (about $15 to $35 as a set)
 - A chopper tool for cutting many strips to the same length
 - A motor tool at low speed, for example a Dremel
-- A digital caliper for precise measurements
+- A digital caliper for precise measurements (about $12 for plastic, about $30 for steel)
 - A soldering iron with a stand and a fume fan (see the upcoming electronics guide)
 - Brushes and paint supplies (see the upcoming painting and weathering guide)
 - Putty for filling gaps, and fine sanding sponges

@@ -26,22 +26,26 @@ Brush care keeps a brush working for years:
 
 - Don't dip past the bristles. Paint that dries in the metal band (the **ferrule**) splays the tip.
 - Rinse often while you work, in water for acrylics or the matching thinner for solvent paints.
-- Wash brushes with a brush soap when you finish, reshape the tip, and let them dry flat or bristles up.
+- Wash brushes with a brush soap when you finish, reshape the tip, and let them dry lying flat. Store them bristles-up only once fully dry, because drying bristles-up lets water or solvent run into the ferrule.
 
 ## Acrylic, enamel, and lacquer
 
-Hobby paints fall into three broad families: acrylic, enamel, and lacquer. Acrylics come in water-based and alcohol-based kinds. Each type uses a different **solvent**, the liquid that thins the paint and cleans it up.
+Hobby paints fall into three broad families: acrylic, enamel, and lacquer. Each type uses a different **solvent**, the liquid that thins the paint and cleans it up.
 
 - **Water-based acrylic.** Cleans up with water. Low odor, dries fast, and makes the easiest start. For example, Vallejo, AK, or Citadel.
-- **Alcohol-based acrylic.** Thins and cleans up with isopropyl alcohol or the maker's thinner. Moderate odor. For example, Tamiya acrylics.
+- **Acrylics that prefer alcohol.** Some acrylics, such as Tamiya's, are water-based but thin and clean up best with alcohol-based thinner or isopropyl alcohol. Moderate odor.
 - **Enamel.** Cleans up with mineral spirits or enamel thinner. Strong fumes, slow drying, and a tough finish. For example, Testors or Humbrol.
-- **Lacquer.** Cleans up with lacquer thinner. The strongest fumes, but very durable and sprays beautifully. For example, Mr. Color or Scalecoat.
+- **Lacquer.** Cleans up with lacquer thinner. The strongest fumes, but very durable and sprays beautifully. For example, Mr. Color.
+
+Scalecoat, long popular with railroad modelers, is a solvent-based paint that is neither a true lacquer nor a typical enamel. Use Scalecoat I on brass and metal and Scalecoat II on plastic, with the matching Scalecoat thinner.
 
 **Layering order matters.** Stronger ("hotter") solvents can lift or wrinkle the paint beneath them. As a rough tendency, hotter paints sit lower in the stack: lacquer, then enamel, then acrylic. The real rule is simpler: check the paint maker's compatibility advice, let each coat cure fully, spray or brush light coats, and test any new combination on scrap. Beginners can skip most of this by sticking with water-based acrylics.
 
 ## Primer
 
 Primer gives paint something to grip, shows flaws before you add color, and makes colors look even. First, wash the model in warm water with a drop of dish soap to remove finger oils and mold release, then let it dry. A light gray primer suits most colors. For example, Tamiya Fine Surface Primer, Vallejo Surface Primer, or Mr. Surfacer. Two light coats beat one heavy coat.
+
+Brass models need a thorough degreasing and a primer or paint made for metal (for example, Scalecoat I). Plastic-only primers may not grip bare brass.
 
 ## Thinning
 
@@ -59,7 +63,7 @@ An **airbrush** is a small paint sprayer powered by an air compressor. It gives 
 
 ## Decals
 
-Most lettering and road names come as **water-slide decals**: printed film on backing paper that slides off after a soak in water.
+Most lettering and road names come as **water-slide decals**: printed film on backing paper that slides off after a soak in water. **Dry transfers**, rubbed onto the model from a carrier sheet, are another option.
 
 1. Brush a **gloss** clear coat where the decal goes. Decals stick poorly to flat paint, and the trapped air shows as a silvery haze called **silvering**.
 2. Soak the decal briefly in water until it slides on its backing.
@@ -77,7 +81,7 @@ Real railroad equipment rarely shines. A **flat** (matte) clear coat hides decal
 
 - **Washes.** Heavily thinned dark paint that flows into cracks and seams to add shadow. Brush it on, then wipe the high spots with a tissue.
 - **Drybrushing.** Load an old brush, wipe almost all the paint off onto a paper towel, then flick it lightly across raised detail. Edges catch the color and stand out.
-- **Weathering powders and pastels.** Fine colored powder brushed on for dust, rust, and soot. For example, Bragdon or AIM weathering powders, or artist chalk pastels scraped into powder. Powder wipes off if you don't like it. Some brands include a binder that helps it stick. A flat clear coat locks powder in but can make much of it vanish, so go a bit heavier than you want, seal lightly, and repeat if needed.
+- **Weathering powders and pastels.** Fine colored powder brushed on for dust, rust, and soot. For example, Bragdon or other hobby weathering powders, or artist chalk pastels scraped into powder. Powder wipes off if you don't like it. Some brands include a binder that helps it stick. A flat clear coat locks powder in but can make much of it vanish, so go a bit heavier than you want, seal lightly, and repeat if needed.
 
 Less is more. You can always add grime, and a light touch looks more real than a heavy one.
 
@@ -102,15 +106,15 @@ A stripped model often comes out better the second time, because you have learne
 - Decal setting solution
 - Weathering powders or a few chalk pastels
 - Toothpicks, cotton swabs, paper towels, and a paint palette or old tile
--Sanding sticks and fine sandpaper
+- Sanding sticks and fine sandpaper
 - A scrap model for practice
 
 ## Safety checklist
 
 - Work in a well-ventilated room. For spraying, a spray booth exhausted outdoors is the main protection. A respirator backs it up.
-- For solvent paints or any spraying, wear a NIOSH-approved respirator. Choose cartridges based on the product's safety data sheet (SDS), usually **organic vapor**, and add particulate prefilters for spray mist. A dust mask alone does not stop solvent fumes.
+- For solvent paints or any spraying, wear a NIOSH-approved respirator. Choose cartridges based on the product's safety data sheet (SDS), usually **organic vapor** cartridges plus P95 or P100 particulate prefilters. An N95 dust mask or N-series filter alone is not enough for solvent fumes or oily paint mist.
 - Make sure the respirator fits, do a seal check each time you put it on, and keep the seal area clean-shaven. Replace cartridges on the maker's schedule.
-- Wear nitrile gloves when handling thinners and strippers.
+- Nitrile gloves handle splashes; replace them right away if solvent soaks them. For soaking parts in stripper, use thicker chemical-resistant gloves and check the SDS for the glove material.
 - Keep solvents and spray cans away from flames, pilot lights, and heaters.
 - Don't eat or drink at the paint bench.
 - Keep lids closed and paint out of reach of children and pets.

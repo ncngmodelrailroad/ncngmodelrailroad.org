@@ -1,0 +1,405 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import { getEventDisplayDates, pacificToday } from '../utils/events';
+import { computeLineView, type StopState } from '../utils/eventLine';
+
+interface Props {
+  events: CollectionEntry<'events'>[];
+}
+
+const shortDate = new Intl.DateTimeFormat('en-US', { month: 'short', day: 'numeric', timeZone: 'UTC' });
+const dayOf = (date: Date) => date.toISOString().split('T')[0];
+
+const stops = Astro.props.events
+  .map((event) => {
+    const { date, endDate } = getEventDisplayDates(event.data);
+    return {
+      id: event.id,
+      title: event.data.title,
+      start: dayOf(date),
+      end: dayOf(endDate ?? date),
+      dates: shortDate.formatRange(date, endDate ?? date),
+      layoutConfirmed: Boolean(event.data.layoutStartDate),
+    };
+  })
+  .sort((a, b) => a.start.localeCompare(b.start));
+
+// Rendered with the build date so the line works without JavaScript; the
+// script below recomputes it with the visitor's date between deploys.
+const view = computeLineView(stops, pacificToday());
+const next = stops.find(s => s.id === view.nextId);
+const current = stops.find(s => view.states[s.id] === 'now');
+
+// Without confirmed layout dates the stop shows host event dates, so "now"
+// must not read as the layout being open.
+const stateLabel = (state: StopState, layoutConfirmed: boolean) =>
+  state === 'now' ? (layoutConfirmed ? 'Layout open' : 'Host event on now')
+    : { past: 'Departed', next: 'Next stop', later: 'Coming up' }[state];
+const statusLead = (stop?: { layoutConfirmed: boolean }, isNow = false) =>
+  !stop ? 'No upcoming stops posted yet.'
+    : isNow ? (stop.layoutConfirmed ? 'Layout open now:' : 'Host event on now:')
+    : 'Next stop:';
+const datesNote = (stop?: { layoutConfirmed: boolean; dates: string }) =>
+  stop ? (stop.layoutConfirmed ? stop.dates : `${stop.dates} (host event dates)`) : '';
+---
+
+{stops.length > 0 && (
+  <nav
+    class="event-line"
+    aria-label="Event timeline"
+    data-event-line
+    style={`--count: ${view.visible.length}; --progress: ${view.progress};`}
+  >
+    <p class="event-line-status">
+      <span data-status-lead>{statusLead(current ?? next, Boolean(current))}</span>
+      <strong data-status-title>{(current ?? next)?.title}</strong>
+      <span data-status-dates>{datesNote(current ?? next)}</span>
+      <span data-status-countdown class="event-line-countdown"></span>
+    </p>
+
+    <div class="event-line-rail">
+      <div class="event-line-track" aria-hidden="true">
+        <span class="event-line-traveled"></span>
+        <span class="event-line-marker"><span class="event-line-marker-label">You are here</span></span>
+      </div>
+      <ol class="event-line-stops">
+        {stops.map((stop) => {
+          const state = view.states[stop.id];
+          return (
+            <li
+              class="event-line-stop"
+              data-stop-id={stop.id}
+              data-start={stop.start}
+              data-end={stop.end}
+              data-title={stop.title}
+              data-dates={stop.dates}
+              data-layout-confirmed={stop.layoutConfirmed ? 'true' : undefined}
+              data-state={state}
+              hidden={!view.visible.includes(stop.id)}
+            >
+              <a href={`#event-${stop.id}`}>
+                <span class="event-line-dot" aria-hidden="true"></span>
+                <span class="event-line-state" data-state-label>{stateLabel(state, stop.layoutConfirmed)}</span>
+                <span class="event-line-title">{stop.title}</span>
+                <span class="event-line-dates">{stop.dates}</span>
+              </a>
+            </li>
+          );
+        })}
+      </ol>
+    </div>
+  </nav>
+)}
+
+<script>
+  import { pacificToday } from '../utils/events';
+  import { computeLineView, formatCountdown, type StopState } from '../utils/eventLine';
+
+  const stateLabel = (state: StopState, layoutConfirmed: boolean) =>
+    state === 'now' ? (layoutConfirmed ? 'Layout open' : 'Host event on now')
+      : { past: 'Departed', next: 'Next stop', later: 'Coming up' }[state];
+
+  for (const line of document.querySelectorAll<HTMLElement>('[data-event-line]')) {
+    const items = [...line.querySelectorAll<HTMLLIElement>('[data-stop-id]')];
+    const stops = items.map(li => ({ id: li.dataset.stopId!, start: li.dataset.start!, end: li.dataset.end! }));
+    const view = computeLineView(stops, pacificToday());
+
+    for (const li of items) {
+      const state = view.states[li.dataset.stopId!];
+      li.dataset.state = state;
+      li.hidden = !view.visible.includes(li.dataset.stopId!);
+      li.querySelector('[data-state-label]')!.textContent = stateLabel(state, 'layoutConfirmed' in li.dataset);
+    }
+    line.style.setProperty('--count', String(view.visible.length));
+    line.style.setProperty('--progress', String(view.progress));
+
+    const current = items.find(li => li.dataset.state === 'now');
+    const next = items.find(li => li.dataset.stopId === view.nextId);
+    const featured = current ?? next;
+    const confirmed = featured ? 'layoutConfirmed' in featured.dataset : false;
+    line.querySelector('[data-status-lead]')!.textContent =
+      !featured ? 'No upcoming stops posted yet.'
+        : current ? (confirmed ? 'Layout open now:' : 'Host event on now:')
+        : 'Next stop:';
+    line.querySelector('[data-status-title]')!.textContent = featured?.dataset.title ?? '';
+    line.querySelector('[data-status-dates]')!.textContent =
+      !featured ? '' : confirmed ? featured.dataset.dates! : `${featured.dataset.dates} (host event dates)`;
+    line.querySelector('[data-status-countdown]')!.textContent =
+      !current && view.daysToNext !== undefined ? formatCountdown(view.daysToNext) : '';
+  }
+</script>
+
+<style>
+  @property --progress {
+    syntax: '<number>';
+    inherits: true;
+    initial-value: 0;
+  }
+
+  .event-line {
+    --dot: 1rem;
+    --track-size: 0.75rem;
+    --rail: rgba(255, 255, 255, 0.34);
+    --tie: rgba(255, 255, 255, 0.16);
+    --lit: var(--color-primary-light);
+    --signal: #FCD34D;
+    --bed: #111827;
+    --marker-at: calc((var(--progress) + 0.5) / var(--count) * 100%);
+    text-align: left;
+    animation: event-line-ride 1.6s cubic-bezier(0.16, 1, 0.3, 1) 0.2s both;
+  }
+
+  @keyframes event-line-ride {
+    from { --progress: -0.5; }
+  }
+
+  .event-line-status {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 0.25rem 0.5rem;
+    margin-bottom: 1.75rem;
+    color: rgb(209 213 219);
+    font-size: 1.0625rem;
+  }
+
+  .event-line-status strong {
+    color: white;
+    font-weight: 700;
+  }
+
+  .event-line-countdown:not(:empty) {
+    color: var(--signal);
+    font-weight: 600;
+  }
+
+  .event-line-countdown:not(:empty)::before {
+    content: '·';
+    margin-right: 0.5rem;
+    color: rgb(156 163 175);
+  }
+
+  .event-line-rail {
+    position: relative;
+  }
+
+  /* Rails plus crossties; the lit route covers the stretch already traveled. */
+  .event-line-track {
+    position: absolute;
+    border-color: var(--rail);
+    border-style: solid;
+  }
+
+  .event-line-traveled {
+    position: absolute;
+    background: var(--lit);
+    border-radius: 999px;
+  }
+
+  .event-line-marker {
+    position: absolute;
+    width: 1.25rem;
+    height: 1.25rem;
+    border-radius: 999px;
+    background: var(--signal);
+    border: 3px solid var(--bed);
+    outline: 2px solid var(--signal);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.45);
+    transform: translate(-50%, -50%);
+    z-index: 2;
+  }
+
+  .event-line-marker-label {
+    position: absolute;
+    bottom: calc(100% + 0.625rem);
+    left: 50%;
+    transform: translateX(-50%);
+    white-space: nowrap;
+    padding: 0.125rem 0.625rem;
+    border-radius: 999px;
+    background: var(--signal);
+    color: #1F2937;
+    font-size: 0.75rem;
+    font-weight: 700;
+  }
+
+  .event-line-stops {
+    display: grid;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .event-line-stop a {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 0.125rem;
+    border-radius: 0.5rem;
+    color: inherit;
+    text-decoration: none;
+  }
+
+  .event-line-dot {
+    position: absolute;
+    width: var(--dot);
+    height: var(--dot);
+    border-radius: 999px;
+    background: var(--bed);
+    border: 3px solid rgba(255, 255, 255, 0.5);
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    transition: transform 0.2s ease, border-color 0.2s ease;
+  }
+
+  .event-line-state {
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: rgb(156 163 175);
+  }
+
+  .event-line-title {
+    font-weight: 600;
+    line-height: 1.25;
+    color: white;
+    text-wrap: balance;
+  }
+
+  .event-line-dates {
+    font-size: 0.875rem;
+    color: rgb(209 213 219);
+  }
+
+  .event-line-stop a:hover .event-line-title {
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+
+  .event-line-stop a:hover .event-line-dot {
+    transform: translate(-50%, -50%) scale(1.25);
+  }
+
+  .event-line-stop a:focus-visible {
+    outline: 3px solid var(--signal);
+    outline-offset: 4px;
+  }
+
+  [data-state='past'] .event-line-dot {
+    background: var(--lit);
+    border-color: var(--lit);
+  }
+
+  [data-state='past'] .event-line-title {
+    color: rgb(209 213 219);
+    font-weight: 500;
+  }
+
+  [data-state='past'] .event-line-dates {
+    color: rgb(156 163 175);
+  }
+
+  [data-state='now'] .event-line-dot,
+  [data-state='next'] .event-line-dot {
+    --dot: 1.375rem;
+    border-color: var(--signal);
+    border-width: 4px;
+  }
+
+  [data-state='now'] .event-line-state,
+  [data-state='next'] .event-line-state {
+    color: var(--signal);
+  }
+
+  /* Phones: the line runs down the page. */
+  @media (max-width: 47.999rem) {
+    .event-line-stops {
+      grid-auto-rows: 1fr;
+    }
+
+    .event-line-stop a {
+      justify-content: center;
+      min-height: 4.75rem;
+      padding: 0.5rem 0 0.5rem 3.25rem;
+    }
+
+    .event-line-dot {
+      left: 1.25rem;
+      top: 50%;
+    }
+
+    .event-line-track {
+      top: 0;
+      bottom: 0;
+      left: calc(1.25rem - var(--track-size) / 2);
+      width: var(--track-size);
+      border-width: 0 2px;
+      background: repeating-linear-gradient(180deg, var(--tie) 0 3px, transparent 3px 12px);
+    }
+
+    .event-line-traveled {
+      top: 0;
+      left: 50%;
+      width: 4px;
+      height: var(--marker-at);
+      transform: translateX(-50%);
+    }
+
+    .event-line-marker {
+      left: 50%;
+      top: var(--marker-at);
+    }
+
+    .event-line-marker-label {
+      display: none;
+    }
+  }
+
+  /* Tablets and up: the line runs across, stations evenly spaced like a route map. */
+  @media (min-width: 48rem) {
+    .event-line-status {
+      justify-content: center;
+    }
+
+    .event-line-rail {
+      padding-top: 2.5rem;
+    }
+
+    .event-line-stops {
+      grid-auto-flow: column;
+      grid-auto-columns: minmax(0, 1fr);
+    }
+
+    .event-line-stop a {
+      align-items: center;
+      text-align: center;
+      padding: 2rem 0.75rem 0.25rem;
+    }
+
+    .event-line-dot {
+      left: 50%;
+      top: 0;
+    }
+
+    .event-line-track {
+      top: calc(2.5rem - var(--track-size) / 2);
+      left: 0;
+      right: 0;
+      height: var(--track-size);
+      border-width: 2px 0;
+      background: repeating-linear-gradient(90deg, var(--tie) 0 3px, transparent 3px 12px);
+    }
+
+    .event-line-traveled {
+      left: 0;
+      top: 50%;
+      height: 4px;
+      width: var(--marker-at);
+      transform: translateY(-50%);
+    }
+
+    .event-line-marker {
+      top: 50%;
+      left: var(--marker-at);
+    }
+  }
+</style>

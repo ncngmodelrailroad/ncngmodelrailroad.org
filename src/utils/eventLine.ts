@@ -59,7 +59,5 @@ export function computeLineView(stops: LineStop[], today: string): LineView {
 }
 
 export function formatCountdown(days: number): string {
-  if (days <= 0) return 'today';
-  if (days === 1) return 'tomorrow';
-  return `in ${days} days`;
+  return days === 1 ? '1 day' : `${days} days`;
 }

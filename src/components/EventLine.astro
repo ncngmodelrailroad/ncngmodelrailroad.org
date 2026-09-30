@@ -49,9 +49,9 @@ const statusLead = (stop?: { layoutConfirmed: boolean }, isNow = false) =>
     style={`--count: ${view.visible.length}; --progress: ${view.progress};`}
   >
     <p class="event-line-status">
+      <span data-status-countdown class="event-line-countdown"></span>
       <span data-status-lead>{statusLead(current ?? next, Boolean(current))}</span>
       <strong data-status-title>{(current ?? next)?.title}</strong>
-      <span data-status-countdown class="event-line-countdown"></span>
     </p>
 
     <div class="event-line-rail">
@@ -115,13 +115,13 @@ const statusLead = (stop?: { layoutConfirmed: boolean }, isNow = false) =>
     const current = items.find(li => li.dataset.state === 'now');
     const next = items.find(li => li.dataset.stopId === view.nextId);
     const featured = current ?? next;
+    const counting = !current && view.daysToNext !== undefined;
     line.querySelector('[data-status-lead]')!.textContent =
       !featured ? 'No upcoming stops posted yet.'
         : current ? ('layoutConfirmed' in current.dataset ? 'Layout open now' : 'Host event on now')
-        : 'Next stop';
+        : counting ? 'until the next stop' : 'Next stop';
     line.querySelector('[data-status-title]')!.textContent = featured?.dataset.title ?? '';
-    line.querySelector('[data-status-countdown]')!.textContent =
-      !current && view.daysToNext !== undefined ? formatCountdown(view.daysToNext) : '';
+    line.querySelector('[data-status-countdown]')!.textContent = counting ? formatCountdown(view.daysToNext!) : '';
   }
 </script>
 
@@ -134,8 +134,10 @@ const statusLead = (stop?: { layoutConfirmed: boolean }, isNow = false) =>
 
   .event-line {
     --axis: 0.75rem;
-    --line: 2px;
+    --gauge: 0.875rem;
     --ahead: rgba(255, 255, 255, 0.3);
+    --rail: rgba(255, 255, 255, 0.42);
+    --tie: rgba(255, 255, 255, 0.16);
     --lit: var(--color-primary-light);
     --signal: #FCD34D;
     --bed: #111827;
@@ -173,21 +175,41 @@ const statusLead = (stop?: { layoutConfirmed: boolean }, isNow = false) =>
 
   .event-line-countdown {
     color: var(--signal);
-    font-weight: 600;
+    font-family: var(--font-display);
+    font-size: 1.5rem;
+    line-height: 1;
+  }
+
+  .event-line-countdown:empty,
+  [data-status-title]:empty {
+    display: none;
+  }
+
+  [data-status-title]::before {
+    content: '·';
+    margin-right: 0.625rem;
+    color: var(--muted);
+    font-weight: 400;
   }
 
   .event-line-rail {
     position: relative;
   }
 
-  /* Dotted track ahead, solid lit line behind. */
-  .event-line-track {
+  /* Track: two rails over crossties. The traveled stretch is the same
+     track drawn in the lit color, so the ties stay aligned. */
+  .event-line-track,
+  .event-line-traveled {
     position: absolute;
+    background:
+      linear-gradient(var(--rail), var(--rail)) var(--rail-a) / var(--rail-size) no-repeat,
+      linear-gradient(var(--rail), var(--rail)) var(--rail-b) / var(--rail-size) no-repeat,
+      repeating-linear-gradient(var(--tie-dir), var(--tie) 0 3px, transparent 3px 11px);
   }
 
   .event-line-traveled {
-    position: absolute;
-    background: var(--lit);
+    --rail: var(--lit);
+    --tie: color-mix(in srgb, var(--lit) 40%, transparent);
   }
 
   .event-line-marker {
@@ -285,7 +307,7 @@ const statusLead = (stop?: { layoutConfirmed: boolean }, isNow = false) =>
 
   [data-state='past'] .event-line-dot {
     background: var(--lit);
-    box-shadow: none;
+    box-shadow: 0 0 0 3px var(--bed);
   }
 
   [data-state='past'] .event-line-title {
@@ -316,6 +338,14 @@ const statusLead = (stop?: { layoutConfirmed: boolean }, isNow = false) =>
 
   /* Phones: the line runs down the page. */
   @media (max-width: 47.999rem) {
+    [data-status-title] {
+      flex-basis: 100%;
+    }
+
+    [data-status-title]::before {
+      content: none;
+    }
+
     .event-line {
       --axis: 1.75rem;
     }
@@ -335,12 +365,18 @@ const statusLead = (stop?: { layoutConfirmed: boolean }, isNow = false) =>
       top: 50%;
     }
 
+    .event-line {
+      --tie-dir: 180deg;
+      --rail-size: 2px 100%;
+      --rail-a: 3px 0;
+      --rail-b: calc(100% - 3px) 0;
+    }
+
     .event-line-track {
       top: 0;
       bottom: 0;
-      left: calc(var(--axis) - var(--line) / 2);
-      width: var(--line);
-      background: repeating-linear-gradient(180deg, var(--ahead) 0 2px, transparent 2px 7px);
+      left: calc(var(--axis) - var(--gauge) / 2);
+      width: var(--gauge);
     }
 
     .event-line-traveled {
@@ -376,12 +412,18 @@ const statusLead = (stop?: { layoutConfirmed: boolean }, isNow = false) =>
       top: var(--axis);
     }
 
+    .event-line {
+      --tie-dir: 90deg;
+      --rail-size: 100% 2px;
+      --rail-a: 0 3px;
+      --rail-b: 0 calc(100% - 3px);
+    }
+
     .event-line-track {
-      top: calc(var(--axis) - var(--line) / 2);
+      top: calc(var(--axis) - var(--gauge) / 2);
       left: 0;
       right: 0;
-      height: var(--line);
-      background: repeating-linear-gradient(90deg, var(--ahead) 0 2px, transparent 2px 7px);
+      height: var(--gauge);
     }
 
     .event-line-traveled {

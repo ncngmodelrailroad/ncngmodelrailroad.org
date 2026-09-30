@@ -15,7 +15,7 @@ Model railroad wiring looks mysterious until you learn a few ideas and two tools
 - Unplug the system before you touch wiring.
 - A multimeter answers most "why won't it run?" questions.
 - At the club, ask an experienced member before you change any layout wiring.
-- You do not need to buy tools to volunteer. The layout has a workbench area with shared tools and supplies for layout work, including an NCE Power Cab. Ask a volunteer what is available and what, if anything, to bring.
+- You do not need to buy a tool kit before volunteering. The layout has shared tools for layout work, including an NCE Power Cab at the workbench. [Email before attending](/contact), and ask what is available and what to bring.
 
 Prices on this page are rough 2026 US estimates. They vary by store and brand.
 
@@ -46,7 +46,7 @@ Soldering joins wires with melted metal so the connection conducts well for year
 - **Helping hands.** A small stand with clips holds parts still so both of your hands stay free.
 - **Heat-shrink tubing.** Slide it onto the wire, well away from the joint, before soldering. Once the joint cools, move it over the bare metal and warm it to shrink a neat, insulated sleeve.
 
-The technique is simple: heat the joint, not the solder. Touch the iron to the wire and rail together, feed solder into the joint, and pull away when it flows. A good joint is shiny and smooth. A dull, lumpy one needs another try.
+The technique is simple: heat the joint, not the solder. Touch the iron to the wire and rail together, feed solder into the joint, and pull away when it flows. A good joint is smooth, flows onto both surfaces, holds firmly when you tug gently, and has no cracks or blobs. Lead-free solder often looks matte, so judge by shape and grip, not shine. A lumpy joint, or one sitting on top of the wire like a bead, needs another try.
 
 ## Wire, feeders, and bus wiring
 
@@ -74,9 +74,8 @@ Most layouts use two kinds of wire under the benchwork.
 
 ### The quarter test
 
-This test checks that a district's breaker shuts off power when something shorts the rails.
+Some layouts use this general diagnostic to check that a district's breaker shuts off power when something shorts the rails. At the club, ask the person responsible for the layout before you try it.
 
-- **On the club layout, get permission first.** Ask an experienced member before you run it.
 - **Remove locomotives** from the district you are testing.
 - **Use an insulated tool**, not your fingers. Lay a coin across both rails at the far end of the district, then lift it off immediately.
 - **The breaker or booster should trip at once.** A small spark on contact is normal. If sparking continues or the coin or rail gets warm, lift the coin off at once.
@@ -93,7 +92,7 @@ At our layout:
 
 ### What DCC costs
 
-- **Entry starter set** (command station, booster, and throttle in one, for example Digitrax Zephyr Express or Bachmann E-Z Command): about $185 to $240
+- **Basic non-sound starter set** (command station, booster, and throttle in one, for example Digitrax Zephyr Express or Bachmann E-Z Command): about $185 to $240
 - **Power Cab-class system**: about $215 to $220
 - **Decoder without sound**: about $20 to $40 for HO; larger O-scale decoders cost roughly twice that
 - **Sound decoder**: about $70 to $140 for HO; O-scale sound decoders run about $165 to $215
@@ -110,9 +109,9 @@ LEDs light buildings, street lamps, and locomotive headlights. Two rules keep th
 
 ## Electronics starter kit for home projects
 
-Buy these for your own bench. For layout work, start with the shared tools at the workbench.
+Buy these for your own bench. For layout work, ask what shared tools are available first.
 
-**Bare minimum**, about $90 to $150 with a compact iron (plus its power adapter), or about $185 to $235 with a bench station:
+**Bare minimum**, about $90 to $150 with a compact iron, or about $185 to $235 with a bench station. The compact-iron estimate assumes you already own a USB-C power adapter that can drive it; check the iron's requirements before you buy.
 
 - Digital multimeter with continuity beeper (about $20 to $35)
 - Temperature-controlled soldering iron with a stand and tip cleaner
@@ -141,13 +140,19 @@ A club layout holds decades of other people's work, and the wiring under it has 
 - **Test before you cut.** Use continuity to confirm which wire goes where.
 - **Label anything you disconnect.** Masking tape and a pen work fine.
 - **Keep solder, iron, and tools off the track** and away from scenery.
-- **After any wiring change, ask an experienced member to run the quarter test** with you, then run a train slowly through the area.
+- **After a wiring change, ask the person responsible for the layout how they want it tested.**
 - **Write down what you changed** so the next person can follow your work.
 
 ## Keep exploring
 
 - [New to model railroading?](/learn/new-to-model-railroading): the friendly starting point
 - [Glossary of terms](/learn/glossary): every model and rail word, explained in plain English
+- [Getting your hands dirty](/learn/getting-your-hands-dirty): where to start on hands-on work
+- [Choosing a scale](/learn/choosing-a-scale): how to pick a size for your own trains
+- [First workbench tools](/learn/first-workbench-tools): the hand tools that come before a soldering iron
+- [Painting and weathering](/learn/painting-weathering): color and wear for models
+- [Scenery and landscape](/learn/scenery-landscape): ground, trees, and rock work
+- [Tinkering and tech](/learn/tinkering-tech): JMRI, microcontrollers, and train cameras
 
 ### Further reading
 

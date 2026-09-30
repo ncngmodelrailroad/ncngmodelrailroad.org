@@ -20,7 +20,7 @@ If you buy nothing else, start here:
 - A bright desk lamp
 - Safety glasses
 
-That kit builds most plastic and wood kits and handles everyday repairs.
+That kit builds most plastic kits and handles everyday repairs. Add wood glue for wood kits.
 
 ## The starter tool kit
 
@@ -34,7 +34,7 @@ A hobby knife with a thin handle and a replaceable pointed blade does most of th
 
 ### Flush cutters
 
-Plastic kit parts come attached to a frame called a **sprue**. Flush cutters, sold as sprue cutters or electronics cutters, have one flat side that snips a part off cleanly with almost no leftover nub. Cut a little away from the part first, then trim close. Keep them for plastic and thin wire. Hard steel wire, like the music wire used for handrails and grab irons, will chip their edges, so use a heavier pair of wire cutters for that.
+Plastic kit parts come attached to a frame called a **sprue**. Flush cutters, sold as sprue cutters or electronics cutters, have one flat side that snips a part off cleanly with almost no leftover nub. Cut a little away from the part first, then trim close. Most grab irons are brass or phosphor-bronze wire, which flush cutters handle fine. Hard steel (music) wire, which some modelers use for handrails, will chip them, so use heavier cutters for it.
 
 ### Tweezers
 
@@ -70,11 +70,11 @@ Good light is the most underrated tool on the bench. A bright LED desk lamp with
 
 No single glue does everything. Match the glue to the materials.
 
-- **Plastic cement** for styrene plastic to styrene plastic. It melts the two surfaces together. Thin liquid types wick into a joint on their own. It does not work on metal, wood, or resin.
-- **CA (cyanoacrylate, or super glue)** for metal, resin, and mixed materials. It sets in seconds. Thin CA wicks into joints, and thicker "gap-filling" CA gives you time to position parts.
+- **Plastic cement** for styrene, the common kit plastic. It melts the two surfaces together, and thin liquid types wick into a joint on their own. Some types also bond ABS and acrylic, so check the label. It will not bond metal, wood, resin, or slippery engineering plastics like Delrin or nylon. Pin or screw those instead.
+- **CA (cyanoacrylate, or super glue)** for metal, resin, and mixed materials. Thin CA wicks into joints and sets in seconds. Thicker "gap-filling" CA takes longer and gives you time to position parts.
 - **White or wood glue (PVA)** for wood, paper, cardstock, and scenery. It dries nearly clear and stays a little flexible. Watered down, it holds ground cover and ballast.
 - **Epoxy** for strong joints, heavy parts, and filling gaps. You mix two parts together. Five-minute epoxy is handy, and slower types are stronger.
-- **Canopy glue** for clear windows and headlight lenses. It dries clear and will not fog clear plastic. It is also sold as clear parts cement, for example Formula 560.
+- **Canopy glue** for clear windows and headlight lenses. It dries clear and will not fog clear plastic. Examples include Formula 560 Canopy Glue and Testors Clear Parts Cement.
 
 ### When not to use CA
 
@@ -93,7 +93,7 @@ Three extras make CA easier to control: accelerator (a spray that sets CA instan
 A good bench is less about space and more about habits.
 
 - **Cover the surface.** A cutting mat, or a large sheet of cardboard or hardboard, protects the table.
-- **Sit where the light comes from the front or the side** of your working hand, so your hand does not shadow the work.
+- **Place the light in front of you or on the side opposite your working hand** (the left side if you are right-handed), so your hand does not shadow the work.
 - **Use a tray with a lip.** A baking sheet or cafeteria tray keeps small parts from rolling off the edge.
 - **Sort small parts.** A tackle box, pill organizer, or egg carton keeps screws, couplers, and details apart. Label each compartment.
 - **Leave kit parts on the sprue** until you need them.
@@ -123,9 +123,12 @@ The tools on this page are safe when you respect them. Most injuries come from a
 ### Keeping CA off your skin
 
 - Use a small amount, and apply it with a toothpick or fine tip instead of straight from the bottle.
-- Keep acetone nail polish remover or CA debonder on the bench.
+- Keep CA debonder, or nail polish remover labeled "acetone," on the bench.
+- Acetone and debonder will mar styrene and paint, so use them on skin and metal, not on plastic models.
+- **Never use acetone, debonder, or any solvent near the eyes or mouth.**
+- A large amount of CA setting on skin can get hot enough to burn.
 - **If you glue your fingers together, do not pull them apart.** Soak the area in warm, soapy water, then gently peel or roll the skin apart. Acetone or debonder helps loosen it.
-- **If CA gets in your eye,** rinse it with clean, lukewarm water for about 15 minutes. Do not force a glued eyelid open. Contact Poison Control (in the US, 1-800-222-1222) or urgent care right away.
+- **If CA gets in your eye,** do not force it open. Rinse it with lukewarm water for 15 minutes, then get medical care or call Poison Control (in the US, 1-800-222-1222). A glued eyelid usually comes free on its own within a few days.
 
 ### First aid
 

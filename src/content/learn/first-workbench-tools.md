@@ -9,7 +9,7 @@ You do not need a workshop to start building models. A kitchen table, a handful 
 
 ## Volunteering? You do not need your own kit
 
-The layout has a workbench area with shared tools and supplies for work on the layout, including an NCE Power Cab, a compact [DCC](/learn/glossary#dcc-digital-command-control) controller. You do not need to buy anything before you volunteer. Ask a volunteer what is available and what, if anything, to bring.
+You do not need to buy a tool kit before volunteering. The layout has shared tools for layout work, including an NCE Power Cab, a compact [DCC](/learn/glossary#dcc-digital-command-control) controller, at the workbench. [Email us](/contact) before attending, and ask what is available and what to bring.
 
 The checklists below are for building a bench at home, for your own projects.
 
@@ -136,7 +136,7 @@ The tools on this page are safe when you respect them. Most injuries come from a
 - **Never use acetone, debonder, or any solvent near the eyes or mouth.**
 - A large amount of CA setting on skin can get hot enough to burn.
 - **If you glue your fingers together, do not pull them apart.** Soak the area in warm, soapy water, then gently peel or roll the skin apart. Acetone or debonder helps loosen it.
-- **If CA gets in your eye,** do not force it open. Rinse it with lukewarm water for 15 minutes, then get medical care or call Poison Control (in the US, 1-800-222-1222). A glued eyelid usually comes free on its own within a few days.
+- **If CA gets in your eye,** do not force it open. Rinse it with lukewarm water for 15 minutes, then get medical care or call Poison Control (in the US, 1-800-222-1222) right away.
 
 ### First aid
 
@@ -155,8 +155,8 @@ Add these to your home bench as your projects call for them. None of them are ne
 - A chopper tool for cutting many strips to the same length
 - A motor tool at low speed, for example a Dremel
 - A digital caliper for precise measurements (about $12 for plastic, about $30 for steel)
-- A soldering iron with a stand and a fume fan (see the upcoming electronics guide)
-- Brushes and paint supplies (see the upcoming painting and weathering guide)
+- A soldering iron with a stand and a fume fan (see [Electronics and DCC basics](/learn/electronics-dcc-basics))
+- Brushes and paint supplies (see [Painting and weathering](/learn/painting-weathering))
 - Putty for filling gaps, and fine sanding sponges
 
 ## Keep exploring

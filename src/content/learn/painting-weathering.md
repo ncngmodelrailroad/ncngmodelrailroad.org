@@ -5,7 +5,7 @@ order: 11
 icon: solar:palette-bold
 ---
 
-Paint turns a shiny plastic model into something that looks like it has worked for a living. The good news for beginners: paint mistakes are almost always fixable. You can wipe, sand, repaint, or strip a model and start over. This guide covers what to buy, how the common paints behave, and how to stay safe while you learn.
+Paint turns a shiny plastic model into something that looks like it has worked for a living. The good news for beginners: on practice pieces, or on paint you applied yourself, you can fix many mistakes. You can wipe, sand, repaint, or strip and start over. Factory finishes, factory lettering, and models that belong to someone else are a different matter, so practice on your own pieces first. This guide covers what to buy, how the common paints behave, and how to stay safe while you learn.
 
 ## Start with something you won't miss
 
@@ -13,7 +13,7 @@ Practice on a cheap or secondhand model first. An old freight car from a swap me
 
 ## Volunteering? You don't need a kit first
 
-You don't need to buy anything before you help at the layout. The layout has a shared workbench area with tools and supplies for layout work. Ask a volunteer what is available for the job and what, if anything, to bring. The shopping lists below are for your own projects at home.
+You do not need to buy a tool kit before volunteering. The layout has shared tools for layout work, including an NCE Power Cab at the workbench. [Email before attending](/contact), and ask what is available and what to bring. The shopping lists below are for your own projects at home.
 
 ## Brushes
 
@@ -91,7 +91,7 @@ Less is more. You can always add grime, and a light touch looks more real than a
 
 ## How to fix mistakes
 
-Many paint mistakes are fixable:
+Many mistakes on practice pieces, or on paint you applied yourself, can be corrected. Treat factory finishes, lettering, and models that belong to others with more caution, and ask the owner before trying a fix. Common fixes:
 
 - **Wet paint in the wrong spot:** wipe it off with a damp brush or cotton swab.
 - **A run, drip, or dust speck:** let it dry, sand it smooth with fine sandpaper or a sanding stick, and repaint.
@@ -131,3 +131,9 @@ Prices here are rough 2026 US estimates and vary by store and brand. Brushes, a 
 - [Glossary of terms](/learn/glossary): kitbashing, weathering, and more, in plain English
 - [The trains](/trains): real equipment to study before you weather
 - [New to model railroading?](/learn/new-to-model-railroading): the basics of scale, gauge, and our railroad
+- [Getting your hands dirty](/learn/getting-your-hands-dirty): why it is safe to start
+- [Choosing a scale](/learn/choosing-a-scale): picking the right size for your space
+- [First workbench tools](/learn/first-workbench-tools): the hand tools to buy first
+- [Scenery and landscape](/learn/scenery-landscape): where weathered models end up
+- [Electronics and DCC basics](/learn/electronics-dcc-basics): wiring and digital control
+- [Tinkering and tech](/learn/tinkering-tech): JMRI, microcontrollers, and train cameras

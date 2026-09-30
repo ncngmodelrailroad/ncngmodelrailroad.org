@@ -5,9 +5,13 @@ order: 14
 icon: solar:cpu-bolt-bold
 ---
 
-Model railroading has a tech side, and it welcomes beginners. A laptop can read and save every setting in a locomotive. A small circuit board can make a crossing signal blink. A tiny camera can show the layout from the engineer's seat.
+Model railroading has a tech side, and it welcomes beginners. A laptop can read and save a locomotive's decoder settings. A small circuit board can make a crossing signal blink. A tiny camera can show the layout from the engineer's seat.
 
 **Most settings are reversible when you back them up first.** Most tinkering happens in decoder settings and your own code, and you can undo both. The main exception is decoder firmware and sound files, covered below.
+
+**Volunteering at our layout? You don't need to buy a kit first.** The layout has a workbench area with shared tools and supplies for layout work, including an NCE Power Cab. Ask a volunteer what's available and what to bring. The shopping lists in this guide are for projects at home.
+
+JMRI and Engine Driver are free. Other prices in this guide are rough 2026 US estimates and vary by store and brand.
 
 ## Your computer and DCC: meet JMRI
 
@@ -55,9 +59,9 @@ A **microcontroller** is a tiny computer on one chip that runs a single program 
 
 The ESP32 adds built-in Wi-Fi and Bluetooth. Classic Arduino boards like the Uno are simpler for a first build.
 
-### A starter kit
+### A starter kit for home projects
 
-You don't need much. Many "starter kits" bundle most of this:
+You don't need much. A development board alone runs about $10 to $30. A boxed starter kit with a board, breadboard, wires, LEDs, and parts runs about $40 to $130, depending on the brand. Many kits bundle most of this:
 
 - A development board (for example, an Arduino Uno or an ESP32 DevKit)
 - A USB cable that carries data, not just charging power
@@ -78,14 +82,14 @@ You don't need much. Many "starter kits" bundle most of this:
 
 ### DCC-EX: an open-source example
 
-**DCC-EX** is a volunteer-run, open-source project that shows how far this can go. Its EX-CommandStation turns a microcontroller board (such as an Arduino Mega or ESP32) plus a motor driver board into a working DCC command station. It works with JMRI, Engine Driver, and WiThrottle, and it offers both a build-it-yourself path and ready-to-run hardware.
+**DCC-EX** is a volunteer-run, open-source project that shows how far this can go. Its EX-CommandStation turns a microcontroller board (such as an Arduino Mega or ESP32) plus a motor driver board into a working DCC command station. It works with JMRI, Engine Driver, and WiThrottle, and it offers both a build-it-yourself path and ready-to-run hardware. A basic do-it-yourself build (board, motor driver, and track power supply) runs about $65 to $120. The ready-to-run command station costs about $120 to $160, depending on whether you add a power supply.
 
 ## Train cams: ride along from the cab
 
 On-board cameras put you in the engineer's seat. Our [layout](/about) uses them so visitors can ride along from a train's point of view. For your own setup, the common choices are:
 
-- **Miniature FPV cameras:** tiny analog cameras from the drone hobby that send live video over a radio link to a small receiver and screen.
-- **Small Wi-Fi cameras:** compact boards, such as ESP32 camera modules, that stream video to a phone or computer over your network.
+- **Miniature FPV cameras:** tiny analog cameras from the drone hobby that send live video over a radio link to a small receiver and screen. A combined camera and transmitter runs about $20 to $30, and a small receiving monitor about $75 to $130.
+- **Small Wi-Fi cameras:** compact boards, such as ESP32 camera modules, that stream video to a phone or computer over your network. These boards run about $10 to $25.
 
 A few things to plan for:
 

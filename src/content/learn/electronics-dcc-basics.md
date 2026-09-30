@@ -5,7 +5,7 @@ order: 13
 icon: solar:plug-circle-bold
 ---
 
-Model railroad wiring looks mysterious until you learn a few ideas and two tools. Layouts run on low voltage, most mistakes cost a blown resistor rather than a burnt hand, and nearly every problem has a simple test. This page covers the basics, then gives you two checklists to take to the workbench.
+Model railroad wiring looks mysterious until you learn a few ideas and two tools. Layouts run on low voltage. Most troubleshooting can be done safely with the power off and a multimeter, but short circuits can still heat wires and rails. This page covers the basics, then gives you two checklists to take to the workbench.
 
 **New to all of this?** Read the short version and the safety section, then skip to the checklists. Come back to the rest when a project calls for it. **Already comfortable with a soldering iron?** Jump to [DCC in plain terms](#dcc-in-plain-terms).
 
@@ -118,7 +118,7 @@ Buy these for your own bench. For layout work, ask what shared tools are availab
 - Thin rosin-core electronics solder (about $6 to $15)
 - Rosin flux pen or paste (about $8), plus isopropyl alcohol for cleanup
 - Wire strippers sized for 12 to 24 AWG (about $12 to $25)
-- Flush cutters (about $7 to $11)
+- Basic electronics flush cutters (about $7 to $11)
 - Heat-shrink tubing assortment (about $8 to $15)
 
 **Worth adding next:**

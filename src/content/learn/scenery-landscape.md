@@ -24,11 +24,11 @@ Finish each layer across an area before moving on.
 
 You need a light, solid shape to build on. Three common methods:
 
-- **Foam board.** Rigid insulation foam from a home center (the pink or blue sheets) stacks and glues into hills. Carve it with a long, thin knife, a rasp and coarse sandpaper, or a hot-wire foam cutter. Heated foam gives off fumes, so follow the cutter maker's warnings and work outdoors or with an exhaust fan.
+- **Foam board.** Rigid insulation foam from a home center (the pink or blue sheets) stacks into hills. Glue the layers with a foam-safe adhesive or white glue. Solvent-based glues, including many construction adhesives and spray glues, melt foam. Carve it with a long, thin knife, a rasp and coarse sandpaper, or a hot-wire foam cutter. Heated foam gives off fumes, so follow the cutter maker's warnings and work outdoors or with an exhaust fan.
 - **Plaster cloth.** Gauze strips soaked in plaster, sold for crafts and for model scenery (for example, Woodland Scenics Plaster Cloth). Dip a strip in water and lay it over crumpled newspaper, cardboard strips, or foam. It sets in minutes and hardens as it dries.
 - **Hardshell.** An older, cheaper version of the same idea: paper towels dipped in thin plaster and draped over a web of cardboard strips.
 
-Once the shell is hard, smooth or roughen it with a sculpting compound such as a papier-mache product (for example, Sculptamold) or more plaster. Keep slopes gentle so ground cover stays put.
+Once the shell is hard, smooth or roughen it with a paper-fiber and plaster compound (for example, Sculptamold) or more plaster. Keep slopes gentle so ground cover stays put.
 
 ## Earth colors and ground cover
 
@@ -36,11 +36,11 @@ Once the shell is hard, smooth or roughen it with a sculpting compound such as a
 
 **Then texture.** Most ground cover falls into a few families:
 
-- **Scenic dirt and fine sand.** Bagged scenic soil or clean craft sand is the safe choice. Soil from an unknown spot can carry pesticides, animal waste, or old mine residue, a real concern in Gold Country. If you collect your own, take it from a known clean spot, sift it with tools you keep out of the kitchen, let it air-dry, and never heat it in a food oven. Pass a magnet through it too, because iron particles can find their way into motors.
+- **Scenic dirt and fine sand.** Bagged scenic soil or clean craft sand is the safe choice. Soil from an unknown spot can carry pesticides, animal waste, or old mine residue, a real concern in Gold Country. Old mine waste around Grass Valley and Nevada City can contain arsenic and mercury, so never collect material from tailings or mine dumps. If you collect your own, take it from a known clean spot, sift it with tools you keep out of the kitchen, let it air-dry, and never heat it in a food oven. Pass a magnet through it too, because iron particles can find their way into motors.
 - **Ground foam.** Dyed foam crumbs in many colors and textures, from fine turf to coarse bushes (for example, Woodland Scenics or Scenic Express products). Blend two or three shades so it doesn't look like carpet.
-- **Static grass.** Short nylon fibers, sold in lengths from about 2 mm to 12 mm. A **static grass applicator** gives the fibers an electric charge so they stand up on end in wet glue, like real grass. Examples include the Noch Gras-Master and Woodland Scenics Static King.
+- **Static grass.** Short nylon or polyester fibers, from about 1 mm to 12 mm. In O scale, 2 to 4 mm reads as grazed grass, 4 to 6 mm as a typical field, and 10 to 12 mm as tall dry grass or weeds. A **static grass applicator** creates a high-voltage field between its screen and a grounding pin pushed into the wet glue. The charged fibers fly into the glue and stand on end, like real grass. Examples include the Noch Gras-Master and Woodland Scenics Static King. Anyone with a pacemaker or other implanted medical device should not use one. Follow the maker's safety instructions.
 - **[Ballast](/learn/glossary#ballast).** The crushed stone under the track. Real-rock ballast (for example, from Arizona Rock & Mineral) has the color variation of real stone. Keep it out of the moving parts of [turnouts](/learn/glossary#turnout-switch).
-- **Talus and rock castings.** Cast rock faces in flexible rubber molds with a hard plaster (for example, Hydrocal), then color them with thin washes of earth-tone paint or an alcohol-based stain. Crushed leftover castings make instant talus.
+- **Talus and rock castings.** Cast rock faces in flexible rubber molds with a hard plaster (for example, Hydrocal), then color them with thin washes of earth-tone paint or an alcohol-based stain. Local rock around the N.C.N.G. runs to gray-tan weathered granite and green-gray serpentine. Crushed leftover castings make instant talus.
 
 ## Bonded scenery: the glue trick
 
@@ -70,8 +70,8 @@ Plant trees in groups of uneven sizes. Nature rarely lines trees up in a row.
 
 Most of the look of model water comes from the paint under it.
 
-1. Paint the streambed dark at the center and lighter at the edges, where water runs shallow.
-2. Seal the bed and banks, for example with plaster cloth or caulk. Resin and water products find every gap.
+1. Paint the streambed dark at the center and lighter at the edges, where water runs shallow. Use 100% acrylic paint here. The vinyl in many latex and craft paints can react with water products (Woodland Scenics gives this warning for Realistic Water).
+2. Close gaps with plaster cloth or caulk, then seal the whole bed with a coat of paint, matte medium, or thinned white glue and let it dry. Resin and water products find every gap.
 3. Pour thin layers of a scenery water product (for example, Woodland Scenics Realistic Water) or a two-part pour-on resin (for example, Envirotex Lite). Follow the maker's label for layer thickness and ventilation.
 4. Add ripples on top with a textured gel (for example, Woodland Scenics Water Effects) or acrylic gloss medium.
 
@@ -89,10 +89,10 @@ A **backdrop** is the painted or printed scene along the back wall. Even a plain
 The best scenery reference is outside. The Nevada County Narrow Gauge ran through the Sierra foothills, and that country has a distinct look:
 
 - **Grass** turns golden brown for much of the year and green only in winter and spring.
-- **Oaks and gray pines** dot the lower hills. Ponderosa pine, black oak, and incense-cedar take over as the land climbs.
+- **Oaks and gray pines** dot the lower hills. Ponderosa pine, sugar pine, Douglas-fir, black oak, and incense-cedar take over as the land climbs.
 - **Manzanita** and other brush grow in thick, reddish-branched patches.
 - **Soil** runs from tan to deep red clay.
-- **Mine tailings,** piles of waste rock from gold mining, sit near old workings.
+- **Mining scars** come in several kinds: coarse waste-rock dumps beside shafts, fine gray or tan mill tailings below stamp mills, and cobble piles or eroded pits left by hydraulic and placer mining.
 
 Take photos on a walk or drive. Notice how grass grows thicker along fences, how dirt washes down a cut, and how few colors there really are. When in doubt, go duller. Nature is less green than a bag of ground foam.
 
@@ -117,6 +117,7 @@ An installed layout is different. Wet glue seeps, stray plaster and ballast can 
 - Control dust when you cut or sand foam and plaster. Vacuum as you go and wear a dust mask.
 - Wear gloves when you mix and pour two-part resin, and follow the label for ventilation.
 - Cut foam with a hot wire outdoors or with an exhaust fan pulling the fumes away.
+- Don't use a static-grass applicator if you have a pacemaker or other implanted medical device.
 - Before handling a static-grass applicator's screen or pin, switch it off and discharge it as its instructions say.
 - Keep scenery tools and containers out of the kitchen.
 

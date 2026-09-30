@@ -5,7 +5,7 @@ order: 12
 icon: solar:leaf-bold
 ---
 
-Scenery turns a board with track on it into a place. It is also the most forgiving part of the hobby. If a hillside looks wrong, you scrape it off, vacuum up the loose bits, and try again. A mistake costs some plaster and glue, not a locomotive, so scenery is a great place to get your hands dirty.
+Scenery turns a board with track on it into a place. It is also the most forgiving part of the hobby. If a hillside looks wrong, you scrape it off, vacuum up the loose bits, and try again. On a detached test board or practice piece, a mistake costs some plaster and glue, not a locomotive, so scenery is a great place to get your hands dirty. Work on an installed layout needs more care, covered below.
 
 Prices in this guide are rough 2026 US estimates. They vary by store and brand.
 
@@ -116,16 +116,16 @@ An installed layout is different. Wet glue seeps, stray plaster and ballast can 
 ## Work safely
 
 - Wear eye protection when cutting, carving, or sanding, and when spraying.
-- Control dust when you cut or sand foam and plaster. Vacuum as you go and wear a dust mask.
+- Control dust when you cut or sand foam and plaster. Ventilate the room and collect dust as you go, with a vacuum at the source. On top of that, wear a NIOSH-approved particulate respirator, such as an N95 or better.
 - Wear gloves when you mix and pour two-part resin, and follow the label for ventilation.
 - Cut foam with a hot wire outdoors or with an exhaust fan pulling the fumes away.
 - Don't use a static-grass applicator if you have a pacemaker or other implanted medical device.
 - Before handling a static-grass applicator's screen or pin, switch it off and discharge it as its instructions say.
 - Keep scenery tools and containers out of the kitchen.
 
-## Volunteering on our layout? No kit needed
+## Volunteering on our layout
 
-You don't need to buy anything before you volunteer. The layout has a workbench area with shared tools and supplies for layout work. Ask a volunteer what's on hand and what, if anything, to bring.
+You do not need to buy a tool kit before volunteering. The layout has shared tools for layout work, including an NCE Power Cab at the workbench. [Email before attending](/contact), and ask what is available and what to bring.
 
 ## Starter supplies for home projects
 
@@ -143,7 +143,7 @@ If you want to practice at home, this list covers a first patch and a bit more. 
 - A soft brush for spreading material
 - A sifter or shaker jar kept just for scenery
 - Painter's tape and plastic sheet to protect track and floors
-- Safety glasses, a dust mask, and disposable gloves
+- Safety glasses, a NIOSH-approved particulate respirator (N95 or better), and disposable gloves
 - A shop vacuum, with a stocking over the nozzle to catch reusable material
 
 Once you have a first patch done, the next tier is a static grass applicator and a few bags of fibers (about $80 to $130 together), then rock molds and water products.
@@ -168,4 +168,10 @@ Keep that practice board. It becomes your test piece for every new product and c
 
 - [Glossary of terms](/learn/glossary): plain-English definitions for the words above
 - [New to model railroading?](/learn/new-to-model-railroading): where the hobby starts
+- [Getting your hands dirty](/learn/getting-your-hands-dirty): starting hands-on work with confidence
+- [Choosing a scale](/learn/choosing-a-scale): picking a size that fits your space
+- [First workbench tools](/learn/first-workbench-tools): the basic kit for home projects
+- [Painting and weathering](/learn/painting-weathering): color and wear for models and scenery
+- [Electronics and DCC basics](/learn/electronics-dcc-basics): the wiring under the scenery
+- [Tinkering and tech](/learn/tinkering-tech): JMRI, microcontrollers, and train cameras
 - [Plan a visit](/events): see our foothills scenery in person

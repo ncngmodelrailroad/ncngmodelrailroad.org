@@ -103,7 +103,7 @@ You do not need to buy a tool kit before volunteering. The layout has shared too
 
 **What to bring:**
 
-You do not need to buy a tool kit first. Ask what is available at the workbench and what to bring.
+Ask what, if anything, you should bring.
 
 - Reading glasses or a magnifier, if you use them for close work
 - Safety glasses, if you have a pair

@@ -57,7 +57,9 @@ Narrow gauge models use the scale of the train with a smaller track gauge:
 
 Our layout models the Nevada County Narrow Gauge in On3, on DCC. On3 is a small niche. Most equipment comes as limited-run brass models or craftsman kits. Few ready-to-run plastic models exist. A used brass locomotive can start around $700, and new or rare models can cost several thousand dollars. Much of it turns up only second-hand.
 
-That is one reason a club layout makes a great way to enjoy On3 without owning it. Our members run trains using Engine Driver on Android tablets through JMRI, and an NCE Power Cab sits at the workbench. You do not need to own trains to help at the layout.
+That is one reason a club layout makes a great way to enjoy On3. Our members run trains using Engine Driver on Android tablets through JMRI.
+
+You do not need to buy a tool kit before volunteering. The layout has shared tools for layout work, including an NCE Power Cab at the workbench. [Email before attending](/contact), and ask what is available and what to bring.
 
 ## Other easy ways in
 
@@ -74,7 +76,7 @@ A **starter set** bundles a locomotive, a few cars, a loop of track, and a power
 
 - **DC** locomotives run on plain direct current. The track voltage sets the speed, so every locomotive on the same electrical section of track responds to the controller together.
 - **DCC-ready** locomotives run on DC and usually include a socket or other provision for adding a decoder later.
-- **DCC with sound** locomotives come with a decoder and speaker installed. They cost more but work out of the box with a [DCC](/learn/glossary#dcc-digital-command-control) system. The electronics-dcc-basics guide covers this in more depth.
+- **DCC with sound** locomotives come with a decoder and speaker installed. They cost more but work out of the box with a [DCC](/learn/glossary#dcc-digital-command-control) system. [Electronics and DCC basics](/learn/electronics-dcc-basics) covers this in more depth.
 
 ### New or used
 
@@ -121,4 +123,13 @@ These are rough 2026 US-dollar estimates. Prices vary with brand, detail, and co
 
 ## Keep exploring
 
-The sibling guides on getting your hands dirty, first workbench tools, painting and weathering, scenery and landscape, electronics and DCC basics, and tinkering with tech pick up where this one leaves off. The [glossary](/learn/glossary) explains any term that trips you up.
+These guides pick up where this one leaves off:
+
+- [Getting your hands dirty](/learn/getting-your-hands-dirty)
+- [First workbench tools](/learn/first-workbench-tools)
+- [Painting and weathering](/learn/painting-weathering)
+- [Scenery and landscape](/learn/scenery-landscape)
+- [Electronics and DCC basics](/learn/electronics-dcc-basics)
+- [Tinkering with tech](/learn/tinkering-tech)
+
+The [glossary](/learn/glossary) explains any term that trips you up.

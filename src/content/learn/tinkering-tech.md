@@ -16,14 +16,14 @@ Model railroading has a tech side, and it welcomes beginners. A laptop can read 
 **JMRI** (Java Model Railroad Interface) is free, open-source software that runs on Windows, macOS, and Linux. It contains several tools. Beginners usually meet these three first:
 
 - **DecoderPro** reads a decoder's CVs and shows them as plain labeled settings instead of raw numbers. It saves each locomotive's settings to a roster file on your computer.
-- **PanelPro** draws track diagrams and control panels on screen, so you can throw turnouts, show signals, and watch where trains are.
+- **PanelPro** draws track diagrams and control panels on screen, so you can throw turnouts, show signals, and, if your layout has occupancy detectors, watch where trains are.
 - **WiThrottle server** lets phones and tablets act as wireless throttles over your home Wi-Fi.
 
 ### Back up before you change anything
 
 This habit protects you more than any other:
 
-1. Put the locomotive on a **programming track** (a short, electrically isolated piece of track wired to your system's program output).
+1. Put the locomotive alone on a **programming track**, a short piece of track used only for programming. Some systems have a separate program output. Others, like the NCE Power Cab at our workbench, use one output for both, so make sure that locomotive is the only thing on the track. In program-track mode, every decoder on the track gets programmed.
 2. In DecoderPro, read all the CVs and save the roster entry.
 3. Change one setting at a time and test it.
 4. If you don't like the result, write the saved settings back.
@@ -38,7 +38,7 @@ With the WiThrottle server running, free and paid throttle apps connect over Wi-
 
 ### The computer interface
 
-JMRI can't talk to the rails on its own. Your DCC system needs a **computer interface**, usually a USB adapter or a network module made for that brand of command station. Each major DCC manufacturer offers one. Check the JMRI website's list of supported hardware for your system before you buy anything.
+JMRI can't talk to the rails on its own. Your DCC system needs a **computer interface**, usually a USB adapter or a network module made for that brand of command station. Most DCC manufacturers offer one, but features vary by system. Check JMRI's supported-hardware list, and its notes on limitations, for your exact command station before you buy.
 
 ### How our layout does it
 
@@ -78,7 +78,7 @@ You don't need much. Many "starter kits" bundle most of this:
 
 ### DCC-EX: an open-source example
 
-**DCC-EX** is a volunteer-run, open-source project that shows how far this can go. Its EX-CommandStation turns an Arduino board plus a motor driver board into a working DCC command station. It works with JMRI, Engine Driver, and WiThrottle, and it offers both a build-it-yourself path and ready-to-run hardware.
+**DCC-EX** is a volunteer-run, open-source project that shows how far this can go. Its EX-CommandStation turns a microcontroller board (such as an Arduino Mega or ESP32) plus a motor driver board into a working DCC command station. It works with JMRI, Engine Driver, and WiThrottle, and it offers both a build-it-yourself path and ready-to-run hardware.
 
 ## Train cams: ride along from the cab
 
@@ -89,18 +89,19 @@ On-board cameras put you in the engineer's seat. Our [layout](/about) uses them 
 
 A few things to plan for:
 
-- **Power:** A battery gives the simplest start. Track power works only through a proper regulator or a decoder function output rated for the load, never wired straight across the rails.
+- **Power:** A battery gives the simplest start. Power the camera from track power only through a proper regulator, meaning a DCC-rated rectifier plus a 5V regulator. If a decoder function output switches the camera, stay within that output's current rating and still feed the camera through a regulator. Never wire a camera straight across the rails or straight to a function output.
 - **Mounting:** Flat cars, gondolas, and open cabs make easy hosts. Use removable mounts like double-sided foam tape or a small bracket, so you can take the camera off without damage.
 - **Clearance:** Measure against tunnels, bridges, and overhead structures before the first run. A camera that sits too tall will hit something.
 - **Heat:** Cameras and transmitters get warm. Leave airflow around them, and keep them away from thin plastic shells that could soften or warp.
 - **Streaming basics:** Analog FPV has almost no delay but lower image quality. Wi-Fi streams look sharper but may lag and can drop out on a busy network. Test in the room where you'll run.
+- **Radio rules:** Analog 5.8 GHz FPV transmitters may need an amateur radio license in the US. Check your local radio rules before you transmit.
 
 ## Checklist: a safe first project
 
 Start with a blinking crossing light. Nothing touches the layout.
 
 - Install the Arduino IDE and your board's support package.
-- Upload the built-in "Blink" example and watch the onboard LED flash.
+- Upload the built-in "Blink" example and watch the onboard LED flash. Some ESP32 boards have no user LED, so wire one LED and resistor to a pin and change the pin number in the code.
 - On the breadboard, wire two red LEDs, each through its own resistor, to two output pins.
 - Double-check that each LED's longer leg (the positive side) faces the pin, not ground.
 - Change the code so the two LEDs alternate, like a railroad crossing.

@@ -91,9 +91,7 @@ A few habits prevent the most common hobby injuries.
 
 Every group runs things its own way, so treat this as a general picture, not a promise. At our layout, members run trains from Android tablets using the Engine Driver app, which works like a handheld throttle. Running trains can be an easy way to start, so ask a volunteer whether it's an option for you. They can also tell you which other activities are open to newcomers and how to stop a train quickly. Watching and asking questions counts as real help too.
 
-You don't need to buy tools or a kit before you volunteer. The layout has a workbench area with shared tools and supplies for layout work, including an NCE Power Cab, a simple [DCC](/learn/glossary#dcc-digital-command-control) controller. Ask a volunteer what's available and what, if anything, to bring. Getting started at the layout should cost little or nothing up front. If you later want your own gear at home, the topic guides below give rough budgets.
-
-Email us before your first session to confirm the date and how to get in. See the [volunteer page](/volunteer).
+You do not need to buy a tool kit before volunteering. The layout has shared tools for layout work, including an NCE Power Cab (a simple [DCC](/learn/glossary#dcc-digital-command-control) controller) at the workbench. Email before attending to confirm the date and how to get in, and ask what is available and what to bring. See the [volunteer page](/volunteer).
 
 ## Your first session checklist
 
@@ -105,7 +103,7 @@ Email us before your first session to confirm the date and how to get in. See th
 
 **What to bring:**
 
-You don't need your own tools or kits. Ask a volunteer what's available at the workbench and what to bring.
+You do not need to buy a tool kit first. Ask what is available at the workbench and what to bring.
 
 - Reading glasses or a magnifier, if you use them for close work
 - Safety glasses, if you have a pair
@@ -116,19 +114,19 @@ You don't need your own tools or kits. Ask a volunteer what's available at the w
 
 - What should I avoid touching?
 - Who should I ask when I get stuck?
-- Which shared tools and supplies can I use, and where do they and the trash go?
+- Which shared tools can I use, and where do they and the trash go?
 - How do I stop a train, or ask for one to be stopped?
 - Is there a scrap piece I can practice on first?
 
 ## Where to go next
 
-Once you feel ready to learn a specific skill, look for these topic guides:
+Once you feel ready to learn a specific skill, try these guides:
 
-- Workbench tools: what to keep on your bench and why
-- Painting and weathering: color, brushes, and making models look used
-- Scenery and landscape: ground cover, trees, rocks, and water
-- Electronics and DCC: wiring, decoders, and running trains digitally
-- Tinkering tech: computers, microcontrollers, and train cameras on a layout
-- Choosing a scale and your first trains: what to buy if you want trains of your own at home
+- [Workbench tools](/learn/first-workbench-tools): what to keep on your bench and why
+- [Painting and weathering](/learn/painting-weathering): color, brushes, and making models look used
+- [Scenery and landscape](/learn/scenery-landscape): ground cover, trees, rocks, and water
+- [Electronics and DCC](/learn/electronics-dcc-basics): wiring, decoders, and running trains digitally
+- [Tinkering tech](/learn/tinkering-tech): computers, microcontrollers, and train cameras on a layout
+- [Choosing a scale](/learn/choosing-a-scale): how scales compare and how to pick your first trains
 
 New to the whole hobby? Start with [New to Model Railroading?](/learn/new-to-model-railroading) and keep the [glossary](/learn/glossary) close by.

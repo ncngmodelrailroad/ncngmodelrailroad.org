@@ -11,6 +11,10 @@ Paint turns a shiny plastic model into something that looks like it has worked f
 
 Practice on a cheap or secondhand model first. An old freight car from a swap meet, a spare plastic kit, or a scrap of styrene sheet makes a fine test piece. Try a technique there before you touch a locomotive you care about.
 
+## Volunteering? You don't need a kit first
+
+You don't need to buy anything before you help at the layout. The layout has a shared workbench area with tools and supplies for layout work. Ask a volunteer what is available for the job and what, if anything, to bring. The shopping lists below are for your own projects at home.
+
 ## Brushes
 
 You need only a few brushes to start:
@@ -59,7 +63,7 @@ Paint straight from the jar often fills in rivets and board lines.
 
 **Spray cans** need no extra equipment and work well for primer, one-color jobs, and clear coats. Shake the can well and spray in short, light passes, following the distance and temperature on the label. Never heat a can with hot water or direct heat, or store it above the maker's stated temperature.
 
-An **airbrush** is a small paint sprayer powered by an air compressor. It gives finer control and wastes less paint, but it takes practice and cleaning. Start at low pressure, often around 15 to 30 psi depending on the airbrush and paint, and check the maker's recommendation. Practice on paper or scrap before a model. Many modelers paint happily for years with brushes and cans alone.
+An **airbrush** is a small paint sprayer powered by an air compressor. It gives finer control and wastes less paint, but it takes practice and cleaning. Start at low pressure, often around 15 to 30 psi depending on the airbrush and paint, and check the maker's recommendation. Practice on paper or scrap before a model. Many modelers paint happily for years with brushes and cans alone. If you do upgrade, a beginner airbrush and compressor set runs about $90 to $180, and a small hobby spray booth with an exhaust fan about $120 to $250.
 
 ## Decals
 
@@ -96,14 +100,16 @@ Many paint mistakes are fixable:
 
 A stripped model often comes out better the second time, because you have learned something.
 
-## Starter paint kit checklist
+## Starter paint kit for home projects
 
-- Three or four brushes (fine round, medium round, small flat, old stiff brush)
-- A spray can of gray primer
-- Water-based acrylic paints in a few basics: black, a boxcar red or brown, a gray, a rust color
+Prices here are rough 2026 US estimates and vary by store and brand. Brushes, a can of primer, and five or six acrylic colors come to roughly $40 to $60. Add the rest of the list over time.
+
+- Three or four brushes (fine round, medium round, small flat, old stiff brush). A three-brush synthetic set costs about $12 to $20.
+- A spray can of gray primer, about $8 to $15
+- Water-based acrylic paints in a few basics: black, a boxcar red or brown, a gray, a rust color. Hobby acrylics cost about $3 to $5 a bottle.
 - The matching thinner
 - Gloss and flat clear coats
-- Decal setting solution
+- Decal setting solutions, about $5 a bottle
 - Weathering powders or a few chalk pastels
 - Toothpicks, cotton swabs, paper towels, and a paint palette or old tile
 - Sanding sticks and fine sandpaper
@@ -112,7 +118,7 @@ A stripped model often comes out better the second time, because you have learne
 ## Safety checklist
 
 - Work in a well-ventilated room. For spraying, a spray booth exhausted outdoors is the main protection. A respirator backs it up.
-- For solvent paints or any spraying, wear a NIOSH-approved respirator. Choose cartridges based on the product's safety data sheet (SDS), usually **organic vapor** cartridges plus P95 or P100 particulate prefilters. An N95 dust mask or N-series filter alone is not enough for solvent fumes or oily paint mist.
+- For solvent paints or any spraying, wear a NIOSH-approved respirator. Choose cartridges based on the product's safety data sheet (SDS), usually **organic vapor** cartridges plus P95 or P100 particulate prefilters. A reusable half-face mask with those cartridges and prefilters costs about $40 to $60. An N95 dust mask or N-series filter alone is not enough for solvent fumes or oily paint mist.
 - Make sure the respirator fits, do a seal check each time you put it on, and keep the seal area clean-shaven. Replace cartridges on the maker's schedule.
 - Nitrile gloves handle splashes; replace them right away if solvent soaks them. For soaking parts in stripper, use thicker chemical-resistant gloves and check the SDS for the glove material.
 - Keep solvents and spray cans away from flames, pilot lights, and heaters.

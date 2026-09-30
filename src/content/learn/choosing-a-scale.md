@@ -18,13 +18,13 @@ The radius is how tight a curve you can use. A simple loop needs a space a littl
 | Scale | Ratio | Starter loop radius |
 | --- | --- | --- |
 | Z | 1:220 | 6 to 8 in. |
-| N | 1:160 | 10 to 12 in. |
+| N | 1:160 | 11 to 12.5 in. |
 | HO | 1:87.1 | 18 in. (22 in. or more runs better) |
 | S | 1:64 | about 20 in. |
-| O | 1:48 | 15 to 18 in. (three-rail), 25 in. and up (two-rail) |
+| O | 1:48 | 13.5 to 18 in. (three-rail, O27 to O36), about 36 in. and up (two-rail) |
 | Large scale / G | 1:20.3 to 1:32 | about 2 ft or more |
 
-**Z (1:220)** is the smallest common scale. A small loop fits in a space about a foot across. Selection is modest and leans European. DCC works, but decoder installs are fiddly. Locomotives often run $140 to $230.
+**Z (1:220)** is the smallest common scale. A small loop fits in a space about a foot across. Selection is smaller than N or HO but covers European, North American, and Japanese prototypes. DCC works, but decoder installs are fiddly. Locomotives often run about $150 to $400.
 
 **N (1:160)** packs a real railroad into a shelf or a hollow-core door. It is the second most popular scale after HO, with plenty of DCC and sound models. Expect about $200 to $400 for a sound-equipped locomotive and $20 to $35 for a freight car.
 
@@ -32,7 +32,7 @@ The radius is how tight a curve you can use. A simple loop needs a space a littl
 
 **S (1:64)** sits between HO and O. Toy-style trains in this size have a long history, and a smaller group builds scale-accurate models. Expect a thinner catalog and more hunting for parts.
 
-**O (1:48)** splits into two worlds. Three-rail O covers the classic toy trains sold in track circles such as O31 and O36, named for the circle's diameter in inches. Two-rail scale O aims for realism and needs broad curves. Both give you heft and detail, at a higher price per piece.
+**O (1:48)** splits into two worlds. Three-rail O covers the classic toy trains sold in track circles such as O31 and O36, named for the circle's diameter in inches. Two-rail scale O aims for realism and needs broad curves, though small switchers and old-time engines can manage 25 to 30 in. Both give you heft and detail, at a higher price per piece.
 
 **Large scale, often called G,** runs on 45 mm track in several ratios. It is the usual choice for garden railways, though how well a given model handles weather varies, and many owners store locomotives indoors. Locomotives and cars cost more and take a lot of room.
 
@@ -40,7 +40,7 @@ The radius is how tight a curve you can use. A simple loop needs a space a littl
 
 Narrow gauge models use the scale of the train with a smaller track gauge:
 
-- **HOn3** is HO scale on 10.5 mm track. It has a steady following and some plastic ready-to-run models, alongside brass.
+- **HOn3** is HO scale on 10.5 mm track. It has a steady following and some plastic ready-to-run models (many now found second-hand), alongside brass.
 - **On30** is O scale on HO track (16.5 mm), which stands in for 30-inch gauge. Mass-produced plastic models made it the budget way into O scale narrow gauge. Starter sets come with 18-inch radius HO track, and you can buy standard HO track and turnouts for it. Used DCC locomotives often sell for $200 to $300.
 - **On3** is O scale on 3/4-inch (19 mm) track. It is what our layout models.
 - **Sn3** is S scale on 14.3 mm track, another small but dedicated group.
@@ -61,7 +61,7 @@ That is one reason a club layout makes a great way to enjoy On3 without owning i
 
 ## Other easy ways in
 
-- **LEGO trains** are a real, family-friendly way into the hobby. Current LEGO City train sets use the Powered Up system, controlled by a remote or a phone app. Sets run about $190 to $200.
+- **LEGO trains** are a real, family-friendly way into the hobby. Current LEGO City trains use the Powered Up system. The motorized sets come with a motor and a remote, can also be run from a phone app, and cost about $190 to $210. Some newer sets, around $90 to $110, work with Powered Up, but you buy the motor separately. Duplo trains for younger children start around $20.
 - **Toy and starter sets** from a toy store or a hobby shop give you a working train on day one. Many people start here and move to a scale layout later.
 
 ## How to get trains
@@ -78,7 +78,7 @@ A **starter set** bundles a locomotive, a few cars, a loop of track, and a power
 
 ### New or used
 
-New equipment comes with a warranty and current features. Used equipment often sells well below new prices, with no warranty. Look at swap meets, train shows, estate sales, online auctions, and club sales. At a show you can often ask the seller to run the locomotive on a test track.
+New equipment comes with a warranty and current features. Used mass-produced equipment often sells well below new prices, with no warranty. Out-of-production brass is priced by rarity and condition, and older models may need a new motor or a decoder installed for DCC. Look at swap meets, train shows, estate sales, online auctions, and club sales. At a show you can often ask the seller to run the locomotive on a test track.
 
 Skip very old or toy-grade gear if you plan to go DCC. Brass-rail sectional track tarnishes and loses electrical contact. Older toy-grade locomotives, such as many Tyco-era models, can be hard to convert: check whether the motor can be isolated from the frame, how much current it draws, and whether a decoder fits. Their deep wheel flanges may also bump along modern track.
 
@@ -109,11 +109,11 @@ These are rough 2026 US-dollar estimates. Prices vary with brand, detail, and co
 | Item | Rough range |
 | --- | --- |
 | N starter set | $200 to $450 |
-| HO starter set, DC | $200 to $450 |
+| HO starter set, DC | $150 to $450 |
 | HO starter set with DCC sound | $500 to $600 |
 | On30 starter set | $400 to $550 |
 | O three-rail starter set | $300 to $500 |
-| LEGO train set | $190 to $200 |
+| LEGO motorized train set | about $190 to $210 |
 | HO locomotive with DCC sound | $230 to $450 |
 | HO freight car | $25 to $50 |
 | Used HO locomotive | often well below new |

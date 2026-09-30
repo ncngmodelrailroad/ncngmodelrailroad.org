@@ -31,17 +31,17 @@ A **digital multimeter** measures voltage, resistance, and continuity. It is the
 - **Continuity** checks whether two points connect. Touch the probes to each end of a wire; the meter beeps if electricity can flow through it. Use it to find broken feeders, bad rail joints, and hidden shorts, always with the power off.
 - **DC voltage** (marked V with a straight line) reads batteries, wall adapters for lighting, and older DC train layouts.
 - **AC voltage** (marked V with a wavy line) is the setting people try for DCC track.
-- **Why DCC reads oddly.** DCC is neither steady DC nor smooth AC. It is a fast square wave that flips polarity thousands of times a second to carry data. Many meters expect a smooth 60 Hz wave, so they read low or jump around. A **true RMS** meter, one built to measure unusual waveforms, gets closer, and dedicated DCC meters exist for exact numbers. For everyday checks, you are looking for "about the same as last time" and "the same on every section of track."
+- **Why DCC reads oddly.** DCC is neither steady DC nor smooth AC. It is a fast square wave that flips polarity thousands of times a second to carry data. Many meters expect a smooth 60 Hz wave, so they often read low. A **true RMS** meter, one built to measure unusual waveforms, helps only if it is rated for frequencies of several kilohertz. A dedicated DCC meter, or a simple rectifier adapter for a DC meter, gives the most reliable numbers. For everyday checks, you are looking for "about the same as last time" and "the same on every section of track."
 
 ## Soldering basics
 
 Soldering joins wires with melted metal so the connection conducts well for years. An afternoon of practice on scrap wire gets you comfortable.
 
 - **Temperature-controlled iron.** An adjustable iron heats evenly and does not cook plastic ties. Examples include stations from Hakko and Weller and compact irons such as the Pinecil.
-- **Rosin-core electronics solder.** Use thin rosin-core solder made for electronics. Never use acid-core solder, which is for plumbing and corrodes wiring. Leaded solder flows easily; lead-free works too with a slightly hotter iron. Wash your hands after handling either.
+- **Rosin-core electronics solder.** Use thin rosin-core solder made for electronics. Never use acid-core solder, which is for plumbing and corrodes wiring. Leaded solder flows easily. Lead-free works too, but it melts about 35 C (60 F) hotter and flows less readily, so set the iron hotter and use extra flux. Wash your hands after handling either.
 - **Flux.** Extra rosin flux helps solder flow onto rail and old, dull wire. Clean off the residue with isopropyl alcohol.
 - **Helping hands.** A small stand with clips holds parts still so both of your hands stay free.
-- **Heat-shrink tubing.** Slide it over a joint before soldering, then warm it to shrink a neat, insulated sleeve over the bare metal.
+- **Heat-shrink tubing.** Slide it onto the wire, well away from the joint, before soldering. Once the joint cools, move it over the bare metal and warm it to shrink a neat, insulated sleeve.
 
 The technique is simple: heat the joint, not the solder. Touch the iron to the wire and rail together, feed solder into the joint, and pull away when it flows. A good joint is shiny and smooth. A dull, lumpy one needs another try.
 
@@ -66,7 +66,7 @@ Most layouts use two kinds of wire under the benchwork.
 - **Decoder.** A small circuit board inside the locomotive. It reads the commands and controls the motor, lights, and sound.
 - **Address.** The number that identifies each locomotive, often matching its road number.
 - **Consist.** Two or more locomotives set to run together as one unit. Our glossary also uses [consist](/learn/glossary#consist) for the full makeup of a train.
-- **Programming track.** A separate, isolated section of track where you set a decoder's address and settings. It uses low current, so a wiring mistake in a new decoder is less likely to damage it.
+- **Programming track.** A separate, isolated section of track where you set a decoder's address and settings. It uses low current, so a wiring mistake in a new decoder is less likely to damage it. The Power Cab at our workbench has one track output that switches into program mode. Every decoder on that track gets programmed, so the locomotive you are programming must be the only one on it.
 - **Power districts and circuit breakers.** Large layouts split into districts, each behind its own electronic circuit breaker. A short in one district shuts down only that area, and the rest of the layout keeps running.
 
 ### The quarter test
@@ -76,12 +76,12 @@ This test checks that a district's breaker shuts off power when something shorts
 - **On the club layout, get permission first.** Ask an experienced member before you run it.
 - **Remove locomotives** from the district you are testing.
 - **Use an insulated tool**, not your fingers. Lay a coin across both rails at the far end of the district, then lift it off immediately.
-- **The breaker or booster should trip at once.** If you see sparks or feel heat, stop.
-- **If it does not trip,** the wiring may be too thin or too long, a connection may be poor, or the breaker itself may have failed or need adjusting. Report it and keep trains off that district until someone fixes it.
+- **The breaker or booster should trip at once.** A small spark on contact is normal. If sparking continues or the coin or rail gets warm, lift the coin off at once.
+- **If it does not trip,** the wiring may be too thin or too long, a connection may be poor, the power supply may be too small, or the breaker itself may have failed or need adjusting. Report it and keep trains off that district until someone fixes it.
 
 ### Common systems
 
-Most DCC equipment follows shared NMRA standards, so brands work together. Widely used examples include the NCE Power Cab, Digitrax starter sets, and ESU's ECoS command stations and LokSound decoders.
+Decoders and command stations from different makers work together on the track because they follow NMRA DCC standards. Throttles and control networks, such as NCE's cab bus or Digitrax LocoNet, are usually brand-specific. Widely used examples include the NCE Power Cab, Digitrax starter sets, and ESU's ECoS command stations and LokSound decoders.
 
 At our layout:
 

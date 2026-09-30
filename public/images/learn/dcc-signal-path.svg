@@ -41,7 +41,7 @@
 
     <rect class="box" x="20" y="356" width="360" height="64" rx="10"/>
     <text class="name" x="40" y="384">Decoder in the locomotive</text>
-    <text class="sub" x="40" y="406">Obeys only commands for its address</text>
+    <text class="sub" x="40" y="406">Obeys commands sent to its address</text>
   </g>
   <g>
     <path class="arrow" d="M200 84 V98"/><path class="head" d="M193 96 L200 104 L207 96 Z"/>

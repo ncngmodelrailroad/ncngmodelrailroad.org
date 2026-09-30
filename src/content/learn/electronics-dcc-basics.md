@@ -15,6 +15,9 @@ Model railroad wiring looks mysterious until you learn a few ideas and two tools
 - Unplug the system before you touch wiring.
 - A multimeter answers most "why won't it run?" questions.
 - At the club, ask an experienced member before you change any layout wiring.
+- You do not need to buy tools to volunteer. The layout has a workbench area with shared tools and supplies for layout work, including an NCE Power Cab. Ask a volunteer what is available and what, if anything, to bring.
+
+Prices on this page are rough 2026 US estimates. They vary by store and brand.
 
 ## Low voltage and wall power are different worlds
 
@@ -26,7 +29,7 @@ Model railroad wiring looks mysterious until you learn a few ideas and two tools
 
 ## Your multimeter
 
-A **digital multimeter** measures voltage, resistance, and continuity. It is the most useful electrical tool you will own. Examples range from budget meters by Klein Tools or AstroAI to shop-grade meters by Fluke. A basic autoranging meter covers everything on this page.
+A **digital multimeter** measures voltage, resistance, and continuity. It is the most useful electrical tool you will own. Examples range from budget meters by Klein Tools or AstroAI to shop-grade meters by Fluke. A basic autoranging meter, about $20 to $35, covers everything on this page. True RMS models start around $60.
 
 - **Continuity** checks whether two points connect. Touch the probes to each end of a wire; the meter beeps if electricity can flow through it. Use it to find broken feeders, bad rail joints, and hidden shorts, always with the power off.
 - **DC voltage** (marked V with a straight line) reads batteries, wall adapters for lighting, and older DC train layouts.
@@ -37,7 +40,7 @@ A **digital multimeter** measures voltage, resistance, and continuity. It is the
 
 Soldering joins wires with melted metal so the connection conducts well for years. An afternoon of practice on scrap wire gets you comfortable.
 
-- **Temperature-controlled iron.** An adjustable iron heats evenly and does not cook plastic ties. Examples include stations from Hakko and Weller and compact irons such as the Pinecil.
+- **Temperature-controlled iron.** An adjustable iron heats evenly and does not cook plastic ties. Examples include compact irons such as the Pinecil, about $25 to $40 plus a USB-C power adapter, and bench stations from Hakko or Weller, about $120 to $130.
 - **Rosin-core electronics solder.** Use thin rosin-core solder made for electronics. Never use acid-core solder, which is for plumbing and corrodes wiring. Leaded solder flows easily. Lead-free works too, but it melts about 35 C (60 F) hotter and flows less readily, so set the iron hotter and use extra flux. Wash your hands after handling either.
 - **Flux.** Extra rosin flux helps solder flow onto rail and old, dull wire. Clean off the residue with isopropyl alcohol.
 - **Helping hands.** A small stand with clips holds parts still so both of your hands stay free.
@@ -88,6 +91,13 @@ At our layout:
 - **The workbench** has an NCE Power Cab, a compact system that combines throttle, command station, and booster.
 - **On the layout**, members run trains with the Engine Driver app on Android tablets. The tablets connect over Wi-Fi to JMRI, free software on a computer that links to the layout's DCC system by USB.
 
+### What DCC costs
+
+- **Entry starter set** (command station, booster, and throttle in one, for example Digitrax Zephyr Express or Bachmann E-Z Command): about $185 to $240
+- **Power Cab-class system**: about $215 to $220
+- **Decoder without sound**: about $20 to $40 for HO; larger O-scale decoders cost roughly twice that
+- **Sound decoder**: about $70 to $140 for HO; O-scale sound decoders run about $165 to $215
+
 Other systems work just as well at home. Ask before you bring your own throttle or decoder to the layout.
 
 ## LED lighting basics
@@ -98,19 +108,27 @@ LEDs light buildings, street lamps, and locomotive headlights. Two rules keep th
 - **Mind the polarity.** An LED passes current only one way. The longer leg is positive (anode) and the flat side of the lens marks negative (cathode). Wired backward, it stays dark, and at 12 volts or more it can fail, because many LEDs tolerate only a few volts in reverse.
 - **On DCC track power or any AC supply**, polarity flips constantly. Protect the LED with a diode wired across it in the opposite direction (antiparallel), feed it through a bridge rectifier, or use a lighting board built for DCC. Many hobbyists power scenery lighting from a separate DC supply instead.
 
-## Electronics starter kit
+## Electronics starter kit for home projects
 
-- Digital multimeter with continuity beeper
+Buy these for your own bench. For layout work, start with the shared tools at the workbench.
+
+**Bare minimum**, about $90 to $150 with a compact iron (plus its power adapter), or about $185 to $235 with a bench station:
+
+- Digital multimeter with continuity beeper (about $20 to $35)
 - Temperature-controlled soldering iron with a stand and tip cleaner
-- Thin rosin-core electronics solder
-- Rosin flux pen or paste, plus isopropyl alcohol for cleanup
-- Helping hands or a small vise
-- Wire strippers sized for 12 to 24 AWG
-- Flush cutters
-- Heat-shrink tubing assortment and a heat gun or hot-air tool (not an open flame near flux and alcohol)
+- Thin rosin-core electronics solder (about $6 to $15)
+- Rosin flux pen or paste (about $8), plus isopropyl alcohol for cleanup
+- Wire strippers sized for 12 to 24 AWG (about $12 to $25)
+- Flush cutters (about $7 to $11)
+- Heat-shrink tubing assortment (about $8 to $15)
+
+**Worth adding next:**
+
+- Heat gun or hot-air tool for heat-shrink (about $20 to $35), not an open flame near flux and alcohol
+- Helping hands or a small vise (about $7 to $20)
+- Safety glasses and fume extraction that pulls solder smoke away from you
 - Spools of feeder wire in two colors
 - Assorted resistors and a few spare LEDs
-- Safety glasses and fume extraction that pulls solder smoke away from you
 - A notebook for wire colors, addresses, and decoder settings
 
 ## Before you touch the layout wiring

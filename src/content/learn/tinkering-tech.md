@@ -9,7 +9,7 @@ Model railroading has a tech side, and it welcomes beginners. A laptop can read 
 
 **Most settings are reversible when you back them up first.** Most tinkering happens in decoder settings and your own code, and you can undo both. The main exception is decoder firmware and sound files, covered below.
 
-**Volunteering at our layout? You don't need to buy a kit first.** The layout has a workbench area with shared tools and supplies for layout work, including an NCE Power Cab. Ask a volunteer what's available and what to bring. The shopping lists in this guide are for projects at home.
+**You do not need to buy a tool kit before volunteering.** The layout has shared tools for layout work, including an NCE Power Cab at the workbench. [Email before attending](/contact), and ask what is available and what to bring. The shopping lists in this guide are for projects at home.
 
 JMRI and Engine Driver are free. Other prices in this guide are rough 2026 US estimates and vary by store and brand.
 
@@ -126,6 +126,9 @@ Start with a blinking crossing light. Nothing touches the layout.
 
 ## Keep exploring
 
+- [Electronics and DCC basics](/learn/electronics-dcc-basics): wiring, power, and how DCC works
+- [First workbench tools](/learn/first-workbench-tools): the hand tools that make projects easier
+- [Getting your hands dirty](/learn/getting-your-hands-dirty): what you can safely try, and how to recover
 - [Glossary of terms](/learn/glossary): plain explanations of rail and model words
 - [New to model railroading?](/learn/new-to-model-railroading): the basics of scale, gauge, and DCC
 - [About the layout](/about): how our model came to be

@@ -42,7 +42,7 @@ A hobby knife with a thin handle and a replaceable pointed blade does most of th
 
 ### Flush cutters
 
-Plastic kit parts come attached to a frame called a **sprue**. Flush cutters, sold as sprue cutters or electronics cutters, have one flat side that snips a part off cleanly with almost no leftover nub. Cut a little away from the part first, then trim close. Most grab irons are brass or phosphor-bronze wire, which flush cutters handle fine. Hard steel (music) wire, which some modelers use for handrails, will chip them, so use heavier cutters for it. A good pair of flush cutters costs about $12 to $20.
+Plastic kit parts come attached to a frame called a **sprue**. Flush cutters, sold as sprue cutters or electronics cutters, have one flat side that snips a part off cleanly with almost no leftover nub. Cut a little away from the part first, then trim close. Most grab irons are brass or phosphor-bronze wire, which flush cutters handle fine. Hard steel (music) wire, which some modelers use for handrails, will chip them, so use heavier cutters for it. Precision hobby flush cutters made for plastic parts cost about $12 to $20. Basic electronics flush cutters cost less and work for many jobs.
 
 ### Tweezers
 
@@ -109,7 +109,7 @@ A good bench is less about space and more about habits.
 
 ## Safety
 
-The tools on this page are safe when you respect them. Most injuries come from a few predictable moments.
+These tools have predictable hazards. The habits below reduce the risk. Most injuries come from a few predictable moments.
 
 ### Blades
 

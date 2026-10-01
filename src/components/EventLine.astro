@@ -183,7 +183,7 @@ const statusLead = (stop?: { layoutConfirmed: boolean }, isNow = false) =>
     --marker-at: calc((var(--progress) + 0.5) / var(--count) * 100%);
     text-align: left;
     font-variant-numeric: tabular-nums;
-    animation: event-line-ride 1.6s cubic-bezier(0.16, 1, 0.3, 1) 0.2s both;
+    animation: event-line-ride 4.5s cubic-bezier(0.45, 0, 0.2, 1) 0.4s both;
   }
 
   @media (prefers-color-scheme: dark) {
@@ -283,24 +283,24 @@ const statusLead = (stop?: { layoutConfirmed: boolean }, isNow = false) =>
     white-space: nowrap;
   }
 
-  /* Wheels turn and the stack puffs while the train rolls in. */
+  /* Wheels turn and the stack puffs while the train rolls in, timed with the ride. */
   .loco-wheel {
-    animation: loco-wheel 1.6s cubic-bezier(0.16, 1, 0.3, 1) 0.2s both;
+    animation: loco-wheel 4.5s cubic-bezier(0.45, 0, 0.2, 1) 0.4s both;
   }
 
   @keyframes loco-wheel {
-    from { transform: rotate(-720deg); }
+    from { transform: rotate(-1800deg); }
   }
 
   .loco-steam circle {
     opacity: 0;
     transform-box: fill-box;
     transform-origin: center;
-    animation: loco-puff 1.2s ease-out 3 both;
+    animation: loco-puff 1.1s ease-out 0.4s 4 both;
   }
 
-  .loco-steam circle:nth-child(2) { animation-delay: 0.3s; }
-  .loco-steam circle:nth-child(3) { animation-delay: 0.6s; }
+  .loco-steam circle:nth-child(2) { animation-delay: 0.75s; }
+  .loco-steam circle:nth-child(3) { animation-delay: 1.1s; }
 
   @keyframes loco-puff {
     0% { opacity: 0; transform: translate(0, 4px) scale(0.4); }

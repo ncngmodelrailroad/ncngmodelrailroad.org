@@ -57,7 +57,45 @@ const statusLead = (stop?: { layoutConfirmed: boolean }, isNow = false) =>
     <div class="event-line-rail">
       <div class="event-line-track" aria-hidden="true">
         <span class="event-line-traveled"></span>
-        <span class="event-line-marker">Today</span>
+        <span class="event-line-marker">
+          <span class="event-line-marker-label">Today</span>
+          <svg class="event-line-loco" viewBox="0 0 64 44" width="64" height="44">
+            <g class="loco-steam" fill="#F3F4F6">
+              <circle cx="46" cy="4" r="3.2" />
+              <circle cx="42" cy="3" r="2.6" />
+              <circle cx="38" cy="4" r="2" />
+            </g>
+            <path class="loco-stack" d="M41 8.5h11l-2.5 4.5h-6z" fill="#4B6584" />
+            <rect x="44" y="12.5" width="5" height="5" fill="#4B6584" />
+            <rect x="24" y="16" width="31" height="13" rx="6.5" fill="#4B6584" />
+            <rect x="28" y="18" width="23" height="2.5" rx="1.25" fill="#7F9CB8" />
+            <rect x="43" y="16" width="2" height="13" fill="#E0A526" />
+            <path d="M33 16a3.5 3.5 0 0 1 7 0z" fill="#E0A526" />
+            <rect x="52" y="12" width="6" height="5" rx="1.5" fill="#E0A526" />
+            <circle cx="57.2" cy="14.5" r="1.6" fill="#FEF3C7" />
+            <rect x="5" y="8" width="21" height="21" rx="3" fill="#C2412F" />
+            <rect x="3" y="5.5" width="25" height="4" rx="2" fill="#2B3A4E" />
+            <rect x="10" y="12" width="10" height="8" rx="2" fill="#FDE68A" />
+            <rect x="5" y="23" width="21" height="2" fill="#9F2F22" />
+            <rect x="4" y="28.5" width="54" height="4" rx="1.5" fill="#2B3A4E" />
+            <path d="M56 29h4l3 9h-8z" fill="#9F2F22" />
+            <g class="loco-wheel" style="transform-origin: 18px 36px">
+              <circle cx="18" cy="36" r="6.5" fill="#2B3A4E" stroke="#E0A526" stroke-width="1.5" />
+              <path d="M18 30.5v11M12.5 36h11" stroke="#E0A526" stroke-width="1.2" />
+              <circle cx="18" cy="36" r="1.6" fill="#E0A526" />
+            </g>
+            <g class="loco-wheel" style="transform-origin: 33px 36px">
+              <circle cx="33" cy="36" r="6.5" fill="#2B3A4E" stroke="#E0A526" stroke-width="1.5" />
+              <path d="M33 30.5v11M27.5 36h11" stroke="#E0A526" stroke-width="1.2" />
+              <circle cx="33" cy="36" r="1.6" fill="#E0A526" />
+            </g>
+            <g class="loco-wheel" style="transform-origin: 48px 38.5px">
+              <circle cx="48" cy="38.5" r="4" fill="#2B3A4E" stroke="#E0A526" stroke-width="1.2" />
+              <circle cx="48" cy="38.5" r="1.1" fill="#E0A526" />
+            </g>
+            <rect x="18" y="35.25" width="15" height="1.5" rx="0.75" fill="#E0A526" />
+          </svg>
+        </span>
       </div>
       <ol class="event-line-stops">
         {stops.map((stop) => {
@@ -163,7 +201,7 @@ const statusLead = (stop?: { layoutConfirmed: boolean }, isNow = false) =>
     flex-wrap: wrap;
     align-items: baseline;
     gap: 0.25rem 0.625rem;
-    margin-bottom: 2.25rem;
+    margin-bottom: 1.5rem;
     font-size: 1.0625rem;
     color: var(--muted);
   }
@@ -212,10 +250,30 @@ const statusLead = (stop?: { layoutConfirmed: boolean }, isNow = false) =>
     --tie: color-mix(in srgb, var(--lit) 40%, transparent);
   }
 
+  /* A zero-size anchor on the track; the loco and label hang off it. */
   .event-line-marker {
     position: absolute;
     z-index: 2;
-    padding: 0.125rem 0.5rem;
+    width: 0;
+    height: 0;
+  }
+
+  .event-line-loco {
+    position: absolute;
+    width: 84px;
+    height: auto;
+    left: -42px;
+    bottom: -3px;
+    overflow: visible;
+    filter: drop-shadow(0 3px 4px rgba(0, 0, 0, 0.45));
+  }
+
+  .event-line-marker-label {
+    position: absolute;
+    bottom: 60px;
+    left: 0;
+    transform: translateX(-50%);
+    padding: 0.0625rem 0.5rem;
     border-radius: 999px;
     background: var(--signal);
     color: #1F2937;
@@ -223,8 +281,31 @@ const statusLead = (stop?: { layoutConfirmed: boolean }, isNow = false) =>
     font-weight: 700;
     line-height: 1.4;
     white-space: nowrap;
-    outline: 4px solid var(--bed);
-    transform: translate(-50%, -50%);
+  }
+
+  /* Wheels turn and the stack puffs while the train rolls in. */
+  .loco-wheel {
+    animation: loco-wheel 1.6s cubic-bezier(0.16, 1, 0.3, 1) 0.2s both;
+  }
+
+  @keyframes loco-wheel {
+    from { transform: rotate(-720deg); }
+  }
+
+  .loco-steam circle {
+    opacity: 0;
+    transform-box: fill-box;
+    transform-origin: center;
+    animation: loco-puff 1.2s ease-out 3 both;
+  }
+
+  .loco-steam circle:nth-child(2) { animation-delay: 0.3s; }
+  .loco-steam circle:nth-child(3) { animation-delay: 0.6s; }
+
+  @keyframes loco-puff {
+    0% { opacity: 0; transform: translate(0, 4px) scale(0.4); }
+    30% { opacity: 0.85; }
+    100% { opacity: 0; transform: translate(-6px, -6px) scale(1.3); }
   }
 
   .event-line-stops {
@@ -388,12 +469,25 @@ const statusLead = (stop?: { layoutConfirmed: boolean }, isNow = false) =>
       left: 50%;
       top: var(--marker-at);
     }
+
+    /* Upright and centered on the track, like a token on a route map. */
+    .event-line-loco {
+      width: 60px;
+      left: -30px;
+      bottom: auto;
+      top: -21px;
+    }
+
+    .event-line-marker-label {
+      display: none;
+    }
   }
 
   /* Tablets and up: the line runs across, stations evenly spaced like a route map. */
   @media (min-width: 48rem) {
     .event-line-status {
       justify-content: center;
+      margin-bottom: 5.75rem;
     }
 
     .event-line-stops {

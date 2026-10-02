@@ -61,7 +61,7 @@ A **re-railer**, a short ramp that sits on the track, guides wheels into place a
 - Paint scrap styrene, cardboard, or old plastic spoons before you paint a model.
 - Try weathering on an inexpensive used freight car from a swap meet or a secondhand bin.
 - Build a small scenery test piece on a scrap of foam board.
-- Practice soldering on clean loose wire or new, unpowered perfboard before you touch layout wiring.
+- Practice soldering on clean loose wire or unused, unpowered perfboard before you touch layout wiring.
 
 ## The "ask first" culture
 
@@ -82,7 +82,7 @@ Good questions to ask include "Is this okay to touch?", "How do you usually do t
 
 ## What a first work session might look like
 
-At our layout, members run trains from Android tablets using the Engine Driver app, which works like a handheld throttle. Running trains can be an easy way to start, so ask a volunteer whether it's an option for you. They can also tell you which other activities are open to newcomers and how to stop a train quickly.
+Members use the Engine Driver app on Android tablets as handheld throttles. The tablets connect to JMRI, software that runs the layout from a computer connected over USB. Running trains can be an easy way to start, so ask a volunteer whether it's an option for you. They can also tell you which other activities are open to newcomers and how to stop a train quickly.
 
 You do not need to buy a tool kit before volunteering. The layout has shared tools for layout work, including an NCE Power Cab (a simple [DCC](/learn/glossary#dcc-digital-command-control) controller) at the workbench. Email before attending to confirm the date and how to get in, and ask what is available and what to bring. See the [volunteer page](/volunteer).
 

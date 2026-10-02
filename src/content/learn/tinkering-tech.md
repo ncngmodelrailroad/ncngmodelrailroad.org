@@ -12,13 +12,13 @@ Model railroading has a tech side, and it welcomes beginners. A laptop can read 
 
 **You do not need to buy a tool kit before volunteering.** The layout has shared tools for layout work, including an NCE Power Cab at the workbench. [Email before attending](/contact), and ask what is available and what to bring. The shopping lists in this guide are for projects at home.
 
-JMRI and Engine Driver are free. Other prices in this guide are rough US estimates, checked in October 2026, and they vary by store and brand.
+JMRI and Engine Driver are free. For rough costs of everything else, see [What it costs](#what-it-costs) near the end.
 
 ## Your computer and DCC: meet JMRI
 
 **[DCC](/learn/glossary#dcc-digital-command-control)** (Digital Command Control) sends digital commands through the rails to a small circuit board in each locomotive, called a **decoder**. Each decoder stores its settings in numbered slots called **CVs** (configuration variables). CVs control things like the locomotive's address, top speed, how gently it starts, and which sounds play.
 
-**JMRI** (Java Model Railroad Interface) is free, open-source software that runs on Windows, macOS, and Linux. It contains several tools. Beginners usually meet these three first:
+**JMRI** (Java Model Railroad Interface) is free, open-source software that runs on Windows, macOS, and Linux. Download the current release from the official JMRI website. It contains several tools. Beginners usually meet these three first:
 
 - **DecoderPro** reads a decoder's CVs and shows them as plain labeled settings instead of raw numbers. It saves each locomotive's settings to a roster file on your computer.
 - **PanelPro** draws track diagrams and control panels on screen, so you can throw turnouts, show signals, and, if your layout has occupancy detectors, watch where trains are.
@@ -29,7 +29,7 @@ JMRI and Engine Driver are free. Other prices in this guide are rough US estimat
 This habit protects you more than any other:
 
 1. Put the locomotive alone on a **programming track**, a short piece of track used only for programming. Some systems have a separate program output. Others, like the NCE Power Cab at our workbench, use one output for both. In program-track mode, every decoder connected to that output gets programmed, so connect it only to an isolated programming track, or disconnect the rest of the layout first.
-2. In DecoderPro, read all the CVs (use "Read All Sheets" where your system supports it), check that the reads succeeded, and save the roster entry.
+2. In DecoderPro, read all the CVs (use the option that reads every settings page, where your system supports it), check that the reads succeeded, and save the roster entry.
 3. Change one setting at a time and test it.
 4. If you don't like the result, write the saved settings back.
 
@@ -39,7 +39,7 @@ Many decoders also support a factory reset, often by writing a specific value to
 
 ### Phones as throttles
 
-With the WiThrottle server running, free and paid throttle apps connect over Wi-Fi. For example, **Engine Driver** runs on Android and **WiThrottle** runs on iPhone and iPad. An old phone with no SIM card works fine as a spare throttle.
+With the WiThrottle server running, free and paid throttle apps connect over Wi-Fi. For example, **Engine Driver** runs on Android, and several WiThrottle-compatible apps run on iPhone and iPad. Look for an app that is still maintained and lists your command station or JMRI as supported. An old phone with no SIM card works fine as a spare throttle.
 
 ### The computer interface
 
@@ -58,21 +58,21 @@ A **microcontroller** is a tiny computer on one chip that runs a single program 
 - **Sensors:** infrared or light sensors that detect a passing train.
 - **Lighting:** flickering welding arcs, building lights that switch on at dusk, or a firebox glow.
 
-The ESP32 has built-in Wi-Fi and Bluetooth and uses 3.3V logic. The classic Arduino Uno has no wireless and uses 5V logic.
+The ESP32 has built-in Wi-Fi and Bluetooth and uses 3.3V logic. Classic Arduino boards such as the Uno use 5V logic, and many have no wireless.
 
 ### A starter kit for home projects
 
-You don't need much. A development board alone runs about $10 to $30. A boxed starter kit with a board, breadboard, wires, LEDs, and parts runs about $40 to $110, depending on the brand. Many kits bundle most of this:
+You don't need much, and a boxed starter kit bundles most of this:
 
-- A development board (for example, an Arduino Uno or an ESP32 DevKit)
+- A development board. Look for one with a USB port, good documentation, and support in the Arduino IDE (for example, an Arduino Uno or an ESP32 development board).
 - A USB cable that carries data, not just charging power
 - A solderless **breadboard** for building circuits without soldering
 - Jumper wires, male-to-male and male-to-female
 - An assortment of resistors (220 to 1,000 ohm covers most LED work)
 - A bag of LEDs in a few colors
-- One or two small hobby servos (for example, the common 9-gram micro servo)
+- One or two small hobby servos. Look for micro servos with a stated voltage range that matches your supply.
 - A separate power supply for servos and larger projects, matched to their rated voltage
-- A multimeter for checking voltage and continuity
+- A multimeter for checking voltage and continuity. Look for one with auto-ranging and a continuity beeper.
 
 ### Voltage rules that save boards
 
@@ -83,29 +83,40 @@ You don't need much. A development board alone runs about $10 to $30. A boxed st
 
 ### DCC-EX: an open-source example
 
-**DCC-EX** is a volunteer-run, open-source project that builds a DCC command station from hobby boards. Its EX-CommandStation turns a supported microcontroller board (such as an Arduino Mega or a supported ESP32 board) plus a compatible motor driver into a working DCC command station. Check DCC-EX's current supported-hardware list before you buy parts. It works with JMRI, Engine Driver, and WiThrottle, and it offers both a build-it-yourself path and ready-to-run hardware. A basic do-it-yourself build (board, motor driver, and track power supply) runs about $75 to $120. The ready-to-run command station costs about $120 to $160, depending on whether you add a power supply.
+**DCC-EX** is a volunteer-run, open-source project that builds a DCC command station from hobby boards. Its EX-CommandStation turns a supported microcontroller board (such as an Arduino Mega or a supported ESP32 board) plus a compatible motor driver into a working DCC command station. Check the supported-hardware list on the DCC-EX website before you buy parts. It works with JMRI, Engine Driver, and WiThrottle, and it offers both a build-it-yourself path and ready-to-run hardware.
 
 ## Train cams: ride along from the cab
 
 On-board cameras put you in the engineer's seat. Our [layout](/about) uses them so visitors can ride along from a train's point of view. For your own setup, the common choices are:
 
-- **Miniature FPV cameras:** tiny analog cameras from the drone hobby that send live video over a radio link to a small receiver and screen. A combined camera and transmitter runs about $20 to $30, and a small receiving monitor about $90 to $130.
-- **Small Wi-Fi cameras:** compact boards, such as ESP32 camera modules, that stream video to a phone or computer over your network. These boards run about $10 to $25.
+- **Miniature FPV cameras:** tiny analog cameras from the drone hobby that send live video over a radio link to a small receiver and screen.
+- **Small Wi-Fi cameras:** compact boards, such as ESP32 camera modules, that stream video to a phone or computer over your network.
 
 A few things to plan for:
 
 - **Power:** A battery gives the simplest start. Use track power only through a purpose-built DCC-to-DC power module, or a rectifier, filter capacitor, and regulator matched to the camera's voltage and current. To switch the camera from a decoder function output, have the output drive a suitable switching circuit within its current rating. Never wire a camera straight across the rails or straight to a function output.
-- **Mounting:** Flat cars, gondolas, and open cabs make easy hosts. Removable mounts, like double-sided foam tape or a small bracket, make the camera easier to take off. Tape can lift paint or decals, so test it on a hidden spot first.
+- **Mounting:** Flat cars, gondolas, and open cabs make easy hosts. Removable mounts, like double-sided foam tape or a small bracket, make the camera easier to take off. Tape can leave residue or lift paint and decals, so test it on a hidden spot first.
 - **Clearance:** Measure against tunnels, bridges, and overhead structures before the first run. A camera that sits too tall will hit something.
 - **Heat:** Cameras and transmitters get warm. Leave airflow around them, and keep them away from thin plastic shells that could soften or warp.
 - **Streaming basics:** Analog FPV has almost no delay but lower image quality. Wi-Fi streams look sharper but may lag and can drop out on a busy network. Test in the room where you'll run.
-- **Radio rules:** In the US, look for an FCC ID on the transmitter and use it only as certified. Many hobby 5.8 GHz FPV transmitters are not certified for unlicensed use and need an amateur radio license to operate legally. Check your local rules before you transmit.
+- **Radio rules:** In the US, look for an FCC ID on the transmitter and use it only as certified. Many hobby 5.8 GHz FPV transmitters are not certified for unlicensed use and need an amateur radio license to operate legally. Elsewhere, follow your country's rules for radio transmitters before you transmit.
+
+## What it costs
+
+Prices are rough US ranges from when this guide was last updated and will drift. Use them for budgeting, not shopping.
+
+- **Software:** JMRI and Engine Driver are free.
+- **Development board alone:** about $10 to $30.
+- **Boxed starter kit** (board, breadboard, wires, LEDs, and parts): about $40 to $110, depending on the brand.
+- **DCC-EX command station:** about $75 to $120 to build yourself (board, motor driver, and track power supply), or about $120 to $160 ready-to-run, depending on whether you add a power supply.
+- **Analog FPV camera with built-in transmitter:** about $20 to $30, plus about $90 to $130 for a small receiving monitor.
+- **Wi-Fi camera board:** about $10 to $25.
 
 ## Checklist: a safe first project
 
 Start with a blinking crossing light. Nothing touches the layout.
 
-- Install the Arduino IDE and your board's support package.
+- Install the Arduino IDE from the official Arduino website, plus your board's support package.
 - Upload the built-in "Blink" example and watch the onboard LED flash. Some ESP32 boards have no user LED, so wire one LED and resistor to a pin and change the pin number in the code.
 - On the breadboard, wire two red LEDs, each through its own resistor, to two output pins.
 - Double-check that each LED's longer leg (the positive side) faces the pin, not ground.

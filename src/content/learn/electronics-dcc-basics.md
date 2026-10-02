@@ -6,9 +6,9 @@ icon: solar:plug-circle-bold
 updatedDate: 2026-10-01
 ---
 
-Model railroad wiring looks mysterious until you learn a few ideas and two tools. Layouts run on low voltage. Most troubleshooting can be done safely with the power off and a multimeter, but short circuits can still heat wires and rails. This page covers the basics, then gives you two checklists to take to the workbench.
+Model railroad wiring looks mysterious until you learn a few ideas and two tools. Layouts run on low voltage. Most troubleshooting can be done safely with the power off and a multimeter, but short circuits can still heat wires and rails. This page covers the basics, explains what to look for when you buy equipment, and ends with a checklist for working on the club layout.
 
-**New to all of this?** Read the short version and the safety section, then skip to the checklists. Come back to the rest when a project calls for it. **Already comfortable with a soldering iron?** Jump to [DCC in plain terms](#dcc-in-plain-terms).
+**New to all of this?** Read the short version and the safety section, then skip to [What to buy for home projects](#what-to-buy-for-home-projects) and [Before you touch the layout wiring](#before-you-touch-the-layout-wiring). Come back to the rest when a project calls for it. **Already comfortable with a soldering iron?** Jump to [DCC in plain terms](#dcc-in-plain-terms).
 
 ## The short version
 
@@ -17,8 +17,6 @@ Model railroad wiring looks mysterious until you learn a few ideas and two tools
 - A multimeter answers most "why won't it run?" questions.
 - At the club, ask an experienced member before you change any layout wiring.
 - You do not need to buy a tool kit before volunteering. The layout has shared tools for layout work, including an NCE Power Cab at the workbench. [Email before attending](/contact), and ask what is available, what to bring, and what work you can help with.
-
-Prices on this page are rough US estimates, checked in October 2026. They vary by store and brand.
 
 ## Low voltage and wall power are different worlds
 
@@ -30,7 +28,7 @@ Prices on this page are rough US estimates, checked in October 2026. They vary b
 
 ## Your multimeter
 
-A **digital multimeter** measures voltage, resistance, and continuity. It is the most useful electrical tool you will own. Examples include meters from AstroAI, Klein Tools, and Fluke. A basic autoranging meter with fused inputs and a continuity beeper, about $20 to $35, covers everything on this page. True RMS models start around $35, and name-brand ones run about $65.
+A **digital multimeter** measures voltage, resistance, and continuity. It is the most useful electrical tool you will own. A basic autoranging meter with fused inputs and a continuity beeper covers everything on this page. The starter kit below lists what to look for.
 
 - **Continuity** checks whether two points connect. Touch the probes to each end of a wire; the meter beeps if the path has very low resistance. Use it to find broken feeders and hidden shorts, always with the power off. A beep does not prove a joint can carry a running train's current, so a suspect rail joint may still need a closer look.
 - **Set it before you touch anything powered.** Black lead in COM, red lead in the V jack, dial on voltage. Never put a meter set for continuity, resistance, or current across powered rails; that can short the track or damage the meter.
@@ -42,7 +40,7 @@ A **digital multimeter** measures voltage, resistance, and continuity. It is the
 
 Soldering joins wires with melted metal so the connection conducts well for years. Practice on scrap wire before you work near track or scenery.
 
-- **Temperature-controlled iron.** An adjustable iron holds a steady heat, so you can work quickly. It can still melt plastic ties if you linger, so keep each touch brief. Examples include compact irons such as the Pinecil, about $25 to $40 plus a USB-C power adapter, and bench stations from Hakko or Weller, about $115 to $130.
+- **Temperature-controlled iron.** An adjustable iron holds a steady heat, so you can work quickly. It can still melt plastic ties if you linger, so keep each touch brief. Both compact irons that run from a separate power adapter and plug-in bench stations work well.
 - **Rosin-core electronics solder.** Use thin rosin-core solder made for electronics. Never use acid-core solder, which is for plumbing and corrodes wiring. Leaded solder flows easily. Lead-free works too, but it melts about 35 C (60 F) hotter and flows less readily, so set the iron hotter and use extra flux. Wash your hands before you eat or drink after handling either.
 - **Flux.** Extra rosin flux helps solder flow onto rail and old, dull wire. Clean off the residue with isopropyl alcohol once the iron is off and the work has cooled. Keep the alcohol capped and away from the iron, since it catches fire easily.
 - **Helping hands.** A small stand with clips holds parts still so both of your hands stay free.
@@ -86,19 +84,12 @@ Some layouts use this general diagnostic to check that a district's breaker shut
 
 ### Common systems
 
-Command stations and decoders that follow NMRA DCC standards generally work together for basic functions, even from different makers. Throttles, control networks such as NCE's cab bus or Digitrax LocoNet, and some advanced features are usually brand-specific. Widely used examples include the NCE Power Cab, Digitrax starter sets, and ESU's ECoS command stations and LokSound decoders.
+Command stations and decoders that follow NMRA DCC standards generally work together for basic functions, even from different makers. Throttles, control networks such as NCE's cab bus or Digitrax LocoNet, and some advanced features are usually brand-specific. Examples of makers include NCE, Digitrax, and ESU.
 
 At our layout:
 
 - **The workbench** has an NCE Power Cab, a compact system that combines throttle, command station, and booster.
 - **On the layout**, members run trains with the Engine Driver app on Android tablets. The tablets connect over Wi-Fi to JMRI, free software on a computer that links to the layout's DCC system by USB.
-
-### What DCC costs
-
-- **Basic non-sound starter set** (command station, booster, and throttle in one, for example Digitrax Zephyr Express or Bachmann E-Z Command): about $195 to $235
-- **Power Cab-class system**: about $215 to $220
-- **Decoder without sound**: about $20 to $40 for HO; larger O-scale decoders cost roughly twice that
-- **Sound decoder**: about $70 to $150 for HO; O-scale sound decoders run about $165 to $220
 
 Other systems may suit a home layout just as well. Compare power capacity, throttle options, and programming features before you choose. Ask before you bring your own throttle or decoder to the layout.
 
@@ -110,29 +101,39 @@ LEDs light buildings, street lamps, and locomotive headlights. Two rules keep th
 - **Mind the polarity.** An LED passes current only one way. On a new LED, the longer leg is positive (anode) and a flat edge on the lens often marks negative (cathode). If the legs are trimmed or the markings unclear, check with your meter's diode-test setting. Wired backward, it stays dark, and at 12 volts or more it can fail, because many LEDs tolerate only a few volts in reverse.
 - **On DCC track power or any AC supply**, polarity flips constantly. Protect the LED with a diode wired across it in the opposite direction (antiparallel), feed it through a bridge rectifier, or use a lighting board built for DCC. Many hobbyists power scenery lighting from a separate DC supply instead.
 
-## Electronics starter kit for home projects
+## What to buy for home projects
 
 Buy these for your own bench. For layout work, ask what shared tools are available first.
 
-**Bare minimum**, about $90 to $160 for the priced items with a compact iron, or about $180 to $250 with a bench station. The compact-iron estimate assumes you already own a USB-C power adapter that can drive it; check the iron's requirements before you buy.
+Prices are rough US ranges from when this guide was last updated (2026) and will drift. Use them for budgeting, not shopping.
 
-- Safety glasses
-- Digital multimeter with continuity beeper (about $20 to $35)
-- Temperature-controlled soldering iron with a stand and tip cleaner
-- Thin rosin-core electronics solder (about $10 to $16)
-- Rosin flux pen or paste (about $8 to $17), plus isopropyl alcohol for cleanup
-- Wire strippers sized for 12 to 24 AWG (about $12 to $25)
-- Basic electronics flush cutters (about $7 to $11)
-- Heat-shrink tubing assortment (about $8 to $15)
+### Electronics starter kit
+
+**Bare minimum**, about $90 to $160 with a compact iron, or about $180 to $250 with a bench station. The compact-iron range assumes you already own a power adapter that meets the iron's requirements.
+
+- **Safety glasses.** Look for eyewear that meets ANSI Z87.1; a Z87+ marking means high-impact protection.
+- **Digital multimeter** (about $20 to $35). Look for autoranging, a continuity beeper, fused inputs, a CAT II or CAT III rating, and a recognized independent certification mark such as UL, ETL, CSA, or TÜV. True RMS is a plus, not a must.
+- **Temperature-controlled soldering iron** with a stand and tip cleaner (compact, about $25 to $40; bench station, about $115 to $130). Look for an adjustable temperature setting and easy-to-find replacement tips. Hakko and Weller are examples.
+- **Rosin-core electronics solder** (about $10 to $16). Look for thin wire, about 0.5 to 0.8 mm, labeled for electronics. Never acid-core.
+- **Rosin flux** in a pen or paste (about $8 to $17), plus isopropyl alcohol for cleanup. Look for flux labeled for electronics.
+- **Wire strippers** (about $12 to $25). Look for marked notches covering 12 to 24 AWG.
+- **Basic electronics flush cutters** (about $7 to $11). Look for small, sharp jaws that cut copper wire flat.
+- **Heat-shrink tubing assortment** (about $8 to $15). Look for several sizes with about a 2:1 shrink ratio.
 
 **Worth adding next:**
 
-- Heat gun or hot-air tool for heat-shrink (about $20 to $35), not an open flame near flux and alcohol
-- Helping hands or a small vise (about $7 to $20)
-- Fume extraction that pulls solder smoke away from you
-- Spools of feeder wire in two colors
-- Assorted resistors and a few spare LEDs
-- A notebook for wire colors, addresses, and decoder settings
+- **Heat gun or hot-air tool** for heat-shrink (about $20 to $35). Avoid an open flame near flux and alcohol.
+- **Helping hands or a small vise** (about $7 to $20). Look for a heavy base and clips that grip without slipping.
+- **Fume extraction.** Look for a fan with a filter that you can place close to the work, pulling smoke away from your face.
+- **Feeder wire** in two colors, plus assorted resistors and a few spare LEDs.
+- **A notebook** for wire colors, addresses, and decoder settings.
+
+### DCC equipment
+
+- **Basic non-sound starter set** with command station, booster, and throttle in one, for example from Digitrax or Bachmann: about $195 to $235. Look for enough output current for the locomotives you expect to run at once, since sound and lighted cars add to the load, and room to add throttles later.
+- **Power Cab-class system**: about $215 to $220.
+- **Decoder without sound**: about $20 to $40 for HO; larger O-scale decoders cost roughly twice that. Look for a decoder whose motor-current rating exceeds the locomotive's stall current (the current it draws when held still under power), and a plug that matches its socket, if it has one.
+- **Sound decoder**: about $70 to $150 for HO; O-scale sound decoders run about $165 to $220.
 
 ## Before you touch the layout wiring
 

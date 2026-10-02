@@ -6,9 +6,7 @@ icon: solar:leaf-bold
 updatedDate: 2026-10-01
 ---
 
-Scenery turns a board with track on it into a place. It is also one of the more forgiving parts of the hobby. On a detached test board or practice piece, many mistakes are inexpensive to fix: scrape off the patch, clean up, and try again. That makes scenery a good place to get your hands dirty. On an installed layout, removal can damage nearby track, wiring, structures, or earlier scenery, so that work needs the extra care covered below.
-
-Prices in this guide are rough US estimates, checked in October 2026. They vary by store and brand.
+Scenery turns a board with track on it into a place. It is also one of the more forgiving parts of the hobby. On a detached test board or practice piece, most mistakes are cheap to fix: scrape off the patch, clean up, and try again. That makes scenery a good place to get your hands dirty. On an installed layout, removal can damage nearby track, wiring, structures, or earlier scenery, so that work needs the extra care covered below.
 
 ## Work in layers, from the ground up
 
@@ -27,30 +25,30 @@ Finish each layer across an area before moving on.
 
 You need a light, solid shape to build on. Three common methods:
 
-- **Foam board.** Rigid insulation foam from a home center (the pink or blue sheets) stacks into hills. Glue the layers with a foam-safe adhesive or white glue. Solvent-based glues, including many construction adhesives and spray glues, melt foam. Carve it with a long, thin knife, a rasp and coarse sandpaper, or a hot-wire foam cutter. Heated foam gives off fumes. Hot-cut only foam whose maker permits it, never unknown, PVC, or polyurethane foam, and work outdoors or with exhaust that vents outside. A dust respirator does not filter fumes.
-- **Plaster cloth.** Gauze strips soaked in plaster, sold for crafts and for model scenery (for example, Woodland Scenics Plaster Cloth). A roll costs about $10. Dip a strip in water and lay it over crumpled newspaper, cardboard strips, or foam. It begins to set within minutes but must dry fully before the next step.
+- **Foam board.** Rigid extruded insulation foam from a home center stacks into hills. Glue the layers with an adhesive labeled safe for foam, or with white glue. Solvent-based glues, including many construction adhesives and spray glues, melt foam. Carve it with a long, thin knife, a rasp and coarse sandpaper, or a hot-wire foam cutter (see Work safely before you hot-cut).
+- **Plaster cloth.** Gauze strips coated with plaster, sold for crafts and for model scenery (Woodland Scenics is one long-standing maker). Dip a strip in water and lay it over crumpled newspaper, cardboard strips, or foam. It begins to set within minutes but must dry fully before the next step.
 - **Hardshell.** An older, cheaper version of the same idea: paper towels dipped in thin plaster and draped over a web of cardboard strips.
 
-Once the shell is hard, smooth or roughen it with a paper-fiber and plaster compound (for example, Sculptamold, about $10 to $15 for a 3-pound bag) or more plaster. Keep slopes gentle so ground cover stays put.
+Once the shell is hard, smooth or roughen it with a paper-fiber and plaster compound (Sculptamold is a common example) or more plaster. Keep slopes gentle so ground cover stays put.
 
 ## Earth colors and ground cover
 
-**Paint first.** Brush a flat, earth-colored latex or acrylic paint over dry landforms. (Areas that will get water need a different paint; see the water section.) The paint hides white plaster when something chips, and wet paint grabs the first layer of ground cover.
+**Paint first.** Brush a flat, earth-colored latex or acrylic paint over dry landforms. Areas that will get water need a different paint; see the water section. The paint hides white plaster when something chips, and wet paint grabs the first layer of ground cover.
 
 **Then texture.** Most ground cover falls into a few families:
 
 - **Scenic dirt and fine sand.** Bagged scenic soil or clean craft sand is the safest choice. Collected soil can carry pesticides, animal waste, or old mine residue, a real concern in Gold Country. Old mine waste around Grass Valley and Nevada City can contain arsenic and mercury, so never collect material from tailings or mine dumps. If you collect your own anyway, get the landowner's permission, avoid mine, industrial, roadside, and animal-use areas, and dampen it before handling. Wear gloves and a respirator while sifting, use tools you keep out of the kitchen, let it air-dry, and never heat it in a food oven. Pass a magnet through it to pull out iron particles that can find their way into motors, but a magnet does not make contaminated soil safe.
-- **Ground foam.** Dyed foam crumbs in many colors and textures, from fine turf to coarse bushes (for example, Woodland Scenics or Scenic Express products). A shaker runs about $10 to $15. Blend two or three shades so it doesn't look like carpet.
-- **Static grass.** Short nylon or polyester fibers, from about 1 mm to 12 mm. In O scale, 2 to 4 mm reads as grazed grass, 4 to 6 mm as a typical field, and 10 to 12 mm as tall dry grass or weeds. A **static grass applicator** creates a high-voltage field between its screen and a grounding pin pushed into the wet glue. The charged fibers fly into the glue and stand on end, like real grass. Examples include the Noch Gras-Master and Woodland Scenics Static King. Electric applicators cost about $70 to $110 for an entry-level hobby model and up to about $190 for a premium one. Small bags of fibers run about $5 to $10. Makers warn about pacemakers, so anyone with a pacemaker or other implanted medical device should not use one or stand near one in use. Follow the maker's safety instructions.
-- **[Ballast](/learn/glossary#ballast).** The crushed stone under the track. Real-rock ballast (for example, from Arizona Rock & Mineral) has the color variation of real stone. Keep it out of the moving parts of [turnouts](/learn/glossary#turnout-switch).
-- **Talus and rock castings.** Cast rock faces in flexible rubber molds with a hard plaster (for example, Hydrocal), then color them with thin washes of earth-tone paint or an alcohol-based stain. Rock along the N.C.N.G. route varies: gray, tan, and greenish metamorphic and volcanic rock, with serpentine and granite in some areas. Match a specific scene to photographs. Rubber rock molds cost about $10 to $15, and a half-gallon box of Hydrocal about $10 to $15. Crushed leftover castings make instant talus.
+- **Ground foam.** Dyed foam crumbs, sold by texture from fine "turf" to coarse clumps for bushes. Look for earthy, slightly dull colors, and blend two or three shades so it doesn't look like carpet.
+- **Static grass.** Short nylon or polyester fibers, sold by length from about 1 mm to 12 mm. In O scale, 2 to 4 mm reads as grazed grass, 4 to 6 mm as a typical field, and 10 to 12 mm as tall dry grass or weeds. A **static grass applicator** creates a high-voltage field between its screen and a grounding pin pushed into the wet glue. The charged fibers fly into the glue and stand on end, like real grass. Woodland Scenics and Noch are two established makers. Read the pacemaker warning under Work safely before you buy or borrow one.
+- **[Ballast](/learn/glossary#ballast).** The crushed stone under the track. Look for ballast graded for your scale, with irregular grains and natural color variation. Test mineral ballast with a magnet before using it near track. Keep it out of the moving parts of [turnouts](/learn/glossary#turnout-switch).
+- **Talus and rock castings.** Cast rock faces in flexible rubber molds with a hard casting plaster (Hydrocal is the classic example), then color them with thin washes of earth-tone paint or an alcohol-based stain. Rock along the N.C.N.G. route varies: gray, tan, and greenish metamorphic and volcanic rock, with serpentine and granite in some areas. Match a specific scene to photographs. Crushed leftover castings make instant talus.
 
 ## Bonded scenery: the glue trick
 
 Loose ground cover needs glue that soaks in without washing it away. The standard method, often called **bonded scenery**, uses two liquids:
 
 - **Wet water.** Water with two or three drops of dish soap per cup, or about one part 70% rubbing alcohol to four parts water. It breaks surface tension so glue soaks in instead of beading up.
-- **Scenery glue.** White glue thinned with water, plus a drop of soap, or thinned acrylic matte medium. Recipes range from equal parts glue and water to one part glue in four parts water. Start around one part glue to two parts water, test it on scrap, and adjust. Bottled products do the same job (for example, Woodland Scenics Scenic Cement, about $10 for 16 ounces). Artist's matte medium runs about $15 to $35 for 8 to 16 ounces.
+- **Scenery glue.** White glue thinned with water, plus a drop of soap, or thinned acrylic matte medium. Recipes vary. Start around one part glue to two parts water, test it on scrap, and adjust. Bottled scenery glues do the same job; look for one labeled clear-drying and not glossy.
 
 The method:
 
@@ -63,9 +61,9 @@ Ballast bonds the same way. Test on a scrap board first, and keep glue out of tu
 
 ## Trees and bushes
 
-- **Bushes:** clumps of coarse foam or fiber (for example, Woodland Scenics Foliage or clump foliage). Glue them where the ground meets rocks, fences, and structures.
-- **Deciduous trees:** a plastic or wire armature, a dried natural plant (sold as "Super Trees" and often called sea foam), or a twig, dusted with ground foam.
-- **Conifers:** twisted-wire bottle-brush trees, or a wooden dowel wrapped in fiber and flocked. Tree kits, which make a good first try, cost about $15 to $25.
+- **Bushes:** clumps of coarse foam or fiber. Glue them where the ground meets rocks, fences, and structures.
+- **Deciduous trees:** a plastic or wire armature, a dried natural plant (often called sea foam), or a twig, dusted with ground foam.
+- **Conifers:** twisted-wire bottle-brush trees, or a wooden dowel wrapped in fiber and flocked. Tree kits make a good first try.
 
 Plant trees in groups of uneven sizes. Nature rarely lines trees up in a row.
 
@@ -74,10 +72,10 @@ Plant trees in groups of uneven sizes. Nature rarely lines trees up in a row.
 Most of the look of model water comes from the paint under it.
 
 1. Close gaps in the bed and banks with plaster cloth or a paintable acrylic caulk. Avoid silicone caulk, which paint and water products won't stick to well.
-2. Paint the streambed dark at the center and lighter at the edges, where water runs shallow. Use 100% acrylic paint here. The vinyl in many latex and craft paints can react with water products (Woodland Scenics gives this warning for Realistic Water).
+2. Paint the streambed dark at the center and lighter at the edges, where water runs shallow. Use 100% acrylic paint here. Some water products warn that the vinyl in many latex and craft paints can react with them, so check the water product's instructions too.
 3. Seal the bed as the water product's maker directs and let it dry fully. Resin and water products find every gap.
-4. Pour thin layers of a scenery water product (for example, Woodland Scenics Realistic Water, about $20 to $30 for 16 ounces) or a two-part pour-on resin (for example, Envirotex Lite, about $10 to $15 for the smallest kit). Measure resin parts accurately and never pour deeper than the maker's maximum layer. A thick resin pour can overheat as it cures. Wear eye protection and nitrile gloves, and ventilate as the label requires.
-5. Add ripples on top with a textured gel (for example, Woodland Scenics Water Effects) or acrylic gloss medium.
+4. Pour thin layers of a pourable scenery water product or a two-part epoxy pour-on coating. Before you mix or pour resin, put on eye protection and nitrile gloves and ventilate as the label requires. Measure resin parts accurately and never pour deeper than the maker's maximum layer. A thick resin pour can overheat as it cures.
+5. Add ripples on top with a textured water gel or acrylic gloss medium.
 
 ## The backdrop
 
@@ -100,12 +98,11 @@ The best scenery reference is outside. The Nevada County Narrow Gauge ran throug
 
 Take photos on a walk or drive. Notice how grass grows thicker along fences, how dirt washes down a cut, and how few colors there really are. When in doubt, go duller. Nature is less green than a bag of ground foam.
 
-## Why scenery is forgiving
+## Fixing mistakes, and working on a real layout
 
 On a detached test board, most mistakes are easy to fix:
 
-- Plaster, foam, glue, and ground cover are inexpensive, so a redo costs little.
-- You can usually repaint a color you don't like. Test first, since some coatings resist new paint.
+- You can usually repaint a color you don't like. Test first, since some coatings resist fresh paint.
 - For a small patch bonded with white glue, first check what lies underneath, such as wiring, track, or a turnout. Then dampen just that patch with as little water as it takes, let it soften, and lift it with a putty knife.
 
 An installed layout is different. Wet glue seeps, stray plaster and ballast can jam turnouts, and static-grass applicators put out high voltage near electronics, which can affect the track wiring and [DCC](/learn/glossary#dcc-digital-command-control) equipment. Before working on one:
@@ -120,12 +117,11 @@ An installed layout is different. Wet glue seeps, stray plaster and ballast can 
 
 ## Work safely
 
-- Wear eye protection when cutting, carving, or sanding, and when spraying.
+- Wear eye protection when cutting, carving, sanding, or spraying.
 - Control dust when you cut or sand foam and plaster. Ventilate the room and collect dust at the source with a HEPA-filtered vacuum or one rated for fine dust. On top of that, wear a NIOSH Approved N95 or better particulate respirator.
-- Wear eye protection and nitrile gloves when you mix and pour two-part resin, and follow the label for ventilation. Repeated skin contact with epoxy can cause allergies.
-- Hot-wire cut foam outdoors or with exhaust that vents outside. A dust respirator does not filter fumes.
-- Don't use or stand near a static-grass applicator if you have a pacemaker or other implanted medical device.
-- Before handling a static-grass applicator's screen or pin, switch it off and discharge it as its instructions say.
+- Hot-cut only foam whose maker permits it, never unknown, PVC, or polyurethane foam. Work outdoors or with exhaust that vents outside. A dust respirator does not filter fumes.
+- Wear eye protection and nitrile gloves when you mix and pour two-part resin, and ventilate as the label requires. Repeated skin contact with epoxy can cause allergies.
+- Makers of static-grass applicators warn about pacemakers. If you have a pacemaker or other implanted medical device, don't use one or stand near one in use. Follow the maker's safety instructions. Before touching its screen or pin, switch it off and discharge it as those instructions say.
 - Keep scenery tools and containers out of the kitchen.
 
 ## Volunteering on our layout
@@ -134,24 +130,36 @@ You do not need to buy a tool kit before volunteering. The layout has shared too
 
 ## Starter supplies for home projects
 
-If you want to practice at home, this list covers a first patch and a bit more. The bare minimum (plaster cloth, three shades of ground foam, glue, a spray bottle, and pipettes) comes to about $50 to $70, plus paint and any foam scraps you can find.
+For practice at home, shop by category:
 
-- Rigid foam board, plaster cloth, or both
-- A long, thin knife or a rasp for shaping foam
-- Flat earth-tone latex or acrylic paint and a cheap wide brush
-- Two or three shades of fine ground foam, plus some coarse foam for bushes
-- Bagged scenic soil or clean craft sand
-- White glue or acrylic matte medium
-- Dish soap or rubbing alcohol for wet water
-- A fine-mist spray bottle
-- A pipette, eyedropper, or glue squeeze bottle
-- A soft brush for spreading material
-- A sifter or shaker jar kept just for scenery
-- Painter's tape and plastic sheet to protect track and floors
-- Safety glasses, a NIOSH Approved N95 or better particulate respirator, and nitrile gloves
-- A HEPA-filtered vacuum or one rated for fine dust. To save clean, coarse leftovers, slip a stocking over the nozzle, but never use it in place of the vacuum's filter.
+- **Landform material:** rigid extruded foam board, plaster cloth, or both. Look for plaster cloth sold for scenery or crafts.
+- **Shaping tools:** a long, thin knife or a rasp and coarse sandpaper.
+- **Base paint:** flat earth-tone latex or acrylic, plus a cheap wide brush. Look for "flat" or "matte"; shiny paint looks wet.
+- **Ground cover:** two or three shades of fine ground foam and some coarse foam for bushes. Look for dull, earthy colors.
+- **Dirt:** bagged scenic soil or clean craft sand. Look for clean, fine material with no organic debris and little loose dust.
+- **Glue:** ordinary white PVA glue, acrylic matte medium, or a bottled scenery glue labeled clear-drying and not glossy.
+- **Wet water:** dish soap or 70% rubbing alcohol.
+- **Applicators:** a fine-mist spray bottle, plus a pipette, eyedropper, or glue squeeze bottle.
+- **Spreading:** a soft brush, and a sifter or shaker jar kept just for scenery.
+- **Protection:** painter's tape and plastic sheet for track and floors.
+- **Safety gear:** safety glasses, nitrile gloves, and a respirator labeled NIOSH Approved N95 or better.
+- **Cleanup:** a HEPA-filtered vacuum or one rated for fine dust. To save clean, coarse leftovers, slip a stocking over the nozzle, but never use it in place of the vacuum's filter.
 
-Once you have a first patch done, the next tier is an entry-level static grass applicator and a few bags of fibers (about $80 to $130 together), then rock molds and water products.
+Next steps, once your first patch is done: a static grass applicator and fibers in two or three lengths, rubber rock molds and casting plaster, and a water product.
+
+## What it costs
+
+Prices are rough US ranges from when this guide was last updated (2026) and will drift. Use them for budgeting, not shopping.
+
+- **Bare-minimum first patch** (plaster cloth, three shades of ground foam, glue, spray bottle, pipettes): about $50 to $70, plus paint and any foam scraps you can find.
+- **Plaster cloth:** about $10 a roll.
+- **Paper-fiber and plaster compound:** about $10 to $15 for a 3-pound bag.
+- **Ground foam:** about $10 to $15 a shaker.
+- **Bottled scenery glue:** about $10 for 16 ounces. Artist's matte medium runs about $15 to $35 for 8 to 16 ounces.
+- **Static grass applicator:** about $70 to $110 for an entry-level hobby model, up to about $190 for a premium one. Small bags of fibers run about $5 to $10.
+- **Rubber rock molds and casting plaster:** about $10 to $15 each.
+- **Tree kits:** about $15 to $25.
+- **Water:** about $20 to $30 for 16 ounces of a scenery water product, or about $10 to $15 for the smallest two-part resin kit.
 
 ## Your first scenery patch
 
@@ -167,7 +175,7 @@ Practice on a scrap of plywood or foam about a foot square before you touch a la
 8. **Leave it overnight.**
 9. **Look again in the morning.** Compare it to a photo of a real hillside. Add a shade, dull a bright spot, or scrape an area and redo it.
 
-Keep that practice board. It becomes your test piece for every new product and color.
+Keep that practice board. It becomes your test piece for every product and color you try.
 
 ## Keep exploring
 

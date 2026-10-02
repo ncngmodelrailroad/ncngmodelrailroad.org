@@ -6,15 +6,15 @@ icon: solar:palette-bold
 updatedDate: 2026-10-01
 ---
 
-Paint turns a shiny plastic model into something that looks like it has worked for a living. The good news for beginners: on practice pieces, or on paint you applied yourself, you can fix many mistakes. You can wipe, sand, repaint, or strip and start over. Factory finishes, factory lettering, and models that belong to someone else are a different matter, so practice on your own pieces first. This guide covers what to buy, how the common paints behave, and how to stay safe while you learn. All prices on this page are rough US estimates, checked in October 2026, and vary by brand, store, and sale.
+Paint turns a shiny plastic model into something that looks like it has worked for a living. The good news for beginners: you can wipe, sand, repaint, or strip paint you applied yourself. Factory finishes, factory lettering, and other people's models are a different matter. This guide covers what to buy, how the common paints behave, and how to stay safe while you learn.
 
 ## Start with something you won't miss
 
-Practice on a cheap or secondhand model first. An old freight car from a swap meet, a spare plastic kit, or a scrap of styrene sheet makes a fine test piece. Try a technique there before you touch a locomotive you care about.
+Practice on a cheap secondhand freight car, a spare plastic kit, or scrap styrene sheet. Try each technique there before you touch a model you care about.
 
 ## Volunteering? You don't need a kit first
 
-You do not need to buy a tool kit before volunteering. The layout has shared tools for layout work, including an NCE Power Cab at the workbench. [Email before attending](/contact), and ask what is available and what to bring. The shopping lists below are for your own projects at home.
+You do not need to buy a tool kit before volunteering. The layout has shared tools for layout work, including an NCE Power Cab at the workbench. [Email before attending](/contact), and ask what is available and what to bring. The shopping list below is for projects at home.
 
 ## Brushes
 
@@ -40,17 +40,17 @@ Hobby paints fall into three broad families: acrylic, enamel, and lacquer. Each 
 - **Water-based acrylic.** Cleans up with water. Low odor, dries fast, and makes the easiest start. For example, Vallejo, AK, or Citadel.
 - **Alcohol-and-water acrylics.** Some acrylics, for example Tamiya's, behave differently from ordinary water-based hobby paint. Thin them with the maker's recommended acrylic thinner. Water or isopropyl alcohol can work for cleanup but may change how the paint dries. Moderate odor.
 - **Enamel.** Cleans up with mineral spirits or enamel thinner. Strong fumes, slow drying, and a tough finish. For example, Testors or Humbrol.
-- **Lacquer.** Cleans up with lacquer thinner. The strongest fumes, but very durable and sprays beautifully. For example, Mr. Color.
+- **Lacquer.** Uses the maker's lacquer thinner. Dries fast to a durable finish, but its solvents call for strict ventilation and a respirator. For example, Mr. Color.
 
-Scalecoat, long popular with railroad modelers, is a solvent-based paint that is neither a true lacquer nor a typical enamel. Use Scalecoat I on brass and metal and Scalecoat II on plastic, with the matching Scalecoat thinner. Some colors can be out of stock, so check before you plan a project around one.
+Some railroad paints come in separate formulas for plastic and bare metal. For example, Scalecoat I is for brass and metal and Scalecoat II for plastic, each with its own thinner. Specialty paints can be hard to find, so check hobby shops and the maker's site.
 
-**Test before you layer.** A coat with stronger ("hotter") solvents can lift, soften, or wrinkle the paint beneath it, even paint that feels dry. You may hear a rule of thumb that lacquer goes under enamel and enamel under acrylic, but don't rely on it. Follow each maker's compatibility and cure-time advice, apply light coats, and test the whole primer, color, decal, and clear-coat combination on scrap first. Beginners can skip most of this by sticking with water-based acrylics.
+**Test before you layer.** Strong solvents can lift or wrinkle an earlier coat, even one that feels dry. Don't rely on a fixed lacquer, enamel, acrylic order. Follow each maker's compatibility and cure-time advice, apply light coats, and test the whole primer, paint, decal, and clear-coat combination on scrap. Sticking with one water-based acrylic system avoids most of these problems.
 
 ## Primer
 
-Primer gives paint something to grip, shows flaws before you add color, and makes colors look even. First, wash the model in warm water with a drop of dish soap to remove finger oils and mold release, then let it dry. A light gray primer suits most colors. For example, Tamiya Fine Surface Primer, Vallejo Surface Primer, or Mr. Surfacer. Two light coats beat one heavy coat.
+Primer gives paint something to grip, shows flaws, and evens out color. Wash the model in warm water with a drop of dish soap to remove finger oils and mold release, and let it dry. Then apply two light coats of a primer labeled for the model's material. Light gray suits most colors. For example, hobby primers from Tamiya, Vallejo, or Mr. Hobby.
 
-Brass models must be free of oil, fingerprints, tarnish, and leftover soldering flux. Follow the model and paint makers' cleaning instructions, rinse and dry the model fully, and handle it with gloves afterward. Then use a primer or paint made for bare metal (for example, Scalecoat I). Plastic-only primers may not grip bare brass.
+Brass models must be free of oil, fingerprints, tarnish, and leftover soldering flux. Follow the paint maker's cleaning instructions, rinse and dry the model fully, and handle it with gloves. Then use a primer or paint labeled for bare metal. Plastic-only primers may not grip brass.
 
 ## Thinning
 
@@ -64,7 +64,7 @@ Paint straight from the jar often fills in rivets and board lines.
 
 **Spray cans** need no extra equipment and work well for primer, one-color jobs, and clear coats. Shake the can well and spray in short, light passes, following the distance and temperature on the label. Never heat a can with hot water or direct heat, or store it above the maker's stated temperature.
 
-An **airbrush** is a small paint sprayer powered by an air compressor. It gives finer control and wastes less paint, but it takes practice and cleaning. Start at low pressure, often around 15 to 30 psi depending on the airbrush and paint, and check the maker's recommendation. Practice on paper or scrap before a model. Many modelers paint happily for years with brushes and cans alone. If you do upgrade, a beginner airbrush and compressor set runs about $90 to $180, and a small hobby spray booth that exhausts outdoors about $120 to $250. Check that the booth's maker allows the paints you plan to use. Many small booths are meant for water-based paint only, not flammable solvent vapor.
+An **airbrush** is a small paint sprayer powered by an air compressor. It gives finer control than a can but takes practice and cleaning. Start at the maker's recommended pressure, often around 15 to 30 psi, and practice on paper or scrap. Many modelers paint for years with brushes and cans alone.
 
 ## Decals
 
@@ -78,7 +78,7 @@ Most lettering and road names come as **water-slide decals**: printed film on ba
 
 ## Flat clear coats
 
-Real railroad equipment rarely shines. A **flat** (matte) clear coat hides decal edges, blends everything together, and protects the paint. For example, Vallejo Matt Varnish, a Mr. Hobby flat clear spray, or Microscale Micro Coat Flat. General-purpose clears can attack hobby paint, so stick to hobby finishes and test on scrap. Let decals and paint cure first, then apply light coats. Follow the label's temperature and humidity limits, because humid air can turn a flat coat cloudy. Spray clears need the same ventilation and respirator precautions as any spraying.
+Real railroad equipment rarely shines. A **flat** (matte) clear coat hides decal edges, blends everything together, and protects the paint. For example, flat clears from Vallejo, Mr. Hobby, or Microscale. General-purpose clears can attack hobby paint, so stick to hobby finishes and test on scrap. Let decals and paint cure first, then apply light coats. Follow the label's temperature and humidity limits, because humid air can turn a flat coat cloudy. Spray clears need the same ventilation and respirator precautions as any spraying.
 
 ## Weathering for beginners
 
@@ -86,13 +86,11 @@ Real railroad equipment rarely shines. A **flat** (matte) clear coat hides decal
 
 - **Washes.** Heavily thinned dark paint that flows into cracks and seams to add shadow. Brush it on, then wipe the high spots with a tissue.
 - **Drybrushing.** Load an old brush, wipe almost all the paint off onto a paper towel, then flick it lightly across raised detail. Edges catch the color and stand out.
-- **Weathering powders and pastels.** Fine colored powder brushed on for dust, rust, and soot. For example, hobby weathering powders or pigments, or dry soft pastels (not oil pastels) scraped into powder. On a sealed surface, you can often brush loose powder off before sealing, but some powders contain a binder and can stain flat paint, so test first. Don't blow powder off the model or raise a cloud of dust. A flat clear coat locks powder in but can make much of it vanish, so go a bit heavier than you want, seal lightly, and repeat if needed.
-
-Less is more. You can always add grime, and a light touch looks more real than a heavy one.
+- **Weathering powders and pastels.** Brush hobby weathering pigment, or dry soft pastel (not oil pastel) scraped into powder, onto the model for dust, rust, and soot. Loose powder often brushes off before sealing, but some products stain flat paint, so test first. Don't blow powder off the model or raise a cloud of dust. A flat clear coat can make much of the effect vanish, so seal lightly and add more if needed.
 
 ## How to fix mistakes
 
-Many mistakes on practice pieces, or on paint you applied yourself, can be corrected. Treat factory finishes, lettering, and models that belong to others with more caution, and ask the owner before trying a fix. Common fixes:
+You can correct many mistakes in paint you applied yourself. Test each fix on scrap or a hidden spot, and ask the owner before working on someone else's model. Common fixes:
 
 - **Wet paint in the wrong spot:** lift water-based paint with a brush or swab dampened with water. For other paints, use the matching cleaner and test it on the finish underneath first.
 - **A run, drip, or dust speck:** let it dry, sand it smooth with fine sandpaper or a sanding stick, and repaint.
@@ -103,23 +101,31 @@ After stripping, check for softened plastic, loose details, and leftover paint b
 
 ## Starter paint kit for home projects
 
-Brushes, a can of primer, and five or six acrylic colors come to roughly $40 to $60. Add the rest of the list over time.
+Prices are rough US ranges from when this guide was last updated (2026) and will drift. Use them for budgeting, not shopping. Brushes, a can of primer, and five or six acrylic colors come to roughly $40 to $60. Add the rest over time.
 
-- Three or four brushes (fine round, medium round, small flat, old stiff brush). A three-brush synthetic set costs about $12 to $20.
-- A spray can of gray primer, about $8 to $15
-- Water-based acrylic paints in a few basics: black, a boxcar red or brown, a gray, a rust color. Hobby acrylics cost about $3 to $5 a bottle.
-- The matching thinner
-- Gloss and flat clear coats
-- Decal setting solutions, about $5 a bottle
-- Weathering powders or a few dry soft pastels
-- Toothpicks, cotton swabs, paper towels, and a paint palette or old tile
-- Sanding sticks and fine sandpaper
-- A scrap model for practice
+- **Brushes:** a fine round, a medium round, a small flat, and an old stiff brush. Look for synthetic bristles that come to a sharp point. A three-brush set runs about $12 to $20.
+- **Primer:** a spray can of light gray hobby primer, about $8 to $15. Look for one labeled for the model's material: plastic, or bare metal for brass.
+- **Paint:** water-based hobby acrylics in black, a boxcar red or brown, a gray, and a rust color, about $3 to $5 a bottle. Look for paints that clean up with water.
+- **Thinner:** the one the paint maker recommends.
+- **Clear coats:** a gloss for under decals and a flat for the final finish. Look for hobby clears whose maker says they work over your paint and decals, and test on scrap.
+- **Decal setting solutions:** a mild one and a stronger softener, about $5 a bottle.
+- **Weathering:** hobby weathering powders or a few dry soft pastels.
+- **Odds and ends:** toothpicks, cotton swabs, paper towels, a palette or old tile, sanding sticks, and fine sandpaper.
+- **A scrap model** for practice.
+
+Before you spray or use solvent paint, set up the controls in the safety checklist below:
+
+- **A spray booth that exhausts outdoors,** about $120 to $250. Look for one whose maker approves it for the paint and solvent you use. Many small booths handle water-based paint only, not flammable solvent vapor.
+- **A respirator as backup:** a NIOSH-approved half-face respirator fitted with the organic vapor cartridges and P95 or P100 particulate filters its maker specifies, about $40 to $60.
+
+Optional:
+
+- **An airbrush and compressor set,** about $90 to $180 for a beginner set. Look for a dual-action airbrush and a compressor with a pressure regulator and moisture trap.
 
 ## Safety checklist
 
 - Work in a well-ventilated room. For spraying, work outdoors where the label allows, or use a spray booth that exhausts outdoors and is rated for the paint you use. That is the main protection, and a respirator backs it up. A booth that only filters and recirculates air does not remove solvent vapor.
-- For solvent paints or any spraying, wear a NIOSH-approved respirator. Choose cartridges based on the product's safety data sheet (SDS), usually **organic vapor** cartridges plus P95 or P100 particulate prefilters. A reusable half-face mask with those cartridges and prefilters costs about $40 to $60. An N95 dust mask or N-series filter alone is not enough for solvent fumes or oily paint mist.
+- For solvent paints or any spraying, wear a NIOSH-approved respirator. Choose cartridges based on the product's safety data sheet (SDS), usually **organic vapor** cartridges plus P95 or P100 particulate prefilters. An N95 dust mask or N-series filter alone is not enough for solvent fumes or oily paint mist.
 - Choose the respirator size by a proper fit test, do the maker's seal check each time you put it on, and keep the seal area clean-shaven. Store it and its cartridges in a sealed bag between uses, and replace cartridges on the maker's schedule rather than waiting to smell solvent.
 - Choose gloves from the product's SDS. Disposable nitrile handles brief splashes of many paints but not every thinner or stripper, so replace gloves right away if solvent soaks them. For soaking parts, use the reusable chemical-resistant glove the SDS names.
 - Keep paint, thinner, alcohol, solvent rags, and spray cans away from flames, pilot lights, heaters, and sparks. Never puncture or burn aerosol cans.

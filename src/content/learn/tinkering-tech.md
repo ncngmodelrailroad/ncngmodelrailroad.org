@@ -103,7 +103,7 @@ A few things to plan for:
 
 ## What it costs
 
-Prices are rough US ranges from when this guide was last updated and will drift. Use them for budgeting, not shopping.
+Prices are rough US ranges from when this guide was last updated (2026) and will drift. Use them for budgeting, not shopping.
 
 - **Software:** JMRI and Engine Driver are free.
 - **Development board alone:** about $10 to $30.

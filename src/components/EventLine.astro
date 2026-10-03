@@ -525,9 +525,10 @@ const statusLead = (stop?: { layoutConfirmed: boolean }, isNow = false) =>
       width: var(--marker-at);
     }
 
+    /* Keep the loco on the track when the marker sits at either end. */
     .event-line-marker {
       top: 50%;
-      left: var(--marker-at);
+      left: clamp(42px, var(--marker-at), 100% - 42px);
     }
   }
 </style>

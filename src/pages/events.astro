@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Button from '../components/Button.astro';
+import EventLine from '../components/EventLine.astro';
 import { Icon } from 'astro-icon/components';
 import { getCollection, render } from 'astro:content';
 import { formatEventDate, getEventDisplayDates, isUpcomingEvent } from '../utils/events';
@@ -71,6 +72,9 @@ const eventSchemaJson = JSON.stringify(eventSchemaItems)
       <p class="text-lg text-gray-300 max-w-2xl mx-auto">
         What's coming up at the model railroad during {organization.location.venue} events.
       </p>
+      <div class="max-w-5xl mx-auto mt-10 md:mt-12">
+        <EventLine events={sortedEvents} />
+      </div>
     </div>
   </section>
 
@@ -142,7 +146,7 @@ const eventSchemaJson = JSON.stringify(eventSchemaItems)
   {pastEvents.length > 0 && (
     <section class="py-16 bg-cream">
       <div class="page-container max-w-4xl">
-        <details>
+        <details data-past-events>
           <summary class="text-2xl font-display text-primary cursor-pointer">Past Events ({pastEvents.length})</summary>
           <p class="text-gray-600 my-6">These dates have passed. Past listings do not establish future opening dates, hours, or admission arrangements.</p>
           <div class="space-y-6">
@@ -190,3 +194,17 @@ const eventSchemaJson = JSON.stringify(eventSchemaItems)
     </div>
   </section>
 </BaseLayout>
+
+<script>
+  // Timeline stations link to past listings, which sit inside a closed <details>.
+  const openTarget = () => {
+    const target = location.hash && document.getElementById(decodeURIComponent(location.hash.slice(1)));
+    const details = target && target.closest<HTMLDetailsElement>('details[data-past-events]');
+    if (details && !details.open) {
+      details.open = true;
+      target.scrollIntoView();
+    }
+  };
+  openTarget();
+  window.addEventListener('hashchange', openTarget);
+</script>

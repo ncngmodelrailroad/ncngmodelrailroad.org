@@ -62,6 +62,7 @@ ${Object.values(contentFeeds).map((feed) => `- [${feed.name}](${url(feed.path)})
 - [Historical map](${url('/map/')}): Interactive comparison of the original railroad route with modern terrain and satellite imagery; requires JavaScript.
 - [Learn](${url('/learn')}): Beginner guides to model railroading.
 - [Glossary](${url('/learn/glossary')}): Model railroading terms and definitions.
+- [On3 check gauge](${url('/on3-gauge')}): How to use the club's printed gauge for track, wheels, coupler height, and car weight.
 - [Gallery](${url('/gallery')}): Photos of the model railroad and its scenery.
 
 ## Optional

@@ -1,0 +1,146 @@
+---
+import { Icon } from 'astro-icon/components';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import SectionHeader from '../components/SectionHeader.astro';
+import { organization } from '../config/organization';
+
+const email = organization.contact.email;
+const nmraStandards = 'https://www.nmra.org/index-nmra-standards-and-recommended-practices';
+
+// NMRA RP-20.1: 1.5 oz plus 0.75 oz per inch of car body length.
+const weights = [4, 6, 8, 10, 12, 14].map((inches) => {
+  const oz = 1.5 + 0.75 * inches;
+  return { inches, oz, grams: Math.round(oz * 28.35) };
+});
+---
+
+<BaseLayout
+  title="On3 Check Gauge | N.C.N.G. Model Railroad"
+  description="How to use the club's printed On3 check gauge for track gauge, wheel spacing, and coupler height."
+>
+  <section class="page-container section">
+    <SectionHeader
+      as="h1"
+      eyebrow="On3 check gauge"
+      title="Using the printed On3 gauge"
+      description="A small printed card that checks On3 track gauge, wheel back-to-back spacing, and coupler height."
+    />
+
+    <div class="max-w-3xl space-y-5 text-gray-700 leading-relaxed">
+      <p>
+        The card uses symbols instead of instructions. Every check uses the same two:
+      </p>
+      <ul class="space-y-3">
+        <li class="flex gap-3">
+          <Icon name="solar:check-circle-bold" class="w-6 h-6 shrink-0 mt-0.5 text-primary" aria-hidden="true" />
+          <span><strong>Check mark:</strong> this part should fit.</span>
+        </li>
+        <li class="flex gap-3">
+          <Icon name="solar:close-circle-bold" class="w-6 h-6 shrink-0 mt-0.5 text-primary" aria-hidden="true" />
+          <span>
+            <strong>Cross, with a small V-notch cut in the part:</strong> this
+            part should <em>not</em> fit. If it does, the track or wheels are too wide.
+          </span>
+        </li>
+      </ul>
+      <p>
+        Tip: to make the marks easier to see, run the side of a permanent marker
+        lightly across the face of the card. The ink catches only the raised marks.
+      </p>
+
+      <h2 class="text-2xl mt-10">Track gauge</h2>
+      <p>The two tabs on the bottom edge check the distance between the rails.</p>
+      <ol class="list-decimal pl-6 space-y-2">
+        <li>
+          Stand the card across the track with the check-mark tab between the
+          rails. It should drop in and the card should sit on both rail heads.
+          If it will not drop in, the track is too narrow.
+        </li>
+        <li>
+          Move the card so the cross tab is over the rails. It should rest on
+          top of the rails. If it drops between them, the track is too wide.
+        </li>
+      </ol>
+      <p>Check curves, turnouts, and rail joints, where gauge most often drifts.</p>
+
+      <h2 class="text-2xl mt-10">Wheel spacing (back-to-back)</h2>
+      <p>
+        The two fingers on the top edge check the distance between the backs
+        of the wheels on an axle.
+      </p>
+      <ol class="list-decimal pl-6 space-y-2">
+        <li>
+          Hold the car upside down. The check-mark finger should slip between
+          the wheels. If it will not, the wheels are too close together.
+        </li>
+        <li>
+          The cross finger should not slip between the wheels. If it does, the
+          wheels are too far apart.
+        </li>
+      </ol>
+
+      <h2 class="text-2xl mt-10">Coupler height</h2>
+      <ol class="list-decimal pl-6 space-y-2">
+        <li>
+          Slide the card into its stand and set the stand on straight, level
+          track. The arrow points at a thin window.
+        </li>
+        <li>
+          Roll the car up to the card. The center of the coupler knuckle should
+          line up inside the window. Above or below the window means the coupler
+          needs adjusting.
+        </li>
+      </ol>
+      <p>The card is light, so steady it with a fingertip while you check.</p>
+
+      <h2 class="text-2xl mt-10">Car weight</h2>
+      <p>
+        The NMRA recommends 1.5 ounces plus 0.75 ounce for each inch of car
+        body length. Weigh the car on a kitchen scale.
+      </p>
+      <div class="overflow-x-auto">
+        <table class="w-full max-w-md text-left border-collapse">
+          <caption class="sr-only">Recommended On3 car weight by body length</caption>
+          <thead>
+            <tr class="border-b border-gray-300">
+              <th scope="col" class="py-2 pr-4 font-semibold">Body length</th>
+              <th scope="col" class="py-2 pr-4 font-semibold">Ounces</th>
+              <th scope="col" class="py-2 font-semibold">Grams</th>
+            </tr>
+          </thead>
+          <tbody>
+            {weights.map((w) => (
+              <tr class="border-b border-gray-200">
+                <td class="py-2 pr-4">{w.inches} in</td>
+                <td class="py-2 pr-4">{w.oz} oz</td>
+                <td class="py-2">{w.grams} g</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+
+      <h2 class="text-2xl mt-10">What the card measures</h2>
+      <ul class="list-disc pl-6 space-y-2">
+        <li>Track gauge: 19.05 mm minimum, 19.41 mm maximum (NMRA S-3.2).</li>
+        <li>Wheel back-to-back: 16.92 mm minimum, 17.12 mm maximum (NMRA S-4.2).</li>
+        <li>Coupler height: 13.51 to 15.09 mm from the top of the rail to the knuckle center (NMRA S-2).</li>
+      </ul>
+      <p>
+        This is a printed club tool, not a certified NMRA gauge. Printers vary
+        by a tenth of a millimeter or more, so treat a borderline result as a
+        reason to check again with a metal gauge or calipers. Read the full
+        standards on the
+        <a href={nmraStandards} class="text-primary underline">NMRA standards page</a>.
+      </p>
+
+      <h2 class="text-2xl mt-10">Questions</h2>
+      <p>
+        Email
+        <a href={`mailto:${email}`} class="text-primary underline">{email}</a>
+        if something on the card is unclear or a check gives a result you do
+        not expect.
+      </p>
+    </div>
+  </section>
+</BaseLayout>

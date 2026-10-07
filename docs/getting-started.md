@@ -10,7 +10,7 @@ This is the source code for the N.C.N.G. Historical Model Railroad website. The 
 
 **[ncngmodelrailroad.org](https://ncngmodelrailroad.org/)**
 
-Think of this repository (repo) like a folder on a shared computer. It contains all the text, images, and code that make up the website. When someone makes a change here and saves it, the website automatically updates.
+Think of this repository (repo) like a folder on a shared computer. It contains all the text, images, and code that make up the website. After a proposed change is checked and merged into `main`, GitHub rebuilds and publishes the site.
 
 ---
 
@@ -39,14 +39,20 @@ The website has these main pages:
 
 You don't need to know how to code to get something changed on the site. Here's what to do:
 
-### Option 1: Edit it yourself with Pages CMS (easiest)
+### Option 1: Propose an edit on GitHub
 
-[Pages CMS](https://app.pagescms.org/djdefi/ncngmodelrailroad.org) is a simple web editor that lets you update events, board members, gallery photos, and engine roster — no coding needed. Just log in with your GitHub account.
+Follow the [step-by-step editing guide](../CONTRIBUTING.md#editing-content-no-coding-required).
+You edit in your browser and submit a pull request so the webmaster can review
+and publish the change.
 
 > **Need access?** See [Getting Access](../CONTRIBUTING.md#getting-access) to request collaborator access.
 
+Site admins can use [Pages CMS](https://app.pagescms.org/ncngmodelrailroad/ncngmodelrailroad.org)
+for form-based editing. It defaults to saving to protected `main`; other
+volunteers should use the GitHub steps above.
+
 ### Option 2: Email the webmaster
-Send an email to **info@ncngmodelrailroad.org** with what you'd like changed. Be specific:
+Use the [Contact page](https://ncngmodelrailroad.org/contact/) to email what you'd like changed. Be specific:
 - "Please update a board member's role to Member at Large"
 - "Can we add photos from the June open house?"
 - "The Christmas Fair date should be November 27-29"
@@ -66,10 +72,11 @@ If you have a GitHub account, you can open an issue directly:
 Here's the simple version of how it works:
 
 ```
-Someone edits a file  →  Saves it to GitHub  →  Site auto-rebuilds  →  Live in ~2 minutes
+Propose a change -> Checks pass -> Webmaster merges it -> GitHub builds and publishes
 ```
 
-That's it. There's no separate "publish" step. Push to `main` and it goes live.
+Submitting a pull request does not publish it. Deployment starts after the change
+reaches `main`; the live site updates when deployment succeeds.
 
 ---
 
@@ -79,10 +86,10 @@ That's it. There's no separate "publish" step. Push to `main` and it goes live.
 A: Not easily. GitHub keeps a full history of every change. Anything can be undone.
 
 **Q: Who can make changes?**
-A: Anyone with collaborator access to the GitHub repository. See the [Contributing Guide](../CONTRIBUTING.md#getting-access) for how to request access.
+A: Collaborators can propose edits. The webmaster reviews and merges them. See the [Contributing Guide](../CONTRIBUTING.md#getting-access) for how to request access.
 
 **Q: How do I get access?**
-A: Email info@ncngmodelrailroad.org to be added as a collaborator.
+A: Follow [Getting access](../CONTRIBUTING.md#getting-access). Include your GitHub username and what you'd like to help with.
 
 **Q: Is the site free to host?**
 A: Yes. GitHub Pages hosting is free for public repositories.
@@ -95,7 +102,7 @@ A: In the `public/images/` folder in this repository. They're served directly �
 ## Next steps
 
 Ready to make changes yourself? Move on to:
-- [Pages CMS](https://app.pagescms.org/djdefi/ncngmodelrailroad.org) — The quickest way to update content (no coding needed)
+- [Contributing](../CONTRIBUTING.md#editing-content-no-coding-required) - Propose an edit in your browser
 - [Editing Content](editing-content.md) — How to update events, board members, and photos by editing files
 - [Development Guide](development.md) — How to run the site on your own computer
 - [Support](../SUPPORT.md) — Where to get help

@@ -1,0 +1,325 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Button from '../components/Button.astro';
+import { Icon } from 'astro-icon/components';
+import { organization } from '../config/organization';
+
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+
+const volunteerNeeds = [
+  {
+    icon: 'solar:ticket-bold',
+    title: 'Event admission for volunteers',
+    desc: 'Complimentary event admission for the volunteers who staff the layout during your event.',
+  },
+  {
+    icon: 'solar:map-arrow-square-bold',
+    title: 'Volunteer parking access',
+    desc: 'Parking close enough to allow setup, shift changes, and a safe end-of-day departure.',
+  },
+];
+
+const visitorNeeds = [
+  {
+    icon: 'solar:map-point-bold',
+    title: 'Inside the event footprint',
+    desc: 'Our building kept within the active event footprint, so attendees can find and reach us rather than being cordoned off from the flow of the event.',
+  },
+  {
+    icon: 'solar:hand-heart-bold',
+    title: 'A modest suggested donation',
+    desc: 'Permission to accept a small suggested donation toward upkeep from visitors who wish to give.',
+  },
+];
+
+const howWeOperate = [
+  'We staff the layout with trained volunteers during posted hours.',
+  'We follow the applicable Fairgrounds and event safety, setup, and cleanup requirements.',
+  'We keep the space family-friendly and welcoming to all ages.',
+];
+
+const mutualBenefits = [
+  'A family-friendly attraction that adds value and dwell time to your event.',
+  'A tie to local heritage that draws train enthusiasts, families, and history lovers.',
+  'Community goodwill and cross-promotion between your event and our historical group.',
+];
+---
+
+<BaseLayout
+  title="For Event Organizers | N.C.N.G. Model Railroad"
+  description={`What the N.C.N.G. Historical Model Railroad needs to open our layout to the public during your event at the ${organization.location.venue}.`}
+>
+  <!-- Hero -->
+  <section class="py-20 bg-primary text-white">
+    <div class="container">
+      <div class="max-w-3xl mx-auto text-center">
+        <span class="text-sm uppercase tracking-widest text-gray-200 font-medium">For Event Organizers</span>
+        <h1 class="text-4xl md:text-5xl font-bold mt-4 mb-6">
+          Open the Layout for Your Event
+        </h1>
+        <p class="text-xl text-gray-200 mb-4">
+          What we need to open our layout to the public during an event at the {organization.location.venue}.
+        </p>
+        <div class="inline-flex items-center gap-2 bg-white/10 px-4 py-2 rounded-full text-sm">
+          <Icon name="solar:buildings-bold" class="w-5 h-5" />
+          <span>A permanent volunteer-run display at the {organization.location.venue}</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Intro -->
+  <section class="py-16 bg-white">
+    <div class="container max-w-4xl">
+      <div class="prose prose-lg max-w-none mb-12 print:hidden">
+        <p>
+          The {organization.fullName} is an all-volunteer group founded in {organization.founded} to
+          preserve local rail history. Our layout is a permanent display at the
+          {organization.location.venue}, and we are glad to open it to the public during fairgrounds
+          events. If you are organizing an event here and would like the layout open, a few basic
+          needs help make that possible.
+        </p>
+      </div>
+
+      <!-- Needs -->
+      <div class="grid md:grid-cols-2 gap-8 mb-14">
+        <div class="bg-gray-50 p-8 rounded-2xl border border-gray-200">
+          <div class="flex items-center gap-3 mb-5">
+            <Icon name="solar:users-group-rounded-bold" class="w-8 h-8 text-primary" />
+            <h2 class="text-xl font-bold">For our volunteers</h2>
+          </div>
+          <ul class="space-y-5">
+            {volunteerNeeds.map(need => (
+              <li class="flex items-start gap-3">
+                <Icon name={need.icon} class="w-6 h-6 text-primary flex-shrink-0 mt-0.5" />
+                <div>
+                  <strong class="block">{need.title}</strong>
+                  <p class="text-gray-600 text-sm mt-1">{need.desc}</p>
+                </div>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <div class="bg-gray-50 p-8 rounded-2xl border border-gray-200">
+          <div class="flex items-center gap-3 mb-5">
+            <Icon name="solar:heart-bold" class="w-8 h-8 text-primary" />
+            <h2 class="text-xl font-bold">For our visitors</h2>
+          </div>
+          <ul class="space-y-5">
+            {visitorNeeds.map(need => (
+              <li class="flex items-start gap-3">
+                <Icon name={need.icon} class="w-6 h-6 text-primary flex-shrink-0 mt-0.5" />
+                <div>
+                  <strong class="block">{need.title}</strong>
+                  <p class="text-gray-600 text-sm mt-1">{need.desc}</p>
+                </div>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+
+      <!-- How we operate + Mutual benefits -->
+      <div class="grid md:grid-cols-2 gap-8">
+        <div class="bg-amber-50 border-l-4 border-primary p-6 rounded-r-lg">
+          <h2 class="text-xl font-bold text-primary mb-4 flex items-center gap-2">
+            <Icon name="solar:shield-check-bold" class="w-6 h-6" /> How we operate
+          </h2>
+          <ul class="space-y-3">
+            {howWeOperate.map(item => (
+              <li class="flex items-start gap-3 text-gray-700">
+                <Icon name="solar:check-circle-bold" class="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
+                <span>{item}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <div class="bg-amber-50 border-l-4 border-primary p-6 rounded-r-lg">
+          <h2 class="text-xl font-bold text-primary mb-4 flex items-center gap-2">
+            <Icon name="solar:medal-star-bold" class="w-6 h-6" /> Mutual benefits
+          </h2>
+          <ul class="space-y-3">
+            {mutualBenefits.map(item => (
+              <li class="flex items-start gap-3 text-gray-700">
+                <Icon name="solar:check-circle-bold" class="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
+                <span>{item}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact CTA -->
+  <section class="py-16 bg-gray-900 text-white">
+    <div class="container max-w-2xl text-center">
+      <h2 class="text-3xl font-bold mb-4">Interested in having us open?</h2>
+      <p class="text-gray-300 mb-8">
+        Get in touch and we will talk through dates, hours, and details for your event.
+        Dates and hours depend on volunteer availability and advance coordination.
+      </p>
+      <div class="flex flex-col sm:flex-row justify-center items-center gap-4 print:hidden">
+        <Button href={`mailto:${organization.contact.email}`} variant="primary">
+          <Icon name="solar:letter-bold" class="w-5 h-5" />
+          {organization.contact.email}
+        </Button>
+        <Button href={organization.contact.phoneHref} variant="white">
+          <Icon name="solar:phone-bold" class="w-5 h-5" />
+          {organization.contact.phone}
+        </Button>
+      </div>
+      <div class="hidden print:block mx-auto max-w-md text-left space-y-1">
+        <p><strong>Email:</strong> {organization.contact.email}</p>
+        <p><strong>Phone:</strong> {organization.contact.phone}</p>
+        <p><strong>Online:</strong> ncngmodelrailroad.org/for-event-organizers</p>
+      </div>
+      <div class="mt-8 print:hidden">
+        <button
+          id="print-one-pager"
+          type="button"
+          class="inline-flex items-center gap-2 text-sm font-semibold text-gray-300 hover:text-white transition-colors"
+        >
+          <Icon name="solar:printer-bold" class="w-5 h-5" />
+          Print this page or save as PDF
+        </button>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style is:global>
+  @media print {
+    header[role='banner'],
+    footer[role='contentinfo'] {
+      display: none !important;
+    }
+    /* Force a light, readable page for print regardless of the visitor's
+       color scheme. The `html` prefix raises specificity above the dark-mode
+       overrides in global.css so these win no matter the source order. */
+    html,
+    body {
+      background: #ffffff !important;
+    }
+    /* Reset the themed text-color variables so inherited text and prose
+       (which read var(--color-text)) render dark even when the visitor's OS
+       is in dark mode. This leaves accent colors like .text-primary intact. */
+    :root {
+      --color-text: #111827 !important;
+      --color-text-muted: #374151 !important;
+      --color-primary: #8A1F17 !important;
+      --color-primary-rgb: 138, 31, 23 !important;
+      --color-primary-light: #8A1F17 !important;
+    }
+    /* Make headings deterministic in print regardless of the OS colour scheme.
+       Dark mode recolours every heading to a light coral; force plain headings
+       dark and keep only the brand-red accent on .text-primary elements. */
+    html h1,
+    html h2,
+    html h3,
+    html h4,
+    html h5,
+    html h6,
+    html .eyebrow {
+      color: #111827 !important;
+    }
+    html .text-primary {
+      color: #8A1F17 !important;
+    }
+    html .bg-primary,
+    html .bg-gray-900,
+    html .bg-white,
+    html .bg-gray-50,
+    html .bg-gray-100,
+    html .bg-amber-50,
+    html .bg-cream {
+      background: #ffffff !important;
+    }
+    html .text-white,
+    html .text-gray-200,
+    html .text-gray-300,
+    html .text-gray-400,
+    html .text-gray-500,
+    html .text-gray-600,
+    html .text-gray-700,
+    html .text-gray-900 {
+      color: #111827 !important;
+    }
+    /* Compress spacing so the sheet stays close to a single page */
+    section {
+      padding-top: 0.25rem !important;
+      padding-bottom: 0.25rem !important;
+    }
+    .py-16,
+    .py-20 {
+      padding-top: 0.25rem !important;
+      padding-bottom: 0.25rem !important;
+    }
+    .p-8 {
+      padding: 0.6rem !important;
+    }
+    .p-6 {
+      padding: 0.5rem !important;
+    }
+    .mb-14 {
+      margin-bottom: 0.4rem !important;
+    }
+    .mb-12 {
+      margin-bottom: 0.45rem !important;
+    }
+    .mb-8 {
+      margin-bottom: 0.45rem !important;
+    }
+    .mb-5 {
+      margin-bottom: 0.25rem !important;
+    }
+    /* Tighten line-height and prose so the wrapped copy fits one page at
+       Letter/A4 paper width, where lines wrap more than on screen. */
+    p,
+    li,
+    span {
+      line-height: 1.2 !important;
+    }
+    .prose {
+      font-size: 0.9rem !important;
+      line-height: 1.2 !important;
+    }
+    .gap-8 {
+      gap: 1rem !important;
+    }
+    .mb-6 {
+      margin-bottom: 0.3rem !important;
+    }
+    .mb-4 {
+      margin-bottom: 0.3rem !important;
+    }
+    .mt-4 {
+      margin-top: 0.35rem !important;
+    }
+    .space-y-5 > :not(:last-child) {
+      margin-block-end: 0.4rem !important;
+    }
+    .space-y-3 > :not(:last-child) {
+      margin-block-end: 0.3rem !important;
+    }
+    h1 {
+      font-size: 1.45rem !important;
+    }
+    .text-3xl {
+      font-size: 1.2rem !important;
+    }
+    .text-xl {
+      font-size: 1rem !important;
+    }
+    .grid > div,
+    li {
+      break-inside: avoid;
+    }
+  }
+</style>
+
+<script>
+  document.getElementById('print-one-pager')?.addEventListener('click', () => window.print());
+</script>

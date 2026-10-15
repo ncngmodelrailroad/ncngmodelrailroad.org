@@ -1,0 +1,24 @@
+{
+  "name": "ncng-content-editor-worker",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Magic-link content editor: capability links and an admin UI that turn scoped edits into pull requests. See docs/design/content-editor.md.",
+  "type": "module",
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "dry-run": "wrangler deploy --dry-run --outdir dist"
+  },
+  "dependencies": {
+    "hono": "^4.6.14"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "^4.20241218.0",
+    "typescript": "^5.7.2",
+    "vitest": "^4.1.9",
+    "wrangler": "^4.40.0"
+  }
+}

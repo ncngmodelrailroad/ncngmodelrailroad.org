@@ -27,6 +27,18 @@ const weights = [4, 6, 8, 10, 12, 14].map((inches) => {
     />
 
     <div class="max-w-3xl space-y-5 text-gray-700 leading-relaxed">
+      <figure class="space-y-2">
+        <img
+          src="/images/on3-gauge/card-front.svg"
+          alt="The gauge card standing across two rails. Bottom edge: a check-mark tab that drops between the rails and a notched cross tab that must not. Top edge: a check-mark finger and a notched cross finger for wheels. Middle: two coupler ribs with an arrow, the letters ON3, and a QR code on the left."
+          width="720"
+          height="440"
+          loading="lazy"
+          decoding="async"
+          class="w-full h-auto rounded-lg border border-gray-200"
+        />
+        <figcaption class="text-sm text-gray-600">The card, seen from the marked face.</figcaption>
+      </figure>
       <p>
         The card uses symbols instead of instructions. Every check uses the same two:
       </p>
@@ -70,28 +82,43 @@ const weights = [4, 6, 8, 10, 12, 14].map((inches) => {
       </p>
       <ol class="list-decimal pl-6 space-y-2">
         <li>
-          Hold the car upside down. The check-mark finger should slip between
-          the wheels. If it will not, the wheels are too close together.
+          Turn the car upside down. Set the check-mark finger between the
+          wheels on one axle. It should slip in. If it will not, the wheels
+          are too close together.
         </li>
         <li>
           The cross finger should not slip between the wheels. If it does, the
           wheels are too far apart.
         </li>
       </ol>
+      <p>Use light pressure. Do not force either finger.</p>
 
       <h2 class="text-2xl mt-10">Coupler height</h2>
       <ol class="list-decimal pl-6 space-y-2">
         <li>
-          Slide the card into its stand and set the stand on straight, level
-          track. The arrow points at a thin window.
+          On straight, level track, stand the card across the rails with the
+          check-mark tab between them and the two ribs facing the car. Hold the
+          top edge lightly.
         </li>
+        <li>Roll the car up until the coupler knuckle touches the ribs.</li>
         <li>
-          Roll the car up to the card. The center of the coupler knuckle should
-          line up inside the window. Above or below the window means the coupler
-          needs adjusting.
+          Look from the side, with your eye at rail height. The middle of the
+          knuckle should sit between the two ribs. Above or below them means
+          the coupler needs adjusting.
         </li>
       </ol>
-      <p>The card is light, so steady it with a fingertip while you check.</p>
+      <figure class="space-y-2">
+        <img
+          src="/images/on3-gauge/coupler-side.svg"
+          alt="Side view of the coupler check. The card stands on the rail with two ribs facing the car. The coupler knuckle touches the ribs, and its center line sits between them."
+          width="420"
+          height="390"
+          loading="lazy"
+          decoding="async"
+          class="w-full max-w-sm h-auto rounded-lg border border-gray-200"
+        />
+        <figcaption class="text-sm text-gray-600">Coupler check, seen from the side.</figcaption>
+      </figure>
 
       <h2 class="text-2xl mt-10">Car weight</h2>
       <p>
@@ -126,6 +153,10 @@ const weights = [4, 6, 8, 10, 12, 14].map((inches) => {
         <li>Wheel back-to-back: 16.92 mm minimum, 17.12 mm maximum (NMRA S-4.2).</li>
         <li>Coupler height: 13.51 to 15.09 mm from the top of the rail to the knuckle center (NMRA S-2).</li>
       </ul>
+      <p>
+        The card does not check flange depth or the wheel check gauge. Use a
+        metal NMRA gauge for those.
+      </p>
       <p>
         This is a printed club tool, not a certified NMRA gauge. Printers vary
         by a tenth of a millimeter or more, so treat a borderline result as a

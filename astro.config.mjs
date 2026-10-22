@@ -22,6 +22,11 @@ export default defineConfig({
     plugins: [tailwindcss()],
   },
   output: 'static',
+  // The printed On3 gauge's QR code encodes /ON3 in capitals (it makes a
+  // smaller code), and GitHub Pages paths are case-sensitive.
+  redirects: {
+    '/ON3': '/on3-gauge',
+  },
   markdown: {
     // Strip unsafe raw HTML (scripts, inline event handlers, javascript: URLs)
     // from rendered Markdown. No site content uses raw HTML, so this only

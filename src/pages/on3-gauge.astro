@@ -16,21 +16,21 @@ const weights = [4, 6, 8, 10, 12, 14].map((inches) => {
 
 <BaseLayout
   title="On3 Check Gauge | N.C.N.G. Model Railroad"
-  description="How to use the club's printed On3 check gauge for track gauge, wheel spacing, and coupler height."
+  description="How to use the club's printed On3 check gauge for track gauge, wheel spacing, coupler height, and trip pin height."
 >
   <section class="page-container section">
     <SectionHeader
       as="h1"
       eyebrow="On3 check gauge"
       title="Using the printed On3 gauge"
-      description="A small printed card that checks On3 track gauge, wheel back-to-back spacing, and coupler height."
+      description="A small printed card that checks On3 track gauge, wheel back-to-back spacing, coupler height, and trip pin height."
     />
 
     <div class="max-w-3xl space-y-5 text-gray-700 leading-relaxed">
       <figure class="space-y-2">
         <img
           src="/images/on3-gauge/card-front.svg"
-          alt="The gauge card standing across two rails. Bottom edge: a check-mark tab that drops between the rails and a notched cross tab that must not. Top edge: a check-mark finger and a notched cross finger for wheels. Middle: two coupler ribs with an arrow, the letters ON3, and a QR code on the left."
+          alt="The gauge card standing across two rails. Bottom edge: a check-mark tab that drops between the rails and a notched cross tab that must not. Top edge: a check-mark finger and a notched cross finger for wheels. Middle: a pad with a Kadee coupler box under it, the letters ON3, and a QR code on the left. A low ledge sits between the rails."
           width="720"
           height="440"
           loading="lazy"
@@ -93,29 +93,38 @@ const weights = [4, 6, 8, 10, 12, 14].map((inches) => {
       </ol>
       <p>Use light pressure. Do not force either finger.</p>
 
-      <h2 class="text-2xl mt-10">Coupler height</h2>
+      <h2 class="text-2xl mt-10">Coupler and trip pin height</h2>
+      <p>
+        This check uses a real Kadee coupler as the reference. One-time setup:
+        screw a Kadee #803 coupler box under the pad with the screw that comes
+        in the pack, coupler pointing away from the card. Cut off that
+        coupler's trip pin.
+      </p>
       <ol class="list-decimal pl-6 space-y-2">
         <li>
           On straight, level track, stand the card across the rails with the
-          check-mark tab between them and the two ribs facing the car. Hold the
-          top edge lightly.
+          check-mark tab between them. Hold the top edge lightly.
         </li>
-        <li>Roll the car up until the coupler knuckle touches the ribs.</li>
+        <li>Roll the car in until its coupler closes with the card's coupler.</li>
         <li>
-          Look from the side, with your eye at rail height. The middle of the
-          knuckle should sit between the two ribs. Above or below them means
-          the coupler needs adjusting.
+          Look from the side, with your eye at coupler height. The two knuckles
+          should line up. If the car's knuckle sits higher or lower, the coupler
+          needs adjusting.
+        </li>
+        <li>
+          The car's trip pin should pass over the low ledge between the rails
+          without touching it. If it drags, bend the pin up.
         </li>
       </ol>
       <figure class="space-y-2">
         <img
           src="/images/on3-gauge/coupler-side.svg"
-          alt="Side view of the coupler check. The card stands on the rail with two ribs facing the car. The coupler knuckle touches the ribs, and its center line sits between them."
-          width="420"
-          height="390"
+          alt="Side view of the coupler check. The card stands on the rail with a Kadee coupler under its pad. The car's coupler closes with it at the same height, and the car's trip pin passes just over a low ledge on the rail."
+          width="720"
+          height="430"
           loading="lazy"
           decoding="async"
-          class="w-full max-w-sm h-auto rounded-lg border border-gray-200"
+          class="w-full h-auto rounded-lg border border-gray-200"
         />
         <figcaption class="text-sm text-gray-600">Coupler check, seen from the side.</figcaption>
       </figure>
@@ -151,11 +160,13 @@ const weights = [4, 6, 8, 10, 12, 14].map((inches) => {
       <ul class="list-disc pl-6 space-y-2">
         <li>Track gauge: 19.05 mm minimum, 19.41 mm maximum (NMRA S-3.2).</li>
         <li>Wheel back-to-back: 16.92 mm minimum, 17.12 mm maximum (NMRA S-4.2).</li>
-        <li>Coupler height: 13.51 to 15.09 mm from the top of the rail to the knuckle center (NMRA S-2).</li>
+        <li>Coupler height: matches a Kadee #803 mounted at 5/8 in, which puts the knuckle center 9/16 in above the rail.</li>
+        <li>Trip pin: at least 1/16 in above the rail.</li>
       </ul>
       <p>
-        The card does not check flange depth or the wheel check gauge. Use a
-        metal NMRA gauge for those.
+        The card does not check flange depth, the wheel check gauge, or
+        turnout flangeways. Those tolerances are too tight for a printed part.
+        Use a metal NMRA gauge for them.
       </p>
       <p>
         This is a printed club tool, not a certified NMRA gauge. Printers vary

@@ -1,12 +1,12 @@
 ---
 title: "Getting Your Hands Dirty: What Is Safe to Try"
-description: What is forgiving, what calls for care, and how to handle trains, stay safe, and prepare for your first volunteer work session with confidence.
+description: What you can try, when to ask first, how to handle trains, and how to prepare for your first volunteer work session.
 order: 2
 icon: solar:hand-heart-bold
 updatedDate: 2026-10-01
 ---
 
-Most beginner mistakes can be fixed, repainted, or rebuilt. A few cannot. This guide sorts the work into what to try, when to ask first, and what to leave alone without approval, so you can dive in with confidence.
+Most beginner mistakes can be fixed, repainted, or rebuilt. A few cannot. This guide sorts the work into what to try, when to ask first, and what to leave alone without approval.
 
 ## Try it, ask first, or leave it alone
 

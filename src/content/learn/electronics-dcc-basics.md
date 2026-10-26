@@ -1,6 +1,6 @@
 ---
 title: Electronics and DCC Basics
-description: A plain guide to multimeters, soldering, DCC, LED lighting, and electrical safety, so you can work on model railroad wiring with confidence.
+description: A plain guide to multimeters, soldering, DCC, LED lighting, and electrical safety for model railroad wiring.
 order: 13
 icon: solar:plug-circle-bold
 updatedDate: 2026-10-01

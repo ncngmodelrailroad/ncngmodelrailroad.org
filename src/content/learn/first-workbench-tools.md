@@ -1,6 +1,6 @@
 ---
 title: Your First Workbench
-description: The hand tools, glues, and simple safety habits that let you start building models with confidence, plus checklists for what to get now and what can wait.
+description: The hand tools, glues, and simple safety habits for building your first models, plus checklists for what to get now and what can wait.
 order: 10
 icon: solar:ruler-cross-pen-bold
 updatedDate: 2026-10-01

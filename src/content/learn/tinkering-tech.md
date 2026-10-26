@@ -103,5 +103,5 @@ Prices are rough US ranges from when this guide was last updated (2026) and will
 ## Keep exploring
 
 - [Electronics and DCC Basics](/learn/electronics-dcc-basics): wiring, power, and how DCC works
-- [Getting Your Hands Dirty](/learn/getting-your-hands-dirty): what is safe to try, and how to recover
+- [Getting Your Hands Dirty](/learn/getting-your-hands-dirty): what to try, when to ask first, and what to leave alone
 - [Further reading: DCC-EX](https://dcc-ex.com): an open-source project that builds a DCC command station from Arduino or ESP32 boards

@@ -123,7 +123,7 @@ You do not need to buy a tool kit before volunteering. The layout has shared too
 
 Prices are rough US ranges from when this guide was last updated (2026) and will drift. Use them for budgeting, not shopping.
 
-The bare minimum comes to about $50 to $70:
+The bare minimum comes to about $60 to $110:
 
 - Plaster cloth (about $10 a roll) and foam scraps or newspaper
 - Flat earth-tone latex or acrylic paint and a cheap wide brush
@@ -142,6 +142,6 @@ Optional upgrades:
 
 ## Keep exploring
 
-- [Getting your hands dirty](/learn/getting-your-hands-dirty): starting hands-on work with confidence
+- [Getting your hands dirty](/learn/getting-your-hands-dirty): what to try, when to ask first, and how to prepare for a work session
 - [Painting and weathering](/learn/painting-weathering): color and wear for models and scenery
 - [Glossary of terms](/learn/glossary): plain-English definitions for the words above

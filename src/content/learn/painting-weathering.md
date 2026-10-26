@@ -86,7 +86,7 @@ An **airbrush** is a small paint sprayer powered by an air compressor. It gives 
 
 Prices are rough US ranges from when this guide was last updated (2026) and will drift. Use them for budgeting, not shopping.
 
-**Start with brushes,** roughly $40 to $60 in all:
+**Start with brushes.** Brushes, primer, and four paints run roughly $35 to $55, and the supplies add roughly $40 to $60:
 
 - **Brushes:** synthetic bristles that hold a sharp point. A three-brush set runs about $12 to $20.
 - **Primer:** light gray, labeled for your model's material, about $8 to $15.

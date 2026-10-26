@@ -88,7 +88,7 @@ For layout work, ask what shared tools are available first. Prices are rough US 
 
 ### Basic soldering kit
 
-About $90 to $160 with a compact iron, assuming you already own a suitable power adapter, or about $180 to $250 with a bench station.
+About $120 to $210 with a compact iron, assuming you already own a suitable power adapter, or about $210 to $300 with a bench station. Fume extraction is extra.
 
 - **Safety glasses** marked ANSI Z87.1.
 - **Digital multimeter** (about $20 to $35). Look for autoranging, a continuity beeper, fused inputs, a CAT II or CAT III rating, and an independent certification mark such as UL, ETL, CSA, or TÜV.

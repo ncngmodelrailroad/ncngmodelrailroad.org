@@ -104,7 +104,7 @@ Specialized and family options cover a wide spread: a powered LEGO train set run
 ## Keep exploring
 
 - [Electronics and DCC basics](/learn/electronics-dcc-basics) explains decoders and command stations.
-- [First workbench tools](/learn/first-workbench-tools) covers what you need to service your trains.
-- [Getting your hands dirty](/learn/getting-your-hands-dirty) helps you start building.
+- [First workbench tools](/learn/first-workbench-tools) covers the hand tools and glues for building and repairing models.
+- [Getting your hands dirty](/learn/getting-your-hands-dirty) covers what is safe to try when you volunteer.
 
 The [glossary](/learn/glossary) explains any term that trips you up.

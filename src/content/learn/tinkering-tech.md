@@ -45,7 +45,7 @@ With the WiThrottle server running, throttle apps connect over Wi-Fi. For exampl
 
 ### How our layout does it
 
-Our layout runs on JMRI. A computer connects to the DCC system over USB, and JMRI's WiThrottle server lets members drive trains with the Engine Driver app on a pair of Android tablets.
+Our layout runs on JMRI. A computer connects to the DCC system over USB, and JMRI's WiThrottle server lets members drive trains with the Engine Driver app on Android tablets.
 
 ## A first microcontroller project: a crossing light
 

@@ -64,7 +64,7 @@ Most layouts run a pair of heavy **bus wires** under the benchwork, with short, 
 - **Throttle or cab.** The controller you drive with: tethered, radio, or a phone app.
 - **Decoder.** A small circuit board inside the locomotive that controls the motor, lights, and sound. Each decoder has an **address**, often the road number.
 - **Consist.** Two or more locomotives set to run together as one unit.
-- **Programming track.** The track or output used to set a decoder's address and settings. The Power Cab at our workbench has a single track output. Service-mode programming from that output can affect every decoder connected to it, so connect only the intended locomotive.
+- **Programming track.** The track or output used to set a decoder's address and settings. Those settings are stored as numbered **CVs** (configuration variables), such as acceleration and top speed. The Power Cab at our workbench has a single track output. Service-mode programming from that output can affect every decoder connected to it, so connect only the intended locomotive.
 - **Power districts and circuit breakers.** Larger layouts often split the track into districts, each with its own breaker, so a short shuts down only one district. Breaker testing belongs to whoever maintains the layout's power districts.
 
 Equipment that follows NMRA DCC standards generally works together for basic functions across makers such as NCE, Digitrax, and ESU. Throttles and control networks are usually brand-specific.
@@ -72,7 +72,7 @@ Equipment that follows NMRA DCC standards generally works together for basic fun
 At our layout:
 
 - **The workbench** has an NCE Power Cab, a compact system that combines throttle, command station, and booster.
-- **On the layout**, members run trains with the Engine Driver app on a pair of Android tablets. The tablets connect over Wi-Fi to JMRI, free software on a computer that links to the layout's DCC system by USB.
+- **On the layout**, members run trains with the Engine Driver app on Android tablets. The tablets connect over Wi-Fi to JMRI, free software on a computer that links to the layout's DCC system by USB.
 
 Personal throttles and decoders may not be compatible, so ask before connecting your own equipment to the layout.
 

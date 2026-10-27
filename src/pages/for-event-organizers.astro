@@ -4,8 +4,6 @@ import Button from '../components/Button.astro';
 import { Icon } from 'astro-icon/components';
 import { organization } from '../config/organization';
 
-const base = import.meta.env.BASE_URL.replace(/\/$/, '');
-
 const volunteerNeeds = [
   {
     icon: 'solar:ticket-bold',
@@ -39,7 +37,7 @@ const howWeOperate = [
 ];
 
 const mutualBenefits = [
-  'A family-friendly attraction that adds value and dwell time to your event.',
+  'A family-friendly attraction that keeps people at your event longer.',
   'A tie to local heritage that draws train enthusiasts, families, and history lovers.',
   'Community goodwill and cross-promotion between your event and our historical group.',
 ];
@@ -51,7 +49,7 @@ const mutualBenefits = [
 >
   <!-- Hero -->
   <section class="py-20 bg-primary text-white">
-    <div class="container">
+    <div class="page-container">
       <div class="max-w-3xl mx-auto text-center">
         <span class="text-sm uppercase tracking-widest text-gray-200 font-medium">For Event Organizers</span>
         <h1 class="text-4xl md:text-5xl font-bold mt-4 mb-6">
@@ -70,7 +68,7 @@ const mutualBenefits = [
 
   <!-- Intro -->
   <section class="py-16 bg-white">
-    <div class="container max-w-4xl">
+    <div class="page-container max-w-4xl">
       <div class="prose prose-lg max-w-none mb-12 print:hidden">
         <p>
           The {organization.fullName} is an all-volunteer group founded in {organization.founded} to
@@ -122,7 +120,7 @@ const mutualBenefits = [
 
       <!-- How we operate + Mutual benefits -->
       <div class="grid md:grid-cols-2 gap-8">
-        <div class="bg-amber-50 border-l-4 border-primary p-6 rounded-r-lg">
+        <div class="bg-gray-50 p-6 rounded-2xl border border-gray-200">
           <h2 class="text-xl font-bold text-primary mb-4 flex items-center gap-2">
             <Icon name="solar:shield-check-bold" class="w-6 h-6" /> How we operate
           </h2>
@@ -136,7 +134,7 @@ const mutualBenefits = [
           </ul>
         </div>
 
-        <div class="bg-amber-50 border-l-4 border-primary p-6 rounded-r-lg">
+        <div class="bg-gray-50 p-6 rounded-2xl border border-gray-200">
           <h2 class="text-xl font-bold text-primary mb-4 flex items-center gap-2">
             <Icon name="solar:medal-star-bold" class="w-6 h-6" /> Mutual benefits
           </h2>
@@ -155,7 +153,7 @@ const mutualBenefits = [
 
   <!-- Contact CTA -->
   <section class="py-16 bg-gray-900 text-white">
-    <div class="container max-w-2xl text-center">
+    <div class="page-container max-w-2xl text-center">
       <h2 class="text-3xl font-bold mb-4">Interested in having us open?</h2>
       <p class="text-gray-300 mb-8">
         Get in touch and we will talk through dates, hours, and details for your event.

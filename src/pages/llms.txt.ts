@@ -54,6 +54,7 @@ ${Object.values(contentFeeds).map((feed) => `- [${feed.name}](${url(feed.path)})
 - [Home](${url('/')}): Overview of the layout and links to visitor information.
 - [Events](${url('/events')}): Published public events and layout visiting hours.
 - [Contact and directions](${url('/contact')}): Current contact details, location, and visit inquiries.
+- [For event organizers](${url('/for-event-organizers')}): What the volunteers need to open the layout during an event at the fairgrounds.
 
 ## History and learning
 

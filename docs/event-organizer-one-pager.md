@@ -32,7 +32,7 @@ like the layout open, a few basic needs help make that possible.
 
 ## Mutual benefits
 
-- A family-friendly attraction that adds value and dwell time to your event.
+- A family-friendly attraction that keeps people at your event longer.
 - A tie to local heritage that draws train enthusiasts, families, and history
   lovers.
 - Community goodwill and cross-promotion between your event and our historical

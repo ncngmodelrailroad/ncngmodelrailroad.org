@@ -26,11 +26,19 @@ content:
         type: string
         required: true
       - name: date
-        label: Event Date
+        label: Host Event Start Date
         type: date
         required: true
       - name: endDate
-        label: End Date (optional)
+        label: Host Event End Date (optional)
+        type: date
+      - name: layoutStartDate
+        label: Confirmed Layout Opening Date (optional)
+        description: Leave blank until the layout opening days are confirmed. This is separate from the host event schedule.
+        type: date
+      - name: layoutEndDate
+        label: Confirmed Layout Last Open Date (optional)
+        description: Use for consecutive opening days. Leave blank for a single-day opening. Put hours in Details, or mark them TBA.
         type: date
       - name: location
         label: Location
@@ -40,7 +48,7 @@ content:
         label: Short Description
         type: text
       - name: featured
-        label: Featured on Homepage
+        label: Featured on Events Page
         type: boolean
       - name: body
         label: Details
@@ -85,7 +93,7 @@ content:
     path: src/content/gallery
     view:
       primary: title
-      fields: [title, category]
+      fields: [title, category, area]
     fields:
       - name: title
         label: Alt Text / Title
@@ -109,9 +117,13 @@ content:
             - Layout
             - "Volunteer Work"
             - "Fairgrounds & Events"
+      - name: area
+        label: Layout Area (optional)
+        type: string
+        description: "Use a confirmed model-layout area name, matching other photos of that area. Leave blank if unknown or not applicable."
 
   - name: trains
-    label: Engine Roster
+    label: Historical Locomotive Roster
     type: collection
     path: src/content/trains
     filename: "engine-{fields.order}.md"
@@ -136,7 +148,7 @@ content:
         required: true
         description: "e.g. 4-4-0, 2-6-0"
       - name: source
-        label: Builder / Previous Owner
+        label: Builder / Previous Railroad
         type: string
       - name: rosterEntry
         label: Roster Note

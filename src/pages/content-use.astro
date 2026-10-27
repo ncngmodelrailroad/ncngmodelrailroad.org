@@ -1,0 +1,61 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import SectionHeader from '../components/SectionHeader.astro';
+import { contentUse } from '../config/contentUse';
+import { dataCatalogPath } from '../config/data';
+import { organization } from '../config/organization';
+
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+---
+
+<BaseLayout
+  title={`${contentUse.title} | ${organization.name}`}
+  description={contentUse.summary}
+>
+  <section class="page-container section">
+    <div class="max-w-3xl">
+      <SectionHeader
+        as="h1"
+        title={contentUse.title}
+        description="A welcome to readers, researchers, developers, and automated tools."
+      />
+
+      <div class="prose max-w-none">
+        <p>{contentUse.summary}</p>
+
+        {contentUse.requests.map((request) => (
+          <>
+            <h2 id={request.id}>{request.title}</h2>
+            <p>{request.text}</p>
+          </>
+        ))}
+
+        <h2 id="support">{contentUse.support.title}</h2>
+        <p>{contentUse.support.text}</p>
+        <ul>
+          {contentUse.support.links.map((link) => (
+            <li><a href={`${base}${link.path}`}>{link.label}</a></li>
+          ))}
+        </ul>
+
+        <h2 id="downloads">Resources for automated tools</h2>
+        <p>
+          Start with the <a href={`${base}/llms.txt`}>AI site guide</a> or
+          the <a href={`${base}${dataCatalogPath}`}>JSON data catalog</a>.
+          The catalog describes available downloads, their fields, sources,
+          and limitations. Read <a href={`${base}/robots.txt`}>robots.txt</a>
+          for crawler access rules.
+        </p>
+
+        <h2 id="permissions">{contentUse.rights.title}</h2>
+        <p>{contentUse.rights.text}</p>
+        <p>
+          For corrections, credit questions, or questions about our own
+          content, <a href={`${base}/contact`}>contact us</a> or email
+          <a href={`mailto:${organization.contact.email}`}>{organization.contact.email}</a>.
+          For third-party material, consult the original source.
+        </p>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

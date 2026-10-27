@@ -52,7 +52,7 @@ src/
 │   ├── board-members.astro # Board of directors
 │   ├── donate.astro      # Get Involved (donate / support)
 │   ├── volunteer.astro   # Volunteer signup
-│   ├── contact.astro     # Contact form
+│   ├── contact.astro     # Contact details and location
 │   ├── links.astro       # External resources
 │   └── 404.astro         # Not found page
 ├── styles/
@@ -80,7 +80,7 @@ New here? Start with the guide that matches your comfort level:
 
 - **[Astro](https://astro.build/)** — Static site generator (zero JS shipped by default)
 - **[Tailwind CSS](https://tailwindcss.com/)** — Utility-first styling
-- **[Iconify Solar](https://icon-sets.iconify.design/solar/)** — Icon set via `astro-icon`
+- **[Iconify Solar](https://icon-sets.iconify.design/solar/)** — Icon set via `astro-icon`, with [Simple Icons](https://icon-sets.iconify.design/simple-icons/) for brand marks
 - **Deployed to** GitHub Pages (auto-deploys on push to `main`)
 
 ## License

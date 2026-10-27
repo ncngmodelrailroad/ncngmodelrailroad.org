@@ -1,6 +1,6 @@
 ---
-title: "Model railroad town scene with period buildings"
+title: "Visitors looking at the model railroad"
 image: gallery-DSC07773.jpg
-caption: "Period-accurate town buildings and scenery"
-category: Layout
+caption: "Visitors beside the model railroad, with town scenery and a painted mountain backdrop."
+category: Fairgrounds & Events
 ---

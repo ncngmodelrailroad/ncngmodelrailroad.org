@@ -1,7 +1,7 @@
 ---
 interface Props {
   href?: string;
-  variant?: 'primary' | 'outline' | 'white';
+  variant?: 'primary' | 'outline' | 'outline-inverse' | 'white';
   size?: 'sm' | 'md' | 'lg';
   class?: string;
   type?: 'button' | 'submit';
@@ -21,7 +21,8 @@ const baseStyles = 'inline-flex items-center justify-center gap-2 font-bold roun
 
 const variants = {
   primary: 'bg-[linear-gradient(135deg,var(--color-primary),var(--color-primary-dark))] text-white shadow-[0_12px_24px_color-mix(in_srgb,var(--color-primary)_20%,transparent)] hover:bg-[linear-gradient(135deg,var(--color-primary-dark),var(--color-primary))] hover:-translate-y-px focus:ring-primary',
-  outline: 'border-2 border-current bg-white/10 backdrop-blur hover:bg-current hover:text-white focus:ring-current',
+  outline: 'btn-outline focus:ring-current',
+  'outline-inverse': 'btn-outline-inverse backdrop-blur focus:ring-current',
   white: 'bg-white text-primary hover:bg-gray-100 focus:ring-white'
 };
 

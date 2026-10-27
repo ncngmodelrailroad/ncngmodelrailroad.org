@@ -1,0 +1,465 @@
+---
+import { organization } from '../../config/organization';
+import { dataCatalogPath, mapDatasets } from '../../config/data';
+---
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#101714">
+  <title>NCNGRR — The Narrow Gauge, Then & Now</title>
+  <meta name="description" content="An interactive historical map of the Nevada County Narrow Gauge Railroad over modern terrain and satellite imagery.">
+  <link rel="canonical" href="https://ncngmodelrailroad.org/map/">
+  <link rel="describedby" type="text/plain" href="/llms.txt">
+  <link rel="describedby" type="application/json" href={dataCatalogPath} title="Public data catalog">
+  {mapDatasets.map((dataset) => (
+    <link rel="alternate" type="application/geo+json" href={dataset.path} title={dataset.name}>
+  ))}
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="vendor/maplibre-gl/5.6.2/maplibre-gl.css"
+    integrity="sha256-Q8HYhrX98KrE5xNb1vhLgj2fSCg6ZIASZl+b5SwBOJ8=" crossorigin="anonymous">
+  <link rel="stylesheet" href="styles.min.css?v=e431a4e223d3fe54">
+  {organization.analytics?.cfBeaconToken && (
+    <script defer src="https://static.cloudflareinsights.com/beacon.min.js"
+      data-cf-beacon={`{"token":"${organization.analytics.cfBeaconToken}"}`}
+      is:inline></script>
+  )}
+  <!-- Keep entry controls with the cached HTML, independent of the shipped map bundle. -->
+  <style is:inline>
+    /* The historical overlay is at z-index 2; details must span both basemaps. */
+    #now-map .maplibregl-popup {
+      z-index: 3;
+    }
+
+    .brand,
+    .brand.collapsed {
+      width: min(380px, calc(100vw - 44px));
+      max-height: calc(100dvh - 94px);
+      overflow-y: auto;
+    }
+
+    .brand.collapsed {
+      display: block;
+      padding: 8px;
+      box-shadow: none;
+    }
+
+    .brand.collapsed h1 {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip-path: inset(50%);
+      white-space: nowrap;
+    }
+
+    .brand .brand-toggle {
+      position: static;
+    }
+
+    .map-entry-heading {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 6px;
+    }
+
+    .map-entry-title {
+      margin: 0;
+      font-size: 14px;
+      font-weight: 700;
+      line-height: 1.3;
+    }
+
+    .map-entry-return {
+      display: inline-flex;
+      align-items: center;
+      min-height: 44px;
+      max-width: 48%;
+      flex-shrink: 0;
+      color: var(--ink);
+      font-size: 12px;
+      line-height: 1.35;
+      text-underline-offset: 3px;
+    }
+
+    .map-entry-actions {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1.4fr) minmax(0, 1.2fr);
+      gap: 6px;
+      margin: 0;
+    }
+
+    .map-entry-actions .button,
+    .map-entry-actions .brand-toggle {
+      min-width: 0;
+      min-height: 44px;
+      padding: 8px;
+      white-space: normal;
+      text-align: center;
+      font-size: 13px;
+      font-weight: 600;
+    }
+
+    .brand .map-entry-help {
+      margin: 6px 0 16px;
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.4;
+    }
+
+    .brand.collapsed .map-entry-help {
+      margin-bottom: 0;
+    }
+
+    .map-entry-actions .search-open {
+      color: var(--ink);
+      background: var(--control);
+      border-color: var(--line);
+    }
+
+    .map-entry-actions .search-open:hover {
+      background: var(--control-hover);
+      border-color: var(--line);
+    }
+
+    .map-entry-actions .brand-toggle-icon {
+      display: none;
+    }
+
+    .map-entry-actions .brand-toggle-label {
+      margin: 0;
+      font: inherit;
+    }
+
+    .map-entry-tour {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      margin: 0;
+      padding: 0;
+      border: 0;
+      background: none;
+    }
+
+    .map-entry-tour .tour-picker select {
+      width: 100%;
+      min-width: 0;
+    }
+
+    .brand .actions {
+      display: grid;
+    }
+
+    .brand.collapsed .actions {
+      display: none;
+    }
+
+    .brand.collapsed .map-entry-actions {
+      margin: 0;
+    }
+
+    .stats {
+      display: none;
+    }
+
+    .brand:not(.collapsed) .mobile-facts {
+      display: block;
+    }
+
+    #map-controls :is(.layer-count, .route-key, .panel-toggle-label, .map-era > span),
+    #map-controls h2,
+    .tour-card :is(.tour-source, .tour-progress, .tour-hint),
+    #status {
+      font-size: 12px;
+      line-height: 1.4;
+    }
+
+    #map-controls .source-note,
+    #map-era-detail,
+    .map-search .search-help {
+      font-size: 13px;
+      line-height: 1.45;
+    }
+
+    .tour-controls {
+      position: sticky;
+      bottom: 0;
+      flex-wrap: wrap;
+      background: var(--panel-solid);
+    }
+
+    @media (max-width: 820px) {
+      .brand,
+      .brand.collapsed {
+        width: calc(100vw - 24px - env(safe-area-inset-left) - env(safe-area-inset-right));
+        max-height: calc(100dvh - 82px - env(safe-area-inset-top) - env(safe-area-inset-bottom));
+      }
+    }
+
+    @media (max-width: 820px) and (orientation: portrait) {
+      .tour-card {
+        max-height: max(140px, calc(100dvh - 240px));
+        overflow-y: auto;
+      }
+
+      body.tour-active .panel.collapsed {
+        bottom: calc(var(--tour-card-height) + 36px + env(safe-area-inset-bottom));
+      }
+    }
+
+    @media (max-width: 950px) and (orientation: landscape) {
+      .brand,
+      .brand.collapsed {
+        width: min(320px, calc(50vw - 18px));
+      }
+
+      .tour-card {
+        left: auto;
+        right: calc(12px + env(safe-area-inset-right));
+        width: min(320px, calc(50vw - 18px));
+        max-height: calc(100dvh - 144px - env(safe-area-inset-top) - env(safe-area-inset-bottom));
+        overflow-y: auto;
+        transform: none;
+      }
+
+      body.tour-active .panel {
+        z-index: 13;
+      }
+
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#panel-toggle">Skip to map controls</a>
+  <main id="main-content">
+    <p class="visually-hidden" id="map-summary">Interactive comparison of historical United States Geological Survey maps and current satellite imagery along the Nevada County Narrow Gauge Railroad. The mapped railroad operated from {organization.prototype.serviceStart} to {organization.prototype.serviceEnd} and used three-foot gauge track.</p>
+    <div class="map-stack" role="region" aria-label="Interactive map of the Nevada County Narrow Gauge Railroad" aria-describedby="map-summary">
+      <div id="now-map" class="map"></div>
+      <div id="then-shell" aria-hidden="true"><div id="then-map" class="map"></div></div>
+    </div>
+
+    <div class="veil-label then" id="then-era-badge">
+      <span class="full" id="then-era-full">Then · USGS Smartsville 1895</span>
+      <span class="compact">Then · <span id="then-era-year">1895</span></span>
+    </div>
+    <div class="veil-label now"><span class="full">Now · satellite</span><span class="compact">Now</span></div>
+
+    <div class="compare-control" aria-label="Historical and modern map comparison">
+      <input id="compare" type="range" min="0" max="100" value="42" tabindex="-1" aria-hidden="true">
+      <div class="compare-handle" aria-hidden="true" aria-describedby="map-entry-help"></div>
+    </div>
+
+    <header class="brand">
+      <div class="map-entry-heading">
+        <p class="map-entry-title">Historic Railroad Map</p>
+        <a class="map-entry-return" href="../">Back to Model Railroad Website</a>
+      </div>
+      <nav class="map-entry-actions" aria-label="Map tools">
+        <button class="button search-open" id="search-open" type="button" aria-haspopup="dialog" aria-controls="map-search">Search</button>
+        <button class="button" id="fit-route" type="button">Show Whole Route</button>
+        <button class="brand-toggle" id="brand-toggle" type="button" aria-expanded="true" aria-label="Close tours and map introduction">
+          <span class="brand-toggle-icon disclosure-icon" aria-hidden="true">−</span>
+          <span class="brand-toggle-label disclosure-label">Close guide</span>
+        </button>
+      </nav>
+      <p class="map-entry-help" id="map-entry-help">Drag the divider to compare the historic map and modern satellite imagery.</p>
+      <p class="eyebrow">Colfax → Grass Valley → Nevada City</p>
+      <h1>
+        <span class="title-main">The Narrow Gauge</span>
+        <span class="title-sub">Then &amp; now.</span>
+      </h1>
+      <p class="lede">Trace the Nevada County Narrow Gauge Railroad across the modern Sierra foothills. Explore stations and spurs, or travel the route stop by stop.</p>
+      <p class="mobile-facts"><span data-route-miles>—</span> mapped miles · {organization.prototype.era} · 3 ft gauge</p>
+      <div class="actions">
+        <div class="tour-launcher map-entry-tour">
+          <label class="tour-picker">
+            <span class="visually-hidden">Choose a map tour</span>
+            <select id="tour-select" aria-label="Choose a map tour">
+              <option value="route">Full route</option>
+              <option value="bridges">Bridges</option>
+              <option value="depots">Depots</option>
+              <option value="mines">Mines</option>
+              <option value="grass-valley">Grass Valley</option>
+            </select>
+          </label>
+          <button class="button primary" id="start-tour" type="button" aria-label="Start tour">Start Tour</button>
+        </div>
+      </div>
+    </header>
+
+    <section class="map-search" id="map-search" role="dialog" aria-modal="false" aria-labelledby="search-title" hidden>
+      <div class="search-header">
+        <div>
+          <p class="search-kicker">Explore the corridor</p>
+          <h2 id="search-title">Search the map</h2>
+        </div>
+        <button class="search-close" id="search-close" type="button" aria-label="Close map search">×</button>
+      </div>
+      <label class="visually-hidden" for="search-input">Search stations, sites, landmarks, and route features</label>
+      <div class="search-field">
+        <svg aria-hidden="true" viewBox="0 0 24 24"><path d="m21 21-4.3-4.3m2.3-5.2a7.5 7.5 0 1 1-15 0 7.5 7.5 0 0 1 15 0Z"/></svg>
+        <input id="search-input" type="search" autocomplete="off" spellcheck="false"
+          placeholder="Station, landmark, route…"
+          role="combobox" aria-autocomplete="list" aria-controls="search-results"
+          aria-expanded="false" aria-describedby="search-help search-status">
+      </div>
+      <div class="search-options" aria-label="Optional search datasets">
+        <label><input id="search-mines" type="checkbox"> Mines &amp; adits</label>
+        <label><input id="search-parcels" type="checkbox"> ROW parcels</label>
+      </div>
+      <p class="search-help" id="search-help">Optional datasets load only when selected or named in your search.</p>
+      <p class="visually-hidden" id="search-status" role="status" aria-live="polite"></p>
+      <div class="search-results" id="search-results" role="listbox" aria-label="Map search results"></div>
+    </section>
+
+    <aside class="panel" id="map-controls" aria-label="Map layers and display options">
+      <div class="panel-header">
+        <h2>Map layers</h2>
+        <button class="panel-toggle" id="panel-toggle" type="button" aria-expanded="true" aria-controls="panel-content" aria-keyshortcuts="L">
+          <span class="panel-toggle-icon disclosure-icon" aria-hidden="true">−</span>
+          <span class="panel-toggle-label disclosure-label">Hide</span>
+        </button>
+      </div>
+      <div id="panel-content">
+        <div class="layer-list">
+          <label class="layer-row">
+            <input type="checkbox" data-layer="route" aria-label="Show rail alignment" checked>
+            <span class="layer-title">Rail alignment</span>
+            <span class="layer-count">63</span>
+          </label>
+          <label class="layer-row">
+            <input type="checkbox" data-layer="places" aria-label="Show stations and sites" checked>
+            <span class="layer-title">Stations &amp; sites</span>
+            <span class="layer-count">75</span>
+          </label>
+          <label class="layer-row">
+            <input type="checkbox" data-layer="historicLandmarks" aria-label="Show county historical landmarks" checked>
+            <span class="layer-title">County landmarks</span>
+            <span class="layer-count">146</span>
+          </label>
+          <label class="layer-row">
+            <input type="checkbox" data-layer="landmarks" aria-label="Show modern landmarks" checked>
+            <span class="layer-title">Modern landmarks</span>
+            <span class="layer-count" id="modern-landmark-count">—</span>
+          </label>
+          <label class="layer-row">
+            <input type="checkbox" data-layer="mines" aria-label="Show mines and adits">
+            <span class="layer-title">Mines &amp; adits</span>
+            <span class="layer-count">375</span>
+          </label>
+          <label class="layer-row">
+            <input type="checkbox" data-layer="parcels" aria-label="Show right-of-way parcels">
+            <span class="layer-title">ROW parcels</span>
+            <span class="layer-count">3</span>
+          </label>
+        </div>
+        <div class="route-key" aria-label="Andrew Brandon route color key">
+          <span><i class="mainline"></i>Mainline</span>
+          <span><i class="sidings"></i>Sidings &amp; spurs</span>
+          <span><i class="standard"></i>Standard gauge</span>
+        </div>
+
+        <div class="divider"></div>
+        <h2>View</h2>
+        <div class="map-era" role="status" aria-live="polite" aria-atomic="true">
+          <span>Historical basemap shown</span>
+          <strong id="map-era-title">USGS Smartsville · 1895</strong>
+          <small id="map-era-detail">Sheet beneath the map center. Operating-era overview; the railroad is printed on the map.</small>
+        </div>
+        <div class="mode-grid">
+          <button class="button active" id="terrain" type="button" aria-pressed="true">3D terrain</button>
+          <button class="button" id="north" type="button">Reset north</button>
+        </div>
+        <details class="share-download">
+          <summary>Share &amp; download</summary>
+          <div class="share-download-menu">
+            <button class="button" id="share-view" type="button">Share current view</button>
+            <a href="/map/poster/">QR poster</a>
+            <a href="/map/ncngrr-interactive-map-poster.pdf" download>Print-ready PDF</a>
+          </div>
+        </details>
+        <p class="source-note">
+          Route reconstruction by Andrew Brandon / <a href="https://pacificng.com/template.php?page=roads/ca/ncng/routege.htm" target="_blank" rel="noreferrer">PacificNG</a>, based on 1912–1916 valuation maps and field research. Historical basemap: USGS Smartsville (1895) and Colfax (1902), with 1948–49 detail sheets at close zoom, via Esri. Mine symbols: USGS. Parcel data: Nevada County. Modern imagery: Esri.
+        </p>
+      </div>
+    </aside>
+
+    <div class="stats" aria-hidden="true">
+      <div class="stat"><strong id="route-miles">—</strong><span>mapped miles</span></div>
+      <div class="stat"><strong>{organization.prototype.era}</strong><span>years operated</span></div>
+      <div class="stat"><strong>3 ft</strong><span>track gauge</span></div>
+    </div>
+
+    <section class="tour-card" id="tour-card" role="dialog" aria-labelledby="tour-title" aria-describedby="tour-description" tabindex="-1" hidden>
+      <button class="tour-close" id="tour-close" type="button" aria-label="Close map tour">×</button>
+      <div class="tour-content">
+        <div class="tour-media no-image" id="tour-media"></div>
+        <div class="tour-copy" aria-live="polite" aria-atomic="true">
+          <p class="tour-kicker" id="tour-kicker">Route stop</p>
+          <h2 id="tour-title"></h2>
+          <p id="tour-description"></p>
+          <a class="tour-source" id="tour-source" target="_blank" rel="noreferrer" hidden>View photograph source ↗</a>
+        </div>
+      </div>
+      <div class="tour-controls">
+        <span class="tour-progress" id="tour-progress"></span>
+        <span class="tour-hint">← → to navigate</span>
+        <button class="button" id="tour-prev" type="button">Previous</button>
+        <button class="button primary" id="tour-next" type="button">Next stop</button>
+      </div>
+    </section>
+
+    <p class="visually-hidden" id="geolocation-help">Find your location once. Your location is not tracked or saved.</p>
+    <div class="status" id="status" role="status" aria-live="polite">Loading historical geography…</div>
+    <div id="error" role="alert" hidden></div>
+  </main>
+
+  <script src="bootstrap.min.js?v=6f738f51e5a83b0e" is:inline></script>
+  <script src="vendor/maplibre-gl/5.6.2/maplibre-gl.js"
+    integrity="sha256-FSX5cSI9gfFp8EnxzlAIPm8WQ6prDqBxZlOlUNLVf8I=" crossorigin="anonymous"
+    onerror="window.__mapBootstrapFail('MapLibre could not be loaded from this site. Reload or contact the site administrator.')"
+    is:inline></script>
+  <script src="app.min.js?v=083b1ca1cf59011b" is:inline></script>
+  <script is:inline>
+    // Use the bundled disclosure handlers so their ARIA and layout state stay in sync.
+    const entryTourCard = document.getElementById('tour-card');
+    const entryBrandToggle = document.getElementById('brand-toggle');
+    const entryLayersToggle = document.getElementById('panel-toggle');
+    for (const toggle of [entryBrandToggle, entryLayersToggle]) {
+      if (toggle.getAttribute('aria-expanded') === 'true') toggle.click();
+    }
+
+    function labelMapGuide() {
+      const expanded = entryBrandToggle.getAttribute('aria-expanded') === 'true';
+      entryBrandToggle.querySelector('.disclosure-label').textContent = expanded ? 'Close guide' : 'Tours & info';
+      entryBrandToggle.setAttribute('aria-label', expanded ? 'Close guide' : 'Tours & info');
+    }
+    new MutationObserver(labelMapGuide).observe(entryBrandToggle, {
+      attributes: true,
+      attributeFilter: ['aria-expanded'],
+    });
+    labelMapGuide();
+
+    let entryTourWasOpen = false;
+    function syncTourIntroduction() {
+      const open = !entryTourCard.hidden;
+      if (open && entryBrandToggle.getAttribute('aria-expanded') === 'true') {
+        entryBrandToggle.click();
+      }
+      // The Start control is now tucked away; return to its visible disclosure.
+      if (!open && entryTourWasOpen) entryBrandToggle.focus({ preventScroll: true });
+      entryTourWasOpen = open;
+    }
+    new MutationObserver(syncTourIntroduction).observe(entryTourCard, {
+      attributes: true,
+      attributeFilter: ['hidden'],
+    });
+    syncTourIntroduction();
+  </script>
+</body>
+</html>

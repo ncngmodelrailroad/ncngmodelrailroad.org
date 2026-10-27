@@ -8,8 +8,9 @@ import { organization } from '../config/organization';
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 
 const timeline = [
-  { year: '1875', event: 'Nevada County Narrow Gauge Railroad begins operations, connecting Colfax, Chicago Park, Grass Valley, and Nevada City' },
-  { year: '1942', event: 'Last train runs; railroad ceases operations after 67 years of service' },
+  { year: '1875', event: 'Construction begins on February 11, breaking ground near Colfax' },
+  { year: '1876', event: 'The line is completed and the last spike is driven at Nevada City on May 20, connecting Colfax, Chicago Park, Grass Valley, and Nevada City' },
+  { year: '1942', event: 'Last train runs; the railroad ceases operations after 66 years of service' },
   { year: '1986', event: 'NCNG Historical Model Railroad is founded as the "N.C.N.G. Project," and basic layout construction begins' },
   { year: '1990s', event: 'The layout continues to grow at Nevada County Fairgrounds' },
   { year: 'Today', event: 'Volunteer team continues to expand and improve the On3 scale layout' },
@@ -32,7 +33,7 @@ const timeline = [
       />
       <div class="absolute inset-0 bg-gradient-to-r from-gray-900/85 via-gray-900/50 to-transparent"></div>
     </div>
-    <div class="container relative z-10">
+    <div class="page-container relative z-10">
       <div class="max-w-3xl">
         <span class="text-sm uppercase tracking-widest text-gray-300 font-medium">About Us</span>
         <h1 class="text-4xl md:text-5xl font-bold mt-4 mb-6">About the N.C.N.G. Layout</h1>
@@ -45,7 +46,7 @@ const timeline = [
 
   <!-- Mission with photo -->
   <section class="py-16 bg-white">
-    <div class="container max-w-5xl">
+    <div class="page-container max-w-5xl">
       <div class="grid md:grid-cols-5 gap-10 items-center">
         <div class="md:col-span-3">
           <SectionHeader eyebrow="Why We Built It" title="Interpreting the Original Railroad" />
@@ -80,7 +81,7 @@ const timeline = [
 
   <!-- Timeline -->
   <section class="py-16 bg-cream">
-    <div class="container max-w-4xl">
+    <div class="page-container max-w-4xl">
       <SectionHeader title="A Brief Timeline" />
       <div class="space-y-6">
         {timeline.map((item, index) => (
@@ -105,20 +106,20 @@ const timeline = [
 
   <!-- The Model - with photos -->
   <section class="py-16 bg-white">
-    <div class="container max-w-5xl">
+    <div class="page-container max-w-5xl">
       <SectionHeader title="On3 Scale Precision" />
       <div class="grid md:grid-cols-2 gap-10">
         <div>
           <h3 class="text-xl font-bold mb-3">What is On3?</h3>
           <p class="text-gray-600 mb-6">
-            "On3" refers to O scale (1:48 ratio) with 3-foot narrow gauge track. This scale 
+            <a href={`${base}/learn/glossary#on3`} class="text-primary underline">On3</a> refers to O scale (1:48 ratio) representing three-foot-gauge track. This scale
             accurately represents the narrow gauge equipment used by the original N.C.N.G. railroad.
           </p>
           <h3 class="text-xl font-bold mb-3">Features</h3>
           <ul class="space-y-3 text-gray-600">
             <li class="flex items-center gap-3">
               <Icon name="solar:cpu-bold" class="w-5 h-5 text-primary flex-shrink-0" />
-              DCC digital control system
+              <a href={`${base}/learn/glossary#dcc-digital-command-control`} class="text-primary underline">DCC digital control system</a>
             </li>
             <li class="flex items-center gap-3">
               <Icon name="solar:tram-bold" class="w-5 h-5 text-primary flex-shrink-0" />
@@ -215,7 +216,7 @@ const timeline = [
       />
       <div class="absolute inset-0 bg-primary/85"></div>
     </div>
-    <div class="container relative z-10 text-center max-w-2xl">
+    <div class="page-container relative z-10 text-center max-w-2xl">
       <Icon name="solar:users-group-rounded-bold" class="w-12 h-12 text-amber-300 mx-auto mb-4" />
       <h2 class="text-3xl font-bold mb-4">Built and Run by Volunteers</h2>
       <p class="text-xl text-gray-200 mb-6">
@@ -228,7 +229,7 @@ const timeline = [
       </p>
       <div class="flex flex-wrap justify-center gap-4">
         <Button href={`${base}/donate`} variant="white">Support the Layout</Button>
-        <Button href={`${base}/volunteer`} variant="outline" class="border-white text-white hover:bg-white hover:text-primary">
+        <Button href={`${base}/volunteer`} variant="outline-inverse">
           Volunteer With Us
         </Button>
       </div>
@@ -237,7 +238,7 @@ const timeline = [
 
   <!-- Contact -->
   <section class="py-16 bg-white">
-    <div class="container max-w-4xl">
+    <div class="page-container max-w-4xl">
       <div class="grid md:grid-cols-2 gap-8">
         <div>
           <SectionHeader title="Visit Us" />
@@ -246,14 +247,14 @@ const timeline = [
             <span>Nevada County Fairgrounds<br />Grass Valley, California</span>
           </address>
           <p class="text-gray-600">
-            Open during fairground events, open houses, regular work sessions, and by arrangement.
+            {organization.visiting.publicAccess}
           </p>
           <Button href={`${base}/events`} class="mt-4">View Events</Button>
         </div>
         <div>
           <SectionHeader title="Get in Touch" />
           <p class="text-gray-600 mb-4">
-            For inquiries about visiting, volunteering, or group tours, please contact us:
+            For questions about published events or volunteering, please contact us:
           </p>
           <div class="flex items-center gap-2">
             <Icon name="solar:letter-bold" class="w-5 h-5 text-primary" />

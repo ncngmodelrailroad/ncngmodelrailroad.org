@@ -8,12 +8,30 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 const getCategoryKey = (category: string) => category.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
 
 const galleryEntries = await getCollection('gallery');
+const introductionPhotoIds = [
+  'ncng-layout-1',
+  'trestle-bridge-wide',
+  'engine8-hero',
+  'gallery-DSC07773',
+  'gallery-img-7040',
+  'historic-locomotive',
+];
+const introductionOrder = new Map(introductionPhotoIds.map((id, index) => [id.toLowerCase(), index]));
+galleryEntries.sort((a, b) =>
+  (introductionOrder.get(a.id.toLowerCase()) ?? introductionPhotoIds.length) -
+  (introductionOrder.get(b.id.toLowerCase()) ?? introductionPhotoIds.length) ||
+  a.id.localeCompare(b.id)
+);
+const areas = [...new Set(galleryEntries.map(entry => entry.data.area).filter((area): area is string => Boolean(area)))]
+  .sort((a, b) => a.localeCompare(b));
 const photos = galleryEntries.map(entry => ({
   src: `${base}/images/${entry.data.image}`,
   alt: entry.data.title,
   caption: entry.data.caption,
   category: entry.data.category,
   categoryKey: getCategoryKey(entry.data.category),
+  area: entry.data.area,
+  areaKey: entry.data.area ? String(areas.indexOf(entry.data.area)) : 'unassigned',
 }));
 
 const categoryOrder = ['Layout', 'Historic', 'Volunteer Work', 'Fairgrounds & Events'];
@@ -29,7 +47,7 @@ const categories = [
     <div class="absolute inset-0 opacity-30">
       <img 
         src={`${base}/images/ncng-layout-1.jpg`} 
-        alt="N.C.N.G. Model Railroad layout" 
+        alt=""
         class="w-full h-full object-cover"
         loading="eager"
         decoding="async"
@@ -38,7 +56,7 @@ const categories = [
         height={320}
       />
     </div>
-    <div class="container relative z-10">
+    <div class="page-container relative z-10">
       <div class="max-w-3xl">
         <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">Photo Gallery</h1>
         <p class="text-xl text-gray-300">
@@ -50,24 +68,38 @@ const categories = [
 
   <!-- Category Filter -->
   <section class="py-6 bg-white border-b sticky top-20 md:top-16 z-30">
-    <div class="container">
+    <div class="page-container">
         <div class="flex flex-wrap gap-3 justify-center">
           <button type="button" class="category-btn active" data-category="all" aria-pressed="true">All Photos</button>
           {categories.map(cat => (
           <button type="button" class="category-btn" data-category={getCategoryKey(cat)} aria-pressed="false">{cat}</button>
           ))}
         </div>
+        <div id="area-filter" class:list={['mt-4 flex flex-wrap items-center justify-center gap-3', { hidden: areas.length === 0 }]}>
+          <label for="gallery-area" class="text-sm font-semibold">Layout area</label>
+          <select id="gallery-area" class="gallery-area">
+            <option value="all">All areas</option>
+            {areas.map((area, index) => <option value={String(index)}>{area}</option>)}
+            <option value="unassigned">No area assigned</option>
+          </select>
+        </div>
       </div>
   </section>
 
   <!-- Photo Grid -->
   <section class="py-12 bg-gray-50">
-    <div class="container">
+    <div class="page-container">
+      <div class="flex flex-wrap items-center justify-between gap-4 mb-6">
+        <p id="photo-count" class="text-sm text-gray-600" role="status" aria-live="polite" aria-atomic="true">{photos.length} photos</p>
+        <button id="reset-gallery-filters" type="button" class="hidden text-primary underline font-semibold min-h-11">Reset filters</button>
+      </div>
+      <p id="gallery-empty" class="hidden py-8 text-gray-600">No photos match this category and area. Reset the filters to see all photos.</p>
       <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6" id="photo-grid">
         {photos.map((photo, index) => (
           <article 
             class="photo-card group cursor-pointer" 
             data-category={photo.categoryKey}
+            data-area={photo.areaKey}
             data-index={index}
             tabindex="0"
             role="button"
@@ -83,17 +115,14 @@ const categories = [
                 width={600}
                 height={450}
               />
-              <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                <div class="absolute bottom-0 left-0 right-0 p-4">
-                  <span class="inline-block bg-primary text-white text-xs font-semibold px-2 py-1 rounded mb-2">
-                    {photo.category}
-                  </span>
-                  <p class="text-white text-sm">{photo.caption}</p>
-                </div>
-              </div>
-              <span class="absolute top-3 right-3 w-10 h-10 bg-white/90 rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity" aria-hidden="true">
+              <span class="photo-card-zoom absolute top-3 right-3 w-10 h-10 bg-white/90 rounded-full flex items-center justify-center" aria-hidden="true">
                 <Icon name="solar:magnifer-bold" class="w-5 h-5 text-gray-700" />
               </span>
+            </div>
+            <div class="px-1 pt-3 pb-4">
+              <span class="photo-category text-primary text-sm font-semibold">{photo.category}</span>
+              {photo.area && <span class="photo-area block text-sm text-gray-600">{photo.area}</span>}
+              <p class="text-gray-700 text-sm mt-1">{photo.caption}</p>
             </div>
           </article>
         ))}
@@ -103,7 +132,7 @@ const categories = [
 
   <!-- Add Photos CTA -->
   <section class="py-16 bg-white">
-    <div class="container">
+    <div class="page-container">
       <div class="max-w-2xl mx-auto text-center">
         <h2 class="text-2xl md:text-3xl font-bold mb-4">Have Photos to Share?</h2>
         <p class="text-gray-600 mb-6">
@@ -128,13 +157,32 @@ const categories = [
       <Icon name="solar:alt-arrow-right-bold" class="w-8 h-8" />
     </button>
     <div class="flex flex-col items-center max-w-5xl w-full px-4">
-      <img id="lightbox-img" src="" alt="" class="max-h-[80vh] max-w-full object-contain" />
+      <!-- Seeded with the first photo so the markup never ships an empty src.
+           openLightbox() overwrites both attributes before the dialog is shown,
+           and the URL matches a grid image, so this costs no extra request. -->
+      <img
+        id="lightbox-img"
+        src={photos[0]?.src}
+        alt={photos[0]?.alt}
+        class="max-h-[80vh] max-w-full object-contain"
+      />
       <p id="lightbox-caption" class="text-white text-center mt-4 max-w-2xl"></p>
     </div>
   </div>
 </BaseLayout>
 
 <style>
+  .gallery-area {
+    max-width: 100%;
+    min-height: 2.75rem;
+    padding: 0.5rem 0.75rem;
+    border: 1px solid var(--color-border);
+    border-radius: 0.5rem;
+    background: var(--color-surface);
+    color: var(--color-text);
+    font: inherit;
+  }
+
   .category-btn {
     display: inline-block;
     padding: 0.5rem 1rem;
@@ -174,6 +222,23 @@ const categories = [
     outline: none;
     box-shadow: var(--focus-ring);
   }
+
+  /* Captions stay visible; hover only enhances the zoom affordance. */
+  .photo-card-zoom {
+    transition: opacity 0.3s ease;
+  }
+
+  @media (hover: hover) and (pointer: fine) {
+    .photo-card-zoom {
+      opacity: 0;
+    }
+
+    .photo-card:hover .photo-card-zoom,
+    .photo-card:focus-visible .photo-card-zoom {
+      opacity: 1;
+    }
+  }
+
   /* Skip rendering off-screen gallery items until scrolled into view */
   .photo-card:nth-child(n+7) {
     content-visibility: auto;
@@ -182,29 +247,45 @@ const categories = [
 </style>
 
 <script>
-  // Category filtering
-  const categoryBtns = document.querySelectorAll('.category-btn');
-  const photoCards = document.querySelectorAll('.photo-card');
+  const categoryBtns = document.querySelectorAll<HTMLButtonElement>('.category-btn');
+  const photoCards = document.querySelectorAll<HTMLElement>('.photo-card');
+  const areaSelect = document.querySelector<HTMLSelectElement>('#gallery-area');
+  const resetFilters = document.getElementById('reset-gallery-filters');
+  const photoCount = document.getElementById('photo-count');
+  const emptyGallery = document.getElementById('gallery-empty');
+  let selectedCategory: string | null = 'all';
+
+  function filterPhotos() {
+    const area = areaSelect?.value ?? 'all';
+    let count = 0;
+    categoryBtns.forEach(button => {
+      const selected = button.getAttribute('data-category') === selectedCategory;
+      button.classList.toggle('active', selected);
+      button.setAttribute('aria-pressed', String(selected));
+    });
+    photoCards.forEach(card => {
+      const visible = (selectedCategory === 'all' || card.dataset.category === selectedCategory) &&
+        (area === 'all' || card.dataset.area === area);
+      card.classList.toggle('hidden', !visible);
+      if (visible) count += 1;
+    });
+    if (photoCount) photoCount.textContent = `${count} ${count === 1 ? 'photo' : 'photos'}`;
+    emptyGallery?.classList.toggle('hidden', count !== 0);
+    resetFilters?.classList.toggle('hidden', selectedCategory === 'all' && area === 'all');
+  }
 
   categoryBtns.forEach(btn => {
     btn.addEventListener('click', () => {
-      const category = btn.getAttribute('data-category');
-      
-      categoryBtns.forEach(b => {
-        b.classList.remove('active');
-        b.setAttribute('aria-pressed', 'false');
-      });
-      btn.classList.add('active');
-      btn.setAttribute('aria-pressed', 'true');
-      
-      photoCards.forEach(card => {
-        if (category === 'all' || card.getAttribute('data-category') === category) {
-          card.classList.remove('hidden');
-        } else {
-          card.classList.add('hidden');
-        }
-      });
+      selectedCategory = btn.getAttribute('data-category');
+      filterPhotos();
     });
+  });
+  areaSelect?.addEventListener('change', filterPhotos);
+  resetFilters?.addEventListener('click', () => {
+    selectedCategory = 'all';
+    if (areaSelect) areaSelect.value = 'all';
+    filterPhotos();
+    categoryBtns[0]?.focus();
   });
 
   // Lightbox functionality
@@ -224,9 +305,19 @@ const categories = [
     currentIndex = index;
     const card = photos[index];
     const img = card.querySelector('img') as HTMLImageElement;
-    const caption = card.querySelector('p')?.textContent || '';
-    
-    triggerElement = document.activeElement as HTMLElement;
+    const caption = [
+      card.querySelector('.photo-category')?.textContent,
+      card.querySelector('.photo-area')?.textContent,
+      card.querySelector('p')?.textContent,
+    ].filter(Boolean).join(' · ');
+
+    // Only capture the return target when opening from the grid. nextPhoto and
+    // prevPhoto route back through here, and at that point the active element
+    // is one of the lightbox's own buttons, which is about to be hidden.
+    if (lightbox?.classList.contains('hidden')) {
+      triggerElement = document.activeElement as HTMLElement;
+    }
+
     lightboxImg.src = img.src;
     lightboxImg.alt = img.alt;
     if (lightboxCaption) lightboxCaption.textContent = caption;

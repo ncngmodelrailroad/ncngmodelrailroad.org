@@ -10,7 +10,7 @@ For most content updates, you don't need to edit files directly. **[Pages CMS](h
 
 1. Go to [app.pagescms.org/djdefi/ncngmodelrailroad.org](https://app.pagescms.org/djdefi/ncngmodelrailroad.org)
 2. Log in with your GitHub account
-3. Select what you want to edit (Events, Board Members, Gallery, or Engine Roster)
+3. Select what you want to edit (Events, Board Members, Gallery, or Historical Locomotive Roster)
 4. Fill in the fields and click **Save**
 5. The site updates automatically in about 2 minutes
 
@@ -25,6 +25,7 @@ The rest of this guide covers editing files directly — useful if you prefer wo
 - [Updating Events](#updating-events)
 - [Updating Board Members](#updating-board-members)
 - [Adding Gallery Photos](#adding-gallery-photos)
+- [Updating the Fairgrounds Map](#updating-the-fairgrounds-map)
 - [Updating the Learn Section](#updating-the-learn-section)
 - [Updating Organization Info](#updating-organization-info)
 - [Updating Navigation](#updating-navigation)
@@ -34,6 +35,22 @@ The rest of this guide covers editing files directly — useful if you prefer wo
 ## Updating Events
 
 Events are Markdown files in `src/content/events/`. Each file = one event on the Events page.
+
+Public visits are available during selected Nevada County Fairgrounds events,
+**only when an opening is announced on this website**. A fairgrounds event does
+not establish layout opening dates or hours. Volunteer work sessions are not
+public visiting hours. Do not advertise drop-in visits or private tours.
+
+Confirm an event before publishing it. State layout hours separately from host
+event dates and hours; use **TBA** if layout hours are not confirmed. Keep
+host-event admission and parking separate from layout admission, and do not
+publish an unconfirmed layout price or free-admission claim.
+
+Include confirmed gate, parking, and building-entry instructions for that event.
+Do not reuse another event's arrangements without confirmation. For physical
+access, publish verified information about the entrance route and viewing
+arrangements; otherwise direct questions to the contact page without promising
+access conditions that have not been established.
 
 ### File location
 ```
@@ -63,8 +80,9 @@ location: "Nevada County Fairgrounds, Grass Valley"
 featured: true
 ---
 
-Join us during the Father's Day Bluegrass Festival! Our layout will be open
-for visitors throughout the weekend. Check the festival for admission details.
+The layout will open during the Father's Day Bluegrass Festival.
+Layout hours are TBA; the festival schedule is not the layout schedule. Check the festival
+for host-event admission and parking details.
 ```
 
 **Field reference:**
@@ -72,12 +90,26 @@ for visitors throughout the weekend. Check the festival for admission details.
 | Field | Required | Description |
 | :---- | :------- | :---------- |
 | `title` | Yes | Event name (in quotes) |
-| `date` | Yes | Start date as `YYYY-MM-DD` |
-| `endDate` | No | End date for multi-day events |
+| `date` | Yes | Host event start date as `YYYY-MM-DD` |
+| `endDate` | No | Host event end date for multi-day events |
+| `layoutStartDate` | No | Confirmed first layout opening day; leave blank if unconfirmed |
+| `layoutEndDate` | No | Confirmed last day in a consecutive opening range; omit for a single-day opening |
 | `location` | Yes | Where the event takes place |
 | `featured` | No | Set to `true` to highlight on the Events page |
 
 The body text (below the `---`) is the event description shown on the page.
+
+The homepage automatically promotes the next two upcoming events in date order,
+using confirmed layout dates when available and host dates otherwise. The homepage
+labels which dates it shows. The Events page keeps both ranges separate.
+The `featured` field adds a badge on the Events page; it does not control homepage
+placement. Keep event dates separate from the layout's opening dates and hours.
+
+Only fill in `layoutStartDate` and `layoutEndDate` after the layout days are
+confirmed. They must fall within the host event dates. For a single-day opening,
+set only `layoutStartDate`. Leave both fields empty when days are unconfirmed;
+do not enter "TBA" in a date field. Put hours in the event body and use **TBA**
+until those hours are confirmed.
 
 ### Editing an existing event
 
@@ -87,7 +119,12 @@ Open the file and change the fields you need. The most common update is changing
 
 Delete the file. The event disappears from the site automatically.
 
-> **Note:** The Events page automatically hides past events. You don't need to delete old events — they just won't show up after their date passes.
+> **Note:** Events move to the collapsed Past Events section on the next build
+> after their final confirmed layout day in California, or the host event's final
+> day if no layout dates are confirmed. A daily deployment refreshes the
+> homepage and Events page, even when no content has changed. The
+> refresh updates date grouping; it does not confirm event details. Avoid
+> relative wording such as "our next open house" in event bodies.
 
 ---
 
@@ -181,8 +218,9 @@ category: Fairgrounds & Events
 | :---- | :---------- |
 | `title` | Used for the image alt text and lightbox title context |
 | `image` | Filename in `public/images/` |
-| `caption` | Short text shown below the photo in the lightbox |
+| `caption` | Short text shown below the photo in the grid and lightbox |
 | `category` | One of: `Historic`, `Layout`, `Volunteer Work`, `Fairgrounds & Events` |
+| `area` | Optional, confirmed model-layout area name. Omit or leave blank when unknown or unrelated. |
 
 ### Categories
 
@@ -192,6 +230,58 @@ Photos are filterable by category on the gallery page:
 - **Layout** — Model railroad scenes, trains, structures, and scenery details
 - **Volunteer Work** — Members building, maintaining, or improving the layout
 - **Fairgrounds & Events** — Building exterior, exhibit context, open houses, and fairgrounds scenes
+
+### Layout areas
+
+An area is a second filter, not a replacement for a photo's category. Add it in
+the optional **Layout Area** CMS field or the `area` frontmatter field. Use the
+same spelling for photographs of the same confirmed model-layout area.
+Do not infer an area from a filename, a historical map, or an uncertain caption.
+Leave unassigned photos unchanged until their area can be identified.
+
+The area selector appears only when at least one entry has a nonblank area.
+Category and area filters work together. **All areas** includes unassigned
+photos, and **No area assigned** finds those entries specifically. Resetting the
+filters restores the full gallery. The lightbox follows the filtered set.
+
+The gallery begins with a short sequence of layout, bridge, locomotive, visitor,
+volunteer, and historical images selected in `src/pages/gallery.astro`; all
+remaining photos stay available.
+
+### Historical locomotives versus models
+
+The **Historical Locomotive Roster** collection (`src/content/trains/`) describes
+the original railroad. Its `source` field means builder or previous railroad,
+not a bibliographic citation. Quote text containing locomotive numbers such as
+`#1` in frontmatter so YAML does not interpret them as comments.
+
+Do not mix a future inventory of actual models and rolling stock into this
+historical collection. That information needs its own verified records.
+
+---
+
+## Updating the Fairgrounds Map
+
+The Contact page shows an illustrated fairgrounds map with a suggested walk
+from Gate 1 to the building. The map is drawn outside this repository and
+exported as six files. Replace them together so every size shows the same
+edition:
+
+| File | Used for |
+|------|----------|
+| `public/images/fairgrounds-map-focus.webp` and `-focus.jpg` | Map shown on the page on wider screens (JPEG is the fallback) |
+| `public/images/fairgrounds-map-railroad.webp` and `-railroad.jpg` | Tighter railroad-area view for screens 640px wide and narrower |
+| `public/images/fairgrounds-map-full.webp` | Whole-fairgrounds map, linked from the page |
+| `public/downloads/fairgrounds-map.pdf` | Printable version |
+
+The walking directions also show `public/images/fairgrounds-hut-sign.webp`
+and `-hut-sign.jpg`, a photo of the NCNGRR sign on the Main Street side of
+the hut. Replace it if the sign is repainted or moved.
+
+If a gate, path, or landmark changes, update the numbered walking directions
+and the image alt text in `src/pages/contact.astro` to match the new map.
+Keep the caveats: gates vary by event, and the walk is not a certified
+accessible route.
 
 ---
 
@@ -265,6 +355,8 @@ analytics: {
 
 Once set, analytics data appears in your Cloudflare dashboard — page views, referrers, countries, and devices.
 
+The interactive map route reads this token directly even though it does not use the shared site layout.
+
 ---
 
 ## Updating Navigation
@@ -281,9 +373,24 @@ To add, remove, or reorder pages in the nav, edit the `navItems` array:
 export const navItems = [
   { label: 'About', href: '/about' },
   { label: 'Events', href: '/events', icon: 'solar:calendar-bold' },
-  { label: 'Get Involved', href: '/donate', cta: true },
+  { label: 'Historic Map', href: '/map/', icon: 'solar:map-bold' },
+  { label: 'Support the Layout', href: '/donate', cta: true },
   // ... add or remove items here
 ];
+```
+
+The desktop bar fits about seven slots before items wrap onto a second line.
+Anything beyond that goes in a `children` array, which renders as a "More"
+dropdown on desktop and as a labelled group in the mobile menu:
+
+```typescript
+{
+  label: 'More',
+  children: [
+    { label: 'Volunteer', href: '/volunteer' },
+    { label: 'Contact', href: '/contact' },
+  ],
+},
 ```
 
 ---

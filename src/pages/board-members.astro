@@ -27,7 +27,7 @@ function getInitials(name: string) {
 >
   <!-- Hero -->
   <section class="bg-gray-900 text-white py-20">
-    <div class="container text-center">
+    <div class="page-container text-center">
       <h1 class="text-4xl md:text-5xl font-bold mb-4">Board Members &amp; Leadership</h1>
       <p class="text-lg text-gray-300 max-w-2xl mx-auto">
         Meet the dedicated volunteers who keep our railroad on track.
@@ -37,7 +37,7 @@ function getInitials(name: string) {
 
   <!-- Board Members Grid -->
   <section class="py-16 bg-cream">
-    <div class="container max-w-4xl">
+    <div class="page-container max-w-4xl">
       <SectionHeader
         eyebrow="Our Team"
         title="Club Leadership"
@@ -82,13 +82,13 @@ function getInitials(name: string) {
 
   <!-- CTA -->
   <section class="py-16 bg-white">
-    <div class="container max-w-2xl text-center">
+    <div class="page-container max-w-2xl text-center">
       <SectionHeader
         title="Interested in Joining?"
         description="We're always looking for new volunteers who share a passion for preserving Nevada County railroad history."
         centered
       />
-      <a href={`${base}/volunteer`} class="btn-primary inline-flex items-center gap-2">
+      <a href={`${base}/volunteer`} class="btn-primary gap-2">
         <Icon name="solar:users-group-rounded-bold" class="w-5 h-5" />
         Join Our Team
       </a>

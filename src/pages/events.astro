@@ -1,28 +1,33 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Button from '../components/Button.astro';
+import EventLine from '../components/EventLine.astro';
 import { Icon } from 'astro-icon/components';
 import { getCollection, render } from 'astro:content';
+import { formatEventDate, getEventDisplayDates, isUpcomingEvent } from '../utils/events';
+import { organization } from '../config/organization';
 
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 
 const events = await getCollection('events');
 const sortedEvents = events.sort((a, b) => 
-  new Date(a.data.date).getTime() - new Date(b.data.date).getTime()
+  getEventDisplayDates(a.data).date.getTime() - getEventDisplayDates(b.data).date.getTime()
 );
-const upcomingEvents = sortedEvents.filter(e => new Date(e.data.date) >= new Date());
-const pastEvents = sortedEvents.filter(e => new Date(e.data.date) < new Date()).reverse();
+const now = new Date();
+const upcomingEvents = sortedEvents.filter(e => isUpcomingEvent(e.data, now));
+const pastEvents = sortedEvents.filter(e => !isUpcomingEvent(e.data, now)).reverse();
 
 const siteUrl = Astro.site?.origin || 'https://ncngmodelrailroad.org';
 
 const eventSchemaItems = upcomingEvents.map((event) => {
+  const { date, endDate } = getEventDisplayDates(event.data);
   const item: Record<string, unknown> = {
     "@context": "https://schema.org",
     "@type": "Event",
     "name": event.data.title,
     "description": event.data.description || event.data.title,
-    "startDate": event.data.date.toISOString().split('T')[0],
-    "endDate": (event.data.endDate || event.data.date).toISOString().split('T')[0],
+    "startDate": date.toISOString().split('T')[0],
+    "endDate": (endDate ?? date).toISOString().split('T')[0],
     "eventStatus": "https://schema.org/EventScheduled",
     "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
     "location": {
@@ -54,66 +59,43 @@ const eventSchemaJson = JSON.stringify(eventSchemaItems)
   .replace(/\u2028/g, '\\u2028')
   .replace(/\u2029/g, '\\u2029');
 
-function formatDate(date: Date, endDate?: Date) {
-  const options: Intl.DateTimeFormatOptions = { 
-    weekday: 'long', 
-    year: 'numeric', 
-    month: 'long', 
-    day: 'numeric',
-    timeZone: 'UTC'
-  };
-  const start = date.toLocaleDateString('en-US', options);
-  if (endDate) {
-    const end = endDate.toLocaleDateString('en-US', options);
-    return `${start} - ${end}`;
-  }
-  return start;
-}
 ---
 
-<BaseLayout title="Events | N.C.N.G. Model Railroad" description="Upcoming events and operating sessions at the Nevada County Narrow Gauge Historical Model Railroad" image="/images/building-exterior.jpg">
+<BaseLayout title="Upcoming Events | N.C.N.G. Model Railroad" description="See upcoming events at the N.C.N.G. Historical Model Railroad, with event details and layout opening information for selected Nevada County Fairgrounds events." image="/images/building-exterior-visit.jpg">
   {eventSchemaItems.length > 0 && (
     <script type="application/ld+json" set:html={eventSchemaJson} />
   )}
   <!-- Hero -->
-  <section class="bg-gray-900 text-white py-20">
-    <div class="container text-center">
+  <section class="bg-gray-900 text-white py-12 md:py-16">
+    <div class="page-container text-center">
       <h1 class="text-4xl md:text-5xl font-bold mb-4">Upcoming Events</h1>
       <p class="text-lg text-gray-300 max-w-2xl mx-auto">
-        Posted events, regular work sessions, open houses, and community events at the Nevada County Fairgrounds.
+        What's coming up at the model railroad during {organization.location.venue} events.
       </p>
+      <div class="max-w-5xl mx-auto mt-10 md:mt-12">
+        <EventLine events={sortedEvents} />
+      </div>
     </div>
   </section>
 
-  <section class="py-16 bg-white">
-    <div class="container mx-auto px-4 max-w-4xl">
-      <div class="mb-10 rounded-2xl border border-amber-200 bg-amber-50 p-6 md:p-8">
-        <div class="flex items-start gap-4">
-          <div class="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-primary/10">
-            <Icon name="solar:settings-bold" class="w-6 h-6 text-primary" />
-          </div>
-          <div>
-            <p class="mb-2 text-sm font-semibold uppercase tracking-wider text-primary">Regular Work Sessions</p>
-            <h2 class="mb-3 text-2xl font-display text-gray-900">Usually the first Saturday and third Wednesday, 11 AM to 2 PM</h2>
-            <p class="text-gray-700">
-              Work sessions are a good time to meet volunteers, see what is being built or repaired, and ask about helping out.
-              They may shift or be canceled during paid-admission fairground events, so check ahead if you are making a special trip.
-            </p>
-          </div>
-        </div>
-      </div>
-      
+  <section class="py-10 md:py-12 bg-white">
+    <div class="page-container max-w-4xl">
       {upcomingEvents.length > 0 ? (
         <div class="space-y-8">
           {upcomingEvents.map(async (event) => {
             const { Content } = await render(event);
             return (
-              <article class="card p-6 border-l-4 border-primary">
+              <article id={`event-${event.id}`} class="clean-card p-6 scroll-mt-24">
                 <div class="flex flex-wrap items-start justify-between gap-4 mb-4">
                   <div>
                     <h2 class="text-2xl font-display text-gray-900">{event.data.title}</h2>
-                    <p class="text-primary font-medium mt-1">
-                      {formatDate(event.data.date, event.data.endDate)}
+                    {event.data.layoutStartDate && (
+                      <p class="text-primary font-semibold mt-2">
+                        Layout open: {formatEventDate(event.data.layoutStartDate, event.data.layoutEndDate ?? undefined)}
+                      </p>
+                    )}
+                    <p class="text-gray-600 mt-2">
+                      Host event dates: {formatEventDate(event.data.date, event.data.endDate)}
                     </p>
                   </div>
                   {event.data.featured && (
@@ -126,7 +108,7 @@ function formatDate(date: Date, endDate?: Date) {
                   <Icon name="solar:map-point-bold" class="w-4 h-4 inline-block mr-1" />
                   {event.data.location}
                 </p>
-                <div class="prose prose-sm mt-4">
+                <div class="prose prose-sm mt-4 max-w-prose">
                   <Content />
                 </div>
               </article>
@@ -134,39 +116,68 @@ function formatDate(date: Date, endDate?: Date) {
           })}
         </div>
       ) : (
-        <p class="text-gray-600">No upcoming events scheduled. Check back soon!</p>
+        <p class="text-gray-600">
+          No upcoming events are posted.
+          <a href={`${base}/gallery`} class="text-primary underline">Explore the layout photos</a>
+          while we prepare the next announcement.
+        </p>
       )}
+    </div>
+  </section>
+
+  <section class="py-10 md:py-12 bg-cream">
+    <div class="page-container max-w-4xl">
+      <h2 class="text-2xl font-bold mb-4">Event Day Details</h2>
+      <div class="max-w-prose">
+        <p class="text-gray-700 mb-3">{organization.visiting.publicAccess}</p>
+        <p class="text-gray-600 mb-3">{organization.visiting.eventTiming}</p>
+        <p class="text-gray-600 mb-4">
+          If layout hours are marked TBA, check the event listing for an update.
+          Host events may charge admission or parking to reach the layout.
+        </p>
+        <div class="flex flex-wrap gap-x-6 gap-y-3">
+          <a href={organization.location.mapsUrl} target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-11 text-primary underline font-semibold">Directions to the Fairgrounds</a>
+          <a href={`${base}/contact`} class="inline-flex items-center min-h-11 text-primary underline font-semibold">Ask About an Event</a>
+        </div>
+      </div>
     </div>
   </section>
 
   {pastEvents.length > 0 && (
     <section class="py-16 bg-cream">
-      <div class="container mx-auto px-4 max-w-4xl">
-        <h2 class="text-3xl font-display text-gray-900 mb-3">Past Events</h2>
-        <p class="text-gray-600 mb-8">Events we have already attended this year. These dates have passed, but the festivals return each year.</p>
-        <div class="space-y-6">
-          {pastEvents.slice(0, 5).map(async (event) => {
-            const { Content } = await render(event);
-            return (
-              <article class="bg-white p-6 rounded-lg shadow-sm border-l-4 border-gray-300">
-                <div class="flex flex-wrap items-start justify-between gap-3 mb-2">
-                  <div>
-                    <h3 class="text-xl font-display text-gray-800">{event.data.title}</h3>
-                    <p class="text-sm text-gray-500 mt-1">{formatDate(event.data.date, event.data.endDate)}</p>
+      <div class="page-container max-w-4xl">
+        <details data-past-events>
+          <summary class="text-2xl font-display text-primary cursor-pointer">Past Events ({pastEvents.length})</summary>
+          <p class="text-gray-600 my-6">These dates have passed. Past listings do not establish future opening dates, hours, or admission arrangements.</p>
+          <div class="space-y-6">
+            {pastEvents.map(async (event) => {
+              const { Content } = await render(event);
+              return (
+                <article id={`event-${event.id}`} class="bg-white p-6 rounded-lg shadow-sm border border-gray-200 scroll-mt-24">
+                  <div class="flex flex-wrap items-start justify-between gap-3 mb-2">
+                    <div>
+                      <h2 class="text-xl font-display text-gray-800">{event.data.title}</h2>
+                      {event.data.layoutStartDate && (
+                        <p class="text-sm text-gray-600 mt-1">
+                          Layout dates: {formatEventDate(event.data.layoutStartDate, event.data.layoutEndDate ?? undefined)}
+                        </p>
+                      )}
+                      <p class="text-sm text-gray-500 mt-1">Host event: {formatEventDate(event.data.date, event.data.endDate)}</p>
+                    </div>
+                    <span class="bg-gray-200 text-gray-700 px-3 py-1 rounded-full text-xs font-medium">Past event</span>
                   </div>
-                  <span class="bg-gray-200 text-gray-700 px-3 py-1 rounded-full text-xs font-medium">Past event</span>
-                </div>
-                <p class="text-gray-500 text-sm mb-2">
-                  <Icon name="solar:map-point-bold" class="w-4 h-4 inline-block mr-1" />
-                  {event.data.location}
-                </p>
-                <div class="prose prose-sm mt-3">
-                  <Content />
-                </div>
-              </article>
-            );
-          })}
-        </div>
+                  <p class="text-gray-500 text-sm mb-2">
+                    <Icon name="solar:map-point-bold" class="w-4 h-4 inline-block mr-1" />
+                    {event.data.location}
+                  </p>
+                  <div class="prose prose-sm mt-3">
+                    <Content />
+                  </div>
+                </article>
+              );
+            })}
+          </div>
+        </details>
       </div>
     </section>
   )}
@@ -195,7 +206,7 @@ function formatDate(date: Date, endDate?: Date) {
   </section>
 
   <section class="py-16 bg-primary text-white text-center">
-    <div class="container mx-auto px-4">
+    <div class="page-container">
       <h2 class="text-3xl font-display mb-4">Want to Get Involved?</h2>
       <p class="text-xl mb-8 text-gray-200">We&apos;re always looking for volunteers to help with events, work sessions, and operations.</p>
       <Button href={`${base}/volunteer`} variant="white">Become a Volunteer</Button>
@@ -206,3 +217,17 @@ function formatDate(date: Date, endDate?: Date) {
     </div>
   </section>
 </BaseLayout>
+
+<script>
+  // Timeline stations link to past listings, which sit inside a closed <details>.
+  const openTarget = () => {
+    const target = location.hash && document.getElementById(decodeURIComponent(location.hash.slice(1)));
+    const details = target && target.closest<HTMLDetailsElement>('details[data-past-events]');
+    if (details && !details.open) {
+      details.open = true;
+      target.scrollIntoView();
+    }
+  };
+  openTarget();
+  window.addEventListener('hashchange', openTarget);
+</script>

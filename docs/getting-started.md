@@ -20,16 +20,17 @@ The website has these main pages:
 
 | Page | What it shows |
 | :--- | :------------ |
-| **Home** | Welcome message, hero photo, quick links to everything |
+| **Home** | The next two upcoming events, layout photos, local history, and location details |
 | **About** | Our history, mission, timeline from 1876 to today |
 | **Trains** | The real N.C.N.G. Railroad history and engine roster |
-| **Gallery** | Photos of the layout, historic images, and building |
-| **Events** | Upcoming open houses and fairground events |
+| **Gallery** | Photos by category, with optional confirmed layout-area labels |
+| **Events** | Upcoming events first, followed by event-day details and past listings |
+| **Historic Map** | The original railroad route compared with modern imagery, not visitor directions |
 | **Learn** | Beginner guides and a glossary of model-railroad terms |
 | **Board Members** | Current board of directors with photos and roles |
-| **Get Involved** | Ways to support the organization (donate, volunteer, materials) |
-| **Volunteer** | Sign-up form for new volunteers |
-| **Contact** | Email contact form and our location info |
+| **Support the Layout** | Ways to support the organization (donate, volunteer, materials) |
+| **Volunteer** | Roles, participation information, and an email link for new volunteers |
+| **Contact** | How to reach us by email, phone, or Facebook, plus our location info |
 | **Links** | Useful external resources about narrow gauge railroads |
 
 ---

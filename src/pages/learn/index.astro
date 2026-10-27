@@ -11,6 +11,12 @@ const articles = (await getCollection('learn')).sort(
 );
 
 const resources = [
+  ...articles.map((article) => ({
+    title: article.data.title,
+    description: article.data.description,
+    href: `${base}/learn/${article.id}`,
+    icon: article.data.icon,
+  })),
   {
     title: 'Glossary of Terms',
     description:
@@ -18,12 +24,6 @@ const resources = [
     href: `${base}/learn/glossary`,
     icon: 'solar:book-bold',
   },
-  ...articles.map((article) => ({
-    title: article.data.title,
-    description: article.data.description,
-    href: `${base}/learn/${article.id}`,
-    icon: article.data.icon,
-  })),
 ];
 ---
 
@@ -32,7 +32,7 @@ const resources = [
   description="Newcomer-friendly guides to model railroading and the Nevada County Narrow Gauge: a beginner's primer and a plain-language glossary."
 >
   <section class="py-16 md:py-20 bg-cream">
-    <div class="container">
+    <div class="page-container">
       <SectionHeader
         as="h1"
         eyebrow="For Newcomers"
@@ -43,7 +43,7 @@ const resources = [
   </section>
 
   <section class="py-12 md:py-16">
-    <div class="container">
+    <div class="page-container">
       <div class="grid md:grid-cols-2 gap-6 max-w-4xl">
         {
           resources.map((resource) => (
@@ -56,7 +56,7 @@ const resources = [
                   <Icon name={resource.icon} class="w-6 h-6 text-primary" />
                 </div>
                 <div>
-                  <h2 class="text-xl font-bold mb-1 group-hover:text-primary transition-colors">
+                  <h2 class="text-xl font-body font-bold mb-1 group-hover:text-primary transition-colors">
                     {resource.title}
                   </h2>
                   <p class="text-gray-600 text-sm leading-relaxed">

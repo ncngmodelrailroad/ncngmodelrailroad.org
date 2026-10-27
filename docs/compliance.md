@@ -33,7 +33,7 @@ Avoid them entirely by only publishing media we can prove we may use:
 - **Images:** use the museum's own photographs, public-domain images, or images
   with a clear license that permits website use. Do not paste images found
   through a search engine. Keep a note of where each image came from.
-- **Fonts:** the site self-hosts open-license fonts (Montserrat and Archivo
+- **Fonts:** the site self-hosts open-license fonts (Libre Franklin and Archivo
   Black, both SIL Open Font License) through `@fontsource`. It does not load
   fonts from Google's CDN, so no visitor IP is sent to a font network. Keep it
   that way.
@@ -66,5 +66,6 @@ General's resources.
   needed. Do not add a second analytics tool or any tracking cookies.
 - No accounts, no on-site data collection (contact buttons open the visitor's
   own email client), no on-site payment processing.
-- Branch protection on `main` with a required build check and review.
+- Branch protection on `main` with a required build check. Every change goes
+  through a pull request, and force pushes and branch deletion are blocked.
 - A privacy policy at [`/privacy`](https://ncngmodelrailroad.org/privacy).

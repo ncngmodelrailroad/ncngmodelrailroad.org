@@ -7,9 +7,21 @@ const events = defineCollection({
     title: z.string(),
     date: z.date(),
     endDate: z.date().optional(),
+    layoutStartDate: z.date().nullish(),
+    layoutEndDate: z.date().nullish(),
     location: z.string(),
     description: z.string().optional(),
     featured: z.boolean().default(false),
+  }).refine(event => !event.layoutEndDate || !!event.layoutStartDate, {
+    path: ['layoutEndDate'],
+    message: 'A layout end date requires a confirmed layout start date.',
+  }).refine(event => !event.layoutStartDate || (
+    event.layoutStartDate >= event.date &&
+    (event.layoutEndDate ?? event.layoutStartDate) >= event.layoutStartDate &&
+    (event.layoutEndDate ?? event.layoutStartDate) <= (event.endDate ?? event.date)
+  ), {
+    path: ['layoutStartDate'],
+    message: 'Confirmed layout dates must be in order and within the host event dates.',
   }),
 });
 
@@ -31,6 +43,7 @@ const gallery = defineCollection({
     image: z.string(),
     caption: z.string(),
     category: z.enum(['Historic', 'Layout', 'Volunteer Work', 'Fairgrounds & Events']),
+    area: z.string().trim().nullish(),
   }),
 });
 

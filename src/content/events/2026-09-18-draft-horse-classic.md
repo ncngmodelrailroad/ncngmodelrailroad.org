@@ -2,19 +2,25 @@
 title: Draft Horse Classic
 date: 2026-09-17
 endDate: 2026-09-20
+layoutStartDate: 2026-09-19
+layoutEndDate: 2026-09-20
 location: Nevada County Fairgrounds, Grass Valley
 description: |
-  Visit the N.C.N.G. Historical Model Railroad during the Draft Horse Classic & Harvest Fair, September 17 to 20, 2026, at the Nevada County Fairgrounds. Fairgrounds admission is free.
+  The N.C.N.G. Historical Model Railroad will be open Saturday and Sunday, September 19 and 20, 2026, during the Draft Horse Classic & Harvest Fair. Layout hours are TBA.
 featured: false
 ---
 
-The model railroad opens during the [Draft Horse Classic & Harvest Fair](https://www.nevadacountyfair.com/p/draft-horse-classic), September 17 to 20, 2026, at the Nevada County Fairgrounds. The Classic draws the premier draft horse show in the western United States, with six arena shows across four days.
-
 ## Visiting the Layout
 
-Stop by the railroad building to watch the On3 scale layout run. Our open hours can vary across the weekend, so check back for confirmed times.
+The model railroad will be open **Saturday and Sunday, September 19 and 20, 2026**, during the [Draft Horse Classic & Harvest Fair](https://www.nevadacountyfair.com/p/draft-horse-classic).
+
+**Layout hours: TBA.** Check this announcement for hours before visiting. The host event's schedule is not the layout's schedule.
+
+Find the On3 scale layout in the railroad building inside the fairgrounds.
 
 ## About the Event
+
+The host event runs September 17 to 20, 2026, at the Nevada County Fairgrounds. The Classic features six arena shows across four days.
 
 Fairgrounds admission during the Draft Horse Classic & Harvest Fair is free. Arena show seats are ticketed and sell out, so book ahead through the official site.
 

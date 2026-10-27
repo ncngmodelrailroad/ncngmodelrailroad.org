@@ -17,7 +17,7 @@
 
   /* Custom fonts */
   --font-display: 'Archivo Black', 'Archivo Black Fallback', Georgia, serif;
-  --font-body: 'Montserrat', 'Helvetica Neue', Arial, sans-serif;
+  --font-body: 'Libre Franklin Variable', 'Libre Franklin', 'Helvetica Neue', Arial, sans-serif;
 }
 
 /* Design system variables.
@@ -218,30 +218,73 @@
   }
 }
 
-/* Reduced motion preference */
+/* Reduced motion preference.
+
+   Animations and scroll behavior stop. Transitions are shortened rather than
+   killed, because a blanket `transition-duration: 0.01ms` on `*` also removes
+   hover and focus feedback on links, buttons, and cards. The preference is
+   about vestibular motion, not about losing state-change cues. Transform-based
+   movement is handled per-effect (see `.animate-kenburns` below). */
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,
   *::after {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
+    transition-duration: 80ms !important;
     scroll-behavior: auto !important;
+  }
+
+  .hover-lift:hover {
+    transform: none;
+  }
+
+  .btn-primary:hover {
+    transform: none;
   }
 }
 
-/* High contrast mode support */
-@media (prefers-contrast: high) {
+/* High contrast mode support.
+
+   The media feature value is `more`, not `high`. `high` was an early draft
+   spelling that no browser ships, so a `prefers-contrast: high` block is dead
+   code that never matches while still looking like working support.
+
+   These overrides must also be scoped per color scheme. The light values below
+   push text toward black, which is correct on the cream background and
+   unreadable on the dark one, so the dark branch raises contrast in the other
+   direction instead of inheriting them. */
+@media (prefers-contrast: more) {
   :root {
     --color-primary: #660000;
+    --color-primary-rgb: 102, 0, 0;
+    --color-primary-dark: #4A0000;
     --color-text: #000000;
     --color-text-muted: #333333;
+    --color-border: #6B5B48;
+  }
+
+  /* Most body copy still reaches for Tailwind's gray utilities rather than the
+     semantic tokens above, so raising the tokens alone leaves the majority of
+     text unchanged. These mirror the dark-mode override block further down and
+     can retire alongside it once pages consume the tokens directly. */
+  .text-gray-500,
+  .text-gray-600,
+  .text-gray-700,
+  .text-gray-800 {
+    color: #1C1C1C !important;
+  }
+
+  .border-gray-200,
+  .border-gray-300 {
+    border-color: #6B5B48 !important;
   }
 }
+
 
 /* Base Styles */
 body {
-  font-family: 'Montserrat', 'Helvetica Neue', Arial, sans-serif;
+  font-family: var(--font-body);
   background-color: var(--color-bg);
   background-image:
     radial-gradient(circle at top left, rgba(var(--color-gold-rgb), 0.10), transparent 30rem),
@@ -252,11 +295,24 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
+@layer base {
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+  }
+
+  h3, h4, h5, h6 {
+    font-family: var(--font-body);
+  }
+}
+
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'Archivo Black', 'Archivo Black Fallback', Georgia, serif;
   color: var(--color-primary);
   line-height: 1.2;
   letter-spacing: -0.03em;
+}
+
+h3, h4, h5, h6 {
+  letter-spacing: -0.01em;
 }
 
 /* Allow parent text-white to override heading color in dark sections */
@@ -313,63 +369,119 @@ select:focus-visible {
 .bg-gold { background-color: var(--color-gold); }
 .text-gold { color: var(--color-gold); }
 
-/* Container */
-.container {
-  max-width: 76rem;
-  margin-left: auto;
-  margin-right: auto;
-  padding-left: clamp(1rem, 4vw, 2rem);
-  padding-right: clamp(1rem, 4vw, 2rem);
+/* Page container.
+
+   This is deliberately NOT called `.container`, and it deliberately sits inside
+   `@layer components`. Both details are load-bearing.
+
+   Tailwind v4 ships its own `container` utility whose breakpoint max-widths run
+   up to 96rem, so reusing that name means either colliding with it or being
+   shadowed by it. A distinct name keeps two rules from competing for one class.
+
+   Tailwind still emits `.container` in the built CSS. Those rules match nothing,
+   because no element carries the class, so they are dead weight rather than a
+   live conflict. Exactly two files produce the candidate:
+   `public/map/vendor/maplibre-gl/5.6.2/maplibre-gl.js`, and the paragraph in
+   `docs/design-system.md` that explains this rename. They are NOT extracted from
+   `page-container`; the scanner tokenizes that as one candidate and never splits
+   it. Do not treat the emitted rules as proof the class is inert: put
+   `container` on an element and you get Tailwind's breakpoint widths, not this
+   shell.
+
+   The layer matters because unlayered rules beat layered ones regardless of
+   specificity or source order. Left unlayered, this rule would silently kill any
+   `max-w-*` or `px-*` utility written alongside it. Inside `components`, which
+   is ordered before `utilities`, an author can still narrow a shell with
+   `max-w-4xl` and have it work.
+
+   `width: 100%` is required, not decorative. Tailwind's container utility used
+   to supply it while this rule supplied the max-width, and at least one shell
+   is a flex item, where `width: auto` shrink-to-fits instead of filling the
+   row. */
+@layer components {
+  .page-container {
+    width: 100%;
+    max-width: 76rem;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: clamp(1rem, 4vw, 2rem);
+    padding-right: clamp(1rem, 4vw, 2rem);
+  }
 }
 
-/* Button Styles */
-.btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0.75rem 1.5rem;
-  border-radius: var(--radius-pill);
-  font-weight: 600;
-  transition: all 0.2s;
-}
+/* Button styles.
 
-.btn-primary {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0.75rem 1.5rem;
-  border-radius: var(--radius-pill);
-  font-weight: 600;
-  transition: all 0.2s;
-  color: white;
-  background: linear-gradient(var(--gradient-direction-diagonal), var(--color-primary), var(--color-primary-dark));
-  box-shadow: 0 12px 24px rgba(var(--color-primary-rgb), 0.20);
-}
+   These live in `@layer components` for the same reason `.page-container` does:
+   they set `display` and `padding`, and an unlayered rule beats every utility
+   regardless of specificity or source order. Left unlayered, a `px-8` or `py-2`
+   written next to `.btn-primary` renders as nothing at all. Inside `components`,
+   which is ordered before `utilities`, a per-instance override takes effect. */
+@layer components {
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.75rem 1.5rem;
+    border-radius: var(--radius-pill);
+    font-weight: 600;
+    transition: all 0.2s;
+  }
 
-.btn-primary:hover {
-  background: linear-gradient(var(--gradient-direction-diagonal), var(--color-primary-dark), var(--color-primary));
-  transform: translateY(-1px);
-}
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.75rem 1.5rem;
+    border-radius: var(--radius-pill);
+    font-weight: 600;
+    transition: all 0.2s;
+    color: white;
+    background: linear-gradient(var(--gradient-direction-diagonal), var(--color-primary), var(--color-primary-dark));
+    box-shadow: 0 12px 24px rgba(var(--color-primary-rgb), 0.20);
+  }
 
-.btn-primary:focus-visible {
-  box-shadow: var(--focus-ring);
-}
+  .btn-primary:hover {
+    background: linear-gradient(var(--gradient-direction-diagonal), var(--color-primary-dark), var(--color-primary));
+    transform: translateY(-1px);
+  }
 
-.btn-outline {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0.75rem 1.5rem;
-  border-radius: var(--radius-pill);
-  font-weight: 600;
-  transition: all 0.2s;
-  border: 2px solid var(--color-primary);
-  color: var(--color-primary);
-}
+  .btn-primary:focus-visible {
+    box-shadow: var(--focus-ring);
+  }
 
-.btn-outline:hover {
-  background-color: var(--color-primary);
-  color: white;
+  .btn-outline,
+  .btn-outline-inverse {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.75rem 1.5rem;
+    border-radius: var(--radius-pill);
+    font-weight: 600;
+    transition: all 0.2s;
+    border: 2px solid;
+  }
+
+  .btn-outline {
+    --button-outline-color: var(--color-primary);
+    border-color: var(--button-outline-color);
+    color: var(--button-outline-color);
+  }
+
+  .btn-outline:hover {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+  }
+
+  .btn-outline-inverse {
+    border-color: var(--color-white);
+    background-color: color-mix(in srgb, var(--color-white) 10%, transparent);
+    color: var(--color-white);
+  }
+
+  .btn-outline-inverse:hover {
+    background-color: var(--color-white);
+    color: var(--color-gray-900);
+  }
 }
 
 /* Card Styles */
@@ -423,10 +535,71 @@ select:focus-visible {
   color: var(--color-primary);
 }
 
+header nav a[aria-current],
+header nav summary[data-current-section="true"] {
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 0.3em;
+}
+
 .nav-link-icon {
   display: inline-flex;
   align-items: center;
   gap: 0.375rem;
+}
+
+/* Desktop "More" disclosure.
+
+   Built on <details> so the toggle, keyboard operation, and expanded state come
+   from the element rather than from script. The marker is removed in two ways
+   because Safari uses the ::-webkit-details-marker pseudo-element instead of
+   honoring `list-style: none`. */
+.nav-more > summary {
+  list-style: none;
+}
+
+.nav-more > summary::-webkit-details-marker {
+  display: none;
+}
+
+.nav-more > summary::marker {
+  content: '';
+}
+
+.nav-more-chevron {
+  transition: transform 0.2s ease;
+}
+
+.nav-more[open] > summary .nav-more-chevron {
+  transform: rotate(180deg);
+}
+
+.nav-more-panel {
+  position: absolute;
+  right: 0;
+  top: calc(100% + 0.5rem);
+  z-index: 60;
+  min-width: 11rem;
+  padding: 0.375rem;
+  border-radius: 0.875rem;
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  box-shadow: var(--shadow-soft);
+}
+
+.nav-more-link {
+  display: block;
+  padding: 0.5rem 0.75rem;
+  border-radius: 0.5rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--color-text-muted);
+  transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+.nav-more-link:hover {
+  background-color: var(--color-bg-alt);
+  color: var(--color-primary);
 }
 
 .hero-kicker {
@@ -469,6 +642,17 @@ select:focus-visible {
     linear-gradient(0deg, rgba(var(--color-hero-overlay-rgb), 0.72), transparent 42%);
 }
 
+@media (max-width: 47.999rem) {
+  .hero-vignette {
+    background: linear-gradient(
+      0deg,
+      rgba(var(--color-hero-overlay-rgb), 0.88),
+      rgba(var(--color-hero-overlay-rgb), 0.76) 65%,
+      rgba(var(--color-hero-overlay-rgb), 0.66)
+    );
+  }
+}
+
 .section-shell {
   border-radius: calc(var(--radius-card) + 0.75rem);
   background: color-mix(in srgb, var(--color-surface) 72%, transparent);
@@ -486,6 +670,7 @@ blockquote {
 
 /* Rich text content theming (event bodies and similar) */
 .prose {
+  overflow-wrap: anywhere;
   --tw-prose-body: var(--color-text);
   --tw-prose-bold: var(--color-text);
   --tw-prose-links: var(--color-primary);
@@ -588,13 +773,12 @@ textarea:invalid:focus {
   h1, h2, h3, h4, h5, h6,
   .text-primary,
   .eyebrow,
-  .btn-outline,
   blockquote {
     color: var(--color-primary-light);
   }
 
   .btn-outline {
-    border-color: var(--color-primary-light);
+    --button-outline-color: var(--color-primary-light);
   }
 
   blockquote {
@@ -605,11 +789,9 @@ textarea:invalid:focus {
     color: var(--color-primary-light);
   }
 
-  /* Hover and group-hover states that turn text red must use the lighter red on
-     dark surfaces too. axe does not test hover, so these are easy to miss. The
-     about-page outline button hovers to a white background, so it is excluded
-     and keeps the darker red there. */
-  .hover\:text-primary:not(.hover\:bg-white):hover,
+  /* Text links need the lighter red on dark surfaces, including hover states.
+     Inverse outline buttons define their own white hover surface and dark text. */
+  .hover\:text-primary:hover,
   .group:hover .group-hover\:text-primary,
   .prose a:hover {
     color: var(--color-primary-light);
@@ -635,5 +817,42 @@ textarea:invalid:focus {
   }
   .bg-gray-200 {
     background-color: var(--color-bg-alt) !important;
+  }
+}
+
+/* Dark high-contrast overrides.
+
+   Placed after the dark-mode block above for the same reason that block sits
+   where it does: equal specificity plus `!important` means source order
+   decides, and `.text-gray-800` is re-declared up there.
+
+   The primary red moves DARKER here, not lighter. It is a background under
+   white text (`.bg-primary`, `.btn-primary`, the gallery category badge), so
+   raising its luminance would lower contrast in the one mode meant to raise it.
+   Red as TEXT on dark surfaces is served by --color-primary-light instead. */
+@media (prefers-color-scheme: dark) and (prefers-contrast: more) {
+  :root {
+    --color-primary: #A11616;
+    --color-primary-rgb: 161, 22, 22;
+    --color-primary-dark: #7A0F0F;
+    --color-primary-light: #FF9A90;
+    --color-text: #FFFFFF;
+    --color-text-muted: #DCDCDC;
+    --color-border: #6E6E85;
+  }
+
+  .text-gray-400,
+  .text-gray-500,
+  .text-gray-600,
+  .text-gray-700,
+  .text-gray-800,
+  .text-gray-900 {
+    color: #FFFFFF !important;
+  }
+
+  .border-gray-200,
+  .border-gray-300,
+  .border-gray-800 {
+    border-color: #6E6E85 !important;
   }
 }

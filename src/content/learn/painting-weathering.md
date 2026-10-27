@@ -8,9 +8,13 @@ updatedDate: 2026-10-01
 
 Paint makes a shiny plastic model look like it has worked for a living. In paint you applied yourself, you can usually wipe off wet paint, sand a small defect, or paint over it. Stripping is a last resort, and factory finishes and other people's models deserve extra care. You need no spray gear to learn.
 
-## Volunteering? You don't need a kit first
+## The short version
 
-You do not need to buy a tool kit before volunteering. The layout has shared tools for layout work, including an NCE Power Cab at the workbench. [Email before attending](/contact), and ask what is available and what to bring. The shopping list below is for projects at home.
+- Start with a cheap practice car, water-based acrylics, and three brushes.
+- Several thin coats beat one thick coat.
+- Mistakes in paint you applied yourself can usually be wiped off, sanded, or painted over.
+- Brush-painting with water-based acrylics needs only a well-ventilated room. Spraying and solvent paints need more gear, covered near the end.
+- **Volunteering?** You do not need your own tools. See [Before your first session](/learn/getting-your-hands-dirty#before-your-first-session).
 
 ## Your first project: paint a practice car
 
@@ -31,7 +35,7 @@ Keep the car to test each new technique.
 - **A small flat** for broad, even areas
 - **An old, stiff brush** for drybrushing and powders, which wear brushes out
 
-Synthetic bristles suit acrylics. Don't dip past the bristles, because paint that dries in the metal band (the **ferrule**) splays the tip. Rinse often while you work. When you finish, wash with brush soap, reshape the tip, and let the brush dry lying flat so water or solvent can't run into the ferrule.
+Synthetic bristles suit acrylics. Do not dip past the bristles, because paint that dries in the metal band (the **ferrule**) splays the tip. Rinse often while you work. When you finish, wash with brush soap, reshape the tip, and let the brush dry lying flat so water or solvent cannot run into the ferrule.
 
 ## Decals
 
@@ -49,7 +53,7 @@ Most lettering comes as **water-slide decals**: printed film on backing paper th
 
 - **Washes.** Heavily thinned dark paint that flows into seams to add shadow. Brush it on, then wipe the high spots with a tissue.
 - **Drybrushing.** Wipe almost all the paint off an old brush, then flick it across raised detail so edges catch color.
-- **Powders and pastels.** Brush on hobby weathering pigment or scraped dry soft pastel (not oil pastel). Test first, since some stain flat paint. Don't blow powder off or raise dust.
+- **Powders and pastels.** Brush on hobby weathering pigment or scraped dry soft pastel (not oil pastel). Test first, since some stain flat paint. Do not blow powder off or raise dust.
 
 A **flat** (matte) clear coat hides decal edges and protects the paint. Use a hobby clear whose label says it works over your paint and decals, and test on scrap, because general-purpose clears can attack hobby paint. Flat coats can fade powder effects, so seal lightly. Spray clears follow the same safety rules as any spraying.
 
@@ -59,9 +63,9 @@ These fixes work on paint you applied yourself. Ask the owner before working on 
 
 - **Wet paint in the wrong spot:** lift water-based paint with a damp swab. For other paints, use the matching cleaner, tested on the finish underneath.
 - **A run, drip, or dust speck:** let it dry, sand it smooth with fine sandpaper or a sanding stick, and repaint.
-- **Too much weathering:** lift loose powder with a clean, dry brush. Soften a heavy wash with a swab and a thinner that won't dissolve the paint beneath it.
+- **Too much weathering:** lift loose powder with a clean, dry brush. Soften a heavy wash with a swab and a thinner that will not dissolve the paint beneath it.
 
-**Stripping is a last resort.** Strippers, even isopropyl alcohol, can damage plastic, clear parts, resin, glue joints, and lettering. Use one whose label allows the model's material, and test a hidden spot first. Work in a small covered container with eye protection, suitable gloves, and good ventilation, away from flames and heaters, and don't leave it unattended.
+**Stripping is a last resort.** Strippers, even isopropyl alcohol, can damage plastic, clear parts, resin, glue joints, and lettering. Use one whose label allows the model's material, and test a hidden spot first. Work in a small covered container with eye protection, suitable gloves, and good ventilation, away from flames and heaters, and do not leave it unattended.
 
 ## Paint types, for reference
 
@@ -99,19 +103,32 @@ Prices are rough US ranges from when this guide was last updated (2026) and will
 - **A NIOSH-approved half-face respirator** with the cartridges and filters the product or conditions require, about $40 to $60.
 - **Optional for spraying:** an airbrush and compressor set, about $90 to $180, with a pressure regulator and moisture trap.
 
-## Safety checklist
+## Brands to start with
 
-- **Follow the label and the safety data sheet (SDS)** for every paint, thinner, clear, and stripper.
-- **Control spray at the source.** Spray outdoors where the label allows, or in a booth that exhausts outdoors and is rated for the product. A booth that only filters and recirculates air does not remove solvent vapor. Brush-painting with water-based acrylics needs only a well-ventilated room.
+These are long-established examples, not endorsements. Check reviews of the exact item before you buy.
+
+- **Paint:** Vallejo, Reaper, and Citadel water-based acrylics.
+- **Decal solutions:** Microscale Micro Set (mild) and Micro Sol (stronger).
+- **Weathering powders:** Bragdon and AIM.
+- **Airbrushes, if you get there:** Badger and Iwata.
+
+## Safety
+
+Follow the label and the safety data sheet (SDS) for every paint, thinner, clear, and stripper.
+
+**Brush-painting with water-based acrylics** needs only a well-ventilated room. Keep food and drink off the paint bench, keep paint away from children and pets, and do not pour paint down a drain.
+
+### If you spray or use solvent paints
+
+- **Control spray at the source.** Spray outdoors where the label allows, or in a booth that exhausts outdoors and is rated for the product. A booth that only filters and recirculates air does not remove solvent vapor.
 - **Wear the respirator the product or conditions require.** For solvent paints and most spraying, the SDS usually calls for a NIOSH-approved respirator with **organic vapor** cartridges plus P95 or P100 filters. An N95 dust mask or other N-series filter does not stop solvent fumes or oily mist.
 - **Make the respirator work.** Pick the size by fit test, seal-check it every time, and keep the seal area clean-shaven. Store it and its cartridges in a sealed bag, and replace cartridges on the maker's schedule, not when you smell solvent.
 - **Choose gloves from the SDS.** Disposable nitrile handles brief splashes of many paints but not every solvent. Replace soaked gloves right away.
 - **Keep flammables away from ignition.** Keep paint, thinner, alcohol, rags, and spray cans away from flames, pilot lights, heaters, and sparks.
-- Don't eat or drink at the paint bench, and keep paint away from children and pets.
-- **Dispose of waste properly.** Don't pour paint or solvent down a drain. Take used solvent and soaked rags to a household hazardous waste program.
+- **Dispose of waste properly.** Do not pour paint or solvent down a drain. Take used solvent and soaked rags to a household hazardous waste program.
 
 ## Keep exploring
 
-- [Getting your hands dirty: what is safe to try](/learn/getting-your-hands-dirty)
-- [Your first workbench](/learn/first-workbench-tools)
-- [Scenery and landscape](/learn/scenery-landscape)
+- [Getting Your Hands Dirty](/learn/getting-your-hands-dirty): what is safe to try
+- [Your First Workbench](/learn/first-workbench-tools): tools and glues
+- [Scenery and Landscape](/learn/scenery-landscape): ground cover, rocks, and trees

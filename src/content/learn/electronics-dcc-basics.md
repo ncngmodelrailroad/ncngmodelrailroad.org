@@ -6,7 +6,7 @@ icon: solar:plug-circle-bold
 updatedDate: 2026-10-01
 ---
 
-Layouts run on low voltage. Most troubleshooting can be done safely with the power off and a multimeter, but short circuits can still heat wires and rails.
+Layouts run on low voltage, so this is a safe area to learn. Turn the power off before you touch wiring, and use a multimeter to find problems. The one thing to respect is a short circuit, which can heat wires and rails.
 
 **New to all of this?** Read the short version and the safety section, then skip to [Before you touch the layout wiring](#before-you-touch-the-layout-wiring). Come back to the rest when a project calls for it.
 
@@ -15,7 +15,7 @@ Layouts run on low voltage. Most troubleshooting can be done safely with the pow
 - The rails carry low voltage. Wall outlets carry dangerous mains voltage. Never open or work inside equipment connected to wall power.
 - Unplug the system before you touch wiring.
 - At the club, ask an experienced member before you change any layout wiring.
-- You do not need to buy a tool kit before volunteering. The layout has shared tools for layout work, including an NCE Power Cab at the workbench. [Email before attending](/contact), and ask what is available and what to bring.
+- **Volunteering?** You do not need your own tools. See [Before your first session](/learn/getting-your-hands-dirty#before-your-first-session).
 
 ## Low voltage and wall power are different worlds
 
@@ -31,7 +31,7 @@ A **digital multimeter** measures voltage, resistance, and continuity.
 - **Continuity**, with the power off, checks whether two points connect. The meter beeps if the path is complete. Use it to find broken feeders and hidden shorts. A beep does not prove a joint can carry a running train's current.
 - **Set it before you touch anything powered.** Black lead in COM, red lead in the V jack, dial on voltage. Never put a meter set for continuity, resistance, or current across powered rails; that can short the track or damage the meter.
 - **DC voltage** (V with a straight line) reads batteries and lighting adapters. **AC voltage** (V with a wavy line) is the setting people use for DCC track.
-- **Compare, don't chase exact numbers.** Look for the same reading on every section of track.
+- **Compare, do not chase exact numbers.** Look for the same reading on every section of track.
 
 **Advanced note:** DCC is a fast square wave, not smooth AC, so many meters read it low. A true RMS meter helps only if it is rated for several kilohertz. A dedicated DCC meter, or a rectifier adapter for a DC meter, gives the most reliable numbers.
 
@@ -105,6 +105,15 @@ Only if you are building your own layout:
 - **Decoder without sound**: about $20 to $40 for HO; larger O-scale decoders cost roughly twice that.
 - **Sound decoder**: about $70 to $150 for HO; about $165 to $220 for O scale.
 
+## Brands to start with
+
+These are long-established examples, not endorsements. Check reviews of the exact item before you buy.
+
+- **Solder and flux:** Kester and MG Chemicals.
+- **Strippers and cutters:** Klein Tools strippers and Xuron cutters.
+- **DCC systems:** NCE, Digitrax, and ESU.
+- **Decoders:** TCS, SoundTraxx, and ESU.
+
 ## Before you touch the layout wiring
 
 Our layout has been growing since 1986, and its wiring holds years of work you cannot see from the top. Use this checklist every time.
@@ -120,9 +129,9 @@ Our layout has been growing since 1986, and its wiring holds years of work you c
 
 ## Keep exploring
 
-- [Glossary of terms](/learn/glossary): model and rail words in plain English
-- [First workbench tools](/learn/first-workbench-tools): the hand tools that come before a soldering iron
-- [Tinkering and tech](/learn/tinkering-tech): JMRI, microcontrollers, and train cameras
+- [Glossary](/learn/glossary): model and rail words in plain English
+- [Your First Workbench](/learn/first-workbench-tools): the hand tools that come before a soldering iron
+- [Tinkering Tech](/learn/tinkering-tech): JMRI, microcontrollers, and train cameras
 
 ### Further reading
 

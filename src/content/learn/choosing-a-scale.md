@@ -8,6 +8,15 @@ updatedDate: 2026-10-01
 
 Your choice of scale shapes everything that follows: how much room you need, what you can buy, and what it costs. This guide helps you pick a scale, then walks through buying your first trains.
 
+## The short version
+
+- For a first home layout, HO has the most choice, N fits small spaces, and On30 is the lower-cost way into O scale narrow gauge.
+- Measure your space first. The curve radius decides what fits.
+- Decide DC or DCC before you buy a controller.
+- Used trains save money. Test them before you buy.
+- Our layout is On3, a small niche. You can enjoy it at the club without buying any On3 equipment.
+- **Volunteering?** You do not need your own tools. See [Before your first session](/learn/getting-your-hands-dirty#before-your-first-session).
+
 ## Scale and gauge, in brief
 
 **[Scale](/learn/glossary#scale)** is the size ratio between the model and the real thing. **[Gauge](/learn/glossary#gauge)** is the distance between the rails. A scale name like HO or O can come with more than one gauge. **[On3](/learn/glossary#on3)**, for example, is O scale (1:48) modeling [narrow gauge](/learn/glossary#narrow-gauge) track 3 real feet wide. For a gentler start, read [New to Model Railroading?](/learn/new-to-model-railroading) first.
@@ -44,9 +53,7 @@ The radius is how tight a curve you can use. A simple loop needs a space a littl
 
 Our layout models the Nevada County Narrow Gauge in On3, on DCC. On3 is a small niche with far fewer ready-to-run options than HO: expect limited-run brass, craftsman kits, and second-hand shopping. Brass is priced by rarity and condition, so even a used locomotive often costs more than a top-end HO model.
 
-A club layout lets you see On3 running without buying any On3 equipment. Our members operate the layout with Engine Driver on a pair of Android tablets through JMRI.
-
-You do not need to buy a tool kit before volunteering. The layout has shared tools for layout work, including an NCE Power Cab at the workbench. [Email before attending](/contact), and ask what is available and what to bring.
+A club layout lets you see On3 running without buying any On3 equipment.
 
 ## Other easy ways in
 
@@ -101,10 +108,16 @@ Prices are rough US ranges from when this guide was last updated (2026) and will
 
 Specialized and family options cover a wide spread: a powered LEGO train set runs about $190 to $210, a Z locomotive about $150 to $400, and an On3 brass locomotive from about $700 used to several thousand.
 
+## Brands to start with
+
+These are long-established examples, not endorsements. Check reviews of the exact item before you buy.
+
+- **Track:** Kato Unitrack and Bachmann E-Z Track snap together with built-in roadbed. Choose a nickel silver line. Atlas is the common choice for flex track and turnouts.
+- **Trains:** Kato has a long record of smooth-running N and HO locomotives. Athearn, Bachmann, and Walthers cover HO widely, and Bachmann makes most plastic On30.
+
 ## Keep exploring
 
-- [Electronics and DCC basics](/learn/electronics-dcc-basics) explains decoders and command stations.
-- [First workbench tools](/learn/first-workbench-tools) covers the hand tools and glues for building and repairing models.
-- [Getting your hands dirty](/learn/getting-your-hands-dirty) covers what is safe to try when you volunteer.
-
-The [glossary](/learn/glossary) explains any term that trips you up.
+- [Electronics and DCC Basics](/learn/electronics-dcc-basics): decoders and command stations
+- [Your First Workbench](/learn/first-workbench-tools): the hand tools and glues for building and repairing models
+- [Getting Your Hands Dirty](/learn/getting-your-hands-dirty): what is safe to try when you volunteer
+- [Glossary](/learn/glossary): any term that trips you up

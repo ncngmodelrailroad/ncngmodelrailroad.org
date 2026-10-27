@@ -8,6 +8,13 @@ updatedDate: 2026-10-01
 
 Most beginner mistakes can be fixed, repainted, or rebuilt. A few cannot. This guide sorts the work into what to try, when to ask first, and what to leave alone without approval.
 
+## The short version
+
+- Practice on scrap and on your own projects first. Mistakes there can almost always be fixed.
+- On a shared layout, ask before you touch installed scenery, track, locomotives, or anyone else's model.
+- Leave wiring, glued ballast, factory paint, and decoder settings alone unless you have approval.
+- **Volunteering?** You do not need your own tools. [Email us](/contact) before your first session; details are at the end of this page.
+
 ## Try it, ask first, or leave it alone
 
 Experienced members on most shared layouts expect questions, and most would rather answer one than repair a mistake. Layouts have history you cannot see, such as past repairs, hidden wiring, and parts that look loose but are meant to move.
@@ -31,7 +38,7 @@ Practice first on cheap material: scrap styrene, plastic spoons, a used freight 
 
 **Do not change without approval.** These mistakes can be permanent.
 
-- Factory paint and lettering. Damage may be hard or impossible to match, and solvents or stripping can ruin it.
+- Factory paint and lettering on layout or member equipment. Damage may be hard or impossible to match, and solvents or stripping can ruin it.
 - Glued ballast and scenery. Once glue sets, ballast can lock a turnout or foul the rails, and removing it risks damaging the track.
 - Layout wiring and power. A change in one spot can affect trains far away. Do not disconnect, cut, or add any wire.
 - Decoder settings. Changing or resetting a decoder can erase a locomotive's address, speed, and sound settings if nobody recorded them. Replacing firmware or sound files can need the maker's hardware and original files.
@@ -72,6 +79,6 @@ You do not need to buy a tool kit before volunteering. The layout has shared too
 
 ## Keep exploring
 
-- [Choosing a scale](/learn/choosing-a-scale), if you want trains of your own at home
-- [Workbench tools](/learn/first-workbench-tools), for what to keep on your bench and why
-- [New to Model Railroading?](/learn/new-to-model-railroading) and the [glossary](/learn/glossary), for the basics and the words you will hear
+- [Choosing a Scale](/learn/choosing-a-scale): if you want trains of your own at home
+- [Your First Workbench](/learn/first-workbench-tools): what to keep on your bench and why
+- [New to Model Railroading?](/learn/new-to-model-railroading) and the [Glossary](/learn/glossary): the basics and the words you will hear

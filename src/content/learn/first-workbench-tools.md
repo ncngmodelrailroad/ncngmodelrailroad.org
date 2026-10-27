@@ -8,11 +8,13 @@ updatedDate: 2026-10-01
 
 You do not need a workshop to start building models. A kitchen table, a few small tools, and two or three glues will carry you through your first kits and repairs. This page covers what to buy first, which glue to use, and what to do if something goes wrong.
 
-## Volunteering? You do not need your own kit
+## The short version
 
-You do not need to buy a tool kit before volunteering. The layout has shared tools for layout work, including an NCE Power Cab, a compact [DCC](/learn/glossary#dcc-digital-command-control) controller, at the workbench. [Email us](/contact) before attending, and ask what is available and what to bring.
-
-The rest of this page covers a bench at home, for your own projects.
+- Start with a hobby knife, cutting mat, sprue cutters, tweezers, a steel rule, glue, good light, and safety glasses.
+- Use plastic cement for styrene, CA for metal and mixed materials, and white glue for wood and scenery.
+- Cut away from yourself, and replace dull blades.
+- If you glue your fingers together, soak them in warm, soapy water. Do not pull them apart.
+- **Volunteering?** You do not need your own tools. See [Before your first session](/learn/getting-your-hands-dirty#before-your-first-session).
 
 ## The bare minimum
 
@@ -110,8 +112,17 @@ These are the next four tools most people add:
 
 For paint and soldering supplies, see [Painting and weathering](/learn/painting-weathering) and [Electronics and DCC basics](/learn/electronics-dcc-basics).
 
+## Brands to start with
+
+These are long-established examples, not endorsements. Check reviews of the exact item before you buy.
+
+- **Knives and blades:** X-Acto and Excel, both taking standard #11 blades.
+- **Cutters:** Xuron sprue cutters.
+- **Cement:** Tamiya Extra Thin Cement for styrene.
+- **Magnifiers:** Optivisor head magnifiers.
+
 ## Keep exploring
 
-- [New to model railroading?](/learn/new-to-model-railroading): scale, gauge, and what we model
-- [Getting your hands dirty](/learn/getting-your-hands-dirty): where to start and what is safe to try
-- [Scenery and landscape](/learn/scenery-landscape): ground cover, ballast, and the glue methods behind them
+- [New to Model Railroading?](/learn/new-to-model-railroading): scale, gauge, and what we model
+- [Getting Your Hands Dirty](/learn/getting-your-hands-dirty): where to start and what is safe to try
+- [Scenery and Landscape](/learn/scenery-landscape): ground cover, ballast, and the glue methods behind them

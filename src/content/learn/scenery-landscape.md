@@ -8,6 +8,15 @@ updatedDate: 2026-10-01
 
 Scenery turns a board with track into a place, and it is one of the more forgiving parts of the hobby. On a detached test board, most mistakes are cheap to fix: scrape off the patch and try again. Work on an installed layout needs more care, covered under Working safely.
 
+## The short version
+
+- Build in layers: shape, paint, ground cover, rocks, trees, then details.
+- Practice on a scrap board about a foot square. Mistakes there scrape off.
+- Glue loose material with wet water and thinned white glue.
+- Work from photos of real hillsides, and go duller than you think.
+- On an installed layout, ask first and turn the power off.
+- **Volunteering?** You do not need your own tools. See [Before your first session](/learn/getting-your-hands-dirty#before-your-first-session).
+
 ## Work in layers, from the ground up
 
 Model scenery builds up in layers, like real ground. Each layer hides mistakes in the one below.
@@ -51,8 +60,8 @@ Once the shell is hard, smooth or roughen it with a paper-fiber and plaster comp
 
 **Then texture.** Ground cover falls into a few families:
 
-- **Scenic dirt and fine sand.** Use packaged scenic soil or clean craft sand. Don't collect unknown soil. In Gold Country, old mine waste can contain arsenic and mercury, and soil from mining, industrial, roadside, or animal-use areas can carry those or other contaminants.
-- **Ground foam.** Dyed foam crumbs, sold by texture from fine "turf" to coarse clumps for bushes. Blend two or three dull, earthy shades so it doesn't look like carpet.
+- **Scenic dirt and fine sand.** Use packaged scenic soil or clean craft sand. Do not collect unknown soil. In Gold Country, old mine waste can contain arsenic and mercury, and soil from mining, industrial, roadside, or animal-use areas can carry those or other contaminants.
+- **Ground foam.** Dyed foam crumbs, sold by texture from fine "turf" to coarse clumps for bushes. Blend two or three dull, earthy shades so it does not look like carpet.
 - **[Ballast](/learn/glossary#ballast).** The crushed stone under the track. Look for ballast graded for your scale, with irregular grains and natural color variation. Test mineral ballast with a magnet before using it near track, and keep it out of the moving parts of [turnouts](/learn/glossary#turnout-switch).
 - **Talus and rock castings.** Cast rock faces in flexible rubber molds with a hard casting plaster (Hydrocal is the classic example). Color them with thin washes of earth-tone paint or an alcohol-based stain. Crushed leftover castings make instant talus.
 
@@ -66,7 +75,7 @@ The standard way to glue loose ground cover, often called **bonded scenery**, us
 The method:
 
 1. Sprinkle the loose material where you want it. Shape it with a soft brush.
-2. Mist it with wet water from a fine-mist spray bottle until it darkens. Mist from above so you don't blow it around.
+2. Mist it with wet water from a fine-mist spray bottle until it darkens. Mist from above so you do not blow it around.
 3. Drip the scenery glue on with a pipette or eyedropper until it soaks through.
 4. Let it dry overnight. It looks milky while wet and clears as it dries.
 
@@ -90,7 +99,7 @@ Work from photos. Notice how grass grows thicker along fences and how few colors
 
 ## Try later
 
-**Static grass.** This is the usual next step after a first patch. Short nylon or polyester fibers come in lengths from about 1 mm to 12 mm. In O scale, 2 to 4 mm reads as grazed grass and 10 to 12 mm as tall dry grass. An electric applicator creates a high-voltage field between its screen and a grounding pin in the wet glue, so the fibers stand on end. Makers warn about pacemakers: if you have a pacemaker or other implanted medical device, don't use one or stand near one in use. Follow the maker's safety instructions, and switch it off and discharge it before touching the screen or pin.
+**Static grass.** This is the usual next step after a first patch. Short nylon or polyester fibers come in lengths from about 1 mm to 12 mm. In O scale, 2 to 4 mm reads as grazed grass and 10 to 12 mm as tall dry grass. An electric applicator creates a high-voltage field between its screen and a grounding pin in the wet glue, so the fibers stand on end. Makers warn about pacemakers: if you have a pacemaker or other implanted medical device, do not use one or stand near one in use. Follow the maker's safety instructions, and switch it off and discharge it before touching the screen or pin.
 
 **Water.** Most of the look of model water comes from the paint under it. Close gaps with plaster cloth or a paintable acrylic caulk, not silicone. Paint the bed with 100% acrylic paint, because the vinyl in many latex and craft paints can react with water products. Seal it as the water product's maker directs, then pour thin layers, never deeper than the label allows. Thick resin pours can overheat.
 
@@ -102,9 +111,12 @@ On any project:
 
 - Wear eye protection when cutting, carving, sanding, or spraying.
 - Control dust. Ventilate, collect dust at the source with a HEPA-filtered vacuum or one rated for fine dust, and wear a NIOSH Approved N95 or better particulate respirator when cutting or sanding foam and plaster.
+- Keep scenery tools and containers out of the kitchen.
+
+Only if you hot-cut foam or pour resin:
+
 - Hot-wire foam cutting makes fumes that a dust respirator does not filter. Hot-cut only foam whose maker permits it, never unknown, PVC, or polyurethane foam, and work outdoors or with exhaust that vents outside.
 - For two-part resin, wear eye protection and chemical-resistant gloves specified by the resin maker or its safety data sheet (SDS). Measure accurately and ventilate as the label requires. Repeated skin contact with epoxy can cause allergies.
-- Keep scenery tools and containers out of the kitchen.
 
 On an installed layout, also:
 
@@ -114,10 +126,6 @@ On an installed layout, also:
 - Protect the track. Mask rails and turnouts with painter's tape, and cover nearby structures and electronics. Keep a static-grass applicator's pin and screen away from rails and wiring.
 - Control liquids and dust. Apply liquids a drop at a time, and vacuum as you go.
 - Wait until everything is fully dry before restoring power.
-
-## Volunteering on our layout
-
-You do not need to buy a tool kit before volunteering. The layout has shared tools for layout work, including an NCE Power Cab at the workbench. [Email before attending](/contact), and ask what is available and what to bring.
 
 ## Supplies for a first patch at home
 
@@ -140,8 +148,17 @@ Optional upgrades:
 - Tree kits: about $15 to $25
 - Water product: about $20 to $30 for 16 ounces, or about $10 to $15 for a small two-part resin kit
 
+## Brands to start with
+
+These are long-established examples, not endorsements. Check reviews of the exact item before you buy.
+
+- **Plaster cloth, ground foam, rock molds, scenery glue, and water products:** Woodland Scenics.
+- **Ground cover and trees:** Scenic Express.
+- **Landforms:** extruded insulation foam board from a home center, and Sculptamold.
+- **Rock castings:** Hydrocal.
+
 ## Keep exploring
 
-- [Getting your hands dirty](/learn/getting-your-hands-dirty): what to try, when to ask first, and how to prepare for a work session
-- [Painting and weathering](/learn/painting-weathering): color and wear for models and scenery
-- [Glossary of terms](/learn/glossary): plain-English definitions for the words above
+- [Getting Your Hands Dirty](/learn/getting-your-hands-dirty): what to try, when to ask first, and how to prepare for a work session
+- [Painting and Weathering](/learn/painting-weathering): color and wear for models and scenery
+- [Glossary](/learn/glossary): plain-English definitions for the words above

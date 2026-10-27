@@ -8,7 +8,13 @@ updatedDate: 2026-10-01
 
 Read [Electronics and DCC Basics](/learn/electronics-dcc-basics) first. It explains decoders, CVs, programming tracks, and safe wiring. This guide covers the optional next step: a computer for your decoders, a small programmable board, and a camera that rides on a train.
 
-You do not need to buy a tool kit before volunteering. The layout has shared tools for layout work, including an NCE Power Cab at the workbench. [Email before attending](/contact), and ask what is available and what to bring.
+## The short version
+
+- JMRI is free software that lets a computer back up and change decoder settings and turn phones into throttles.
+- Save a decoder's settings before you change them.
+- A first microcontroller project, two alternating crossing lights, runs from USB and never touches the layout.
+- For a first train camera, use a battery-powered camera on a removable car.
+- **Volunteering?** You do not need your own tools. See [Before your first session](/learn/getting-your-hands-dirty#before-your-first-session).
 
 ## What JMRI adds
 
@@ -22,14 +28,14 @@ JMRI gives a beginner three things:
 
 ### Back up before you change CVs
 
-A DecoderPro backup reduces the risk of changing CV settings, but it is not a complete restore point. It saves only the CVs your system and DecoderPro can read. Some systems can't read CVs at all, and some decoders have CVs that are write-only, locked, or missing from DecoderPro's definition. A backup never includes a decoder's firmware or sound project. Those need the decoder maker's own tools and files and may not be recoverable, so leave them alone until you know that process.
+A DecoderPro backup reduces the risk of changing CV settings, but it is not a complete restore point. It saves only the CVs your system and DecoderPro can read. Some systems cannot read CVs at all, and some decoders have CVs that are write-only, locked, or missing from DecoderPro's definition. A backup never includes a decoder's firmware or sound project. Those need the decoder maker's own tools and files and may not be recoverable, so leave them alone until you know that process.
 
 With that limit in mind:
 
 1. Put the locomotive on the programming track, set up as [Electronics and DCC Basics](/learn/electronics-dcc-basics) describes. The Power Cab has one track output. In programming-track mode it programs every decoder on that output, so the locomotive must be alone there.
 2. In DecoderPro, read every settings page your system supports, check that the reads succeeded, and save the roster entry.
 3. Change one setting at a time and test it.
-4. If you don't like the result, write the saved settings back.
+4. If you do not like the result, write the saved settings back.
 
 A factory reset, often done by writing a value to CV8 (check the decoder's manual), resets CVs to their defaults and erases your custom settings. It changes CVs only and does not restore firmware or a damaged sound project.
 
@@ -92,6 +98,13 @@ Prices are rough US ranges from when this guide was last updated (2026) and will
 - **Analog drone-style camera with built-in transmitter:** about $20 to $30, plus about $90 to $130 for a small receiving monitor.
 - **Wi-Fi camera board:** about $10 to $25.
 
+## Brands to start with
+
+These are long-established examples, not endorsements. Check reviews of the exact item before you buy.
+
+- **Boards and starter kits:** official Arduino boards and kits, and Espressif ESP32 development boards.
+- **Tutorials:** Adafruit and SparkFun publish free beginner guides.
+
 ## Before connecting a project to the layout
 
 - Confirm each device's voltage rating and your board's logic level.
@@ -104,4 +117,4 @@ Prices are rough US ranges from when this guide was last updated (2026) and will
 
 - [Electronics and DCC Basics](/learn/electronics-dcc-basics): wiring, power, and how DCC works
 - [Getting Your Hands Dirty](/learn/getting-your-hands-dirty): what to try, when to ask first, and what to leave alone
-- [Further reading: DCC-EX](https://dcc-ex.com): an open-source project that builds a DCC command station from Arduino or ESP32 boards
+- [DCC-EX](https://dcc-ex.com), for further reading: an open-source project that builds a DCC command station from Arduino or ESP32 boards

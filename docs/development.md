@@ -8,13 +8,13 @@ This guide walks you through setting up the site on your own computer so you can
 
 You need two things installed:
 
-1. **Node.js** (version 22.19 or newer; CI uses Node 22) - [Download here](https://nodejs.org/)
+1. **Node.js** (version 22.23.4 or newer; CI uses Node 22) - [Download here](https://nodejs.org/)
 2. **Git** — [Download here](https://git-scm.com/)
 
 To check if you have them:
 
 ```sh
-node --version   # should print v22.19.0 or higher
+node --version   # should print v22.23.4 or higher
 git --version    # should print git version 2.x.x
 ```
 

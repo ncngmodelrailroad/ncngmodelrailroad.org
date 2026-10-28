@@ -29,7 +29,7 @@ jobs:
       # a11y tooling is kept out of package.json so it never slows the deploy
       # build; install pinned versions only for this job.
       - name: Install accessibility tooling
-        run: npm install --no-save playwright@1.61.1 @axe-core/playwright@4.12.1
+        run: npm install --no-save playwright@1.64.1 @axe-core/playwright@4.14.0
 
       - name: Install Chromium
         run: npx playwright install --with-deps chromium

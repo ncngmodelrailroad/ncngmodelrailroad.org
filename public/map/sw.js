@@ -3,7 +3,7 @@ const CACHE_VERSION = `${CACHE_PREFIX}v5`;
 const SHELL_ASSETS = Object.freeze([
   "./styles.min.css?v=e431a4e223d3fe54",
   "./bootstrap.min.js?v=6f738f51e5a83b0e",
-  "./app.min.js?v=083b1ca1cf59011b",
+  "./app.min.js?v=b4c7e4bfd383755f",
 ]);
 const VENDOR_ASSETS = Object.freeze([
   "./vendor/maplibre-gl/5.6.2/maplibre-gl.css",

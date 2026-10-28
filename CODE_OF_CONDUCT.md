@@ -17,7 +17,9 @@ The N.C.N.G. Historical Model Railroad is a volunteer organization dedicated to 
 
 ## Reporting Issues
 
-If you experience or witness unacceptable behavior, please email **info@ncngmodelrailroad.org**. All reports will be handled respectfully and confidentially.
+If you experience or witness unacceptable behavior, use the email link on our
+[Contact page](https://ncngmodelrailroad.org/contact/). Do not post reports in
+public issues. All reports will be handled respectfully and confidentially.
 
 ## Scope
 

@@ -4,15 +4,23 @@ This guide covers the most common updates: events, board members, gallery photos
 
 ---
 
-## Easiest option: Use Pages CMS
+## Choose an editing path
 
-For most content updates, you don't need to edit files directly. **[Pages CMS](https://app.pagescms.org/djdefi/ncngmodelrailroad.org)** provides a simple web editor with form fields for each content type.
+Volunteers should follow the [GitHub editing guide](../CONTRIBUTING.md#editing-content-no-coding-required)
+to propose changes through a pull request. For a correction without editing,
+[open a content update request](https://github.com/ncngmodelrailroad/ncngmodelrailroad.org/issues/new?template=content-update.yml).
 
-1. Go to [app.pagescms.org/djdefi/ncngmodelrailroad.org](https://app.pagescms.org/djdefi/ncngmodelrailroad.org)
+### Pages CMS for site admins
+
+[Pages CMS](https://app.pagescms.org/ncngmodelrailroad/ncngmodelrailroad.org) provides
+form fields for common content updates. It defaults to saving to protected
+`main`, so non-admin editors should use the pull-request workflow above.
+
+1. Go to [app.pagescms.org/ncngmodelrailroad/ncngmodelrailroad.org](https://app.pagescms.org/ncngmodelrailroad/ncngmodelrailroad.org)
 2. Log in with your GitHub account
 3. Select what you want to edit (Events, Board Members, Gallery, or Historical Locomotive Roster)
 4. Fill in the fields and click **Save**
-5. The site updates automatically in about 2 minutes
+5. A save to `main` starts deployment. The site updates when deployment succeeds; a save to another branch needs a pull request and merge first.
 
 > **Need access?** See [Getting Access](../CONTRIBUTING.md#getting-access) to request collaborator access.
 
@@ -130,7 +138,10 @@ Delete the file. The event disappears from the site automatically.
 
 ## Updating Board Members
 
-Board members are Markdown files in `src/content/board/`, one file per person. The easiest way to edit them is [Pages CMS](https://app.pagescms.org/djdefi/ncngmodelrailroad.org) → **Board Members**, but you can also edit the files directly.
+Board members are Markdown files in `src/content/board/`, one file per person.
+Propose edits through the [GitHub editing guide](../CONTRIBUTING.md#editing-content-no-coding-required).
+Site admins can also use [Pages CMS](https://app.pagescms.org/ncngmodelrailroad/ncngmodelrailroad.org)
+and select **Board Members**.
 
 ### File location
 

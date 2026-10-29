@@ -61,7 +61,7 @@ Cars come off the track (derail) often. It is normal and easy to fix. First, sto
 - **Blades.** Cut away from your body and your other hand. Use a fresh blade. Cap the knife or set it in a holder when you stop. Put used blades in a hard, closed container.
 - **Eyes.** Wear safety glasses when you cut wire, snip metal, drill, use power tools, or solder.
 - **Hot tools.** A soldering iron stays hot long after you unplug it. Always put it back in its stand. If it falls, let it fall. Never try to catch it.
-- **Fumes.** For glues, paints, and solvents, follow the product label and its safety data sheet (SDS). Use ventilation that carries fumes outdoors. If you feel a headache, dizziness, or irritation, move to fresh air.
+- **Fumes.** For glues, paints, and solvents, follow the product label and its safety data sheet (SDS). Brush-painting with water-based acrylics needs only a room with good fresh air. Spraying and solvent products need ventilation that carries fumes outdoors. If you feel a headache, dizziness, or irritation, move to fresh air.
 - **Unknown old materials.** Some old solder, cast metal parts, and older paints contain lead. Do not sand, file, drill, or heat an unknown old material until you know what it is.
 - **Food.** Keep food and drinks away from the bench. Wipe up dust instead of sweeping it. Wash your hands before you eat or drink.
 - **Lifting and limits.** Hold loads close, and do not twist while lifting. Ask for help with anything heavy or awkward. If climbing a ladder or crawling under the benchwork does not suit you, say so.

@@ -8,7 +8,7 @@ updatedDate: 2026-10-01
 
 Model railroads run on low voltage, so this is a good place to learn electronics from zero. Two habits keep you safe: turn the power off before you touch wiring, and use a meter to find problems. The one thing to respect is a short circuit, which can make wires and rails hot.
 
-**New to all of this?** Read the short version and the safety section. Then skip to [Before you touch the layout wiring](#before-you-touch-the-layout-wiring). Come back to the rest when a project needs it.
+**New to all of this?** Read the short version and the checklist right after it. Come back to the rest when a project needs it.
 
 ## The short version
 
@@ -16,6 +16,19 @@ Model railroads run on low voltage, so this is a good place to learn electronics
 - Unplug the system before you touch any wiring.
 - At the club, ask an experienced member before you change layout wiring.
 - **Volunteering?** You do not need your own tools. See [Before your first session](/learn/getting-your-hands-dirty#before-your-first-session).
+
+## Before you touch the layout wiring
+
+Our layout has been growing since 1986. Its wiring holds years of work you cannot see from the top. Follow these steps every time.
+
+1. **Ask an experienced member first.** Check that you may do the work and which areas need care.
+2. **Turn off and unplug the system.** Tell everyone in the room you have done it.
+3. **Match the wiring already there.** Follow the colors and methods in place.
+4. **Test before you cut.** On a connected layout, a meter can beep through other wires, rails, or locomotives, so a beep does not prove which wire is which. Disconnect one end of the wire first, then test it. Still unsure? Ask before you cut.
+5. **Label anything you disconnect.**
+6. **Keep solder, the iron, and tools off the track** and away from scenery.
+7. **After a wiring change, ask the person responsible for the layout how they want it tested.**
+8. **Write down what you changed** so the next person can follow your work.
 
 ## Low voltage and wall power are different worlds
 
@@ -129,19 +142,6 @@ These are long-established examples, not endorsements. Check reviews of the exac
 - **Strippers and cutters:** Klein Tools strippers and Xuron cutters.
 - **DCC systems:** NCE, Digitrax, and ESU.
 - **Decoders:** TCS, SoundTraxx, and ESU.
-
-## Before you touch the layout wiring
-
-Our layout has been growing since 1986. Its wiring holds years of work you cannot see from the top. Follow these steps every time.
-
-1. **Ask an experienced member first.** Check that you may do the work and which areas need care.
-2. **Turn off and unplug the system.** Tell everyone in the room you have done it.
-3. **Match the wiring already there.** Follow the colors and methods in place.
-4. **Test before you cut.** Use continuity to confirm which wire goes where.
-5. **Label anything you disconnect.**
-6. **Keep solder, the iron, and tools off the track** and away from scenery.
-7. **After a wiring change, ask the person responsible for the layout how they want it tested.**
-8. **Write down what you changed** so the next person can follow your work.
 
 ## Keep exploring
 

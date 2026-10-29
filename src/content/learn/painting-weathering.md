@@ -21,10 +21,11 @@ Paint makes a shiny plastic model look like a real car that has worked for years
 Get a cheap secondhand car or a spare kit (a model you build from parts). Work in a room with fresh air.
 
 1. **Clean it.** Wash it in warm, soapy water and let it dry. This removes finger oils and **mold release**, a slippery factory coating that paint does not stick to.
-2. **Prime it.** **Primer** is a first coat that helps paint grip. Brush it on, or spray it following the safety rules below. Pick one labeled for your model's material, in light gray for most colors. Use two light coats.
+2. **Prime it.** **Primer** is a first coat that helps paint grip. Use a brush-on, water-based primer for this first project. Pick one labeled for your model's material, in light gray for most colors. Use two light coats.
 3. **Paint it.** Add water, or the paint maker's thinner, one drop at a time until the paint flows easily. Brush on two or three thin coats. Thick paint fills in small details like **rivets**, the tiny raised bumps that show where metal parts join.
-4. **Letter it.** Add a decal or two over a glossy clear coat (see Decals below).
-5. **Weather and seal it.** Add a wash or some drybrushing, then a flat clear coat to tie it together.
+4. **Drybrush it.** Dip an old brush in a lighter color and wipe almost all of it off. Then flick the brush across raised details so only the edges catch color.
+
+That is the whole first project. When you want more, try a second one on the same car: brush on a gloss clear coat, add a decal or two (see Decals below), then brush on a flat clear coat to seal it. Use brush-on, water-based clear coats so you do not need spray gear.
 
 Keep this car to test each new technique.
 

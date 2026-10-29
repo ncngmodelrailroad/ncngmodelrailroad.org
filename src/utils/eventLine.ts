@@ -13,9 +13,12 @@ export type LineView = {
 const MAX_PAST = 3;
 const MAX_AHEAD = 4;
 
+// Convert date-only values to UTC day numbers so day differences ignore DST.
 const dayNumber = (day: string) => Date.UTC(+day.slice(0, 4), +day.slice(5, 7) - 1, +day.slice(8, 10)) / 86_400_000;
 
-/** Stops must be sorted by start day. Days are YYYY-MM-DD in Pacific time. */
+/** Calculates visible stops, their states, and marker position for a Pacific calendar day.
+ * Stops must be sorted by start day; dates use `YYYY-MM-DD`.
+ */
 export function computeLineView(stops: LineStop[], today: string): LineView {
   const states: Record<string, StopState> = {};
   let nextId: string | undefined;
@@ -26,6 +29,7 @@ export function computeLineView(stops: LineStop[], today: string): LineView {
     else states[stop.id] = 'later';
   }
 
+  // Keep the timeline focused on recent history and the nearest upcoming stops.
   const past = stops.filter(s => states[s.id] === 'past').slice(-MAX_PAST);
   const ahead = stops.filter(s => states[s.id] !== 'past').slice(0, MAX_AHEAD);
   const visibleStops = [...past, ...ahead];
@@ -58,6 +62,7 @@ export function computeLineView(stops: LineStop[], today: string): LineView {
   };
 }
 
+/** Formats a day count with singular wording only for one day. */
 export function formatCountdown(days: number): string {
   return days === 1 ? '1 day' : `${days} days`;
 }

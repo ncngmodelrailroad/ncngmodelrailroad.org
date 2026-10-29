@@ -17,6 +17,7 @@ const featureCollection = z.object({
   })),
 });
 
+/** Generates the data catalog and derives map metadata from the source GeoJSON. */
 export const GET: APIRoute = ({ site }) => {
   const url = (path: string) => publicDataUrl(path, site);
   return jsonResponse({

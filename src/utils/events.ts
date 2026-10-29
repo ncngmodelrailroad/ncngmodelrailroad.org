@@ -14,6 +14,7 @@ type EventDates = {
   layoutEndDate?: Date | null;
 };
 
+/** Uses confirmed layout dates for display, falling back to host event dates. */
 export function getEventDisplayDates(event: EventDates) {
   return event.layoutStartDate
     ? { date: event.layoutStartDate, endDate: event.layoutEndDate ?? undefined, label: 'Layout open' }
@@ -36,10 +37,12 @@ export function eventEndDay(event: EventDates): string {
   return (endDate ?? date).toISOString().split('T')[0];
 }
 
+/** Reports whether the selected event dates include today or a future day in Pacific time. */
 export function isUpcomingEvent(event: EventDates, now: Date = new Date()): boolean {
   return eventEndDay(event) >= pacificToday(now);
 }
 
+/** Formats date-only event values in UTC, optionally as a range and in full or compact style. */
 export function formatEventDate(date: Date, endDate?: Date, style: 'full' | 'compact' = 'full'): string {
   const options: Intl.DateTimeFormatOptions = {
     weekday: style === 'full' ? 'long' : undefined,

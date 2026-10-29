@@ -18,48 +18,30 @@ The official website for the **Nevada County Narrow Gauge Historical Model Railr
 
 ## Quick Start (developers)
 
+Use Node.js 22.23.4 and install the locked dependencies with `npm ci`.
+
 ```sh
-npm install        # install dependencies (first time only)
+npm ci             # install the versions recorded in package-lock.json
 npm run dev        # start local dev server at localhost:4321
-npm run build      # build for production
+npm run build      # build for production into dist/
 ```
 
 ## Project Structure
 
 ```
 src/
-├── config/           # Centralized org data & navigation
-│   ├── organization.ts   # Name, address, contact info
-│   └── navigation.ts     # Shared nav items for header/mobile
-├── content/          # Markdown content collections
-│   ├── events/       # Event pages (one Markdown file per event)
-│   ├── board/        # Board members
-│   ├── gallery/      # Gallery photos
-│   ├── trains/       # Engine roster
-│   └── learn/        # Learn / newcomer guides
-├── data/
-│   └── glossary.yaml # Glossary terms (Learn section)
-├── layouts/
-│   └── BaseLayout.astro  # Shared header, footer, SEO, schema.org
-├── components/       # Reusable UI pieces (Button, SectionHeader, etc.)
-├── pages/            # Each .astro file = one page on the site
-│   ├── index.astro       # Homepage
-│   ├── about.astro       # History & mission
-│   ├── trains.astro      # Engine roster & railroad history
-│   ├── gallery.astro     # Photo gallery with lightbox
-│   ├── events.astro      # Upcoming events (auto-generated from content/)
-│   ├── learn/            # Learn section: hub, glossary, guides
-│   ├── board-members.astro # Board of directors
-│   ├── donate.astro      # Get Involved (donate / support)
-│   ├── volunteer.astro   # Volunteer signup
-│   ├── contact.astro     # Contact details and location
-│   ├── links.astro       # External resources
-│   └── 404.astro         # Not found page
-├── styles/
-│   └── global.css    # Tailwind + custom theme (colors, buttons, etc.)
+├── config/           # Organization, navigation, content-use policy, and data metadata
+├── content/          # Markdown collections: events, board, gallery, trains, learn
+├── data/glossary.yaml
+├── layouts/          # Shared page layout, SEO, and structured data
+├── components/       # Reusable Astro UI
+├── pages/            # Site routes, including /map/, JSON feeds, and /llms.txt
+├── styles/global.css # Tailwind v4 theme and global styles
+└── utils/            # Shared event, data-feed, and image helpers
 public/
-├── images/           # All photos (gallery, board, heroes, etc.)
-└── favicon.svg       # Site icon
+├── images/           # Site and gallery images
+├── map/              # Standalone maps, map data, and vendor assets
+└── downloads/        # Public downloads
 ```
 
 ## Documentation

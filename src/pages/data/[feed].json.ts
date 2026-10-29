@@ -3,10 +3,12 @@ import { getCollection } from 'astro:content';
 import { contentFeeds } from '../../config/data';
 import { dataSnapshot, jsonResponse, publicDataUrl } from '../../utils/data';
 
+/** Creates one build-time route for each configured content feed. */
 export const getStaticPaths = (() =>
   Object.keys(contentFeeds).map((feed) => ({ params: { feed } }))
 ) satisfies GetStaticPaths;
 
+/** Generates the versioned JSON snapshot for the requested content feed. */
 export const GET: APIRoute = async ({ params, site }) => {
   const id = params.feed;
   if (id !== 'events' && id !== 'trains' && id !== 'glossary') {

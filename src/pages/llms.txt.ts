@@ -4,6 +4,7 @@ import { contentFeeds, dataCatalogPath, mapDatasets } from '../config/data';
 import { donationEmailHref, organization } from '../config/organization';
 import { publicDataUrl } from '../utils/data';
 
+/** Generates the build-time llms.txt guide from shared site and dataset metadata. */
 export const GET: APIRoute = ({ site }) => {
   const url = (path: string) => publicDataUrl(path, site);
   const content = `# ${organization.name}

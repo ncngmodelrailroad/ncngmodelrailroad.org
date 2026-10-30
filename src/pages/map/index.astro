@@ -1,6 +1,7 @@
 ---
 import { organization } from '../../config/organization';
 import { dataCatalogPath, mapDatasets } from '../../config/data';
+import mapAssets from '../../map/generated-assets.json';
 ---
 
 <!doctype html>
@@ -20,7 +21,7 @@ import { dataCatalogPath, mapDatasets } from '../../config/data';
   <link rel="icon" href="data:,">
   <link rel="stylesheet" href="vendor/maplibre-gl/5.6.2/maplibre-gl.css"
     integrity="sha256-Q8HYhrX98KrE5xNb1vhLgj2fSCg6ZIASZl+b5SwBOJ8=" crossorigin="anonymous">
-  <link rel="stylesheet" href="styles.min.css?v=e431a4e223d3fe54">
+  <link rel="stylesheet" href={mapAssets['styles.min.css']}>
   {organization.analytics?.cfBeaconToken && (
     <script defer src="https://static.cloudflareinsights.com/beacon.min.js"
       data-cf-beacon={`{"token":"${organization.analytics.cfBeaconToken}"}`}
@@ -419,12 +420,12 @@ import { dataCatalogPath, mapDatasets } from '../../config/data';
     <div id="error" role="alert" hidden></div>
   </main>
 
-  <script src="bootstrap.min.js?v=6f738f51e5a83b0e" is:inline></script>
+  <script src={mapAssets['bootstrap.min.js']} is:inline></script>
   <script src="vendor/maplibre-gl/5.6.2/maplibre-gl.js"
     integrity="sha256-FSX5cSI9gfFp8EnxzlAIPm8WQ6prDqBxZlOlUNLVf8I=" crossorigin="anonymous"
     onerror="window.__mapBootstrapFail('MapLibre could not be loaded from this site. Reload or contact the site administrator.')"
     is:inline></script>
-  <script src="app.min.js?v=b4c7e4bfd383755f" is:inline></script>
+  <script src={mapAssets['app.min.js']} is:inline></script>
   <script is:inline>
     // Use the bundled disclosure handlers so their ARIA and layout state stay in sync.
     const entryTourCard = document.getElementById('tour-card');

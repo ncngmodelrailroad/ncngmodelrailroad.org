@@ -4,7 +4,10 @@ Need help with the N.C.N.G. website? Here's where to go:
 
 ## I want to edit website content
 
-Use **[Pages CMS](https://app.pagescms.org/djdefi/ncngmodelrailroad.org)** — a simple web editor for events, board members, gallery photos, and engine roster. Log in with your GitHub account.
+Follow [Propose changes with Pages CMS](docs/editing-content.md#propose-changes-with-pages-cms)
+to edit events, board members, gallery photos, or the historical engine roster.
+Save on a separate content branch, then open a GitHub pull request for review.
+Do not save directly to `main`.
 
 > Need access? Email **info@ncngmodelrailroad.org** to be added as a collaborator.
 
@@ -14,7 +17,10 @@ Use **[Pages CMS](https://app.pagescms.org/djdefi/ncngmodelrailroad.org)** — a
 
 ## I want to request a content change
 
-[Open a content update request](https://github.com/djdefi/ncngmodelrailroad.org/issues/new?template=content-update.yml) describing what needs to change.
+[Open a content update request](https://github.com/ncngmodelrailroad/ncngmodelrailroad.org/issues/new?template=content-update.yml)
+with the page URL, proposed wording, confirmation source, and photos you have
+permission to publish. Use this if you cannot edit through the CMS or GitHub.
+Issues are public; keep private details in email instead.
 
 ## I want to make code changes
 

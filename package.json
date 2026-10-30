@@ -3,8 +3,9 @@
   "type": "module",
   "version": "0.0.1",
   "scripts": {
-    "dev": "astro dev",
-    "build": "astro build",
+    "dev": "npm run build:map && astro dev",
+    "build:map": "node scripts/build-map.mjs",
+    "build": "npm run build:map && astro build",
     "preview": "astro preview",
     "astro": "astro",
     "a11y": "node scripts/a11y.mjs"
@@ -26,7 +27,8 @@
     "tailwindcss": "^4.3.3"
   },
   "devDependencies": {
-    "@tailwindcss/typography": "^0.5.20"
+    "@tailwindcss/typography": "^0.5.20",
+    "esbuild": "0.28.2"
   },
   "overrides": {
     "@tailwindcss/typography": {

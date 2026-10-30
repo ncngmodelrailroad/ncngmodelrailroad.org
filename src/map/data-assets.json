@@ -1,0 +1,9 @@
+{
+  "route": "extracted/ncng_historical_route_lines.geojson",
+  "reference": "extracted/ncng_historical_reference_features.geojson",
+  "landmarks": "extracted/modern_landmarks.geojson",
+  "historicLandmarks": "extracted/nchlc_historical_landmarks.geojson",
+  "mines": "extracted/usgs_mine_adit_points.geojson",
+  "mineAreas": "extracted/usgs_mine_areas.geojson",
+  "parcels": "extracted/transit_right_of_way_candidate_parcels.geojson"
+}

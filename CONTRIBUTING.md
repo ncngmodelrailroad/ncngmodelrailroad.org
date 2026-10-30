@@ -41,11 +41,23 @@ GitHub Docs: [Editing files](https://docs.github.com/en/repositories/working-wit
 
 ### Photos and anything else
 
-To add or replace a photo, or if you're not sure how to make a change, [open a Content update request](https://github.com/ncngmodelrailroad/ncngmodelrailroad.org/issues/new?template=content-update.yml) or email the webmaster from the [Contact page](https://ncngmodelrailroad.org/contact/).
+To add or replace a photo, use [Pages CMS](#pages-cms-form-based-editing) on your
+content branch. If you need help, [open a Content update request](https://github.com/ncngmodelrailroad/ncngmodelrailroad.org/issues/new?template=content-update.yml)
+or email the webmaster from the [Contact page](https://ncngmodelrailroad.org/contact/).
 
-### Pages CMS (site admins)
+### Pages CMS (form-based editing)
 
-[Pages CMS](https://pagescms.org) offers form-based editing for events, board members, gallery photos, and the engine roster at [app.pagescms.org/ncngmodelrailroad/ncngmodelrailroad.org](https://app.pagescms.org/ncngmodelrailroad/ncngmodelrailroad.org). It saves to the branch selected in its branch menu, which is `main` by default. Only site admins can save to the protected `main` branch, so other volunteers should use the GitHub steps above.
+[Pages CMS](https://app.pagescms.org/ncngmodelrailroad/ncngmodelrailroad.org)
+offers forms for events, board members, gallery photos, and the historical engine
+roster. With repository write access, you can save to a separate content branch
+without admin access. It saves to the selected branch; check that it is not `main`
+before every save or upload.
+
+Follow [Propose changes with Pages CMS](docs/editing-content.md#propose-changes-with-pages-cms):
+create a branch from `main` on GitHub, select it in Pages CMS, save your edits,
+then open a pull request back to `main`. The webmaster reviews and merges after
+**Build check** and **Accessibility** pass. Saving in the CMS alone does not
+publish your proposal. Admins follow the same review path.
 
 ### Public visiting information
 

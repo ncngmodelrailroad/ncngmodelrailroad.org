@@ -10,7 +10,9 @@ This is the source code for the N.C.N.G. Historical Model Railroad website. The 
 
 **[ncngmodelrailroad.org](https://ncngmodelrailroad.org/)**
 
-Think of this repository (repo) like a folder on a shared computer. It contains all the text, images, and code that make up the website. When someone makes a change here and saves it, the website automatically updates.
+Think of this repository (repo) like a folder on a shared computer. It contains
+the website's text, images, and code. Proposed changes stay on a separate branch
+until checks pass and the webmaster reviews and merges them into `main`.
 
 ---
 
@@ -39,9 +41,13 @@ The website has these main pages:
 
 You don't need to know how to code to get something changed on the site. Here's what to do:
 
-### Option 1: Edit it yourself with Pages CMS (easiest)
+### Option 1: Propose an update with Pages CMS
 
-[Pages CMS](https://app.pagescms.org/djdefi/ncngmodelrailroad.org) is a simple web editor that lets you update events, board members, gallery photos, and engine roster — no coding needed. Just log in with your GitHub account.
+[Pages CMS](https://app.pagescms.org/ncngmodelrailroad/ncngmodelrailroad.org)
+has forms for events, board members, gallery photos, and the historical engine
+roster. Follow [Propose changes with Pages CMS](editing-content.md#propose-changes-with-pages-cms)
+to create a branch, select it in the CMS, save your edits, and open a GitHub pull
+request. No coding or admin access is needed. Saving does not publish the proposal.
 
 > **Need access?** See [Getting Access](../CONTRIBUTING.md#getting-access) to request collaborator access.
 
@@ -66,10 +72,11 @@ If you have a GitHub account, you can open an issue directly:
 Here's the simple version of how it works:
 
 ```
-Someone edits a file  →  Saves it to GitHub  →  Site auto-rebuilds  →  Live in ~2 minutes
+Save on a content branch → Open a pull request → Checks and review → Merge to main → Deploy
 ```
 
-That's it. There's no separate "publish" step. Push to `main` and it goes live.
+The webmaster merges reviewed changes after checks pass. Deployment then updates
+the live site, usually within a few minutes. Unmerged proposals do not go live.
 
 ---
 
@@ -95,7 +102,7 @@ A: In the `public/images/` folder in this repository. They're served directly �
 ## Next steps
 
 Ready to make changes yourself? Move on to:
-- [Pages CMS](https://app.pagescms.org/djdefi/ncngmodelrailroad.org) — The quickest way to update content (no coding needed)
+- [Pages CMS review workflow](editing-content.md#propose-changes-with-pages-cms): propose content updates without coding
 - [Editing Content](editing-content.md) — How to update events, board members, and photos by editing files
 - [Development Guide](development.md) — How to run the site on your own computer
 - [Support](../SUPPORT.md) — Where to get help

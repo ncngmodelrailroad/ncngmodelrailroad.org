@@ -44,7 +44,7 @@ Merge a PR only after all of the following: CI and tests pass, and the change ha
 
 ## Content editing
 
-- Most content (events, board, gallery, trains) is editable through Pages CMS (`.pages.yml`), but it requires a GitHub login and commits to `main`, so non-admin editors hit branch protection. The `learn` collection and `glossary.yaml` are not wired into the CMS — edit them as files.
+- Most content (events, board, gallery, trains) is editable through Pages CMS (`.pages.yml`). Editors need a GitHub login and repository write access: create a content branch from `main` on GitHub, select it in the CMS before saving or uploading, then open a GitHub PR to `main`. Follow `docs/editing-content.md`; do not bypass branch protection. The `learn` collection and `glossary.yaml` are not wired into the CMS — edit them as files.
 - Keep `docs/` and `CONTRIBUTING.md` in sync when collections, fields, or the palette change.
 
 ## Events and content accuracy

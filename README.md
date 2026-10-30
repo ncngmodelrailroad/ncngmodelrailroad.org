@@ -10,7 +10,11 @@ The official website for the **Nevada County Narrow Gauge Historical Model Railr
 
 ## Want to update the website?
 
-**You don't need to know how to code.** The easiest way to edit content is through [Pages CMS](https://app.pagescms.org/djdefi/ncngmodelrailroad.org) — a simple web editor for events, board members, gallery photos, and more. Just log in with your GitHub account.
+**You don't need to know how to code.** Use
+[Pages CMS on a content branch](docs/editing-content.md#propose-changes-with-pages-cms)
+for events, board members, gallery photos, and the historical engine roster.
+Save your proposal, then open a GitHub pull request for checks and review.
+The live site changes only after the pull request is merged.
 
 > **First time?** You'll need collaborator access to the repository. See the [Contributing Guide](CONTRIBUTING.md#getting-access) to request it.
 

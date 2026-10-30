@@ -4,19 +4,74 @@ This guide covers the most common updates: events, board members, gallery photos
 
 ---
 
-## Easiest option: Use Pages CMS
+## Propose changes with Pages CMS
 
-For most content updates, you don't need to edit files directly. **[Pages CMS](https://app.pagescms.org/djdefi/ncngmodelrailroad.org)** provides a simple web editor with form fields for each content type.
+**[Pages CMS](https://app.pagescms.org/ncngmodelrailroad/ncngmodelrailroad.org)**
+has forms for events, board members, gallery photos, and the historical locomotive
+roster. You need a GitHub account and repository write access.
+See [Getting access](../CONTRIBUTING.md#getting-access).
 
-1. Go to [app.pagescms.org/djdefi/ncngmodelrailroad.org](https://app.pagescms.org/djdefi/ncngmodelrailroad.org)
-2. Log in with your GitHub account
-3. Select what you want to edit (Events, Board Members, Gallery, or Historical Locomotive Roster)
-4. Fill in the fields and click **Save**
-5. The site updates automatically in about 2 minutes
+**Save changes on a separate branch, then open a pull request on GitHub.**
+A branch holds your proposed changes without changing the live site.
+The protected `main` branch holds published content. Do not save directly to it,
+even with admin access.
 
-> **Need access?** See [Getting Access](../CONTRIBUTING.md#getting-access) to request collaborator access.
+### 1. Create a content branch on GitHub
 
-The rest of this guide covers editing files directly — useful if you prefer working with code or need to make changes that Pages CMS doesn't support.
+1. Sign in and open the [repository](https://github.com/ncngmodelrailroad/ncngmodelrailroad.org).
+2. On the **Code** tab, open the branch menu and select `main`.
+3. Open the branch menu again, type a new name such as
+   `content/update-gallery-caption`, and choose **Create branch** from `main`.
+   Use a new branch for each separate update.
+
+### 2. Edit on that branch in Pages CMS
+
+1. Open [Pages CMS](https://app.pagescms.org/ncngmodelrailroad/ncngmodelrailroad.org)
+   and sign in with GitHub.
+2. In its branch menu, select the exact branch you just created.
+   **Check the selected branch before every save or photo upload.**
+3. Choose **Events**, **Board Members**, **Photo Gallery**, or
+   **Historical Locomotive Roster**. Edit the fields and click **Save**.
+   Keep related edits and uploaded photos on the same branch.
+4. On GitHub, switch to that branch and check that your changed files and photos
+   appear. Saving in the CMS does not publish this branch to the live site.
+
+Pages CMS [reads `.pages.yml` per branch](https://pagescms.org/docs/configuration/).
+No CMS configuration change is needed for this workflow.
+
+### 3. Request review and publish
+
+1. Open the repository's **Pull requests** tab and click **New pull request**.
+   Set **base** to `main` and **compare** to your content branch.
+2. Check the changed files, then click **Create pull request**. Describe the update,
+   which page it affects, and how the information was confirmed. Keep private
+   contact details and internal messages out of the public description.
+3. Wait for **Build check** and **Accessibility** to pass. A green check tests the
+   site, not whether dates, hours, captions, or historical claims are correct.
+   Ask the webmaster to review the content and any photos.
+4. For requested corrections, select the same branch in Pages CMS and save again.
+   The open pull request updates and checks run again. If GitHub reports a
+   conflict or a failed check, ask the webmaster for help.
+5. After review and passing checks, the webmaster merges the pull request.
+   Deployment then updates the live site, usually within a few minutes.
+   **Closed without merging** means the proposal was not published.
+
+### If you cannot use the CMS
+
+- **Repository, branch, or Save unavailable:** check your GitHub login and
+  collaborator invitation. Ask the webmaster to check repository access and the
+  Pages CMS GitHub App installation. Do not request admin access or disable
+  branch protection.
+- **Protected-branch error:** keep a copy of unsaved text, select your content
+  branch, and retry. Do not retry on `main`.
+- **CMS still blocked:** use [GitHub's file editor](../CONTRIBUTING.md#edit-a-file-on-github)
+  to propose text changes, or
+  [open a Content update request](https://github.com/ncngmodelrailroad/ncngmodelrailroad.org/issues/new?template=content-update.yml).
+  Include the page URL, proposed wording, confirmation source, and any photos you
+  have permission to publish. Issues are public; use the
+  [Contact page](https://ncngmodelrailroad.org/contact/) for private information.
+
+The sections below explain the content fields and file locations.
 
 ---
 
@@ -117,7 +172,8 @@ Open the file and change the fields you need. The most common update is changing
 
 ### Removing an event
 
-Delete the file. The event disappears from the site automatically.
+Delete the file on your content branch. The event disappears after the pull
+request is merged and deployed.
 
 > **Note:** Events move to the collapsed Past Events section on the next build
 > after their final confirmed layout day in California, or the host event's final
@@ -130,14 +186,16 @@ Delete the file. The event disappears from the site automatically.
 
 ## Updating Board Members
 
-Board members are Markdown files in `src/content/board/`, one file per person. The easiest way to edit them is [Pages CMS](https://app.pagescms.org/djdefi/ncngmodelrailroad.org) → **Board Members**, but you can also edit the files directly.
+Board members are Markdown files in `src/content/board/`, one file per person.
+Use **Board Members** in Pages CMS on your content branch, or edit the files
+directly through a pull request.
 
 ### File location
 
 ```
 src/content/board/
-├── jane-doe.md
-├── john-smith.md
+├── board-member.md
+├── another-member.md
 └── ...
 ```
 
@@ -147,10 +205,10 @@ Open their file and change the fields in the frontmatter (between the `---` line
 
 ```md
 ---
-name: Jane Doe
+name: Board Member
 role: President
 bio: Leads the organization and oversees operations.
-image: board/jane-doe.jpeg
+image: board/board-member.jpeg
 order: 1
 ---
 ```
@@ -162,13 +220,13 @@ order: 1
 | `name` | Yes | Full name |
 | `role` | Yes | Role or title |
 | `bio` | Yes | Short description |
-| `image` | Yes | Photo path under `public/images/` (for example `board/jane-doe.jpeg`) |
+| `image` | Yes | Photo path under `public/images/` (for example `board/board-member.jpeg`) |
 | `order` | Yes | Display position (lower numbers appear first) |
 
 ### Adding a member
 
 1. **Add their photo** to `public/images/board/` (JPEG, displays at 96×96px).
-2. **Create a new file** in `src/content/board/`, for example `jane-doe.md`, with the fields above. Set `order` to control where they appear.
+2. **Create a new file** in `src/content/board/`, for example `board-member.md`, with the fields above. Set `order` to control where they appear.
 
 ### Removing a member
 
@@ -397,9 +455,9 @@ dropdown on desktop and as a labelled group in the mobile menu:
 
 ## After making changes
 
-Once you save your changes (commit and push to `main`), the site will automatically rebuild and deploy within about 2 minutes. No extra steps needed.
-
-If you're unsure about a change, ask the webmaster to review it first — GitHub pull requests are great for this.
+Saving on your content branch leaves the live site unchanged. Follow
+[Request review and publish](#3-request-review-and-publish) to open a pull request,
+pass checks, and have the webmaster review and merge it into `main`.
 
 ---
 

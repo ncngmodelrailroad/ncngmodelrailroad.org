@@ -3,8 +3,8 @@
     "blender": {
       "tools": ["*"],
       "type": "stdio",
-      "command": "/opt/homebrew/bin/uvx",
-      "args": ["blender-mcp"]
+      "command": "uvx",
+      "args": ["--from", "mcp-for-blender==2.2.6", "mcp-for-blender"]
     }
   }
 }

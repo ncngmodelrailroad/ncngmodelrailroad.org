@@ -30,9 +30,9 @@ async function trimCache(cacheName, limit) {
   await Promise.all(keys.slice(0, Math.max(0, keys.length - limit)).map(key => cache.delete(key)));
 }
 
-async function cacheFirst(request, cacheName, limit) {
+async function cacheFirst(request, cacheName, limit, ignoreVary = false) {
   const cache = await caches.open(cacheName);
-  const cached = await cache.match(request);
+  const cached = await cache.match(request, { ignoreVary });
   if (cached) return cached;
   const response = await fetch(request);
   if (cacheableResponse(response)) {
@@ -125,7 +125,7 @@ self.addEventListener("fetch", event => {
   }
 
   if (VENDOR_ASSET_URLS.has(request.url)) {
-    event.respondWith(cacheFirst(request, VENDOR_CACHE, VENDOR_CACHE_LIMIT));
+    event.respondWith(cacheFirst(request, VENDOR_CACHE, VENDOR_CACHE_LIMIT, true));
     return;
   }
 

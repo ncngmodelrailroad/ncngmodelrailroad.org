@@ -17,6 +17,23 @@ If GitHub asks you to **fork** the repository when you try to edit, your access 
 
 ---
 
+## Reviewing a pull request
+
+Anyone with a free GitHub account can comment on an open pull request. You do not need collaborator access to review.
+
+1. Sign in, and open the pull request link you were sent.
+2. Read the **Conversation** tab. It explains what changed and why. For a general comment, type in the box at the bottom and click **Comment**.
+3. Open the **Files changed** tab. Each changed file shows its new text, with additions in green.
+4. To comment on a specific line, hover over it and click the blue comment icon. To cover several lines, click the first line number and Shift-click the last.
+5. To propose exact wording, click the suggestion button in the comment box and edit the text inside the suggestion block. The author can accept it with one click.
+6. Click **Comment** for a single note, or **Start a review** to batch several, then **Submit review** when you finish.
+
+Good review comments say what is wrong and why, such as "This price looks high; my local shop charges about $15." Questions are welcome too. Leave out private phone numbers, email addresses, and other personal details, because pull requests are public.
+
+GitHub Docs: [Commenting on a pull request](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/reviewing-changes-in-pull-requests/commenting-on-a-pull-request).
+
+---
+
 ## Editing content (no coding required)
 
 Changes to `main` go through a **pull request**: you propose a change, automatic checks test it, and the webmaster reviews and publishes it.

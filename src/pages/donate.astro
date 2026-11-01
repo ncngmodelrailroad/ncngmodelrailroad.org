@@ -3,7 +3,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import { donationEmailHref, organization } from '../config/organization';
 
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
-const { escrip } = organization;
+const { escrip, location } = organization;
 ---
 
 <BaseLayout title="Support the Layout | N.C.N.G. Model Railroad" description="Support the N.C.N.G. Historical Model Railroad with volunteer time, donated materials, or financial contributions.">
@@ -24,12 +24,14 @@ const { escrip } = organization;
           Your support helps with maintenance, scenery, electrical work, rolling stock,
           building upkeep, and visitor education.
         </p>
-        <p class="text-gray-700 mb-4">
-          {organization.donations.instructions}
-        </p>
-        <a href={donationEmailHref} class="btn-primary">Email about a donation</a>
-        <p class="text-sm text-gray-600 mt-3">
-          Or write to
+        <p class="text-gray-700 mb-3">Mail a check payable to:</p>
+        <address class="not-italic text-gray-900 font-semibold mb-4">
+          {organization.donations.checkPayee}<br />
+          {location.poBox}<br />
+          {location.poCity}, {location.poState} {location.poZip}
+        </address>
+        <p class="text-sm text-gray-600">
+          Online checkout is not available. Questions? Email
           <a href={donationEmailHref} class="text-primary underline font-semibold">{organization.contact.email}</a>.
         </p>
         <aside id="nonprofit-details" aria-label="Nonprofit details" class="mt-6 border-t border-gray-200 pt-5 scroll-mt-28 text-sm text-gray-700">

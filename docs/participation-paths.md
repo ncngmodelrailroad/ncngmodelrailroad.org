@@ -1,6 +1,6 @@
 # Give, volunteer, and stay connected
 
-Status: nonprofit identity, donation discovery, and a shorter email-inquiry page are implemented in this branch. Hosted checkout and new signup flows remain proposed. No service setup is authorized.
+Status: nonprofit identity, donation discovery, and mailed-check donations are implemented. Hosted checkout and new signup flows remain proposed. No service setup is authorized.
 
 ## Goal
 
@@ -15,7 +15,7 @@ needed and approved. No new website accounts, forms, database, or tracking.
 
 | Intent | Website action | What happens next | Complete when |
 | --- | --- | --- | --- |
-| Give money | `/donate`: **Donate securely**, linking to hosted checkout once approved and ready. Until then, retain **Email about a contribution**. | The donor chooses an amount and pays without a required account. The provider confirms payment and emails a receipt. Keep email as a fallback, not a prerequisite. | Payment succeeds and is acknowledged. Reconcile payouts separately. An inquiry or button click is not a donation. |
+| Give money | `/donate`: mail a check to the P.O. Box, payable to the IRS-listed name. Add **Donate securely** for hosted checkout only once approved and ready. | The donor mails a check. Email remains for questions. | The check is deposited and acknowledged. An inquiry or button click is not a donation. |
 | Volunteer | `/volunteer`: **Email about volunteering**. | A volunteer replies and arranges a first work session. Explain any confirmed membership requirements before attendance. | A first session is agreed. Count attendance separately. |
 | Join the email group | `/donate`: **Join the email group**, only if the existing group accepts public requests. | Groups.io handles confirmation and any approval. For a members-only group, explain on `/volunteer` that access is arranged after approval; do not publish a public signup offer. | Subscription is confirmed and any required approval is complete. |
 | Offer equipment | `/donate`: **Email about equipment**. | Ask for item type, scale, condition, photos, and collection/delivery needs. A volunteer confirms whether it can be accepted. | Acceptance and handoff are agreed. No unannounced drop-offs. |
@@ -53,18 +53,17 @@ Donation-page identity block, implemented from shared organization config:
 The site footer shows the classification and EIN, linking to these details.
 Organization metadata includes the EIN and the Schema.org 501(c)(3) status.
 The public source link points to the IRS extract information page, not private
-paperwork. Contributions start with an email inquiry; there is no online checkout.
+paperwork. Contributions are by mailed check to the P.O. Box; there is no online checkout.
 
 `/llms.txt` and `/data/catalog.json` also expose the IRS identity, source date,
-canonical donation page, and current email-inquiry method. The page, guide, and
+canonical donation page, and current check-by-mail method. The page, guide, and
 catalog share their instructions and prefilled email link. These discovery aids
 do not guarantee search rankings or AI recommendations. Crawler permissions
 remain unchanged; no working payment endpoint is implied.
 
-The donation page replaces seven cards and the generic closing pitch with a short
-impact summary and plain volunteer/equipment links. Financial inquiries remain the
-primary action, repeated at the end. The shared email link includes an editable
-subject and message asking for current donation instructions, without a response-time
+The donation page gives the check payee and P.O. Box first, with email for
+questions. Volunteer and equipment links follow. The shared email link includes
+an editable subject and message, without a response-time
 promise. The visible address remains available for people using webmail.
 
 The volunteer page groups roles once and uses a three-line draft for name,

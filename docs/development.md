@@ -146,8 +146,8 @@ The catalog's `organization` object identifies the publisher with its public nam
 IRS-listed name, EIN, federal classification, Schema.org nonprofit status,
 deductibility wording, and source URL/date. `sourcePublishedOn` is the IRS dataset
 publication date, not the build date or a live status assertion. The `donations`
-object provides the canonical page `url`, current `method` (`email-inquiry`),
-`instructions`, `contactEmail`, and a `mailto:` `emailUrl`. Its nested `escrip`
+object provides the canonical page `url`, current `method` (`check-by-mail`),
+`instructions`, `checkPayee`, `mailingAddress`, `contactEmail`, and a `mailto:` `emailUrl`. Its nested `escrip`
 object lists the SPD Market grocery-rewards route from `organization.escrip`:
 page anchor `url`, `merchant`, `groupId`, `groupName`, `rate`, the external
 SPD eScrip `programUrl`, and `instructions`. None of these is a

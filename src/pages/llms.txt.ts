@@ -62,7 +62,7 @@ ${Object.values(contentFeeds).map((feed) => `- [${feed.name}](${url(feed.path)})
 - [About the layout](${url('/about')}): The volunteer project, its history, On3 scale, and modeled towns.
 - [Trains](${url('/trains')}): Railroad history, locomotive roster, and model train scenes.
 - [Historical map](${url('/map/')}): Interactive comparison of the original railroad route with modern terrain and satellite imagery; requires JavaScript.
-- [Learn](${url('/learn')}): Beginner guides to model railroading.
+- [Learn](${url('/learn')}): Beginner guides to model railroading: getting started safely, choosing a scale, tools, painting, scenery, electronics and DCC.
 - [Glossary](${url('/learn/glossary')}): Model railroading terms and definitions.
 - [Gallery](${url('/gallery')}): Photos of the model railroad and its scenery.
 

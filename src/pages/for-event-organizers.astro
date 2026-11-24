@@ -3,6 +3,9 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import Button from '../components/Button.astro';
 import { Icon } from 'astro-icon/components';
 import { organization } from '../config/organization';
+import QuestionList, { type Question } from '../components/QuestionList.astro';
+
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 
 const volunteerNeeds = [
   {
@@ -34,6 +37,22 @@ const howWeOperate = [
   'We staff the layout with trained volunteers during posted hours.',
   'We follow the applicable Fairgrounds and event safety, setup, and cleanup requirements.',
   'We keep the space family-friendly and welcoming to all ages.',
+];
+
+const questions: Question[] = [
+  {
+    q: `Can the model railroad open during my event at the ${organization.location.venue}?`,
+    a: `Yes. The layout is a permanent display at the ${organization.location.venue}, and the volunteers can open it to the public during fairgrounds events. Dates and hours depend on volunteer availability and advance coordination.`,
+  },
+  {
+    q: 'What does the layout need to open during an event?',
+    a: 'Complimentary event admission and nearby parking for the volunteers who staff the layout, the building kept inside the active event footprint, and permission to accept a small suggested donation from visitors who wish to give.',
+  },
+  {
+    q: 'How do I ask the volunteers to open the layout?',
+    a: `Email ${organization.contact.email} or call ${organization.contact.phone} with your event name and dates.`,
+    link: { href: `${base}/contact`, label: 'Contact the volunteers' },
+  },
 ];
 
 const mutualBenefits = [
@@ -148,6 +167,12 @@ const mutualBenefits = [
           </ul>
         </div>
       </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-white print:hidden">
+    <div class="page-container max-w-3xl">
+      <QuestionList id="organizer-questions" questions={questions} />
     </div>
   </section>
 

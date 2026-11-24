@@ -1,13 +1,12 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import ContactCard from '../components/ContactCard.astro';
+import QuestionList, { type Question } from '../components/QuestionList.astro';
 import { organization } from '../config/organization';
 
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 
-// Answers repeat facts published elsewhere on the site. Do not add an
-// admission price or confirmed hours here; see .github/copilot-instructions.md.
-const questions = [
+const questions: Question[] = [
   {
     q: `Where is the model railroad at the ${organization.location.venue}?`,
     a: `In the red Quonset hut on Main Street inside the fairgrounds at ${organization.location.streetAddress}, ${organization.location.city}. For most events outside the Fair, enter at Gate 1, walk to Main Street, and turn left. The hut has NCNGRR painted on its red wall.`,
@@ -28,27 +27,7 @@ const questions = [
     a: `An operating On3 scale model of the Nevada County Narrow Gauge Railroad, which ran from ${organization.prototype.serviceStart} to ${organization.prototype.serviceEnd}. Trains run through miniature Colfax, Chicago Park, Grass Valley, and Nevada City, including the Bear River Bridge. Volunteers have built it since ${organization.founded}.`,
     link: { href: `${base}/trains`, label: 'Trains and history' },
   },
-  {
-    q: 'Can I volunteer without model railroad experience?',
-    a: 'Yes. No experience is needed. Work sessions are usually the first Saturday and third Wednesday of the month. Email us before attending to confirm the session and entry arrangements. Work sessions are for volunteering, not public visits. Junior members ages 12 to 18 are welcome with an accompanying adult member.',
-    link: { href: `${base}/volunteer`, label: 'Volunteer' },
-  },
-  {
-    q: 'Can an event at the fairgrounds ask the layout to open?',
-    a: 'Yes. Event organizers can contact the volunteers about opening the layout during an event at the fairgrounds.',
-    link: { href: `${base}/for-event-organizers`, label: 'For event organizers' },
-  },
 ];
-
-const faqSchema = {
-  '@context': 'https://schema.org',
-  '@type': 'FAQPage',
-  mainEntity: questions.map(({ q, a }) => ({
-    '@type': 'Question',
-    name: q,
-    acceptedAnswer: { '@type': 'Answer', text: a },
-  })),
-};
 ---
 
 <BaseLayout title="Contact Us | N.C.N.G. Model Railroad" description="Contact the volunteers about announced layout openings, volunteering, or the model railroad. Find directions to the Nevada County Fairgrounds." image="/images/building-exterior-visit.jpg" heroImage={`${base}/images/building-exterior-visit.jpg`}>
@@ -201,19 +180,7 @@ const faqSchema = {
         </p>
       </section>
 
-      <section class="mt-10" aria-labelledby="questions-title">
-        <h2 id="questions-title" class="text-2xl font-bold mb-4">Common questions</h2>
-        <div class="space-y-5">
-          {questions.map(({ q, a, link }) => (
-            <div>
-              <h3 class="font-bold mb-1">{q}</h3>
-              <p class="text-gray-700">{a}</p>
-              <a href={link.href} class="inline-flex items-center min-h-11 text-primary underline">{link.label}</a>
-            </div>
-          ))}
-        </div>
-      </section>
+      <QuestionList id="questions-title" questions={questions} class="mt-10" />
     </div>
   </section>
-  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
 </BaseLayout>

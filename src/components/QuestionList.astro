@@ -1,0 +1,46 @@
+---
+// Plain-language answers to questions people ask search engines and AI tools.
+// The same text is emitted as FAQPage structured data, so answers must stand
+// alone and repeat only facts published elsewhere on the site. Never state an
+// admission price or unconfirmed hours (see .github/copilot-instructions.md).
+export interface Question {
+  q: string;
+  a: string;
+  link?: { href: string; label: string };
+}
+
+interface Props {
+  questions: Question[];
+  id: string;
+  title?: string;
+  class?: string;
+}
+
+const { questions, id, title = 'Common questions', class: className = '' } = Astro.props;
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: questions.map(({ q, a }) => ({
+    '@type': 'Question',
+    name: q,
+    acceptedAnswer: { '@type': 'Answer', text: a },
+  })),
+};
+---
+
+<section class={className} aria-labelledby={id}>
+  <h2 id={id} class="text-2xl font-bold mb-4">{title}</h2>
+  <div class="space-y-5">
+    {questions.map(({ q, a, link }) => (
+      <div>
+        <h3 class="font-bold mb-1">{q}</h3>
+        <p class="text-gray-700">{a}</p>
+        {link && (
+          <a href={link.href} class="inline-flex items-center min-h-11 text-primary underline">{link.label}</a>
+        )}
+      </div>
+    ))}
+  </div>
+  <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+</section>

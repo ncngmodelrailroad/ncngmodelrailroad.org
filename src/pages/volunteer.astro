@@ -3,8 +3,24 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import ContactCard from '../components/ContactCard.astro';
 import { getCollection } from 'astro:content';
 import { organization } from '../config/organization';
+import QuestionList, { type Question } from '../components/QuestionList.astro';
 
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+
+const questions: Question[] = [
+  {
+    q: 'Do I need model railroad experience to volunteer?',
+    a: 'No. Volunteers operate trains, welcome visitors, build scenery and structures, wire the layout, and help with research and photography. No model railroad experience is needed.',
+  },
+  {
+    q: 'When do volunteers meet?',
+    a: 'Work sessions are usually the first Saturday and third Wednesday of the month, 11 AM to 2 PM. Email before attending to confirm the session and entry arrangements. Work sessions are for volunteering, not public visits.',
+  },
+  {
+    q: 'Can teenagers volunteer?',
+    a: 'Yes. Junior members ages 12 to 18 are welcome with an accompanying adult member.',
+  },
+];
 const volunteerPhotoIds = ['gallery-img-7238', 'gallery-img-7040', 'gallery-img-7041', 'gallery-img-9141'];
 const galleryEntries = await getCollection('gallery');
 const volunteerPhotos = volunteerPhotoIds.flatMap((id) => {
@@ -81,6 +97,8 @@ const volunteerEmailBody = [
           about bringing a class to a published public event.
         </p>
       </section>
+
+      <QuestionList id="volunteer-questions" questions={questions} class="mt-10" />
     </div>
 
     <div class="page-container max-w-4xl mt-10">

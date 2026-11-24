@@ -4,8 +4,32 @@ import Button from '../components/Button.astro';
 import SectionHeader from '../components/SectionHeader.astro';
 import { Icon } from 'astro-icon/components';
 import { organization } from '../config/organization';
+import QuestionList, { type Question } from '../components/QuestionList.astro';
 
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+
+const questions: Question[] = [
+  {
+    q: 'What was the Nevada County Narrow Gauge Railroad?',
+    a: `A three-foot narrow gauge railroad that ran from ${organization.prototype.serviceStart} to ${organization.prototype.serviceEnd} between Colfax and Nevada City, by way of Chicago Park and Grass Valley. It met the Southern Pacific mainline at Colfax and carried passengers, freight, and mining supplies through western Nevada County.`,
+    link: { href: `${base}/trains`, label: 'Railroad history' },
+  },
+  {
+    q: 'What is On3 scale?',
+    a: 'On3 is O scale (1:48) representing three-foot-gauge track, the track width of the original railroad.',
+    link: { href: `${base}/learn/glossary#on3`, label: 'Glossary: On3' },
+  },
+  {
+    q: 'Who built the model railroad?',
+    a: `Volunteers have researched, built, wired, and operated the layout at the ${organization.location.venue} since ${organization.founded}.`,
+    link: { href: `${base}/volunteer`, label: 'Volunteer' },
+  },
+  {
+    q: 'Is the model railroad a nonprofit?',
+    a: `Yes. It is a ${organization.nonprofit.classification} nonprofit listed by the IRS as ${organization.nonprofit.irsName} (EIN ${organization.nonprofit.ein}). ${organization.nonprofit.deductibilityStatement}`,
+    link: { href: `${base}${organization.donations.path}`, label: 'Support the layout' },
+  },
+];
 
 const timeline = [
   { year: '1875', event: 'Construction begins on February 11, breaking ground near Colfax' },
@@ -199,6 +223,12 @@ const timeline = [
             Plus scenic highlights like Town Talk, the Bear River Bridge, gold mining operations, and other familiar local scenes.
           </p>
       </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-cream">
+    <div class="page-container max-w-3xl">
+      <QuestionList id="about-questions" questions={questions} />
     </div>
   </section>
 

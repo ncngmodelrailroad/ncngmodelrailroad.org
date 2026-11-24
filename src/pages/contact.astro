@@ -1,9 +1,33 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import ContactCard from '../components/ContactCard.astro';
+import QuestionList, { type Question } from '../components/QuestionList.astro';
 import { organization } from '../config/organization';
 
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+
+const questions: Question[] = [
+  {
+    q: `Where is the model railroad at the ${organization.location.venue}?`,
+    a: `In the red Quonset hut on Main Street inside the fairgrounds at ${organization.location.streetAddress}, ${organization.location.city}. For most events outside the Fair, enter at Gate 1, walk to Main Street, and turn left. The hut has NCNGRR painted on its red wall.`,
+    link: { href: '#finding-the-building', label: 'Walking directions' },
+  },
+  {
+    q: 'When is the model railroad open to visit?',
+    a: `${organization.visiting.publicAccess} ${organization.visiting.eventTiming}`,
+    link: { href: `${base}/events`, label: 'Announced openings' },
+  },
+  {
+    q: 'Is this the Nevada County Narrow Gauge Railroad Museum in Nevada City?',
+    a: `No. The ${organization.name} is a separate volunteer organization at the ${organization.location.venue} in ${organization.location.city}. It is not affiliated with other museums or groups.`,
+    link: { href: `${base}/about`, label: 'About the layout' },
+  },
+  {
+    q: 'What does the model railroad show?',
+    a: `An operating On3 scale model of the Nevada County Narrow Gauge Railroad, which ran from ${organization.prototype.serviceStart} to ${organization.prototype.serviceEnd}. Trains run through miniature Colfax, Chicago Park, Grass Valley, and Nevada City, including the Bear River Bridge. Volunteers have built it since ${organization.founded}.`,
+    link: { href: `${base}/trains`, label: 'Trains and history' },
+  },
+];
 ---
 
 <BaseLayout title="Contact Us | N.C.N.G. Model Railroad" description="Contact the volunteers about announced layout openings, volunteering, or the model railroad. Find directions to the Nevada County Fairgrounds." image="/images/building-exterior-visit.jpg" heroImage={`${base}/images/building-exterior-visit.jpg`}>
@@ -98,7 +122,7 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
         </p>
 
         <div class="mt-8">
-          <h3 class="font-bold mb-2">Finding the building</h3>
+          <h3 id="finding-the-building" class="font-bold mb-2">Finding the building</h3>
           <figure>
             <a href={`${base}/images/fairgrounds-map-full.webp`} class="block rounded-lg overflow-hidden border border-gray-200">
               <picture>
@@ -155,6 +179,8 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
           with the event name and the access information you need.
         </p>
       </section>
+
+      <QuestionList id="questions-title" questions={questions} class="mt-10" />
     </div>
   </section>
 </BaseLayout>

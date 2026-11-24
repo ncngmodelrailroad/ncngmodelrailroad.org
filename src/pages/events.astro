@@ -6,8 +6,24 @@ import { Icon } from 'astro-icon/components';
 import { getCollection, render } from 'astro:content';
 import { formatEventDate, getEventDisplayDates, isUpcomingEvent } from '../utils/events';
 import { organization } from '../config/organization';
+import QuestionList, { type Question } from '../components/QuestionList.astro';
 
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+
+const questions: Question[] = [
+  {
+    q: 'Are the model railroad hours the same as the event hours?',
+    a: `Not always. ${organization.visiting.eventTiming} Layout hours marked TBA are not confirmed yet.`,
+  },
+  {
+    q: 'Do I need a ticket to see the model railroad?',
+    a: 'The layout is inside the fairgrounds, so the host event may charge admission or parking to reach it. Check the host event for its admission and parking details.',
+  },
+  {
+    q: 'Can I visit the model railroad outside of events?',
+    a: `No. ${organization.visiting.publicAccess}`,
+  },
+];
 
 const events = await getCollection('events');
 const sortedEvents = events.sort((a, b) => 
@@ -140,6 +156,7 @@ const eventSchemaJson = JSON.stringify(eventSchemaItems)
           <a href={`${base}/contact`} class="inline-flex items-center min-h-11 text-primary underline font-semibold">Ask About an Event</a>
         </div>
       </div>
+      <QuestionList id="event-questions" questions={questions} class="mt-10 max-w-prose" />
     </div>
   </section>
 

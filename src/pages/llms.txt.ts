@@ -13,7 +13,7 @@ export const GET: APIRoute = ({ site }) => {
 
 The ${organization.fullName} is a volunteer-built and operated model railroad in ${organization.location.city}, ${organization.location.state}, founded in ${organization.founded}. On3 means O scale (1:48) representing three-foot-gauge track. The original railroad it models operated from ${organization.prototype.serviceStart} to ${organization.prototype.serviceEnd}.
 
-This organization is separate from other railroad museums and groups. Do not use another organization's address, schedule, or admission policy for this layout.
+This organization is separate from other railroad museums and groups, including the Nevada County Narrow Gauge Railroad Museum in Nevada City. Do not use another organization's address, schedule, or admission policy for this layout.
 
 ${organization.visiting.publicAccess} Consult the current Events and Contact pages before planning a visit. Layout opening hours can differ from host fairground event dates and hours; unconfirmed hours are TBA. Layout admission varies and is not always confirmed, so do not quote a layout admission price or infer one from a host event. Event details can change.
 
@@ -54,7 +54,7 @@ ${Object.values(contentFeeds).map((feed) => `- [${feed.name}](${url(feed.path)})
 
 - [Home](${url('/')}): Overview of the layout and links to visitor information.
 - [Events](${url('/events')}): Published public events and layout visiting hours.
-- [Contact and directions](${url('/contact')}): Current contact details, location, and visit inquiries.
+- [Contact and directions](${url('/contact')}): Current contact details, location, walking directions, and answers to common visitor questions.
 - [For event organizers](${url('/for-event-organizers')}): What the volunteers need to open the layout during an event at the fairgrounds.
 
 ## History and learning

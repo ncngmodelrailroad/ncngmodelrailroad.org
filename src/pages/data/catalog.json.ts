@@ -40,6 +40,8 @@ export const GET: APIRoute = ({ site }) => {
       url: url(organization.donations.path),
       method: organization.donations.method,
       instructions: organization.donations.instructions,
+      checkPayee: organization.donations.checkPayee,
+      mailingAddress: `${organization.location.poBox}, ${organization.location.poCity}, ${organization.location.poState} ${organization.location.poZip}`,
       contactEmail: organization.contact.email,
       emailUrl: donationEmailHref,
       escrip: {

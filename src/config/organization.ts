@@ -32,10 +32,11 @@ export const organization = {
   },
   donations: {
     path: "/donate",
-    method: "email-inquiry",
-    instructions: "Email us for current donation instructions. Online checkout is not available.",
-    emailSubject: "Financial contribution inquiry",
-    emailBody: "I'd like to support the layout. Please send the current donation instructions.",
+    method: "check-by-mail",
+    checkPayee: "Nevada County Narrow Gauge Project",
+    instructions: `Mail a check payable to Nevada County Narrow Gauge Project to ${location.poBox}, ${location.poCity}, ${location.poState} ${location.poZip}. Online checkout is not available.`,
+    emailSubject: "Donation question",
+    emailBody: "I have a question about supporting the layout.",
   },
   // SPD Market grocery rewards through eScrip. Group ID and listed name come
   // from the club's eScrip flyer. escrip.com states the SPD rate as "up to 3%".
